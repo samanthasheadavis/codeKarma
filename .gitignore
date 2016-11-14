@@ -1,4 +1,3 @@
-bourbon
 *.css.map
 node_modules
 .sass-cache/
