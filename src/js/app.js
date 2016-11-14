@@ -25,7 +25,7 @@
           templateUrl: 'src/templates/client-dashboard.html'
       }).state('codeKarmaParent.clientAddProject', {
           url: 'client/add-project',
-          controller: 'ClientAddProjectsController as clientAddProject',
+          controller: 'ClientAddProjectController as clientAddProject',
           templateUrl: 'src/templates/client-add-project.html'
       }).state('codeKarmaParent.clientProjects', {
           url: 'client/projects',
