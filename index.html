@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="codeKarmaApp">
 
 <head>
     <meta charset='UTF-8'>
@@ -10,8 +10,46 @@
     <link rel="stylesheet" href="lib/styles/main.min.css">
 </head>
 
-<body>
-    <div class="container"></div>
+<body ng-controller='AccountController as account'>
+    <header>
+        <h1>todos</h1>
+    </header>
+    <div class="nav-container">
+        <nav class="nav">
+            <div class="container">
+                <ul class="navList">
+                    <li class="navItem">
+                        <a ui-sref="codeKarmaParent.home">Home</a>
+                    </li>
+                    <li class="navItem">
+                        <a ui-sref="codeKarmaParent.allProjects">All Projects</a>
+                    </li>
+                    <li class="navItem">
+                        <a ui-sref="codeKarmaParent.clientDashboard">Client Dashboard</a>
+                    </li>
+                    <li class="navItem">
+                        <a ui-sref="codeKarmaParent.clientEditProjects">Client Edit Projects</a>
+                    </li>
+                    <li class="navItem">
+                        <a ui-sref="codeKarmaParent.clientProjects">Client Projects</a>
+                    </li>
+                    <li class="navItem">
+                        <a ui-sref="codeKarmaParent.communityFeed">Community Feed</a>
+                    </li>
+                    <li class="navItem">
+                        <a ui-sref="codeKarmaParent.devDashboard">Developer Dashboard</a>
+                    </li>
+                    <li class="navItem">
+                        <a ui-sref="codeKarmaParent.devProjects">Developer Projects</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <main>
+        <ui-view></ui-view>
+    </main>
 
     <script src="lib/js/vendor.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
