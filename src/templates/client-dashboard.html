@@ -2,17 +2,23 @@
 
     <div class="profilePic"></div>
 
-    <div class="orgName">Organization Name<img class="editIcon" src="assets/editIcon.png" alt="edit by Laura Vilar from the Noun Project" />
+<div class="infoContainer">
+
+    <div class="orgName">
+      <p>Organization Name</p>
+      <img ng-click = 'clientDashboard.showNameEdit=true' class="editIcon" src="assets/editIcon.png" alt="edit by Laura Vilar from the Noun Project" />
+      <input type="text" name="orgName" ng-show='clientDashboard.showNameEdit'>
+      <button class="save" ng-show='clientDashboard.showNameEdit'>Save</button>
+    </div>
+
+    <div class="orgLink">
+      <p>Website Link</p>
+      <img ng-click ='clientDashboard.showLinkEdit=true' class="editIcon" src="assets/editIcon.png" alt="edit by Laura Vilar from the Noun Project" />
+      <input type="text" name="orgLink" ng-show='clientDashboard.showLinkEdit'>
+      <button class="save" ng-show='clientDashboard.showLinkEdit'>Save</button>
+    </div>
+
 </div>
-
-    <div class="orgLink">Website Link<img class="editIcon" src="assets/editIcon.png" alt="edit by Laura Vilar from the Noun Project" />
-</div>
-
-    <form>
-        <input type="text" name="orgName">
-        <input type="text" name="orgLink">
-    </form>
-
-    <button>My Projects</button>
-    <button>Create a Project</button>
+    <button class="myProjectsBtn">My Projects</button>
+    <button class="createProjectsBtn">Create a Project</button>
 </div>
