@@ -1,0 +1,35 @@
+header {
+  background: linear-gradient(#4F4F4F, $charcoal);
+  height: 50px;
+  color: $white;
+  display: flex;
+  flex-direction: row;
+
+  h1 {
+    margin-top: 2px;
+    font-size: 24px;
+    margin-left: 10px;
+  }
+
+  img {
+    height: 40px;
+    margin-top: 5px;
+    margin-left: $hspace;
+  }
+
+  .navList {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10px;
+
+    .navItem {
+      padding: 0 20px;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: $white;
+  }
+}
