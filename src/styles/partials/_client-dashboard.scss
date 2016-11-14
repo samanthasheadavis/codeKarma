@@ -1,6 +1,38 @@
 .client-dashboard-container {
   width: 100vw;
   height: 100vh;
+  display: flex;
+
+  .orgName, .orgLink {
+    font-size: 20px;
+    float: left;
+    margin: $vspace $hspace;
+
+    &:hover {
+      color: $darkGrey;
+    }
+    &:hover > .editIcon {
+      display: inline;
+    }
+  }
+
+  .editIcon {
+    width: 15px;
+    margin-left: 10px;
+    display: none;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .profilePic {
+    width: 100px;
+    height: 100px;
+    border: 1px solid $lightGrey;
+    margin: $vspace $hspace;
+    float: left;
+  }
 
   button {
     padding: 10px;
