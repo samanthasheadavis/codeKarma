@@ -2,8 +2,18 @@
 @import 'partials/vendor/bourbon/bourbon';
 
 /********** Setup ***********/
+@import 'partials/setup/mixins';
 @import 'partials/setup/variables';
 @import 'partials/setup/reset';
 @import 'partials/setup/general';
 
 /***** Site Components ******/
+@import 'partials/all-projects';
+@import 'partials/client-dashboard';
+@import 'partials/client-edit-projects';
+@import 'partials/client-projects';
+@import 'partials/community-feed';
+@import 'partials/dev-dashboard';
+@import 'partials/dev-projects';
+@import 'partials/header';
+@import 'partials/home';
