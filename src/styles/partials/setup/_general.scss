@@ -1,0 +1,10 @@
+body {
+    background: $midGrey;
+    width: 100%;
+}
+
+ui-view {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}

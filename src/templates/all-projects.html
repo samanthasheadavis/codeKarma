@@ -1,3 +1,17 @@
 <div class="all-projects-container">
-  {{allProjects.message}}
+  <div class="project-card">
+    <ul class="project-snapshot">
+      <li class="title">Project Title</li>
+      <li class="snapshot">brief line about project</li>
+    </ul>
+    <button class="details-btn" ng-click="toggleDetails()">Details</button>
+  </div>
+  <div class="details" ng-show="details">
+    <ul class="project-details">
+      <li class="description">more detailed description of project</li>
+      <li class="client-url"><a href="#">nonprofitclienturl.com</a></li>
+      <li class="contact-info">contact us: nonprofit@client.com</li>
+    </ul>
+    <button class="fork-btn">Fork Project</button>
+  </div>
 </div>
