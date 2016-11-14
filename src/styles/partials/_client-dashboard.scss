@@ -11,6 +11,22 @@
         display: flex;
         flex-direction: column;
 
+        &:hover > .orgLink > p{
+          background: $midGrey;
+        }
+
+        &:hover > .orgName > p{
+          background: $midGrey;
+        }
+
+        &:hover > .orgName > .editIcon{
+          display: inline;
+        }
+
+        &:hover > .orgLink > .editIcon{
+          display: inline;
+        }
+
         p {
             display: inline;
         }
@@ -19,14 +35,6 @@
         .orgName {
             font-size: 20px;
             margin: $vspace $hspace;
-
-            &:hover {
-                color: $darkGrey;
-            }
-
-            &:hover > .editIcon {
-                display: inline;
-            }
         }
 
         .editIcon {

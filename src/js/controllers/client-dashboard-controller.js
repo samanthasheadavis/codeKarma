@@ -1,6 +1,12 @@
 angular.module('codeKarmaApp').controller('ClientDashboardController', function($state) {
     this.message = "in ClientDashboardController";
 
+    this.updateInfo=function(value) {
+      console.log(value);
+      this.showLinkEdit = false;
+      this.showNameEdit = false;
+    };
+
 });
 
 //OAUTH
