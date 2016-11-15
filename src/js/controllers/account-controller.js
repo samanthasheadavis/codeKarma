@@ -1,4 +1,5 @@
-angular.module('codeKarmaApp').controller('AccountController', function($state) {
+angular.module('codeKarmaApp').controller('AccountController', function($state, $location) {
   this.message = "in AccountController";
-  this.$state = $state;
+  this.url = $location.url();
+  console.log(this.url);
 });
