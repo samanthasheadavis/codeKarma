@@ -2,14 +2,60 @@
     background: $lightGrey;
     display: flex;
     flex-wrap: wrap;
-    padding: 40px;
+    flex-direction: column;
+    align-items: center;
     width: 80%;
-    height: 100%;
-    justify-content: space-around;
+    height: 100vh;
+    justify-content: flex-start;
+
+    .btnContainer {
+        margin: 40px 0 20px;
+        display: flex;
+        justify-content: center;
+
+        .allProjectsBtn,
+        .commFeedBtn,
+        .myProjectsBtn {
+            padding: 10px;
+            height: 40px;
+            width: 133px;
+            outline: none;
+            border: none;
+            background: $white;
+        }
+
+        .allProjectsBtn {
+          border-right: 1px solid $midGrey;
+        }
+
+        .commFeedBtn {
+          border-radius: 0 5px 5px 0;
+        }
+
+        .myProjectsBtn {
+          border-radius: 5px 0 0 5px;
+          border-right: 1px solid $midGrey;
+        }
+    }
 
     .infoContainer {
         display: flex;
+        width: 402px;
         flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        background: $white;
+        box-shadow: $box-shadow;
+        border-radius: 5px;
+
+        .profilePic {
+            margin-top: 20px;
+            width: 150px;
+            height: 150px;
+            box-shadow: $box-shadow;
+            border-radius: 50%;
+            margin: $vspace $hspace;
+        }
 
         &:hover > .gitHubLink > p {
             background: $midGrey;
@@ -17,6 +63,10 @@
 
         &:hover > .name > p {
             background: $midGrey;
+        }
+
+        &:hover > .skills > p {
+          background: $midGrey;
         }
 
         &:hover > .name > .editIcon {
@@ -27,14 +77,32 @@
             display: inline;
         }
 
+        &:hover > .skills > .editIcon {
+          display: inline;
+        }
+
         p {
             display: inline;
         }
 
         .gitHubLink,
-        .name {
+        .name,
+        .skills {
             font-size: 20px;
             margin: $vspace $hspace;
+        }
+
+        .rank,
+        .points,
+        .contributions,
+        .skills {
+          height: 20px;
+          width: 100%;
+          text-align: center;
+          border-top: 1px solid lightGrey;
+          font-size: 20px;
+          padding: $vspace 0;
+          margin: 0;
         }
 
         .editIcon {
@@ -45,28 +113,6 @@
             &:hover {
                 cursor: pointer;
             }
-        }
-    }
-
-    .profilePic {
-        width: 150px;
-        height: 150px;
-        border: 1px solid $darkGrey;
-        margin: $vspace $hspace;
-    }
-
-    .btnContainer {
-      display: flex;
-      flex-direction: column;
-
-        .allProjectsBtn,
-        .commFeedBtn,
-        .myProjectsBtn {
-            padding: 10px;
-            margin: 10px;
-            border-radius: 5px;
-            height: 40px;
-            width: 150px;
         }
     }
 }
