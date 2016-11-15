@@ -1,0 +1,53 @@
+.client-add-project-container {
+    align-items: center;
+    background: $lightGrey;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 40px 0;
+    width: 80%;
+    height: 100vh;
+
+    .project-card {
+        background: $white;
+        border: 1px solid $midGrey;
+        padding: $vspace $hspace;
+        width: 60%;
+
+        h3 {
+            font-size: 30px;
+            margin-bottom: $vspace;
+        }
+    }
+}
+
+.client-add-project-container .project-details {
+    display: flex;
+    flex-direction: column;
+
+    li {
+        margin: 0 0 $vspace $hspace;
+
+        p {
+          display: inline;
+        }
+
+        &:hover > p, &:hover > a{
+            background: $midGrey;
+        }
+
+        &:hover > .editIcon {
+            display: inline;
+        }
+    }
+}
+
+.editIcon {
+  width: 15px;
+  margin-left: 10px;
+  display: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

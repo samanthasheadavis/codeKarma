@@ -1,8 +1,9 @@
 .all-projects-container {
+    align-items: center;
     background: $lightGrey;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;  
     padding: 40px 0;
     width: 80%;
     height: 100vh;
