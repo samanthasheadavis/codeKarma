@@ -1,0 +1,53 @@
+.dev-projects-container {
+    background: $lightGrey;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 40px;
+    width: 80%;
+    height: 100vh;
+
+    .project-card {
+        background: $white;
+        border: 1px solid $midGrey;
+        margin-bottom: 40px;
+        padding: $vspace $hspace;
+        height: 120px;
+        width: 60%;
+
+        h3 {
+            font-size: 30px;
+        }
+
+        .details {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+
+            form {
+                display: flex;
+                flex-direction: column;
+                margin: $vspace $hspace;
+
+                label {
+                  margin-top: $vspace;
+                }
+            }
+
+            .help-btn,
+            .submit-btn {
+                padding: 10px;
+                margin: 10px;
+                border-radius: 5px;
+                border: none;
+                height: 40px;
+                width: 100px;
+                align-self: center;
+
+                &:focus {
+                    outline: 0;
+                }
+            }
+        }
+    }
+}

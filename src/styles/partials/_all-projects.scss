@@ -3,50 +3,60 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding-top: 40px;
+    padding: 40px 0;
     width: 80%;
+    height: 100vh;
 
     .project-card {
         background: $white;
-        border: 2px solid $midGrey;
-        border-bottom: none;
-        display: flex;
-        flex-direction: row;
+        border: 1px solid $midGrey;
+        padding: $vspace $hspace;
         height: 120px;
         width: 60%;
 
-        ul {
-          width: 90%;
+        h3 {
+            font-size: 30px;
         }
 
-        li {
-          margin: $vspace $hspace;
+        .project-contents {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            height: 99.5px;
 
-            &.title {
-                font-size: 30px;
+            p {
+                align-self: center;
+                padding: $vspace $hspace;
             }
-        }
 
-        .details-btn {
-          height: 40px;
-          width: 50px;
-          margin-top: $vspace;
+            .details-btn {
+                padding: 10px;
+                margin: 10px;
+                border-radius: 5px;
+                border: none;
+                height: 40px;
+                width: 100px;
+                align-self: center;
+
+                &:focus {
+                    outline: 0;
+                }
+            }
         }
     }
 
     .details {
-        border: 2px solid $midGrey;
+        border: 1px solid $midGrey;
+        background: $white;
         border-top: none;
         display: flex;
+        justify-content: space-between;
         margin-bottom: 40px;
+        padding: $vspace $hspace;
         width: 60%;
 
-        ul {
-          width: 90%;
-
-          li {
+        li {
             margin: $vspace $hspace;
-          }
         }
 
         a {
@@ -55,9 +65,17 @@
         }
 
         .fork-btn {
-          height: 40px;
-          margin-top: $vspace;
-          width: 50px;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            border: none;
+            height: 40px;
+            width: 100px;
+            align-self: center;
+
+            &:focus {
+                outline: 0;
+            }
         }
     }
 }
