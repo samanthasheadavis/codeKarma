@@ -8,8 +8,7 @@
 
     .project-card {
         background: $white;
-        border: 2px solid $midGrey;
-        border-bottom: none;
+        border: 1px solid $midGrey;
         display: flex;
         flex-direction: row;
         height: 120px;
@@ -28,14 +27,22 @@
         }
 
         .details-btn {
+          background: $lightGrey;
+          border: none;
+          border-radius: 5px;
           height: 40px;
           width: 50px;
           margin-top: $vspace;
+
+          &:focus {
+            outline: 0;
+          }
         }
     }
 
     .details {
-        border: 2px solid $midGrey;
+        border: 1px solid $midGrey;
+        background: $white;
         border-top: none;
         display: flex;
         margin-bottom: 40px;
@@ -55,9 +62,16 @@
         }
 
         .fork-btn {
+          background: $lightGrey;
+          border: none;
+          border-radius: 5px;
           height: 40px;
           margin-top: $vspace;
           width: 50px;
+
+          &:focus {
+            outline: 0;
+          }
         }
     }
 }

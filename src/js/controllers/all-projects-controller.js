@@ -2,9 +2,7 @@ angular.module('codeKarmaApp').controller('AllProjectsController', function($sta
   $scope.details = false;
 
   $scope.toggleDetails = function () {
-    console.log("in");
     $scope.details = !$scope.details;
-
   };
 
 });
