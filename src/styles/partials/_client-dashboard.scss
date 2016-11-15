@@ -21,6 +21,10 @@
             outline: none;
             border: none;
             background: $white;
+
+            &:hover {
+              background: $pop;
+            }
         }
 
         .createProjectsBtn {
@@ -29,7 +33,6 @@
 
         .myProjectsBtn {
           border-radius: 5px 0 0 5px;
-          border-right: 1px solid $midGrey;
         }
 
         .active {
@@ -57,11 +60,11 @@
         }
 
         &:hover > .orgLink > p {
-            background: $midGrey;
+            background: $pop;
         }
 
         &:hover > .orgName > p {
-            background: $midGrey;
+            background: $pop;
         }
 
         &:hover > .orgName > .editIcon {

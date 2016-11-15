@@ -39,6 +39,10 @@
             margin: 0;
             box-shadow: $box-shadow;
             padding: 0;
+
+            &:hover {
+              background: $pop;
+            }
         }
     }
 
@@ -76,6 +80,10 @@
             img {
                 width: 25px;
                 height: 25px;
+
+                &:hover {
+                  background: $pop;
+                }
             }
         }
 
@@ -121,6 +129,10 @@
                 outline: none;
                 margin: 0;
                 box-shadow: $box-shadow;
+
+                &:hover {
+                  background: $pop;
+                }
             }
         }
     }

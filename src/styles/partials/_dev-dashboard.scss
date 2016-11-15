@@ -22,10 +22,10 @@
             outline: none;
             border: none;
             background: $white;
-        }
 
-        .allProjectsBtn {
-          border-right: 1px solid $midGrey;
+            &:hover {
+              background: $pop;
+            }
         }
 
         .commFeedBtn {
@@ -34,7 +34,6 @@
 
         .myProjectsBtn {
           border-radius: 5px 0 0 5px;
-          border-right: 1px solid $midGrey;
         }
     }
 
@@ -58,15 +57,15 @@
         }
 
         &:hover > .gitHubLink > p {
-            background: $midGrey;
+            background: $pop;
         }
 
         &:hover > .name > p {
-            background: $midGrey;
+            background: $pop;
         }
 
         &:hover > .skills > p {
-          background: $midGrey;
+          background: $pop;
         }
 
         &:hover > .name > .editIcon {
