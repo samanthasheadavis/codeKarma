@@ -14,6 +14,7 @@
         height: 120px;
         width: 60%;
         box-shadow: $box-shadow;
+        border-radius: $border-radius;
 
         h3 {
             font-size: 30px;
@@ -48,7 +49,10 @@
 
     .details {
         background: $white;
-        border: 1px solid #midGrey;
+        border-bottom-left-radius: $border-radius;
+        border-bottom-right-radius: $border-radius;
+        border-top-left-radius: none;
+        border-top-right-radius: none;
         box-shadow: $box-shadow;
         display: flex;
         justify-content: space-between;
