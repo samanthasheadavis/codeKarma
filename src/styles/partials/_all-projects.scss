@@ -40,6 +40,10 @@
                 width: 100px;
                 align-self: center;
 
+                &:hover {
+                  background: $pop;
+                }
+
                 &:focus {
                     outline: 0;
                 }
@@ -77,6 +81,10 @@
             height: 40px;
             width: 100px;
             align-self: center;
+
+            &:hover {
+              background: $pop;
+            }
 
             &:focus {
                 outline: 0;
