@@ -9,11 +9,12 @@
 
     .project-card {
         background: $white;
-        border: 1px solid $midGrey;
         margin-bottom: 40px;
         padding: $vspace $hspace;
         height: 120px;
         width: 60%;
+        box-shadow: $box-shadow;
+        border-radius: $border-radius;
 
         h3 {
             font-size: 30px;
