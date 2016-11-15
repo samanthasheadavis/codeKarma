@@ -1,0 +1,127 @@
+.community-feed-container {
+    background: $lightGrey;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    height: 100vh;
+    justify-content: flex-start;
+
+    .postForm {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 40px 0 0;
+        width: 60%;
+        margin-bottom: 40px;
+
+        textarea {
+            resize: none;
+            height: 20px;
+            padding: 10px;
+            border: none;
+            outline: none;
+            width: 100%;
+            border-radius: 5px 0 0 5px;
+            box-shadow: $box-shadow;
+            @include placeholder {
+                color: $midGrey;
+            }
+        }
+
+        .askBtn {
+            border-radius: 0 5px 5px 0;
+            width: 100px;
+            border: none;
+            outline: none;
+            height: 42px;
+            margin: 0;
+            box-shadow: $box-shadow;
+            padding: 0;
+        }
+    }
+
+    .commPost {
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        background: $white;
+        border: 1px solid $midGrey;
+        padding: $vspace $hspace;
+        width: 60%;
+        box-shadow: $box-shadow;
+        border-radius: $border-radius;
+        margin-bottom: 20px;
+
+        .postContainer {
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+
+            .profile {
+                border: 1px solid $lightGrey;
+                border-radius: 50%;
+                width: 50px;
+                height: 50px;
+                margin-bottom: 15px;
+            }
+
+            .question {
+                width: 60%;
+                padding: 10px;
+                color: $darkGrey;
+            }
+
+            img {
+                width: 25px;
+                height: 25px;
+            }
+        }
+
+        .postInfoContainer {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .responsesContainer {
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+            width: 100%;
+            background: $lightGrey;
+            border-radius: 5px;
+            color: dimgray;
+            padding: 10px;
+        }
+
+        .responseForm {
+            display: flex;
+
+            textarea {
+                box-sizing: border-box;
+                width: 100%;
+                resize: none;
+                padding: 10px;
+                border: none;
+                outline: none;
+                height: 36px;
+                border-radius: 5px 0 0 5px;
+                box-shadow: $box-shadow;
+                @include placeholder {
+                    color: $midGrey;
+                }
+            }
+
+            .respondBtn {
+                border-radius: 0 5px 5px 0;
+                width: 100px;
+                border: none;
+                outline: none;
+                margin: 0;
+                box-shadow: $box-shadow;
+            }
+        }
+    }
+}
