@@ -7,11 +7,11 @@
     justify-content: space-around;
 
     .feed {
-      width: 60%;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
     }
 
     .postForm {
@@ -45,7 +45,7 @@
             padding: 0;
 
             &:hover {
-              background: $pop;
+                background: $pop;
             }
         }
     }
@@ -86,7 +86,7 @@
                 height: 25px;
 
                 &:hover {
-                  background: $pop;
+                    background: $pop;
                 }
             }
         }
@@ -135,18 +135,93 @@
                 box-shadow: $box-shadow;
 
                 &:hover {
-                  background: $pop;
+                    background: $pop;
                 }
             }
         }
     }
 }
 
-.community-feed-container .leaderboard {
-  height: 300px;
-  background: $white;
-  margin-top: 40px;
-  box-shadow: $box-shadow;
-  border-radius: $border-radius;
+.sidebar {
   width: 25%;
+
+    .user-stats {
+      background: $white;
+      border-radius: $border-radius;
+      box-shadow: $box-shadow;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 150px;
+      margin-top: 40px;
+      width: 100%;
+
+      .user-photo {
+        width: 50px;
+        height: 50px;
+        background: $lightGrey;
+        margin-bottom: $vspace;
+      }
+
+      .username {
+        margin-bottom: 8px;
+      }
+
+      .points {
+        margin-bottom: $vspace;
+      }
+    }
+
+    .leaderboard {
+        background: $white;
+        border-radius: $border-radius;
+        box-shadow: $box-shadow;
+        height: 250px;
+        margin-top: 40px;
+        margin-right: $hspace;
+        width: 100%;
+
+        hr {
+            width: 90%;
+            border: 0;
+            height: 0;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        li {
+            display: flex;
+            flex-direction: row;
+            line-height: 30px;
+            width: 100%;
+            margin: $vspace $hspace;
+
+            h3 {
+              margin-top: $vspace;
+            }
+
+            .prof-pic {
+                height: 30px;
+                width: 15%;
+                margin-right: $hspace;
+                background: $lightGrey;
+            }
+
+            .rank {
+                width: 12%;
+            }
+
+            .username {
+                margin-right: $hspace;
+                width: 25%;
+            }
+
+            .points {
+                align-content: flex-end;
+                width: 32%;
+                text-align: right;
+            }
+        }
+    }
 }
