@@ -1,0 +1,72 @@
+.dev-dashboard-container {
+    background: $lightGrey;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 40px;
+    width: 80%;
+    height: 100%;
+    justify-content: space-around;
+
+    .infoContainer {
+        display: flex;
+        flex-direction: column;
+
+        &:hover > .gitHubLink > p {
+            background: $midGrey;
+        }
+
+        &:hover > .name > p {
+            background: $midGrey;
+        }
+
+        &:hover > .name > .editIcon {
+            display: inline;
+        }
+
+        &:hover > .gitHubLink > .editIcon {
+            display: inline;
+        }
+
+        p {
+            display: inline;
+        }
+
+        .gitHubLink,
+        .name {
+            font-size: 20px;
+            margin: $vspace $hspace;
+        }
+
+        .editIcon {
+            width: 15px;
+            margin-left: 10px;
+            display: none;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .profilePic {
+        width: 150px;
+        height: 150px;
+        border: 1px solid $darkGrey;
+        margin: $vspace $hspace;
+    }
+
+    .btnContainer {
+      display: flex;
+      flex-direction: column;
+
+        .allProjectsBtn,
+        .commFeedBtn,
+        .myProjectsBtn {
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            height: 40px;
+            width: 150px;
+        }
+    }
+}

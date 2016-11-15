@@ -17,9 +17,8 @@
         width: 60%;
 
         h3 {
-          width: 60%;
-          margin: $vspace $hspace 0 $hspace;
-          font-size: 30px;
+            margin: $vspace $hspace 0;
+            font-size: 30px;
         }
 
         form {
@@ -29,25 +28,22 @@
             width: 70%;
 
             select {
-              width: 30%;
+                width: 30%;
             }
 
             input {
-              width: 30%;
+                width: 30%;
             }
         }
 
         .help-btn,
         .submit-btn {
-            background: $lightGrey;
-            border: none;
+            padding: 10px;
+            margin: 10px;
             border-radius: 5px;
             height: 40px;
-            width: 50px;
-            margin-top: $vspace;
+            width: 100px;
             align-self: center;
-            margin-right: 10px;
-
 
             &:focus {
                 outline: 0;

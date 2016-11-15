@@ -3,7 +3,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding-top: 40px;
+    padding: 40px 0;
     width: 80%;
 
     .project-card {
@@ -27,12 +27,11 @@
         }
 
         .details-btn {
-          background: $lightGrey;
-          border: none;
+          padding: 10px;
+          margin: 10px;
           border-radius: 5px;
           height: 40px;
-          width: 50px;
-          margin-top: $vspace;
+          width: 100px;
 
           &:focus {
             outline: 0;
@@ -62,12 +61,11 @@
         }
 
         .fork-btn {
-          background: $lightGrey;
-          border: none;
+          padding: 10px;
+          margin: 10px;
           border-radius: 5px;
           height: 40px;
-          margin-top: $vspace;
-          width: 50px;
+          width: 100px;
 
           &:focus {
             outline: 0;
