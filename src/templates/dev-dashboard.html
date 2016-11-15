@@ -1,3 +1,28 @@
 <div class="dev-dashboard-container">
-  {{devDashboard.message}}
+  <div class="profilePic"></div>
+
+  <div class="infoContainer">
+
+      <div class="name">
+          <p>Full Name</p>
+          <img ng-click='devDashboard.showNameEdit=true' class="editIcon" src="assets/editIcon.png" alt="edit by Laura Vilar from the Noun Project" />
+          <input type="text" name="fullName" ng-show='devDashboard.showNameEdit'ng-model="devDashboard.newName">
+          <button class="save" ng-show='devDashboard.showNameEdit' ng-click="devDashboard.updateInfo(devDashboard.newName)">Save</button>
+      </div>
+
+      <div class="gitHubLink">
+          <p>GitHub Account Link</p>
+          <img ng-click='devDashboard.showLinkEdit=true' class="editIcon" src="assets/editIcon.png" alt="edit by Laura Vilar from the Noun Project" />
+          <input type="text" name="gitHubLink" ng-show='devDashboard.showLinkEdit' ng-model="devDashboard.newLink">
+          <button class="save" ng-show='devDashboard.showLinkEdit' ng-click="devDashboard.updateInfo(devDashboard.newLink)">Save</button>
+      </div>
+
+  </div>
+
+  <div class="btnContainer">
+  <button class="myProjectsBtn">My Projects</button>
+  <button class="allProjectsBtn">All Projects</button>
+  <button class="commFeedBtn">Community Feed</button>
+  </div>
+  
 </div>
