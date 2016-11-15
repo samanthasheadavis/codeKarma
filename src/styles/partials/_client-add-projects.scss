@@ -1,1 +1,60 @@
+.client-add-project-container {
+    align-items: center;
+    background: $lightGrey;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 40px 0;
+    width: 80%;
+    height: 100vh;
 
+    .project-card {
+        background: $white;
+        border: 1px solid $midGrey;
+        border-radius: $border-radius;
+        box-shadow: $box-shadow;
+        display: flex;
+        flex-direction: column;
+        padding: $vspace $hspace;
+        width: 60%;
+
+        h3 {
+            font-size: 30px;
+            margin-bottom: $vspace;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+
+            label {
+                margin-bottom: 10px;
+                width: 80%;
+            }
+
+            input {
+                width: 80%;
+                height: 25px;
+                margin-bottom: $vspace;
+                text-indent: 10px;
+            }
+
+            .submit-btn {
+              align-self: flex-end;
+              width: 150px;
+              height: 40px;
+              padding: 10px;
+              margin: 10px;
+              border-radius: $border-radius;
+              border: none;
+              background: $pop;
+
+              &:focus {
+                outline: 0;
+              }
+            }
+        }
+    }
+}
