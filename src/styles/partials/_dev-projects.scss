@@ -11,8 +11,8 @@
         background: $white;
         margin-bottom: 40px;
         padding: $vspace $hspace;
-        height: 120px;
         width: 60%;
+        height: 200px;
         box-shadow: $box-shadow;
         border-radius: $border-radius;
 
@@ -30,8 +30,24 @@
                 flex-direction: column;
                 margin: $vspace $hspace;
 
+                select {
+                  background: $white;
+                  border: 1px solid $midGrey;
+                  font-family: $raleway;
+                  font-size: 16px;
+                  height: 25px;
+                }
+
                 label {
-                  margin-top: $vspace;
+                  margin: $vspace 0 10px 0;
+                }
+
+                input {
+                  border-radius: $border-radius;
+                  border: 1px solid $midGrey;
+                  font-family: $raleway;
+                  font-size: 16px;
+                  height: 25px;
                 }
             }
 
