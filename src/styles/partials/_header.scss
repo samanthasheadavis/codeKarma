@@ -1,5 +1,5 @@
 header {
-  background: linear-gradient(#4F4F4F, $charcoal);
+  background: linear-gradient($darkGrey, $charcoal);
   height: 50px;
   color: $white;
   display: flex;
@@ -9,7 +9,7 @@ header {
     margin-top: 2px;
     font-size: 24px;
     margin-left: 10px;
-    color: $pop;
+    color: $white;
   }
 
   img {

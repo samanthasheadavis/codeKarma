@@ -5,48 +5,48 @@
     justify-content: center;
     padding-top: 40px;
     width: 80%;
+    height: 100vh;
 
     .project-card {
         background: $white;
         border: 1px solid $midGrey;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
         margin-bottom: 40px;
+        padding: $vspace $hspace;
         height: 120px;
         width: 60%;
 
         h3 {
-            margin: $vspace $hspace 0;
             font-size: 30px;
         }
 
-        form {
-            display: flex;
-            flex-direction: column;
-            margin: $vspace $hspace;
-            width: 70%;
+        .details {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
 
-            select {
-                width: 30%;
+            form {
+                display: flex;
+                flex-direction: column;
+                margin: $vspace $hspace;
+
+                label {
+                  margin-top: $vspace;
+                }
             }
 
-            input {
-                width: 30%;
-            }
-        }
+            .help-btn,
+            .submit-btn {
+                padding: 10px;
+                margin: 10px;
+                border-radius: 5px;
+                border: none;
+                height: 40px;
+                width: 100px;
+                align-self: center;
 
-        .help-btn,
-        .submit-btn {
-            padding: 10px;
-            margin: 10px;
-            border-radius: 5px;
-            height: 40px;
-            width: 100px;
-            align-self: center;
-
-            &:focus {
-                outline: 0;
+                &:focus {
+                    outline: 0;
+                }
             }
         }
     }
