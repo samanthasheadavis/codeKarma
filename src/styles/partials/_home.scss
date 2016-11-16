@@ -8,6 +8,12 @@
   width: 80%;
   height: 100vh;
 
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
   button {
     padding: 10px;
     margin: 10px;
@@ -17,19 +23,21 @@
     background: none;
     width: 150px;
     background: $pop;
+    align-self: center;
 
     &:hover {
       background: $pop;
-    }
-
-    .continueBtnContainer {
-      display: flex;
     }
 
     a {
       text-decoration: none;
       color: black;
     }
+  }
+
+  .continueBtnContainer {
+    display: flex;
+    justify-content: center;
   }
 
   h1 {
@@ -39,6 +47,7 @@
   h2 {
     margin: 20px 0;
     font-size: 1.5em;
+    align-self: center;
   }
 
   .about {
