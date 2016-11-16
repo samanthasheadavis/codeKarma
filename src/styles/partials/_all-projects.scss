@@ -87,6 +87,7 @@
                         color: $charcoal;
                         display: none;
                         font-size: 14px;
+                        line-height: 16px;
                         left: 80%;
                         top: -10%;
                         padding: 5px;
@@ -107,7 +108,8 @@
                         }
 
                         span {
-                            font-weight: bold;
+                            font-weight: 900;
+                            letter-spacing: .1em;
                         }
                     }
                 }
