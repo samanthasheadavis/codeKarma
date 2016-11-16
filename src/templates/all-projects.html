@@ -1,9 +1,23 @@
 <div class="all-projects-container">
+
+    <form class="searchForm">
+        <textarea name="post" placeholder="search by skills or title..."></textarea>
+        <button type="button" class="searchBtn">Search</button>
+    </form>
     <div class="project-card">
-        <h3 class="title">Project Title</h3>
+        <div class="heading">
+            <h3 class="title">Project Title</h3>
+            <div class="categories">
+                <div class="category-image tooltip">
+                <img class="bug-fix" src="assets/bugfix.png">
+                <span class="tooltiptext">this project is a bug fix</span>
+                </div>
+                <p class="languages">HTML, CSS, JS</p>
+            </div>
+        </div>
         <div class="project-contents">
-        <p class="snapshot">brief line about project</p>
-        <button class="details-btn" ng-click="toggleDetails()">Details</button>
+            <p class="snapshot">brief line about project</p>
+            <button class="details-btn" ng-click="toggleDetails()">Details</button>
         </div>
     </div>
     <div class="details" ng-show="details">
