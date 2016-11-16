@@ -13,6 +13,13 @@
         display: flex;
         justify-content: center;
 
+        a {
+          text-decoration: none;
+          color: $darkGrey;
+          font-size: 14px;
+          font-family: $raleway;
+        }
+
         .allProjectsBtn,
         .commFeedBtn,
         .myProjectsBtn {
