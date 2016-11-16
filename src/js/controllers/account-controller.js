@@ -1,5 +1,6 @@
 angular.module('codeKarmaApp').controller('AccountController', function($state, $location, $rootScope) {
 
+// refreshView checks the url of the page after it is refreshed and adjusts the navbar items based on the url.
     this.refreshView = function() {
         this.url = $location.url();
 
@@ -12,6 +13,7 @@ angular.module('codeKarmaApp').controller('AccountController', function($state, 
         }
     };
 
+// views adjusts the navbar items based on which navbar item is clicked on. If a user clicks on home, for instance, the navbar is hidden.
     this.views = function(view) {
         console.log('in');
         if (view === 'developer/all-projects' || view === 'developer/community-feed' || view === 'developer/dashboard' || view === 'developer/projects') {

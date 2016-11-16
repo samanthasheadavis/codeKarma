@@ -12,15 +12,15 @@
         <div class="orgName">
             <p>Organization Name</p>
             <img ng-click='clientDashboard.showNameEdit=true' class="editIcon" src="assets/editIcon.png" alt="edit by Laura Vilar from the Noun Project" />
-            <input type="text" name="orgName" ng-show='clientDashboard.showNameEdit'ng-model="clientDashboard.newName">
-            <button class="save" ng-show='clientDashboard.showNameEdit' ng-click="clientDashboard.updateInfo(clientDashboard.newName)">Save</button>
+            <input type="text" name="orgName" ng-show='clientDashboard.showNameEdit'ng-model="clientDashboard.orgName">
+            <button class="save" ng-show='clientDashboard.showNameEdit' ng-click="clientDashboard.updateInfo()">Save</button>
         </div>
 
         <div class="orgLink">
             <p>Website Link</p>
             <img ng-click='clientDashboard.showLinkEdit=true' class="editIcon" src="assets/editIcon.png" alt="edit by Laura Vilar from the Noun Project" />
-            <input type="text" name="orgLink" ng-show='clientDashboard.showLinkEdit' ng-model="clientDashboard.newName">
-            <button class="save" ng-show='clientDashboard.showLinkEdit' ng-click="clientDashboard.updateInfo(clientDashboard.newName)">Save</button>
+            <input type="text" name="orgLink" ng-show='clientDashboard.showLinkEdit' ng-model="clientDashboard.orgLink">
+            <button class="save" ng-show='clientDashboard.showLinkEdit' ng-click="clientDashboard.updateInfo()">Save</button>
         </div>
 
     </div>
