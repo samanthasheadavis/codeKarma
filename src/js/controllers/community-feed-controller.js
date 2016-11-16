@@ -10,6 +10,7 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
 
     this.addResponse = function(response) {
       var newResponse = $('<p>').attr('class', 'response').html(response).appendTo('.responsesContainer');
+      this.response = '';
     };
 
     this.updateLikes = function(likes) {
