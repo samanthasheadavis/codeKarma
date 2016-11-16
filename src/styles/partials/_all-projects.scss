@@ -8,18 +8,80 @@
     width: 80%;
     height: 100vh;
 
+    .searchForm {
+        display: flex;
+        margin: 40px 0 0;
+        width: 60%;
+        margin-bottom: 40px;
+
+        textarea {
+            resize: none;
+            height: 20px;
+            padding: 10px;
+            border: none;
+            outline: none;
+            width: 100%;
+            border-radius: 5px 0 0 5px;
+            box-shadow: $box-shadow;
+            @include placeholder {
+                color: $midGrey;
+            }
+        }
+
+        .searchBtn {
+            border-radius: 0 5px 5px 0;
+            width: 100px;
+            border: none;
+            outline: none;
+            height: 42px;
+            margin: 0;
+            box-shadow: $box-shadow;
+            padding: 0;
+
+            &:hover {
+                background: $pop;
+            }
+        }
+    }
+
     .project-card {
         background: $white;
-        padding: $vspace $hspace;
-        height: 120px;
+        height: 160px;
         width: 60%;
         box-shadow: $box-shadow;
         border-radius: $border-radius;
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
 
-        h3 {
-            font-size: 30px;
+        .heading {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            h3 {
+                font-size: 30px;
+                padding: $vspace 0 0 $hspace;
+            }
+
+            .categories {
+                display: flex;
+                flex-direction: column;
+                margin: $vspace $hspace;
+
+                .category-image {
+                  display: flex;
+                  justify-content: center;
+
+                    img {
+                        height: 35px;
+                    }
+                }
+
+                .languages {
+                    align-self: center;
+                    margin-top: $vspace;
+                }
+            }
         }
 
         .project-contents {
@@ -29,21 +91,21 @@
             height: 99.5px;
 
             p {
-                align-self: center;
-                padding: $vspace $hspace;
+                align-self: flex-start;
+                padding: 0 $hspace;
             }
 
             .details-btn {
                 padding: 10px;
-                margin: 10px;
+                margin: 0 10px 10px 10px;
                 border-radius: 5px;
                 border: none;
                 height: 40px;
                 width: 100px;
-                align-self: center;
+                align-self: flex-start;
 
                 &:hover {
-                  background: $pop;
+                    background: $pop;
                 }
 
                 &:focus {
@@ -63,7 +125,6 @@
         display: flex;
         justify-content: space-between;
         margin-bottom: 40px;
-        padding: $vspace $hspace;
         width: 60%;
 
         li {
@@ -85,7 +146,7 @@
             align-self: center;
 
             &:hover {
-              background: $pop;
+                background: $pop;
             }
 
             &:focus {
