@@ -69,11 +69,41 @@
                 margin: $vspace $hspace;
 
                 .category-image {
-                  display: flex;
-                  justify-content: center;
+                    display: flex;
+                    justify-content: center;
+                    position: relative;
+
+                    &:hover .tooltiptext {
+                        display: block;
+                    }
 
                     img {
                         height: 35px;
+                    }
+
+                    .tooltiptext {
+                        background: $pop;
+                        border-radius: $border-radius;
+                        color: $charcoal;
+                        display: none;
+                        left: 80%;
+                        top: -10%;
+                        padding: 5px;
+                        position: absolute;
+                        text-align: center;
+                        width: 130px;
+                        z-index: 5;
+
+                        &:after {
+                            content: " ";
+                            position: absolute;
+                            top: 45%;
+                            right: 100%;
+                            margin-top: -5px;
+                            border-width: 8px;
+                            border-style: solid;
+                            border-color: transparent $pop transparent transparent;
+                        }
                     }
                 }
 
@@ -97,7 +127,7 @@
 
             .details-btn {
                 padding: 10px;
-                margin: 0 10px 10px 10px;
+                margin: 0 10px 10px;
                 border-radius: 5px;
                 border: none;
                 height: 40px;
