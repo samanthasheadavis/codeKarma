@@ -18,30 +18,39 @@
         <nav class="nav">
             <div class="container">
                 <ul class="navList">
+
                     <li class="navItem">
                         <a ui-sref="codeKarmaParent.home">Home</a>
                     </li>
-                    <li class="navItem">
+
+                    <li class="navItem" ng-hide="account.url === '/developer/all-projects' || account.url === '/developer/community-feed' || account.url === '/developer/dashboard'">
+                        <a ui-sref="codeKarmaParent.clientDashboard">My Dashboard</a>
+                    </li>
+
+                    <li class="navItem" ng-hide="account.url === '/developer/all-projects' || account.url === '/developer/community-feed' || account.url === '/developer/dashboard'">
+                        <a ui-sref="codeKarmaParent.clientProjects">My Projects</a>
+                    </li>
+
+                    <li class="navItem" ng-hide="account.url === '/developer/all-projects' || account.url === '/developer/community-feed' || account.url === '/developer/dashboard'">
+                        <a ui-sref="codeKarmaParent.clientAddProject">Create a Project</a>
+                    </li>
+
+                    <li class="navItem" ng-hide="account.url === '/client/dashboard' || account.url==='/client/projects' || account.url==='/client/add-project'">
+                        <a ui-sref="codeKarmaParent.devDashboard">My Dashboard</a>
+                    </li>
+
+                    <li class="navItem" ng-hide="account.url === '/client/dashboard' || account.url==='/client/projects' || account.url==='/client/add-project'">
+                        <a ui-sref="codeKarmaParent.devProjects">My Projects</a>
+                    </li>
+
+                    <li class="navItem" ng-hide="account.url === '/client/dashboard' || account.url==='/client/projects' || account.url==='/client/add-project'" >
                         <a ui-sref="codeKarmaParent.allProjects">All Projects</a>
                     </li>
-                    <li class="navItem">
-                        <a ui-sref="codeKarmaParent.clientDashboard">Client Dashboard</a>
-                    </li>
-                    <li class="navItem">
-                        <a ui-sref="codeKarmaParent.clientAddProject">Client Add Projects</a>
-                    </li>
-                    <li class="navItem">
-                        <a ui-sref="codeKarmaParent.clientProjects">Client Projects</a>
-                    </li>
-                    <li class="navItem">
+
+                    <li class="navItem" ng-hide="account.url === '/client/dashboard' || account.url==='/client/projects' || account.url==='/client/add-project'">
                         <a ui-sref="codeKarmaParent.communityFeed">Community Feed</a>
                     </li>
-                    <li class="navItem">
-                        <a ui-sref="codeKarmaParent.devDashboard">Developer Dashboard</a>
-                    </li>
-                    <li class="navItem">
-                        <a ui-sref="codeKarmaParent.devProjects">Developer Projects</a>
-                    </li>
+
                 </ul>
             </div>
         </nav>
