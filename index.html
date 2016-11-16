@@ -12,43 +12,43 @@
 </head>
 
 <body ng-controller='AccountController as account'>
-    <header ng-hide="account.url === '/'">
-        <img src="assets/lotus_blue.png" alt="Lotus by Muhammad Faizal Rahman Hakim from the Noun Project" />
+    <header ng-hide="account.hideNav">
+        <img ng-click="account.views('all')" src="assets/lotus_blue.png" alt="Lotus by Muhammad Faizal Rahman Hakim from the Noun Project" />
         <h1>Code Karma</h1>
         <nav class="nav">
             <div class="container">
                 <ul class="navList">
 
                     <li class="navItem">
-                        <a ui-sref="codeKarmaParent.home">Home</a>
+                        <a ng-click = "account.views('home')" ui-sref="codeKarmaParent.home">Home</a>
                     </li>
 
-                    <li class="navItem" ng-hide="account.url === '/developer/all-projects' || account.url === '/developer/community-feed' || account.url === '/developer/dashboard'">
-                        <a ui-sref="codeKarmaParent.clientDashboard">My Dashboard</a>
+                    <li class="navItem" ng-hide="account.hideDev">
+                        <a ng-click = "account.views('client/dashboard')" ui-sref="codeKarmaParent.clientDashboard">My Dashboard</a>
                     </li>
 
-                    <li class="navItem" ng-hide="account.url === '/developer/all-projects' || account.url === '/developer/community-feed' || account.url === '/developer/dashboard'">
-                        <a ui-sref="codeKarmaParent.clientProjects">My Projects</a>
+                    <li class="navItem" ng-hide="account.hideDev">
+                        <a ng-click = "account.views('client/projects')" ui-sref="codeKarmaParent.clientProjects">My Projects</a>
                     </li>
 
-                    <li class="navItem" ng-hide="account.url === '/developer/all-projects' || account.url === '/developer/community-feed' || account.url === '/developer/dashboard'">
-                        <a ui-sref="codeKarmaParent.clientAddProject">Create a Project</a>
+                    <li class="navItem" ng-hide="account.hideDev">
+                        <a ng-click = "account.views('client/add-project')" ui-sref="codeKarmaParent.clientAddProject">Create a Project</a>
                     </li>
 
-                    <li class="navItem" ng-hide="account.url === '/client/dashboard' || account.url==='/client/projects' || account.url==='/client/add-project'">
-                        <a ui-sref="codeKarmaParent.devDashboard">My Dashboard</a>
+                    <li class="navItem" ng-hide="account.hideClient">
+                        <a ng-click = "account.views('developer/dashboard')" ui-sref="codeKarmaParent.devDashboard">My Dashboard</a>
                     </li>
 
-                    <li class="navItem" ng-hide="account.url === '/client/dashboard' || account.url==='/client/projects' || account.url==='/client/add-project'">
-                        <a ui-sref="codeKarmaParent.devProjects">My Projects</a>
+                    <li class="navItem" ng-hide="account.hideClient">
+                        <a ng-click = "account.views('developer/projects')" ui-sref="codeKarmaParent.devProjects">My Projects</a>
                     </li>
 
-                    <li class="navItem" ng-hide="account.url === '/client/dashboard' || account.url==='/client/projects' || account.url==='/client/add-project'" >
-                        <a ui-sref="codeKarmaParent.allProjects">All Projects</a>
+                    <li class="navItem" ng-hide="account.hideClient" >
+                        <a ng-click = "account.views('developer/all-projects')" ui-sref="codeKarmaParent.allProjects">All Projects</a>
                     </li>
 
-                    <li class="navItem" ng-hide="account.url === '/client/dashboard' || account.url==='/client/projects' || account.url==='/client/add-project'">
-                        <a ui-sref="codeKarmaParent.communityFeed">Community Feed</a>
+                    <li class="navItem" ng-hide="account.hideClient">
+                        <a ng-click = "account.views('developer/community-feed')" ui-sref="codeKarmaParent.communityFeed">Community Feed</a>
                     </li>
 
                 </ul>

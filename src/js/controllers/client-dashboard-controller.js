@@ -1,11 +1,15 @@
 angular.module('codeKarmaApp').controller('ClientDashboardController', function($state) {
-    this.message = "in ClientDashboardController";
 
-    this.updateInfo=function(value) {
-      console.log(value);
-      this.showLinkEdit = false;
-      this.showNameEdit = false;
-    };
+// orgName and orgLink refer to the 'organization name' and 'website link' fieds.
+    this.orgName = '';
+    this.orgLink = '';
+
+// updateInfo is the function that handles passing the updated org name or org link to the back end.
+    this.updateInfo = function() {
+
+    this.showLinkEdit = false;
+    this.showNameEdit = false;
+};
 
 });
 

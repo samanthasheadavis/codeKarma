@@ -2,8 +2,8 @@
 
     <div class="feed">
         <form class="postForm">
-            <textarea name="post" placeholder="Ask the community"></textarea>
-            <button type="button" class="askBtn">Ask</button>
+            <textarea name="post" placeholder="Ask the community" ng-model='communityFeed.post'></textarea>
+            <button type="button" class="askBtn" ng-click="communityFeed.addPost()">Ask</button>
         </form>
 
         <div class="commPost">
@@ -11,8 +11,8 @@
             <div class="postContainer">
                 <div class="profile"></div>
                 <p class="question">Sometimes when I eat 15 bags of M&amp;Ms consecutively I feel less than my best. Could use some insight into this.</p>
-                <p class="likeAmount"><span>12</span> Likes</p>
-                <img src="assets/like.png" alt="like by dilayorganci from the Noun Project">
+                <p class="likeAmount"><span>{{communityFeed.likes}}</span> Likes</p>
+                <img src="assets/like.png" alt="like by dilayorganci from the Noun Project" ng-click="communityFeed.updateLikes(communityFeed.likes)">
             </div>
 
             <div class="postInfoContainer">
@@ -21,12 +21,14 @@
             </div>
 
             <div class="responsesContainer">
-                Cool story bro.
+                <p class='response'>
+                  Cool story bro.
+                </p>
             </div>
 
             <div class="responseForm">
-                <textarea name="post" placeholder="Post a response"></textarea>
-                <button type="button" class="respondBtn">Post</button>
+                <textarea name="post" placeholder="Post a response" ng-model="communityFeed.response"></textarea>
+                <button type="button" class="respondBtn" ng-click="communityFeed.addResponse(communityFeed.response)">Post</button>
             </div>
 
         </div>
