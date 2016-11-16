@@ -13,5 +13,4 @@ angular.module('codeKarmaApp').controller('AccountController', function($state, 
             this.hideDev = false;
         }
     };
-
 });
