@@ -86,12 +86,13 @@
                         border-radius: $border-radius;
                         color: $charcoal;
                         display: none;
+                        font-size: 14px;
                         left: 80%;
                         top: -10%;
                         padding: 5px;
                         position: absolute;
                         text-align: center;
-                        width: 130px;
+                        width: 110px;
                         z-index: 5;
 
                         &:after {
@@ -103,6 +104,10 @@
                             border-width: 8px;
                             border-style: solid;
                             border-color: transparent $pop transparent transparent;
+                        }
+
+                        span {
+                            font-weight: bold;
                         }
                     }
                 }
