@@ -1,19 +1,21 @@
 <div class="client-add-project-container">
     <div class="project-card">
         <h3>Add a New Project</h3>
-        <form name="addProjectForm" class="add-project" ng-submit="addProjectForm.$valid && clientAddProject.create(title, briefDescription, description, githubRepo)">
+        <form name="addProjectForm" class="add-project" ng-submit="addProjectForm.$valid && clientAddProject.create(title, briefDescription, description, category, githubRepo)">
             <label for="title">Project Title</label>
             <input type="text" ng-model="title" name="title" placeholder="What would you like to call your project?">
             <label for="brief-description">Snapshot</label>
             <input type="text" ng-model="briefDescription" name="briefDescription" placeholder="Sum up your project in one sentence.">
             <label for="description">Detail</label>
             <input type="text" ng-model="description" name="description" placeholder="What else would you like the developer to know about your project?">
+            <div class="select-box">
             <label for="category">Project Category</label>
-            <select ng-model="category" class="status">
-            <option class="bug-fix">Bug Fix</option>
-            <option class="design-update">Design Update</option>
-            <option class="new-feature">New Feature</option>
-            </select>
+              <select ng-model="category" class="status">
+              <option class="bug-fix">Bug Fix</option>
+              <option class="design-update">Design Update</option>
+              <option class="new-feature">New Feature</option>
+              </select>
+            </div>
             <label for="github-repo">GitHub Repository</label>
             <input type="text" ng-model="githubRepo" name="githubRepo" placeholder="Provide a link to the GitHub repo for this project.">
             <button type="submit" class="submit-btn">Submit Project</button>

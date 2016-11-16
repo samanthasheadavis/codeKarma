@@ -3,25 +3,25 @@
         <h3 class="title">Org Name - Project Title</h3>
         <div class="details">
             <form>
-                <label for="status">update your progress</label>
-                <select class="status">
-                <option class="0">0%</option>
-                <option class="10">10%</option>
-                <option class="20">20%</option>
-                <option class="30">30%</option>
-                <option class="40">40%</option>
-                <option class="50">50%</option>
-                <option class="60">60%</option>
-                <option class="70">70%</option>
-                <option class="80">80%</option>
-                <option class="90">90%</option>
-                <option class="100">100%</option>
+                <label for="status">percent complete</label>
+                <select ng-model="status" class="status" ng-change="devProjects.updateStatus(status)">
+                <option class="0">0</option>
+                <option class="10">10</option>
+                <option class="20">20</option>
+                <option class="30">30</option>
+                <option class="40">40</option>
+                <option class="50">50</option>
+                <option class="60">60</option>
+                <option class="70">70</option>
+                <option class="80">80</option>
+                <option class="90">90</option>
+                <option class="100">100</option>
                 </select>
                 <label for="completion-date">est. completion date</label>
-                <input type="date">
+                <input ng-disabled="devProjects.complete" ng-model="completionDate" name="completionDate" type="date">
             </form>
-            <button class="help-btn" ui-sref="codeKarmaParent.communityFeed">Ask for Help</button>
-            <!-- <button class="submit-btn">Submit Project</button> -->
+            <button ng-hide="devProjects.complete" class="help-btn" ui-sref="codeKarmaParent.communityFeed">Ask for Help</button>
+            <button ng-hide="!devProjects.complete" class="submit-btn">Submit Project</button>
         </div>
     </div>
 </div>
