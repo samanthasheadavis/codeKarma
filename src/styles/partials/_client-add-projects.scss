@@ -29,6 +29,27 @@
             align-items: center;
             width: 100%;
 
+            .select-box {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                width: 80%;
+
+                select {
+                    background: $white;
+                    border: 1px solid $midGrey;
+                    font-family: $raleway;
+                    font-size: 16px;
+                    height: 25px;
+                    margin-bottom: $vspace;
+                    width: 30%;
+
+                    &:focus {
+                        outline: 0;
+                    }
+                }
+            }
+
             label {
                 margin-bottom: 10px;
                 width: 80%;
@@ -39,21 +60,29 @@
                 height: 25px;
                 margin-bottom: $vspace;
                 text-indent: 10px;
+
+                &:focus {
+                    outline-color: $pop;
+                }
             }
 
             .submit-btn {
-              align-self: flex-end;
-              width: 150px;
-              height: 40px;
-              padding: 10px;
-              margin: 10px;
-              border-radius: $border-radius;
-              border: none;
-              background: $pop;
+                align-self: flex-end;
+                width: 150px;
+                height: 40px;
+                padding: 10px;
+                margin: 10px;
+                border-radius: $border-radius;
+                border: none;
+                background: $midGrey;
 
-              &:focus {
-                outline: 0;
-              }
+                &:focus {
+                    outline: 0;
+                }
+
+                &:hover {
+                    background: $pop;
+                }
             }
         }
     }
