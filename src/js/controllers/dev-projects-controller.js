@@ -1,4 +1,4 @@
-angular.module('codeKarmaApp').controller('DevProjectsController', function($state, $scope) {
+angular.module('codeKarmaApp').controller('DevProjectsController', function($scope, $state) {
 
   this.complete = false;
 
