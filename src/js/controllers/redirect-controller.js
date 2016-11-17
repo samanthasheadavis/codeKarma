@@ -9,9 +9,15 @@ angular.module('codeKarmaApp').controller('RedirectController', function($state,
     } else if (this.url.includes("Developer")) {
       $state.go('codeKarmaParent.devDashboard');
     }
-
   };
 
-  this.dashboardRedirect();
+  this.getToken = function() {
 
+    RequestService.getToken(function(response) {
+      console.log(response);
+      this.dashboardRedirect();
+    });
+  };
+
+  this.getToken();
 });

@@ -1,6 +1,13 @@
-angular.module('codeKarmaApp').service('RequestService', function($http) {
+angular.module('codeKarmaApp').service('RequestService', function($http, $location) {
+
+
+function getToken(callback) {
+  var url = $location.url();
+  this.token = this.url.match(/\#(?:token)\=([\S\s]*?)\&/)[1];
+}
 
 function getUser(callback) {
+
 
   $http({
       method: 'GET',
@@ -12,6 +19,7 @@ function getUser(callback) {
 
 return {
     getUser: getUser,
+    getToken: getToken
 };
 
 });
