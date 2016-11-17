@@ -1,9 +1,11 @@
 angular.module('codeKarmaApp').service('RequestService', function($http, $location) {
-
+var token = '';
 
 function getToken(callback) {
   var url = $location.url();
-  this.token = url.match(/\#(?:token)\=([\S\s]*?)\&/)[1];
+  token = url.match(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/);
+
+  return token;
 }
 
 function getUser(callback) {
