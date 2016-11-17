@@ -1,74 +1,104 @@
 <div class="community-feed-container">
+    <header>
+        <img src="assets/lotus_blue.png" alt="Lotus by Muhammad Faizal Rahman Hakim from the Noun Project" />
+        <h1>Code Karma</h1>
+        <nav class="nav">
+            <div class="container">
+                <ul class="navList">
 
-    <div class="feed">
-        <form class="postForm">
-            <textarea name="post" placeholder="Ask the community" ng-model='communityFeed.post'></textarea>
-            <button type="button" class="askBtn" ng-click="communityFeed.addPost()">Ask</button>
-        </form>
+                    <li class="navItem">
+                        <a ui-sref="codeKarmaParent.home">Home</a>
+                    </li>
 
-        <div class="commPost">
+                    <li class="navItem">
+                        <a ui-sref="codeKarmaParent.devDashboard">My Dashboard</a>
+                    </li>
 
-            <div class="postContainer">
-                <div class="profile"></div>
-                <p class="question">Sometimes when I eat 15 bags of M&amp;Ms consecutively I feel less than my best. Could use some insight into this.</p>
-                <p class="likeAmount"><span>{{communityFeed.likes}}</span> Likes</p>
-                <img src="assets/like.png" alt="like by dilayorganci from the Noun Project" ng-click="communityFeed.updateLikes(communityFeed.likes)">
+                    <li class="navItem">
+                        <a ui-sref="codeKarmaParent.devProjects">My Projects</a>
+                    </li>
+
+                    <li class="navItem">
+                        <a ui-sref="codeKarmaParent.allProjects">All Projects</a>
+                    </li>
+
+                    <li class="navItem">
+                        <a ui-sref="codeKarmaParent.communityFeed">Community Feed</a>
+                    </li>
+
+                </ul>
             </div>
+        </nav>
+    </header>
 
-            <div class="postInfoContainer">
-                <h1 class="name">Samantha Davis</h1>
-                <p class="timeElapsed"><span class="timeStamp">15 </span><span class="timeUnit">minutes</span> ago</p>
+    <div class="flexContainer">
+        <div class="feed">
+            <form class="postForm">
+                <textarea name="post" placeholder="Ask the community" ng-model='communityFeed.post'></textarea>
+                <button type="button" class="askBtn" ng-click="communityFeed.addPost()">Ask</button>
+            </form>
+
+            <div class="commPost">
+
+                <div class="postContainer">
+                    <div class="profile"></div>
+                    <p class="question">Sometimes when I eat 15 bags of M&amp;Ms consecutively I feel less than my best. Could use some insight into this.</p>
+                    <p class="likeAmount"><span>{{communityFeed.likes}}</span> Likes</p>
+                    <img src="assets/like.png" alt="like by dilayorganci from the Noun Project" ng-click="communityFeed.updateLikes(communityFeed.likes)">
+                </div>
+
+                <div class="postInfoContainer">
+                    <h1 class="name">Samantha Davis</h1>
+                    <p class="timeElapsed"><span class="timeStamp">15 </span><span class="timeUnit">minutes</span> ago</p>
+                </div>
+
+                <div class="responsesContainer">
+                    <p class='response'>
+                        Cool story bro.
+                    </p>
+                </div>
+
+                <div class="responseForm">
+                    <textarea name="post" placeholder="Post a response" ng-model="communityFeed.response"></textarea>
+                    <button type="button" class="respondBtn" ng-click="communityFeed.addResponse(communityFeed.response)">Post</button>
+                </div>
+
             </div>
-
-            <div class="responsesContainer">
-                <p class='response'>
-                  Cool story bro.
-                </p>
-            </div>
-
-            <div class="responseForm">
-                <textarea name="post" placeholder="Post a response" ng-model="communityFeed.response"></textarea>
-                <button type="button" class="respondBtn" ng-click="communityFeed.addResponse(communityFeed.response)">Post</button>
-            </div>
-
         </div>
+
+
+        <aside class="sidebar">
+            <div class="user-stats">
+                <div class="user-photo"></div>
+                <p class="username">lindsma87</p>
+                <p class="points">1,340 points</p>
+                <p class="rank">All Time Rank: #<span>1</span> of 42,141</p>
+            </div>
+            <div class="leaderboard">
+                <ul>
+                    <li class="title">
+                        <h3>Leaders This Week</h3></li>
+                    <hr>
+                    <li class="one">
+                        <p class="rank">#1</p>
+                                <div class="prof-pic"></div>
+                                <p class="username">lindsma87</p>
+                                <p class="points">1,340 pts</p>
+                    </li>
+                    <li class="two">
+                        <p class="rank">#2</p>
+                                <div class="prof-pic"></div>
+                                <p class="username">samsd24</p>
+                                <p class="points">1,140 pts</p>
+                    </li>
+                    <li class="three">
+                        <p class="rank">#3</p>
+                                <div class="prof-pic"></div>
+                                <p class="username">kristeich</p>
+                                <p class="points">1,000 pts</p>
+                    </li>
+                </ul>
+            </div>
+        </aside>
     </div>
-
-
-    <aside class="sidebar">
-        <div class="user-stats">
-          <div class="user-photo"></div>
-          <p class="username">lindsma87</p>
-          <p class="points">1,340 points</p>
-          <p class="rank">All Time Rank: #<span>1</span> of 42,141</p>
-        </div>
-        <div class="leaderboard">
-            <ul>
-                <li class="title"><h3>Leaders This Week</h3></li>
-                <hr>
-                <li class="one">
-                    <p class="rank">#1
-                        <p>
-                            <div class="prof-pic"></div>
-                            <p class="username">lindsma87</p>
-                            <p class="points">1,340 pts</p>
-                </li>
-                <li class="two">
-                    <p class="rank">#2
-                        <p>
-                            <div class="prof-pic"></div>
-                            <p class="username">samsd24</p>
-                            <p class="points">1,140 pts</p>
-                </li>
-                <li class="three">
-                    <p class="rank">#3
-                        <p>
-                            <div class="prof-pic"></div>
-                            <p class="username">kristeich</p>
-                            <p class="points">1,000 pts</p>
-                </li>
-            </ul>
-        </div>
-    </aside>
-
 </div>

@@ -1,18 +1,33 @@
 <div class="client-dashboard-container">
+    <header>
+        <img src="assets/lotus_blue.png" alt="Lotus by Muhammad Faizal Rahman Hakim from the Noun Project" />
+        <h1>Code Karma</h1>
+        <nav class="nav">
+            <div class="container">
+                <ul class="navList">
 
-  <div class="btnContainer">
-    <button class="myProjectsBtn"><a ui-sref="codeKarmaParent.clientProjects">My Projects</a></button>
-    <button class="createProjectsBtn"><a ui-sref="codeKarmaParent.clientAddProject">Create a Project</a></button>
-  </div>
+                    <li class="navItem">
+                        <a ui-sref="codeKarmaParent.home">Home</a>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="btnContainer">
+        <button class="myProjectsBtn"><a ui-sref="codeKarmaParent.clientProjects">My Projects</a></button>
+        <button class="createProjectsBtn"><a ui-sref="codeKarmaParent.clientAddProject">Create a Project</a></button>
+    </div>
 
     <div class="infoContainer">
 
-      <div class="profilePic"></div>
+        <div class="profilePic"></div>
 
         <div class="orgName">
             <p>{{clientDashboard.orgName}}</p>
             <img ng-click='clientDashboard.showNameEdit=true' class="editIcon" src="assets/editIcon.png" alt="edit by Laura Vilar from the Noun Project" />
-            <input type="text" name="orgName" ng-show='clientDashboard.showNameEdit'ng-model="clientDashboard.orgName">
+            <input type="text" name="orgName" ng-show='clientDashboard.showNameEdit' ng-model="clientDashboard.orgName">
             <button class="save" ng-show='clientDashboard.showNameEdit' ng-click="clientDashboard.updateInfo()">Save</button>
         </div>
 

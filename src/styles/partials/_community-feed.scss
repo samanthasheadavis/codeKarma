@@ -1,127 +1,34 @@
 .community-feed-container {
     background: $lightGrey;
-    display: flex;
-    flex-direction: row;
     width: 80%;
     height: 100vh;
-    justify-content: space-around;
 
-    .feed {
-        width: 60%;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-    }
+    .flexContainer {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
 
-    .postForm {
-        display: flex;
-        margin: 40px 0 0;
-        width: 100%;
-        margin-bottom: 40px;
+        .feed {
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
 
-        textarea {
-            resize: none;
-            height: 20px;
-            padding: 10px;
-            border: none;
-            outline: none;
+        .postForm {
+            display: flex;
+            margin: 40px 0 0;
             width: 100%;
-            border-radius: 5px 0 0 5px;
-            box-shadow: $box-shadow;
-            @include placeholder {
-                color: $midGrey;
-            }
-        }
-
-        .askBtn {
-            border-radius: 0 5px 5px 0;
-            width: 100px;
-            border: none;
-            outline: none;
-            height: 42px;
-            margin: 0;
-            box-shadow: $box-shadow;
-            padding: 0;
-
-            &:hover {
-                background: $pop;
-            }
-        }
-    }
-
-    .commPost {
-        display: flex;
-        flex-direction: column;
-        box-sizing: border-box;
-        background: $white;
-        border: 1px solid $midGrey;
-        padding: $vspace $hspace;
-        width: 100%;
-        box-shadow: $box-shadow;
-        border-radius: $border-radius;
-        margin-bottom: 20px;
-
-        .postContainer {
-            box-sizing: border-box;
-            display: flex;
-            justify-content: space-between;
-
-            .profile {
-                border: 1px solid $lightGrey;
-                border-radius: 50%;
-                width: 50px;
-                height: 50px;
-                margin-bottom: 15px;
-            }
-
-            .question {
-                width: 60%;
-                padding: 10px;
-                color: $darkGrey;
-            }
-
-            img {
-                width: 25px;
-                height: 25px;
-
-                &:hover {
-                    background: $pop;
-                }
-            }
-        }
-
-        .postInfoContainer {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .responsesContainer {
-            box-sizing: border-box;
-
-            .response {
-              display: flex;
-              box-sizing: border-box;
-              margin: 15px 0;
-              width: 100%;
-              background: $lightGrey;
-              border-radius: 5px;
-              color: dimgray;
-              padding: 10px;
-            }
-        }
-
-        .responseForm {
-            display: flex;
+            margin-bottom: 40px;
 
             textarea {
-                box-sizing: border-box;
-                width: 100%;
                 resize: none;
+                height: 20px;
                 padding: 10px;
                 border: none;
                 outline: none;
-                height: 36px;
+                width: 100%;
                 border-radius: 5px 0 0 5px;
                 box-shadow: $box-shadow;
                 @include placeholder {
@@ -129,101 +36,197 @@
                 }
             }
 
-            .respondBtn {
+            .askBtn {
                 border-radius: 0 5px 5px 0;
                 width: 100px;
                 border: none;
                 outline: none;
+                height: 42px;
                 margin: 0;
                 box-shadow: $box-shadow;
+                padding: 0;
 
                 &:hover {
                     background: $pop;
                 }
             }
         }
-    }
-}
 
-.sidebar {
-  width: 25%;
-
-    .user-stats {
-      background: $white;
-      border-radius: $border-radius;
-      box-shadow: $box-shadow;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 150px;
-      margin-top: 40px;
-      width: 100%;
-
-      .user-photo {
-        width: 50px;
-        height: 50px;
-        background: $lightGrey;
-        margin-bottom: $vspace;
-      }
-
-      .username {
-        margin-bottom: 8px;
-      }
-
-      .points {
-        margin-bottom: $vspace;
-      }
-    }
-
-    .leaderboard {
-        background: $white;
-        border-radius: $border-radius;
-        box-shadow: $box-shadow;
-        height: 250px;
-        margin-top: 40px;
-        margin-right: $hspace;
-        width: 100%;
-
-        hr {
-            width: 90%;
-            border: 0;
-            height: 0;
-            border-top: 1px solid rgba(0, 0, 0, 0.1);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        li {
+        .commPost {
             display: flex;
-            flex-direction: row;
-            line-height: 30px;
+            flex-direction: column;
+            box-sizing: border-box;
+            background: $white;
+            border: 1px solid $midGrey;
+            padding: $vspace $hspace;
             width: 100%;
-            margin: $vspace $hspace;
+            box-shadow: $box-shadow;
+            border-radius: $border-radius;
+            margin-bottom: 20px;
 
-            h3 {
-              margin-top: $vspace;
+            .postContainer {
+                box-sizing: border-box;
+                display: flex;
+                justify-content: space-between;
+
+                .profile {
+                    border: 1px solid $lightGrey;
+                    border-radius: 50%;
+                    width: 50px;
+                    height: 50px;
+                    margin-bottom: 15px;
+                }
+
+                .question {
+                    width: 60%;
+                    padding: 10px;
+                    color: $darkGrey;
+                }
+
+                img {
+                    width: 25px;
+                    height: 25px;
+
+                    &:hover {
+                        background: $pop;
+                    }
+                }
             }
 
-            .prof-pic {
-                height: 30px;
-                width: 15%;
-                margin-right: $hspace;
+            .postInfoContainer {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .responsesContainer {
+                box-sizing: border-box;
+
+                .response {
+                    display: flex;
+                    box-sizing: border-box;
+                    margin: 15px 0;
+                    width: 100%;
+                    background: $lightGrey;
+                    border-radius: 5px;
+                    color: dimgray;
+                    padding: 10px;
+                }
+            }
+
+            .responseForm {
+                display: flex;
+
+                textarea {
+                    box-sizing: border-box;
+                    width: 100%;
+                    resize: none;
+                    padding: 10px;
+                    border: none;
+                    outline: none;
+                    height: 36px;
+                    border-radius: 5px 0 0 5px;
+                    box-shadow: $box-shadow;
+                    @include placeholder {
+                        color: $midGrey;
+                    }
+                }
+
+                .respondBtn {
+                    border-radius: 0 5px 5px 0;
+                    width: 100px;
+                    border: none;
+                    outline: none;
+                    margin: 0;
+                    box-shadow: $box-shadow;
+
+                    &:hover {
+                        background: $pop;
+                    }
+                }
+            }
+        }
+    }
+
+    .sidebar {
+        width: 25%;
+
+        .user-stats {
+            background: $white;
+            border-radius: $border-radius;
+            box-shadow: $box-shadow;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 150px;
+            margin-top: 40px;
+            width: 100%;
+
+            .user-photo {
+                width: 50px;
+                height: 50px;
                 background: $lightGrey;
-            }
-
-            .rank {
-                width: 12%;
+                margin-bottom: $vspace;
             }
 
             .username {
-                margin-right: $hspace;
-                width: 25%;
+                margin-bottom: 8px;
             }
 
             .points {
-                align-content: flex-end;
-                width: 32%;
-                text-align: right;
+                margin-bottom: $vspace;
+            }
+        }
+
+        .leaderboard {
+            background: $white;
+            border-radius: $border-radius;
+            box-shadow: $box-shadow;
+            height: 250px;
+            margin-top: 40px;
+            margin-right: $hspace;
+            width: 100%;
+
+            hr {
+                width: 90%;
+                border: 0;
+                height: 0;
+                border-top: 1px solid rgba(0, 0, 0, 0.1);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            }
+
+            li {
+                display: flex;
+                flex-direction: row;
+                line-height: 30px;
+                width: 100%;
+                margin: $vspace $hspace;
+
+                h3 {
+                    margin-top: $vspace;
+                }
+
+                .prof-pic {
+                    height: 30px;
+                    width: 15%;
+                    margin-right: $hspace;
+                    background: $lightGrey;
+                }
+
+                .rank {
+                    width: 12%;
+                }
+
+                .username {
+                    margin-right: $hspace;
+                    width: 25%;
+                }
+
+                .points {
+                    align-content: flex-end;
+                    width: 32%;
+                    text-align: right;
+                }
             }
         }
     }

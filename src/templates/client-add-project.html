@@ -1,4 +1,32 @@
 <div class="client-add-project-container">
+  <header >
+      <img src="assets/lotus_blue.png" alt="Lotus by Muhammad Faizal Rahman Hakim from the Noun Project" />
+      <h1>Code Karma</h1>
+      <nav class="nav">
+          <div class="container">
+              <ul class="navList">
+
+                  <li class="navItem">
+                      <a ui-sref="codeKarmaParent.home">Home</a>
+                  </li>
+
+                  <li class="navItem">
+                      <a ui-sref="codeKarmaParent.clientDashboard">My Dashboard</a>
+                  </li>
+
+                  <li class="navItem">
+                      <a ui-sref="codeKarmaParent.clientProjects">My Projects</a>
+                  </li>
+
+                  <li class="navItem" >
+                      <a ui-sref="codeKarmaParent.clientAddProject">Create a Project</a>
+                  </li>
+
+              </ul>
+          </div>
+      </nav>
+  </header>
+
     <div class="project-card">
         <h3>Add a New Project</h3>
         <form name="addProjectForm" class="add-project" ng-submit="addProjectForm.$valid && clientAddProject.create(title, briefDescription, description, category, githubRepo)">

@@ -1,4 +1,36 @@
 <div class="dev-projects-container">
+    <header>
+        <img src="assets/lotus_blue.png" alt="Lotus by Muhammad Faizal Rahman Hakim from the Noun Project" />
+        <h1>Code Karma</h1>
+        <nav class="nav">
+            <div class="container">
+                <ul class="navList">
+
+                    <li class="navItem">
+                        <a ui-sref="codeKarmaParent.home">Home</a>
+                    </li>
+
+                    <li class="navItem">
+                        <a ui-sref="codeKarmaParent.devDashboard">My Dashboard</a>
+                    </li>
+
+                    <li class="navItem">
+                        <a ui-sref="codeKarmaParent.devProjects">My Projects</a>
+                    </li>
+
+                    <li class="navItem">
+                        <a ui-sref="codeKarmaParent.allProjects">All Projects</a>
+                    </li>
+
+                    <li class="navItem">
+                        <a ui-sref="codeKarmaParent.communityFeed">Community Feed</a>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+    </header>
+
     <div class="project-card">
         <h3 class="title">Org Name - Project Title</h3>
         <div class="details">
@@ -17,7 +49,7 @@
                 <option class="90">90</option>
                 <option class="100">100</option>
                 </select>
-                
+
                 <label for="completion-date">est. completion date</label>
                 <input ng-disabled="devProjects.complete" ng-model="completionDate" name="completionDate" type="date">
             </form>
