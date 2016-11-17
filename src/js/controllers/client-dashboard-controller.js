@@ -1,4 +1,4 @@
-angular.module('codeKarmaApp').controller('ClientDashboardController', function($state) {
+angular.module('codeKarmaApp').controller('ClientDashboardController', function($state, RequestService) {
 
 // orgName and orgLink refer to the 'organization name' and 'website link' fieds.
     this.orgName = "Your Organization's Name";
@@ -10,6 +10,17 @@ angular.module('codeKarmaApp').controller('ClientDashboardController', function(
     this.showLinkEdit = false;
     this.showNameEdit = false;
 };
+
+    this.getUser = function() {
+
+      RequestService.getUser(function(response) {
+
+        console.log(response);
+
+      });
+    };
+
+    this.getUser();
 
 });
 
