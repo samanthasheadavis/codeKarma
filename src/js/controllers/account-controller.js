@@ -10,6 +10,9 @@ angular.module('codeKarmaApp').controller('AccountController', function($state, 
             this.hideClient = true;
         } else if (this.url === '/') {
             this.hideNav = true;
+        } else if (this.url.includes('redirect')) {
+          this.hideDev = true;
+          this.hideClient = true;
         }
         // else if (this.url === '/developer/dashboard' || this.url === '/client/dashboard') {
         //     this.hideClient = true;
