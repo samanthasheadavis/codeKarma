@@ -1,7 +1,9 @@
-angular.module('codeKarmaApp').controller('RedirectController', function($state) {
+angular.module('codeKarmaApp').controller('RedirectController', function($state, RequestService) {
   this.message = "in RedirectController";
 
-  // function to determine if the user is a client or developer and redirect them to their dashboard 
+  console.log("in");
 
+  // function to determine if the user is a client or developer and redirect them to their dashboard
+  // RequestService.getUserType();
 
 });
