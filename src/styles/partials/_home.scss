@@ -19,14 +19,9 @@
     border-radius: 5px;
     outline: none;
     border: none;
-    background: none;
     width: 150px;
-    background: $pop;
     align-self: center;
-
-    &:hover {
-      background: $pop;
-    }
+    background: transparent;
 
     a {
       text-decoration: none;
@@ -83,8 +78,8 @@
 
         p {
           color: $darkGrey;
-          margin-left: 20px;
           line-height: 1.25;
+          text-align: center;
         }
 
         .member {
@@ -101,6 +96,11 @@
           }
 
           .profile {
+            width: 50px;
+            border-radius: 50%;
+          }
+
+          .mediaPic {
             width: 50px;
           }
         }

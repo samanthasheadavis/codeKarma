@@ -15,7 +15,6 @@
 
         .createProjectsBtn,
         .myProjectsBtn {
-            padding: 10px;
             height: 40px;
             width: 200px;
             outline: none;
@@ -38,7 +37,7 @@
         a {
             text-decoration: none;
             color: $darkGrey;
-            font-size: 14px;
+            font-size: 20px;
             font-family: $raleway;
         }
     }
