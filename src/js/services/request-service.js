@@ -4,7 +4,7 @@ var token = '';
 function getToken(callback) {
   var url = $location.url();
   token = url.match(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/);
-
+  console.log(token);
   return token;
 }
 
