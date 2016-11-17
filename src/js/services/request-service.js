@@ -1,19 +1,32 @@
-angular.module('codeKarmaApp').service('RequestService', function($http, $location) {
+angular.module('codeKarmaApp').service('RequestService', function($http, $location, $state) {
 
-function getToken(callback) {
-  console.log('in getToken on service');
-  var url = $location.url();
-  var token = url.match(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/)[0];
-  console.log(token);
-  return token;
-}
+var token = '';
+
+  function dashboardRedirect() {
+    console.log('in dashboard redirect on request service');
+    var url = $location.url();
+
+    if (url.includes("Client")) {
+      $state.go('codeKarmaParent.clientDashboard');
+    } else if (url.includes("Developer")) {
+      $state.go('codeKarmaParent.devDashboard');
+    }
+  }
+
+  function getToken() {
+    console.log('in getToken on request service');
+    var url = $location.url();
+    token = url.match(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/)[0];
+    console.log(token);
+
+    dashboardRedirect();
+  }
 
 function getUser(callback) {
 
-
   $http({
       method: 'GET',
-      url: 'https://code-karma-api.herokuapp.com/',
+      url: 'https://code-karma-api.herokuapp.com/clients/1?token=' + token,
   }).then(callback, function errorCallback(response) {
       return response;
   });
