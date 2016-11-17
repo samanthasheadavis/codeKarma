@@ -3,7 +3,7 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
 
 function getToken(callback) {
   var url = $location.url();
-  this.token = this.url.match(/\#(?:token)\=([\S\s]*?)\&/)[1];
+  this.token = url.match(/\#(?:token)\=([\S\s]*?)\&/)[1];
 }
 
 function getUser(callback) {
