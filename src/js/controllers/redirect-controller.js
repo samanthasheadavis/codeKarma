@@ -12,8 +12,8 @@ angular.module('codeKarmaApp').controller('RedirectController', function($state,
   };
 
   this.getToken = function() {
-
     RequestService.getToken(function(response) {
+      console.log(RequestService.token);
       console.log(response);
       this.dashboardRedirect();
     });
