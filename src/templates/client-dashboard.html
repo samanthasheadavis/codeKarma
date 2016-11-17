@@ -1,8 +1,8 @@
 <div class="client-dashboard-container">
 
   <div class="btnContainer">
-    <button class="myProjectsBtn">My Projects</button>
-    <button class="createProjectsBtn">Create a Project</button>
+    <button class="myProjectsBtn"><a ui-sref="codeKarmaParent.clientProjects">My Projects</a></button>
+    <button class="createProjectsBtn"><a ui-sref="codeKarmaParent.clientAddProject">Create a Project</a></button>
   </div>
 
     <div class="infoContainer">
@@ -10,14 +10,14 @@
       <div class="profilePic"></div>
 
         <div class="orgName">
-            <p>Organization Name</p>
+            <p>{{clientDashboard.orgName}}</p>
             <img ng-click='clientDashboard.showNameEdit=true' class="editIcon" src="assets/editIcon.png" alt="edit by Laura Vilar from the Noun Project" />
             <input type="text" name="orgName" ng-show='clientDashboard.showNameEdit'ng-model="clientDashboard.orgName">
             <button class="save" ng-show='clientDashboard.showNameEdit' ng-click="clientDashboard.updateInfo()">Save</button>
         </div>
 
         <div class="orgLink">
-            <p>Website Link</p>
+            <p>{{clientDashboard.orgLink}}</p>
             <img ng-click='clientDashboard.showLinkEdit=true' class="editIcon" src="assets/editIcon.png" alt="edit by Laura Vilar from the Noun Project" />
             <input type="text" name="orgLink" ng-show='clientDashboard.showLinkEdit' ng-model="clientDashboard.orgLink">
             <button class="save" ng-show='clientDashboard.showLinkEdit' ng-click="clientDashboard.updateInfo()">Save</button>
