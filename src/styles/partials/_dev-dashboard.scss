@@ -5,13 +5,20 @@
     flex-direction: column;
     align-items: center;
     width: 80%;
-    height: 100vh;
+    // height: 100vh;
     justify-content: flex-start;
 
     .btnContainer {
         margin: 40px 0 20px;
         display: flex;
         justify-content: center;
+
+        a {
+          text-decoration: none;
+          color: $darkGrey;
+          font-size: 14px;
+          font-family: $raleway;
+        }
 
         .allProjectsBtn,
         .commFeedBtn,
@@ -46,6 +53,7 @@
         background: $white;
         box-shadow: $box-shadow;
         border-radius: 5px;
+        margin-bottom: 50px;
 
         .profilePic {
             margin-top: 20px;
@@ -102,6 +110,14 @@
           font-size: 20px;
           padding: $vspace 0;
           margin: 0;
+        }
+
+        .skills {
+          height: auto;
+
+          p {
+            display: block;
+          }
         }
 
         .editIcon {

@@ -1,9 +1,9 @@
 <div class="dev-dashboard-container">
 
     <div class="btnContainer">
-        <button class="myProjectsBtn">My Projects</button>
-        <button class="allProjectsBtn">All Projects</button>
-        <button class="commFeedBtn">Community Feed</button>
+        <button class="myProjectsBtn"><a ui-sref="codeKarmaParent.devProjects">My Projects</a></button>
+        <button class="allProjectsBtn"><a ui-sref="codeKarmaParent.allProjects">All Projects</a></button>
+        <button class="commFeedBtn"><a ui-sref="codeKarmaParent.communityFeed">Community Feed</a></button>
     </div>
 
     <div class="infoContainer">
@@ -11,17 +11,17 @@
         <div class="profilePic"></div>
 
         <div class="name">
-            <p>Your Name</p>
+            <p>{{devDashboard.devName}}</p>
             <img ng-click='devDashboard.showNameEdit=true' class="editIcon" src="assets/editIcon.png" alt="edit by Laura Vilar from the Noun Project" />
-            <input type="text" name="fullName" ng-show='devDashboard.showNameEdit' ng-model="devDashboard.newName">
-            <button class="save" ng-show='devDashboard.showNameEdit' ng-click="devDashboard.updateInfo(devDashboard.newName)">Save</button>
+            <input type="text" name="fullName" ng-show='devDashboard.showNameEdit' ng-model="devDashboard.devName">
+            <button class="save" ng-show='devDashboard.showNameEdit' ng-click="devDashboard.updateInfo('name')">Save</button>
         </div>
 
         <div class="gitHubLink">
-            <p>github.com/yourName</p>
+            <p>{{devDashboard.devLink}}</p>
             <img ng-click='devDashboard.showLinkEdit=true' class="editIcon" src="assets/editIcon.png" alt="edit by Laura Vilar from the Noun Project" />
-            <input type="text" name="gitHubLink" ng-show='devDashboard.showLinkEdit' ng-model="devDashboard.newLink">
-            <button class="save" ng-show='devDashboard.showLinkEdit' ng-click="devDashboard.updateInfo(devDashboard.newLink)">Save</button>
+            <input type="text" name="gitHubLink" ng-show='devDashboard.showLinkEdit' ng-model="devDashboard.devLink">
+            <button class="save" ng-show='devDashboard.showLinkEdit' ng-click="devDashboard.updateInfo('link')">Save</button>
         </div>
 
         <div class="rank">
@@ -37,10 +37,10 @@
         </div>
 
         <div class="skills">
-            <p>Skills: Boiling water, napping</p>
+            <p ng-repeat="skill in devDashboard.skills">{{skill}}</p>
             <img ng-click='devDashboard.showSkillEdit=true' class="editIcon" src="assets/plus.png" alt="Plus by Eagle Eye from the Noun Project" />
             <input type="text" name="skill" ng-show='devDashboard.showSkillEdit' ng-model="devDashboard.newSkill">
-            <button class="save" ng-show='devDashboard.showSkillEdit' ng-click="devDashboard.updateInfo(devDashboard.newSkill)">Save</button>
+            <button class="save" ng-show='devDashboard.showSkillEdit' ng-click="devDashboard.updateInfo('skills')">Save</button>
         </div>
 
 

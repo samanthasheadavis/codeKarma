@@ -4,27 +4,33 @@ angular.module('codeKarmaApp').controller('AccountController', function($state, 
     this.refreshView = function() {
         this.url = $location.url();
 
-        if (this.url === '/developer/all-projects' || this.url === '/developer/community-feed' || this.url === '/developer/dashboard' || this.url === '/developer/projects') {
+        if (this.url === '/developer/all-projects' || this.url === '/developer/community-feed' ||  this.url === '/developer/projects') {
             this.hideDev = true;
-        } else if (this.url === '/client/dashboard' || this.url === '/client/projects' || this.url === '/client/add-project') {
+        } else if (this.url === '/client/projects' || this.url === '/client/add-project') {
             this.hideClient = true;
         } else if (this.url === '/') {
             this.hideNav = true;
+        } else if (this.url === '/developer/dashboard' || this.url === '/client/dashboard') {
+            this.hideClient = true;
+            this.hideDev = true;
         }
     };
 
 // views adjusts the navbar items based on which navbar item is clicked on. If a user clicks on home, for instance, the navbar is hidden.
     this.views = function(view) {
         console.log('in');
-        if (view === 'developer/all-projects' || view === 'developer/community-feed' || view === 'developer/dashboard' || view === 'developer/projects') {
+        if (view === 'developer/all-projects' || view === 'developer/community-feed' || view === 'developer/projects') {
             this.hideDev = true;
-        } else if (view === 'client/dashboard' || view === 'client/projects' || view === 'client/add-project') {
+        } else if (view === 'client/projects' || view === 'client/add-project') {
             this.hideClient = true;
         } else if (view === 'home') {
             this.hideNav = true;
         } else if (view === 'all') {
             this.hideClient = false;
             this.hideDev = false;
+        } else if (view === '/client/dashboard' || view === '/developer/dashboard') {
+            this.hideDev = true;
+            this.hideClient = true;
         }
     };
 
