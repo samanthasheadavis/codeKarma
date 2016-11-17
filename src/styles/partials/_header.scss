@@ -1,39 +1,54 @@
 header {
-  background: linear-gradient($darkGrey, $charcoal);
-  height: 50px;
-  color: $white;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  width: 100%;
-
-  h1 {
-    margin-top: 2px;
-    font-size: 24px;
-    margin-left: 10px;
+    background: linear-gradient($darkGrey, $charcoal);
+    height: 50px;
     color: $white;
-    font-family: $catamaran;
-    font-weight: 900;
-    letter-spacing: .1em;
-  }
-
-  img {
-    height: 40px;
-    margin-left: $hspace;
-  }
-
-  .navList {
     display: flex;
+    align-items: center;
     flex-direction: row;
-    justify-content: space-between;
+    width: 100%;
 
-    .navItem {
-      padding: 0 20px;
+    h1 {
+        margin-top: 2px;
+        font-size: 24px;
+        margin-left: 10px;
+        color: $white;
+        font-family: $catamaran;
+        font-weight: 900;
+        letter-spacing: 0.1em;
     }
-  }
 
-  a {
-    text-decoration: none;
-    color: $white;
-  }
+    img {
+        height: 40px;
+        margin-left: $hspace;
+    }
+
+    .navList {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .navItem {
+            padding: 0 20px;
+            height: 50px;
+            align-items: center;
+            display: flex;
+
+            &:hover {
+              background: $pop;
+            }
+
+            &:hover > a {
+              color: $darkGrey;
+            }
+        }
+
+        .active {
+            background: red;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: $white;
+    }
 }
