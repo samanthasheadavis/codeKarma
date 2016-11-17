@@ -5,9 +5,9 @@ angular.module('codeKarmaApp').controller('RedirectController', function($state,
     this.url = $location.url();
 
     if (this.url.includes("Client")) {
-      console.log("hey client!");
-    } else {
-      console.log("that didn't work");
+      $state.go('codeKarmaParent.clientDashboard');
+    } else if (this.url.includes("Developer")) {
+      $state.go('codeKarmaParent.devDashboard');
     }
 
   };
