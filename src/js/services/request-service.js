@@ -1,8 +1,6 @@
 angular.module('codeKarmaApp').service('RequestService', function($http) {
 
-  console.log('in service');
-
-function getUserType(callback) {
+function getUser(callback) {
 
   $http({
       method: 'GET',
@@ -13,7 +11,7 @@ function getUserType(callback) {
 }
 
 return {
-    getUserType: getUserType,
+    getUser: getUser,
 };
 
 });
