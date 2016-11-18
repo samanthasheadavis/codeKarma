@@ -15,6 +15,6 @@ angular.module('codeKarmaApp').controller('DevDashboardController', function($st
     this.showSkillEdit = false;
   };
 
-  RequestService.getDev();
+  console.log(RequestService.getDev());
 
 });

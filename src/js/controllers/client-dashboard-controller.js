@@ -11,7 +11,7 @@ angular.module('codeKarmaApp').controller('ClientDashboardController', function(
         this.showNameEdit = false;
     };
 
-    RequestService.getClient();
+    console.log(RequestService.getClient());
 
 
 });

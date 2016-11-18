@@ -46,7 +46,7 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
                 name: response.name,
                 email: response.email,
                 image: response.image,
-                github: response.urls.GitHub
+                github: response.urls.GitHub,
             };
             return this.currentUser;
         }
