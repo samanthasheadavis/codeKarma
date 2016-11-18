@@ -18,7 +18,7 @@ angular.module('codeKarmaApp').controller('DevDashboardController', function($st
   this.getDev = function() {
 
     RequestService.getDev(function(response) {
-      var currentUser = RequestService.createUser(response.data.info);
+      this.currentUser = RequestService.createUser(response.data.info);
       console.log(currentUser);
     });
   };
