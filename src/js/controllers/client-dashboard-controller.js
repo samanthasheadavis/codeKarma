@@ -14,10 +14,8 @@ angular.module('codeKarmaApp').controller('ClientDashboardController', function(
     this.getClient = function() {
 
       RequestService.getClient(function(response) {
-
         var currentUser = RequestService.createUser(response.data.info);
         console.log(currentUser);
-
       });
     };
 
