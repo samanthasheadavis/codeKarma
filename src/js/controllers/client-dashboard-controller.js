@@ -1,36 +1,18 @@
 angular.module('codeKarmaApp').controller('ClientDashboardController', function($state, RequestService) {
 
-// orgName and orgLink refer to the 'organization name' and 'website link' fieds.
+    // orgName and orgLink refer to the 'organization name' and 'website link' fieds.
     this.orgName = "Your Organization's Name";
     this.orgLink = 'Your Website Link';
 
-// updateInfo is the function that handles passing the updated org name or org link to the back end.
+    // updateInfo is the function that handles passing the updated org name or org link to the back end.
     this.updateInfo = function() {
 
-    this.showLinkEdit = false;
-    this.showNameEdit = false;
-};
-
-    this.getUser = function() {
-
-      RequestService.getUser(function(response) {
-
-        this.currentClient = {
-
-          username: response.data.info.nickname,
-          name: response.data.info.name,
-          email: response.data.info.email,
-          image: response.data.info.image
-          // github: response.data.info.url.GitHub
-
-        };
-
-        console.log(this.currentClient);
-
-      });
+        this.showLinkEdit = false;
+        this.showNameEdit = false;
     };
 
-    this.getUser();
+    RequestService.getClient();
+
 
 });
 
