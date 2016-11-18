@@ -1,6 +1,7 @@
 angular.module('codeKarmaApp').service('RequestService', function($http, $location, $state) {
 
     var token = '';
+    var currentUser = '';
 
     function dashboardRedirect() {
         var url = $location.url();
@@ -42,14 +43,14 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
     }
 
     function createUser(response) {
-        this.currentUser = {
+        currentUser = {
             username: response.nickname,
             name: response.name,
             email: response.email,
             image: response.image,
             github: response.urls.GitHub,
         };
-        return this.currentUser;
+        return currentUser;
     }
 
     return {
