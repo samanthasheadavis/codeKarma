@@ -31,7 +31,7 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
       console.log(userId);
         $http({
             method: 'GET',
-            url: "https://code-karma-api.herokuapp.com/clients/" + userId + "?token=" + token,
+            url: 'https://code-karma-api.herokuapp.com/clients/' + userId + '?token=' + token,
         }).then(callback, function errorCallback(response) {
             return response;
         });
