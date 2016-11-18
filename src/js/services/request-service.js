@@ -2,6 +2,7 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
 
     var token = '';
     var currentUser = '';
+    var userId = '';
 
     function dashboardRedirect() {
         var url = $location.url();
@@ -16,8 +17,8 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
     function getToken() {
         var url = $location.url();
         token = url.match(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/)[0];
-        var userString = url.match(/id=([0-9]+)/);
-        console.log(userString);
+        var userId = url.match(/id=([0-9]+)/)[1];
+        console.log(userId);
 
         if (url.includes("redirect")) {
         dashboardRedirect();
@@ -29,7 +30,7 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
     function getClient(callback) {
         $http({
             method: 'GET',
-            url: 'https://code-karma-api.herokuapp.com/clients/1?token=' + token,
+            url: 'https://code-karma-api.herokuapp.com/clients/' + userId + '?token=' + token,
         }).then(callback, function errorCallback(response) {
             return response;
         });
@@ -38,7 +39,7 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
     function getDev(callback) {
         $http({
             method: 'GET',
-            url: 'https://code-karma-api.herokuapp.com/developers/2?token=' + token,
+            url: 'https://code-karma-api.herokuapp.com/developers/' + userId + '?token=' + token,
         }).then(callback, function errorCallback(response) {
             return response;
         });
