@@ -18,8 +18,8 @@ angular.module('codeKarmaApp').controller('DevDashboardController', function($st
   this.getDev = function() {
 
     RequestService.getDev(function(response) {
-      this.currentUser = RequestService.createUser(response.data.info);
-      console.log(currentUser);
+      $scope.currentUser = RequestService.createUser(response.data.info);
+      console.log($scope.currentUser);
     });
   };
 

@@ -23,17 +23,17 @@
 
     <div class="infoContainer">
 
-        <div class="profilePic"><img alt="{{devDashboard.currentUser.name}}" img="{{devDashboard.currentUser.image}}"></div>
+        <div class="profilePic"><img alt="{{currentUser.name}}" img="{{currentUser.image}}"></div>
 
         <div class="name">
-            <p>{{devDashboard.devName}}</p>
+            <p>{{currentUser.name}}</p>
             <img ng-click='devDashboard.showNameEdit=true' class="editIcon" src="assets/editIcon.png" alt="edit by Laura Vilar from the Noun Project" />
             <input type="text" name="fullName" ng-show='devDashboard.showNameEdit' ng-model="devDashboard.devName">
             <button class="save" ng-show='devDashboard.showNameEdit' ng-click="devDashboard.updateInfo('name')">Save</button>
         </div>
 
         <div class="gitHubLink">
-            <p>{{devDashboard.devLink}}</p>
+            <p>{{currentUser.github}}</p>
             <img ng-click='devDashboard.showLinkEdit=true' class="editIcon" src="assets/editIcon.png" alt="edit by Laura Vilar from the Noun Project" />
             <input type="text" name="gitHubLink" ng-show='devDashboard.showLinkEdit' ng-model="devDashboard.devLink">
             <button class="save" ng-show='devDashboard.showLinkEdit' ng-click="devDashboard.updateInfo('link')">Save</button>
