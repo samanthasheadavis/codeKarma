@@ -29,9 +29,7 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
             method: 'GET',
             url: 'https://code-karma-api.herokuapp.com/clients/1?token=' + token,
         }).then(callback, function errorCallback(response) {
-            console.log(response);
-            createUser(response.data.info);
-            return createUser;
+            return response;
         });
     }
 
@@ -40,10 +38,7 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
             method: 'GET',
             url: 'https://code-karma-api.herokuapp.com/developers/2?token=' + token,
         }).then(callback, function errorCallback(response) {
-            console.log(response);
-
-            createUser(response.data.info);
-            return createUser;
+            return response;
         });
     }
 
@@ -63,7 +58,8 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
     return {
         getClient: getClient,
         getDev: getDev,
-        getToken: getToken
+        getToken: getToken,
+        createUser: createUser
     };
 
 });
