@@ -27,13 +27,11 @@ angular.module('codeKarmaApp').controller('ClientAddProjectController', function
       });
     };
 
-    this.getClient();
-
-        // RequestService.getToken();
-
-
-
-        // create post url
-
+    this.getToken = function() {
+      this.url = $location.url();
+      this.token = this.url.match(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/)[0];
+      this.userId = this.url.match(/id=([0-9]+)/)[1];
+      console.log('url: ' + this.url + 'token' + this.token + 'userId' + this.userId);
+    };
 
 });
