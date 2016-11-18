@@ -16,9 +16,8 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
     function getToken() {
         var url = $location.url();
         token = url.match(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/)[0];
-        var userString = url.match(/id=[0-9]+/);
-        var userId = userString.slice(4);
-        console.log(userId);
+        var userString = url.match(/id=([0-9]+)/);
+        console.log(userString);
 
         if (url.includes("redirect")) {
         dashboardRedirect();
