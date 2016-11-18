@@ -17,4 +17,14 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
       likes++;
       this.likes = likes;
     };
+
+    this.getDev = function() {
+
+      RequestService.getDev(function(response) {
+        $scope.currentUser = RequestService.createUser(response.data.info);
+        console.log($scope.currentUser);
+      });
+    };
+
+    this.getDev();
 });

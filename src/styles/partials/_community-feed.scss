@@ -167,6 +167,12 @@
                 height: 50px;
                 background: $lightGrey;
                 margin-bottom: $vspace;
+
+                img {
+                  width: 50px;
+                  border-radius: 50%;
+                  box-shadow: $box-shadow;
+                }
             }
 
             .username {
