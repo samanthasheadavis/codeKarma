@@ -19,7 +19,19 @@ angular.module('codeKarmaApp').controller('ClientAddProjectController', function
 
     // post project object to backend
 
-        this.token = RequestService.getToken();
+    this.getClient = function() {
+
+      RequestService.getClient(function(response) {
+        var currentUser = RequestService.createUser(response.data.info);
+        console.log(currentUser);
+      });
+    };
+
+    this.getClient();
+
+        // RequestService.getToken();
+
+
 
         // create post url
 
