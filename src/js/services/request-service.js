@@ -29,7 +29,9 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
             method: 'GET',
             url: 'https://code-karma-api.herokuapp.com/clients/1?token=' + token,
         }).then(callback, function errorCallback(response) {
-            return createUser(response.data.info);
+            console.log(response);
+            createUser(response.data.info);
+            return createUser;
         });
     }
 
