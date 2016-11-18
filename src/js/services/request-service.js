@@ -38,11 +38,13 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
             method: 'GET',
             url: 'https://code-karma-api.herokuapp.com/developers/2?token=' + token,
         }).then(callback, function errorCallback(response) {
+            console.log(response);
             return createUser(response.data.info);
         });
     }
 
     function createUser(response) {
+      console.log(response);
         currentUser = {
             username: response.nickname,
             name: response.name,
@@ -50,6 +52,7 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
             image: response.image,
             github: response.urls.GitHub,
         };
+        console.log(currentUser);
         return currentUser;
     }
 
