@@ -1,4 +1,4 @@
-angular.module('codeKarmaApp').controller('ClientAddProjectController', function($state) {
+angular.module('codeKarmaApp').controller('ClientAddProjectController', function(RequestService, $state, $http) {
 
 
   // collect form data and put into project object
@@ -19,6 +19,11 @@ angular.module('codeKarmaApp').controller('ClientAddProjectController', function
   };
 
   // post project object to backend
+this.getToken = function() {
+  this.token = RequestService.getToken();
+  console.log(this.token);
 
+  // create post url
+};
 
 });
