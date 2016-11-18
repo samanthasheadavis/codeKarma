@@ -1,4 +1,4 @@
-angular.module('codeKarmaApp').controller('DevDashboardController', function($state) {
+angular.module('codeKarmaApp').controller('DevDashboardController', function($state, RequestService) {
 
   this.devName = 'Samantha Davis';
   this.devLink = 'github.com/yourName';
@@ -14,5 +14,28 @@ angular.module('codeKarmaApp').controller('DevDashboardController', function($st
     this.showNameEdit = false;
     this.showSkillEdit = false;
   };
+
+  this.getUser = function() {
+
+    RequestService.getUser(function(response) {
+
+      console.log(response);
+
+      this.currentDev = {
+
+        username: response.data.info.nickname,
+        name: response.data.info.name,
+        email: response.data.info.email,
+        image: response.data.info.image,
+        github: response.data.info.url.github
+
+      };
+
+      console.log(this.currentDev);
+
+    });
+  };
+
+  this.getUser();
 
 });
