@@ -14,12 +14,12 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
         function getToken() {
             var url = $location.url();
             token = url.match(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/)[0];
-
-            if (url.includes("redirect")) {
+            // 
+            // if (url.includes("redirect")) {
                 dashboardRedirect();
-            } else {
-                return token;
-            }
+            // } else {
+            //     return token;
+            // }
         }
 
         function getClient(callback) {
