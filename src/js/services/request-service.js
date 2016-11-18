@@ -3,7 +3,6 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
 var token = '';
 
   function dashboardRedirect() {
-    console.log('in dashboard redirect on request service');
     var url = $location.url();
 
     if (url.includes("Client")) {
@@ -14,10 +13,8 @@ var token = '';
   }
 
   function getToken() {
-    console.log('in getToken on request service');
     var url = $location.url();
     token = url.match(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/)[0];
-    console.log(token);
 
     dashboardRedirect();
   }
