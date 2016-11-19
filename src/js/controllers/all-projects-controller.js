@@ -1,4 +1,5 @@
-angular.module('codeKarmaApp').controller('AllProjectsController', function($state, $scope, $http) {
+angular.module('codeKarmaApp').controller('AllProjectsController', function($state, $scope, $http, RequestService) {
+
   $scope.details = false;
   this.category = "Bug Fix";
 
