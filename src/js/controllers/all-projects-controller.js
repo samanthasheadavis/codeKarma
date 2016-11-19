@@ -1,47 +1,56 @@
 angular.module('codeKarmaApp').controller('AllProjectsController', function($state, $scope, $http, RequestService) {
 
-  $scope.details = false;
-  this.category = "Bug Fix";
+    $scope.details = false;
+    this.category = "Bug Fix";
 
-  $scope.toggleDetails = function () {
-    $scope.details = !$scope.details;
-  };
+    $scope.toggleDetails = function() {
+        $scope.details = !$scope.details;
+    };
 
-  this.getUrl = function() {
-  this.url = RequestService.getDevUrl();
-};
+    this.getUrl = function() {
+        this.url = RequestService.getProjectsUrl();
+    };
 
-  this.getProjects = function() {
-    var response = RequestService.getAllProjects();
-      console.log(response);
-  };
+    this.getProjects = function() {
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": this.url,
+            "method": "GET"
+        };
 
-  // fork project function
+        $.ajax(settings).done(function(response) {
+            console.log(response);
+        });
+
+    };
+
+    // fork project function
 
 
-  // add project info to user object
+    // add project info to user object
 
 
-  // determine icon to show on project - grab category(fix_type )
+    // determine icon to show on project - grab category(fix_type )
 
 
-  this.getIcon = function(responseObj) {
+    this.getIcon = function(responseObj) {
 
-    this.category = responseObj.fix_type;
+        this.category = responseObj.fix_type;
 
-    if (this.category === "Bug Fix") {
-      this.img = "bugfix";
-      this.alt = "Icon Fair";
-    } else if (this.category === "Design Update") {
-      this.img = "design_update";
-      this.alt = "Oliviu Stoian";
-    } else if (this.category === "New Feature") {
-      this.img = "new_feature";
-      this.alt = "Phil Goodwin";
-    }
+        if (this.category === "Bug Fix") {
+            this.img = "bugfix";
+            this.alt = "Icon Fair";
+        } else if (this.category === "Design Update") {
+            this.img = "design_update";
+            this.alt = "Oliviu Stoian";
+        } else if (this.category === "New Feature") {
+            this.img = "new_feature";
+            this.alt = "Phil Goodwin";
+        }
 
-  };
+    };
 
-  this.getUrl();
-  this.getProjects();
+    this.getUrl();
+    this.getProjects();
 });

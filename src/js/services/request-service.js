@@ -26,7 +26,7 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
         }
     }
 
-    function getClientUrl() {
+    function getProjectsUrl() {
         console.log('in getUrl');
         var url = "https://code-karma-api.herokuapp.com/projects" + "?token=" + token;
         return url;
@@ -67,22 +67,6 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
         return currentUser;
     }
 
-    function getAllProjects(callback) {
-
-        var settings = {
-            "async": true,
-            "crossDomain": true,
-            "url": "https://code-karma-api.herokuapp.com/projects" + "?token=" + token,
-            "method": "GET"
-        };
-
-        $.ajax(settings).done(function(response) {
-            console.log(response);
-            return response;
-        });
-      }
-
-
     function setProgress(progress) {
       $http({
           method: 'PATCH',
@@ -101,17 +85,15 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
       });
     }
 
-
     return {
         getClient: getClient,
         getDev: getDev,
         getToken: getToken,
         createUser: createUser,
-        getClientUrl: getClientUrl,
+        getProjectsUrl: getProjectsUrl,
         getDevUrl: getDevUrl,
         setProgress: setProgress,
         setEstDate: setEstDate,
-        getAllProjects: getAllProjects
     };
 
 });

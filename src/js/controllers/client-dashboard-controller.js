@@ -2,7 +2,7 @@ angular.module('codeKarmaApp').controller('ClientDashboardController', function(
 
 // Have to edit this in service to make sure posting to correct url for updating client info
     this.getUrl = function() {
-        this.url = RequestService.getClientUrl();
+        this.url = RequestService.getProjectsUrl();
     };
 
     // orgName and orgLink refer to the 'organization name' and 'website link' fieds.

@@ -4,7 +4,7 @@ angular.module('codeKarmaApp').controller('ClientAddProjectController', function
     // this.url calls to the request service to get the correct url for posting to including the user id and token, and saves it in the controller variable this.url
 
     this.getUrl = function() {
-        this.url = RequestService.getClientUrl();
+        this.url = RequestService.getProjectsUrl();
     };
 
     // collect form data and put into project object
@@ -34,7 +34,7 @@ angular.module('codeKarmaApp').controller('ClientAddProjectController', function
             "method": "POST",
             "data": this.newProject
         };
-        
+
         $.ajax(settings).done(function(response) {
             console.log(response);
         });
