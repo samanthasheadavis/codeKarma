@@ -1,4 +1,4 @@
-angular.module('codeKarmaApp').controller('DevDashboardController', function($state, RequestService) {
+angular.module('codeKarmaApp').controller('DevDashboardController', function($state, RequestService, $scope) {
 
   this.devName = 'Samantha Davis';
   this.devLink = 'github.com/yourName';
