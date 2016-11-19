@@ -65,11 +65,18 @@
       justify-content: center;
       padding: 10px;
 
+      .mission {
+        flex-shrink: 20;
+      }
+
       .section {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
+        margin: 15px;
+        border: 1px solid darken(white, 5%);
+        padding: 10px;
 
         h2 {
           color: $pop;
@@ -88,7 +95,6 @@
           align-items: center;
           justify-content: center;
           margin-top: 10px;
-          width: 250px;
 
           .memberName {
             font-weight: bold;

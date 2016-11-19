@@ -220,7 +220,8 @@ ui-view {
   flex-direction: column;
   align-items: center;
   width: 80%;
-  height: 100vh; }
+  height: 100vh;
+  justify-content: flex-start; }
   .client-dashboard-container .btnContainer {
     margin: 40px 0 20px;
     display: flex;
@@ -859,11 +860,16 @@ header {
       display: flex;
       justify-content: center;
       padding: 10px; }
+      .home-container .about .aboutSubContainer .mission {
+        flex-shrink: 20; }
       .home-container .about .aboutSubContainer .section {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        align-items: center; }
+        align-items: center;
+        margin: 15px;
+        border: 1px solid #f2f2f2;
+        padding: 10px; }
         .home-container .about .aboutSubContainer .section h2 {
           color: #AAEFDF;
           border-bottom: 1px solid #ced0ce; }
@@ -876,8 +882,7 @@ header {
           flex-direction: column;
           align-items: center;
           justify-content: center;
-          margin-top: 10px;
-          width: 250px; }
+          margin-top: 10px; }
           .home-container .about .aboutSubContainer .section .member .memberName {
             font-weight: bold;
             font-size: 20px; }
