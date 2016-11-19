@@ -17,7 +17,6 @@ angular.module('codeKarmaApp').controller('ClientAddProjectController', function
             description: description,
             fix_type: category,
             github_repo_url: githubRepo,
-            active_site_url: "grab from client object"
         };
 
         console.log(this.url);
