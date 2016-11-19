@@ -31,7 +31,7 @@
             background: $white;
 
             &:hover {
-              // background: $pop;
+              background: $pop;
             }
         }
 
@@ -70,24 +70,8 @@
             }
         }
 
-        &:hover > .gitHubLink > p {
-            background: $pop;
-        }
-
-        &:hover > .name > p {
-            background: $pop;
-        }
-
         &:hover > .skills > p {
           background: $pop;
-        }
-
-        &:hover > .name > .editIcon {
-            display: inline;
-        }
-
-        &:hover > .gitHubLink > .editIcon {
-            display: inline;
         }
 
         &:hover > .skills > .editIcon {
