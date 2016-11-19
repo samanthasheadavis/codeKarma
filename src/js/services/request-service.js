@@ -69,13 +69,43 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
         return currentUser;
     }
 
+    function getProjects() {
+      $http({
+          method: 'GET',
+          url: '',
+      }).then(callback, function errorCallback(response) {
+          return response;
+      });
+    }
+
+    function setProgress(progress) {
+      $http({
+          method: 'PATCH',
+          url: '',
+      }).then(callback, function errorCallback(response) {
+          return response;
+      });
+    }
+
+    function setEstDate(date) {
+      $http({
+          method: 'PATCH',
+          url: '',
+      }).then(callback, function errorCallback(response) {
+          return response;
+      });
+    }
+
     return {
         getClient: getClient,
         getDev: getDev,
         getToken: getToken,
         createUser: createUser,
         getClientUrl: getClientUrl,
-        getDevUrl: getDevUrl
+        getDevUrl: getDevUrl,
+        getProjects: getProjects,
+        setProgress: setProgress,
+        setEstDate: setEstDate
     };
 
 });
