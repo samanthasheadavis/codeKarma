@@ -22,7 +22,6 @@ angular.module('codeKarmaApp').controller('AllProjectsController', function($sta
         $.ajax(settings).done(function(response) {
             console.log(response);
         });
-
     };
 
     // fork project function
