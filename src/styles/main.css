@@ -466,7 +466,8 @@ ui-view {
           color: #4F4F4F; }
         .community-feed-container .flexContainer .commPost .postContainer img {
           width: 25px;
-          height: 25px; }
+          height: 25px;
+          border-radius: 5px; }
           .community-feed-container .flexContainer .commPost .postContainer img:hover {
             background: #AAEFDF; }
       .community-feed-container .flexContainer .commPost .postInfoContainer {

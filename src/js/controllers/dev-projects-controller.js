@@ -1,6 +1,17 @@
-angular.module('codeKarmaApp').controller('DevProjectsController', function($scope, $state) {
+angular.module('codeKarmaApp').controller('DevProjectsController', function($scope, $state, RequestService) {
 
   this.complete = false;
+
+  // get projects info
+
+  // this.getProjects = function() {
+  //   RequestService.getProjects(function(response) {
+  //       $scope.projects = response;
+  //       console.log($scope.projects);
+  //     });
+  // };
+
+
 
   $scope.slider_floor_ceil = {
         value: 10,
@@ -26,6 +37,14 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
       this.complete = true;
     }
 
+    // RequestService.setProgress(progress);
+
+  };
+
+  this.updateEstDate = function(date) {
+
+    // RequestService.setEstDate(date);
+
   };
 
 
@@ -33,5 +52,6 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
   // update and post est. completion date
 
 
+this.getProjects();
 
 });

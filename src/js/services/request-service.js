@@ -18,7 +18,6 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
         var url = $location.url();
         token = url.match(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/)[0];
         userId = url.match(/id=([0-9]+)/)[1];
-        // console.log(typeof userId);
 
         if (url.includes("redirect")) {
             dashboardRedirect();
@@ -81,7 +80,25 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
             console.log(response);
             return response;
         });
+      }
 
+
+    function setProgress(progress) {
+      $http({
+          method: 'PATCH',
+          url: '',
+      }).then(callback, function errorCallback(response) {
+          return response;
+      });
+    }
+
+    function setEstDate(date) {
+      $http({
+          method: 'PATCH',
+          url: '',
+      }).then(callback, function errorCallback(response) {
+          return response;
+      });
     }
 
 
@@ -92,7 +109,9 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
         createUser: createUser,
         getClientUrl: getClientUrl,
         getDevUrl: getDevUrl,
-        getAllProjects: getAllProjects
+        getProjects: getProjects,
+        setProgress: setProgress,
+        setEstDate: setEstDate
     };
 
 });
