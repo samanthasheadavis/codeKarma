@@ -815,7 +815,7 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 40px;
+  padding-top: 10px;
   width: 80%;
   height: 100vh; }
   .home-container .main-container {
@@ -827,10 +827,13 @@ header {
     margin: 10px;
     border-radius: 5px;
     outline: none;
-    border: none;
     width: 150px;
     align-self: center;
-    background: transparent; }
+    background: transparent;
+    border: 1px solid #e6e8e6;
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px; }
     .home-container button a {
       text-decoration: none;
       color: black; }

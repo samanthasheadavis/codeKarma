@@ -29,7 +29,7 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
 
     function getClientUrl() {
       console.log('in getUrl');
-      var url = "https://code-karma-api.herokuapp.com/projects/" + userId + "?token=" + token;
+      var url = "https://code-karma-api.herokuapp.com/projects/" + "?token=" + token;
       return url;
     }
 
