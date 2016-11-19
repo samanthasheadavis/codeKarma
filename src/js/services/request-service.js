@@ -41,7 +41,6 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
 
 
     function getClient(callback) {
-      console.log(userId);
         $http({
             method: 'GET',
             url: "https://code-karma-api.herokuapp.com/clients/" + userId + "?token=" + token,
@@ -60,7 +59,6 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
     }
 
     function createUser(response) {
-      console.log(response);
         currentUser = {
             username: response.nickname,
             name: response.name,
@@ -68,7 +66,6 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
             image: response.image,
             github: response.urls.GitHub,
         };
-        console.log(currentUser);
         return currentUser;
     }
 
