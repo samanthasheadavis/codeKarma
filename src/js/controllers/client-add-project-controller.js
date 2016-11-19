@@ -5,6 +5,7 @@ angular.module('codeKarmaApp').controller('ClientAddProjectController', function
 
   this.url = function() {
     this.url = RequestService.getClientUrl();
+    console.log(this.url);
   };
 
     // collect form data and put into project object
