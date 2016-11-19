@@ -23,7 +23,7 @@ angular.module('codeKarmaApp').controller('ClientAddProjectController', function
           url: this.url,
           data: this.newProject
         }).then(function successCallback(response) {
-          $state.go('codeKarmaParent.clientProjects');
+          console.log('post success');
         });
 
     };
