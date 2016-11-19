@@ -19,14 +19,6 @@ angular.module('codeKarmaApp').controller('ClientAddProjectController', function
             github_repo_url: githubRepo,
         };
 
-        // $http ({
-        //   method: "POST",
-        //   url: this.url,
-        //   data: this.newProject
-        // }).then(function successCallback(response) {
-        //   console.log('post success');
-        // });
-
         var settings = {
             "async": true,
             "crossDomain": true,
@@ -37,6 +29,7 @@ angular.module('codeKarmaApp').controller('ClientAddProjectController', function
 
         $.ajax(settings).done(function(response) {
             console.log(response);
+            $state.go('codeKarmaParent.clientProjects');
         });
 
     };
