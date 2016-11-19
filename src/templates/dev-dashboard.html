@@ -27,16 +27,10 @@
 
         <div class="name">
             <p>{{currentUser.name}}</p>
-            <img ng-click='devDashboard.showNameEdit=true' class="editIcon" src="assets/editIcon.png" alt="edit by Laura Vilar from the Noun Project" />
-            <input type="text" name="fullName" ng-show='devDashboard.showNameEdit' ng-model="devDashboard.devName">
-            <button class="save" ng-show='devDashboard.showNameEdit' ng-click="devDashboard.updateInfo('name')">Save</button>
         </div>
 
         <div class="gitHubLink">
             <p>{{currentUser.github}}</p>
-            <img ng-click='devDashboard.showLinkEdit=true' class="editIcon" src="assets/editIcon.png" alt="edit by Laura Vilar from the Noun Project" />
-            <input type="text" name="gitHubLink" ng-show='devDashboard.showLinkEdit' ng-model="devDashboard.devLink">
-            <button class="save" ng-show='devDashboard.showLinkEdit' ng-click="devDashboard.updateInfo('link')">Save</button>
         </div>
 
         <div class="rank">
