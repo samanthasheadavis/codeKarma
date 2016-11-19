@@ -1,4 +1,4 @@
-angular.module('codeKarmaApp').controller('AllProjectsController', function($state, $scope) {
+angular.module('codeKarmaApp').controller('AllProjectsController', function($state, $scope, $http) {
   $scope.details = false;
   this.category = "Bug Fix";
 
@@ -6,9 +6,19 @@ angular.module('codeKarmaApp').controller('AllProjectsController', function($sta
     $scope.details = !$scope.details;
   };
 
+  this.getUrl = function() {
+  this.url = RequestService.getDevUrl();
+};
 
   // get request to get project info
-
+  this.get = function() {
+    // $http({
+    //   method: "GET",
+    //   url: this.url
+    // }).then(function successCallback(response) {
+    //     console.log(response);
+    // });
+  };
 
 
   // fork project function
@@ -36,5 +46,8 @@ angular.module('codeKarmaApp').controller('AllProjectsController', function($sta
     }
 
   };
+
+  this.getUrl();
+  this.get();
 
 });
