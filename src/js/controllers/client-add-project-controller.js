@@ -18,13 +18,13 @@ angular.module('codeKarmaApp').controller('ClientAddProjectController', function
             github_repo_url: githubRepo,
         };
 
-        // $http ({
-        //   method: "POST",
-        //   url: this.url,
-        //   data: this.newProject
-        // }).then(function successCallback(response) {
-        //   $state.go('codeKarmaParent.clientProjects');
-        // });
+        $http ({
+          method: "POST",
+          url: this.url,
+          data: this.newProject
+        }).then(function successCallback(response) {
+          $state.go('codeKarmaParent.clientProjects');
+        });
 
     };
 
