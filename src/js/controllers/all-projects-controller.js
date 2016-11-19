@@ -12,9 +12,9 @@ angular.module('codeKarmaApp').controller('AllProjectsController', function($sta
 };
 
   this.getProjects = function() {
-    RequestService.getAllProjects(function(response) {
-      console.log(response);
-    });
+    // RequestService.getAllProjects(function(response) {
+    //   console.log(response);
+    // });
   };
 
   // fork project function
@@ -24,7 +24,7 @@ angular.module('codeKarmaApp').controller('AllProjectsController', function($sta
 
 
   // determine icon to show on project - grab category(fix_type )
-  
+
 
   this.getIcon = function(responseObj) {
 
