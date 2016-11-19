@@ -1,7 +1,7 @@
 angular.module('codeKarmaApp').controller('ClientDashboardController', function($state, RequestService, $scope, $http) {
 
 // Have to edit this in service to make sure posting to correct url for updating client info
-    this.url = function() {
+    this.getUrl = function() {
         this.url = RequestService.getClientUrl();
     };
 
@@ -19,7 +19,7 @@ angular.module('codeKarmaApp').controller('ClientDashboardController', function(
         this.showNameEdit = false;
 
     // might have to do two different posts, one for org name and one for org link
-    
+
         // $http({
         //     method: "PUT",
         //     url: this.url,
@@ -39,6 +39,6 @@ angular.module('codeKarmaApp').controller('ClientDashboardController', function(
     };
 
     this.getClient();
-    this.url();
+    this.getUrl();
 
 });

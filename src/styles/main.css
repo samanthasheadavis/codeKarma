@@ -816,7 +816,7 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 40px;
+  padding-top: 10px;
   width: 80%;
   height: 100vh; }
   .home-container .main-container {
@@ -828,10 +828,13 @@ header {
     margin: 10px;
     border-radius: 5px;
     outline: none;
-    border: none;
     width: 150px;
     align-self: center;
-    background: transparent; }
+    background: transparent;
+    border: 1px solid #e6e8e6;
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px; }
     .home-container button a {
       text-decoration: none;
       color: black; }
@@ -861,11 +864,16 @@ header {
       display: flex;
       justify-content: center;
       padding: 10px; }
+      .home-container .about .aboutSubContainer .mission {
+        flex-shrink: 20; }
       .home-container .about .aboutSubContainer .section {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        align-items: center; }
+        align-items: center;
+        margin: 15px;
+        border: 1px solid #f2f2f2;
+        padding: 10px; }
         .home-container .about .aboutSubContainer .section h2 {
           color: #AAEFDF;
           border-bottom: 1px solid #ced0ce; }
@@ -878,8 +886,7 @@ header {
           flex-direction: column;
           align-items: center;
           justify-content: center;
-          margin-top: 10px;
-          width: 250px; }
+          margin-top: 10px; }
           .home-container .about .aboutSubContainer .section .member .memberName {
             font-weight: bold;
             font-size: 20px; }

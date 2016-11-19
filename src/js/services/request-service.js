@@ -29,7 +29,7 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
 
     function getClientUrl() {
       console.log('in getUrl');
-      var url = "https://code-karma-api.herokuapp.com/projects/" + userId + "?token=" + token;
+      var url = "https://code-karma-api.herokuapp.com/projects" + "?token=" + token;
       return url;
     }
 
@@ -69,6 +69,7 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
         return currentUser;
     }
 
+<<<<<<< HEAD
     function getProjects() {
       $http({
           method: 'GET',
@@ -93,6 +94,14 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
           url: '',
       }).then(callback, function errorCallback(response) {
           return response;
+=======
+    function getAllProjects(callback) {
+      $http({
+        method: "GET",
+        url: "https://code-karma-api.herokuapp.com/projects" + "?token=" + token,
+      }).then(callback, function errorCallback(response) {
+        return response;
+>>>>>>> 80a359b637873a9d17d64cdfdff549f574d52a6b
       });
     }
 
@@ -103,9 +112,13 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
         createUser: createUser,
         getClientUrl: getClientUrl,
         getDevUrl: getDevUrl,
+<<<<<<< HEAD
         getProjects: getProjects,
         setProgress: setProgress,
         setEstDate: setEstDate
+=======
+        getAllProjects: getAllProjects
+>>>>>>> 80a359b637873a9d17d64cdfdff549f574d52a6b
     };
 
 });

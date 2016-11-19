@@ -5,7 +5,7 @@ angular.module('codeKarmaApp').controller('DevDashboardController', function($st
   this.skills = [];
 
   // have to edit in service to get correct url for posting skills
-  this.url = function() {
+  this.getUrl = function() {
     this.url = RequestService.getDevUrl();
   };
 
@@ -36,6 +36,6 @@ angular.module('codeKarmaApp').controller('DevDashboardController', function($st
   };
 
   this.getDev();
-  this.url();
+  this.getUrl();
 
 });

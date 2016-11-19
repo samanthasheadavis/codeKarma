@@ -1,4 +1,5 @@
-angular.module('codeKarmaApp').controller('AllProjectsController', function($state, $scope) {
+angular.module('codeKarmaApp').controller('AllProjectsController', function($state, $scope, $http, RequestService) {
+
   $scope.details = false;
   this.category = "Bug Fix";
 
@@ -6,19 +7,24 @@ angular.module('codeKarmaApp').controller('AllProjectsController', function($sta
     $scope.details = !$scope.details;
   };
 
+  this.getUrl = function() {
+  this.url = RequestService.getDevUrl();
+};
 
-  // get request to get project info
-
-
+  this.getProjects = function() {
+    RequestService.getAllProjects(function(response) {
+      console.log(response);
+    });
+  };
 
   // fork project function
-
 
 
   // add project info to user object
 
 
   // determine icon to show on project - grab category(fix_type )
+  
 
   this.getIcon = function(responseObj) {
 
@@ -36,5 +42,8 @@ angular.module('codeKarmaApp').controller('AllProjectsController', function($sta
     }
 
   };
+
+  this.getUrl();
+  this.getProjects();
 
 });
