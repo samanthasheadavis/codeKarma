@@ -20,9 +20,9 @@
         }
 
         .details {
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
 
             form {
                 display: flex;
@@ -30,31 +30,31 @@
                 margin: $vspace $hspace;
 
                 select {
-                  background: $white;
-                  border: 1px solid $midGrey;
-                  font-family: $raleway;
-                  font-size: 16px;
-                  height: 25px;
+                    background: $white;
+                    border: 1px solid $midGrey;
+                    font-family: $raleway;
+                    font-size: 16px;
+                    height: 25px;
 
-                  &:focus {
-                    outline: 0;
-                  }
+                    &:focus {
+                        outline: 0;
+                    }
                 }
 
                 label {
-                  margin: $vspace 0 10px 0;
+                    margin: $vspace 0 10px;
                 }
 
                 input {
-                  border-radius: $border-radius;
-                  border: 1px solid $midGrey;
-                  font-family: $raleway;
-                  font-size: 16px;
-                  height: 25px;
+                    border-radius: $border-radius;
+                    border: 1px solid $midGrey;
+                    font-family: $raleway;
+                    font-size: 16px;
+                    height: 25px;
 
-                  &:focus {
-                    outline: 0;
-                  }
+                    &:focus {
+                        outline: 0;
+                    }
                 }
             }
 
@@ -69,13 +69,52 @@
                 align-self: center;
 
                 &:hover {
-                  background: $pop;
+                    background: $pop;
                 }
 
                 &:focus {
                     outline: 0;
                 }
             }
+        }
+    }
+}
+
+.dev-projects-container .tooltip {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 40px;
+    align-self: center;
+
+    &:hover .tooltiptext {
+        display: block;
+    }
+
+    .tooltiptext {
+        background: $pop;
+        border-radius: $border-radius;
+        color: $charcoal;
+        display: none;
+        font-size: 12px;
+        line-height: 16px;
+        left: 100%;
+        top: -10%;
+        padding: 5px;
+        position: absolute;
+        text-align: center;
+        width: 120px;
+        z-index: 5;
+
+        &:after {
+            content: " ";
+            position: absolute;
+            top: 45%;
+            right: 100%;
+            margin-top: -5px;
+            border-width: 8px;
+            border-style: solid;
+            border-color: transparent $pop transparent transparent;
         }
     }
 }
