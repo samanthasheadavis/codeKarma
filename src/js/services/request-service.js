@@ -109,9 +109,9 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
         createUser: createUser,
         getClientUrl: getClientUrl,
         getDevUrl: getDevUrl,
-        getProjects: getProjects,
         setProgress: setProgress,
-        setEstDate: setEstDate
+        setEstDate: setEstDate,
+        getAllProjects: getAllProjects
     };
 
 });

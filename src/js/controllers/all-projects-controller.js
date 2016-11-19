@@ -44,5 +44,4 @@ angular.module('codeKarmaApp').controller('AllProjectsController', function($sta
 
   this.getUrl();
   this.getProjects();
-
 });
