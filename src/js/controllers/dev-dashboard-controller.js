@@ -1,8 +1,12 @@
 angular.module('codeKarmaApp').controller('DevDashboardController', function($state, RequestService, $scope) {
 
-  this.devName = 'Samantha Davis';
+  this.devName = 'Your Name';
   this.devLink = 'github.com/yourName';
   this.skills = ['boiling water', 'napping'];
+
+  this.url = function() {
+    this.url = RequestService.getDevUrl();
+  };
 
   this.updateInfo=function(value) {
     if (value === "skills") {
@@ -13,17 +17,24 @@ angular.module('codeKarmaApp').controller('DevDashboardController', function($st
     this.showLinkEdit = false;
     this.showNameEdit = false;
     this.showSkillEdit = false;
+
+      $http ({
+        method: "POST",
+        url: this.url,
+        data: this.skills
+      }).then(function successCallback(response) {
+        console.log(response);
+      });
   };
 
   this.getDev = function() {
 
     RequestService.getDev(function(response) {
       $scope.currentUser = RequestService.createUser(response.data.info);
-      console.log($scope.currentUser);
     });
   };
 
   this.getDev();
-
+  this.url();
 
 });
