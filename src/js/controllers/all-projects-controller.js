@@ -11,25 +11,20 @@ angular.module('codeKarmaApp').controller('AllProjectsController', function($sta
   this.url = RequestService.getDevUrl();
 };
 
-  // get request to get project info
-  this.get = function() {
-    // $http({
-    //   method: "GET",
-    //   url: this.url
-    // }).then(function successCallback(response) {
-    //     console.log(response);
-    // });
+  this.getProjects = function() {
+    RequestService.getAllProjects(function(response) {
+      console.log(response);
+    });
   };
 
-
   // fork project function
-
 
 
   // add project info to user object
 
 
   // determine icon to show on project - grab category(fix_type )
+  
 
   this.getIcon = function(responseObj) {
 
@@ -49,6 +44,6 @@ angular.module('codeKarmaApp').controller('AllProjectsController', function($sta
   };
 
   this.getUrl();
-  this.get();
+  this.getProjects();
 
 });

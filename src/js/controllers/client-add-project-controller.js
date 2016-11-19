@@ -5,7 +5,6 @@ angular.module('codeKarmaApp').controller('ClientAddProjectController', function
 
   this.url = function() {
     this.url = RequestService.getClientUrl();
-    console.log(this.url);
   };
 
     // collect form data and put into project object
@@ -19,15 +18,13 @@ angular.module('codeKarmaApp').controller('ClientAddProjectController', function
             github_repo_url: githubRepo,
         };
 
-        console.log(this.url);
-
-        $http ({
-          method: "POST",
-          url: this.url,
-          data: this.newProject
-        }).then(function successCallback(response) {
-          $state.go('codeKarmaParent.clientProjects');
-        });
+        // $http ({
+        //   method: "POST",
+        //   url: this.url,
+        //   data: this.newProject
+        // }).then(function successCallback(response) {
+        //   $state.go('codeKarmaParent.clientProjects');
+        // });
 
     };
 

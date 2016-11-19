@@ -69,13 +69,23 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
         return currentUser;
     }
 
+    function getAllProjects(callback) {
+      $http({
+        method: "GET",
+        url: "https://code-karma-api.herokuapp.com/projects" + "?token=" + token,
+      }).then(callback, function errorCallback(response) {
+        return response;
+      });
+    }
+
     return {
         getClient: getClient,
         getDev: getDev,
         getToken: getToken,
         createUser: createUser,
         getClientUrl: getClientUrl,
-        getDevUrl: getDevUrl
+        getDevUrl: getDevUrl,
+        getAllProjects: getAllProjects
     };
 
 });
