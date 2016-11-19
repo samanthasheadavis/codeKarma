@@ -1,5 +1,12 @@
 angular.module('codeKarmaApp').controller('ClientAddProjectController', function($state, $http, RequestService) {
 
+
+  // this.url calls to the request service to get the correct url for posting to including the user id and token, and saves it in the controller variable this.url
+
+  this.url = function() {
+    this.url = RequestService.getClientUrl();
+  };
+
     // collect form data and put into project object
 
     this.create = function(title, briefDescription, description, category, githubRepo) {
@@ -12,26 +19,17 @@ angular.module('codeKarmaApp').controller('ClientAddProjectController', function
             active_site_url: "grab from client object"
         };
 
-        console.log(this.newProject);
-        // $state.go('codeKarmaParent.clientProjects');
+        console.log(this.url);
+
+        $http ({
+          method: "POST",
+          url: this.url,
+          data: this.newProject
+        }).then(function successCallback(response) {
+          $state.go('codeKarmaParent.clientProjects');
+        });
 
     };
 
-    // post project object to backend
-
-    this.getClient = function() {
-
-      RequestService.getClient(function(response) {
-        var currentUser = RequestService.createUser(response.data.info);
-        console.log(currentUser);
-      });
-    };
-
-    this.getToken = function() {
-      this.url = $location.url();
-      this.token = this.url.match(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/)[0];
-      this.userId = this.url.match(/id=([0-9]+)/)[1];
-      console.log('url: ' + this.url + 'token' + this.token + 'userId' + this.userId);
-    };
-
+    this.url();
 });
