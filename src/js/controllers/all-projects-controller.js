@@ -12,9 +12,8 @@ angular.module('codeKarmaApp').controller('AllProjectsController', function($sta
 };
 
   this.getProjects = function() {
-    // RequestService.getAllProjects(function(response) {
-    //   console.log(response);
-    // });
+    var response = RequestService.getAllProjects();
+      console.log(response);
   };
 
   // fork project function

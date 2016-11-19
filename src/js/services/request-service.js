@@ -21,24 +21,23 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
         // console.log(typeof userId);
 
         if (url.includes("redirect")) {
-        dashboardRedirect();
+            dashboardRedirect();
         } else {
             return token;
         }
     }
 
     function getClientUrl() {
-      console.log('in getUrl');
-      var url = "https://code-karma-api.herokuapp.com/projects" + "?token=" + token;
-      return url;
+        console.log('in getUrl');
+        var url = "https://code-karma-api.herokuapp.com/projects" + "?token=" + token;
+        return url;
     }
 
     function getDevUrl() {
-      console.log('in getUrl');
-      var url = "https://code-karma-api.herokuapp.com/developers/" + userId + "?token=" + token;
-      return url;
+        console.log('in getUrl');
+        var url = "https://code-karma-api.herokuapp.com/developers/" + userId + "?token=" + token;
+        return url;
     }
-
 
     function getClient(callback) {
         $http({
@@ -70,13 +69,21 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
     }
 
     function getAllProjects(callback) {
-      $http({
-        method: "GET",
-        url: "https://code-karma-api.herokuapp.com/projects" + "?token=" + token,
-      }).then(callback, function errorCallback(response) {
-        return response;
-      });
+
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://code-karma-api.herokuapp.com/projects" + "?token=" + token,
+            "method": "GET"
+        };
+
+        $.ajax(settings).done(function(response) {
+            console.log(response);
+            return response;
+        });
+
     }
+
 
     return {
         getClient: getClient,
