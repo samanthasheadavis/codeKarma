@@ -1,4 +1,4 @@
-angular.module('codeKarmaApp').controller('CommunityFeedController', function($state) {
+angular.module('codeKarmaApp').controller('CommunityFeedController', function($state, $scope, RequestService) {
 
     this.post = '';
     this.response = '';
