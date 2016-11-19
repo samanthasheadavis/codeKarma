@@ -24,15 +24,23 @@
 
         <div class="profilePic"><img alt="{{currentUser.name}}" src="{{currentUser.image}}"></div>
 
+        <div class="name">
+            <p>{{currentUser.name}}</p>
+        </div>
+
+        <div class="gitHubLink">
+            <p>{{currentUser.github}}</p>
+        </div>
+
         <div class="orgName">
-            <p>{{clientDashboard.orgName}}</p>
+            <p>{{clientDashboard.clientInfo.orgName}}</p>
             <img ng-click='clientDashboard.showNameEdit=true' class="editIcon" src="assets/editIcon.png" alt="edit by Laura Vilar from the Noun Project" />
             <input type="text" name="orgName" ng-show='clientDashboard.showNameEdit' ng-model="clientDashboard.orgName">
             <button class="save" ng-show='clientDashboard.showNameEdit' ng-click="clientDashboard.updateInfo()">Save</button>
         </div>
 
         <div class="orgLink">
-            <p>{{clientDashboard.orgLink}}</p>
+            <p>{{clientDashboard.clientInfo.orgLink}}</p>
             <img ng-click='clientDashboard.showLinkEdit=true' class="editIcon" src="assets/editIcon.png" alt="edit by Laura Vilar from the Noun Project" />
             <input type="text" name="orgLink" ng-show='clientDashboard.showLinkEdit' ng-model="clientDashboard.orgLink">
             <button class="save" ng-show='clientDashboard.showLinkEdit' ng-click="clientDashboard.updateInfo()">Save</button>

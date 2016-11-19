@@ -2,8 +2,9 @@ angular.module('codeKarmaApp').controller('DevDashboardController', function($st
 
   this.devName = 'Your Name';
   this.devLink = 'github.com/yourName';
-  this.skills = ['boiling water', 'napping'];
+  this.skills = [];
 
+  // have to edit in service to get correct url for posting skills
   this.url = function() {
     this.url = RequestService.getDevUrl();
   };
@@ -18,13 +19,13 @@ angular.module('codeKarmaApp').controller('DevDashboardController', function($st
     this.showNameEdit = false;
     this.showSkillEdit = false;
 
-      $http ({
-        method: "POST",
-        url: this.url,
-        data: this.skills
-      }).then(function successCallback(response) {
-        console.log(response);
-      });
+      // $http ({
+      //   method: "PUT",
+      //   url: this.url,
+      //   data: this.skills
+      // }).then(function successCallback(response) {
+      //   console.log(response);
+      // });
   };
 
   this.getDev = function() {

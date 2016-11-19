@@ -87,8 +87,11 @@
             display: inline;
         }
 
+
         .orgLink,
-        .orgName {
+        .orgName,
+        .name,
+        .gitHubLink {
             font-size: 20px;
             margin: $vspace $hspace;
         }

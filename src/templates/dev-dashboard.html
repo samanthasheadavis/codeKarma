@@ -46,6 +46,7 @@
         </div>
 
         <div class="skills">
+            <p>Skills</p>
             <p ng-repeat="skill in devDashboard.skills">{{skill}}</p>
             <img ng-click='devDashboard.showSkillEdit=true' class="editIcon" src="assets/plus.png" alt="Plus by Eagle Eye from the Noun Project" />
             <input type="text" name="skill" ng-show='devDashboard.showSkillEdit' ng-model="devDashboard.newSkill">
