@@ -1,63 +1,65 @@
 <div class="all-projects-container">
-  <header>
-      <img src="assets/lotus_blue.png" alt="Lotus by Muhammad Faizal Rahman Hakim from the Noun Project" />
-      <h1>Code Karma</h1>
-      <nav class="nav">
-          <div class="container">
-              <ul class="navList">
+    <header>
+        <img src="assets/lotus_blue.png" alt="Lotus by Muhammad Faizal Rahman Hakim from the Noun Project" />
+        <h1>Code Karma</h1>
+        <nav class="nav">
+            <div class="container">
+                <ul class="navList">
 
-                  <li class="navItem">
-                      <a ui-sref="codeKarmaParent.home">Home</a>
-                  </li>
+                    <li class="navItem">
+                        <a ui-sref="codeKarmaParent.home">Home</a>
+                    </li>
 
-                  <li class="navItem">
-                      <a ui-sref="codeKarmaParent.devDashboard">My Dashboard</a>
-                  </li>
+                    <li class="navItem">
+                        <a ui-sref="codeKarmaParent.devDashboard">My Dashboard</a>
+                    </li>
 
-                  <li class="navItem">
-                      <a ui-sref="codeKarmaParent.devProjects">My Projects</a>
-                  </li>
+                    <li class="navItem">
+                        <a ui-sref="codeKarmaParent.devProjects">My Projects</a>
+                    </li>
 
-                  <li class="navItem">
-                      <a ui-sref="codeKarmaParent.allProjects">All Projects</a>
-                  </li>
+                    <li class="navItem">
+                        <a ui-sref="codeKarmaParent.allProjects">All Projects</a>
+                    </li>
 
-                  <li class="navItem">
-                      <a ui-sref="codeKarmaParent.communityFeed">Community Feed</a>
-                  </li>
+                    <li class="navItem">
+                        <a ui-sref="codeKarmaParent.communityFeed">Community Feed</a>
+                    </li>
 
-              </ul>
-          </div>
-      </nav>
-  </header>
+                </ul>
+            </div>
+        </nav>
+    </header>
 
     <form class="searchForm">
         <textarea name="post" placeholder="search by skills or title..."></textarea>
         <button type="button" class="searchBtn">Search</button>
     </form>
-    <div class="project-card">
+
+      <div class="project-card" ng-repeat="project in projects">
         <div class="heading">
-            <h3 class="title">Project Title</h3>
+            <h3 class="title">{{project.title}}</h3>
             <div class="categories">
                 <div class="category-image tooltip">
-                <img class="bug-fix" src="assets/bugfix.png">
-                <p class="tooltiptext">this project is a <span>{{allProjects.category}}</span></p>
+                    <img class="bug-fix" src="assets/bugfix.png">
+                    <p class="tooltiptext">this project is a <span>{{project.fix_type}}</span></p>
                 </div>
                 <p class="languages">HTML, CSS, JS</p>
             </div>
         </div>
         <div class="project-contents">
-            <p class="snapshot">brief line about project</p>
+            <p class="snapshot">{{project.brief_description}}</p>
             <button class="details-btn" ng-click="toggleDetails()">Details</button>
         </div>
+        <div class="details" ng-show="details">
+            <ul class="project-details">
+                <li class="description">{{project.description}}</li>
+                <li class="client-url"><a href="#">nonprofitclienturl.com</a></li>
+                <li class="repo-url"><a href="#">{{project.github_repo_url}}</a></li>
+                <li class="contact-info">contact us: {{project.client_email}}</li>
+            </ul>
+            <button class="fork-btn"><img src="assets/github_logo.png" alt="github logo from flaticon.com"> Fork</button>
+        </div>
     </div>
-    <div class="details" ng-show="details">
-        <ul class="project-details">
-            <li class="description">more detailed description of project</li>
-            <li class="client-url"><a href="#">nonprofitclienturl.com</a></li>
-            <li class="repo-url"><a href="#">repo url</a></li>
-            <li class="contact-info">contact us: nonprofit@client.com</li>
-        </ul>
-        <button class="fork-btn"><img src="assets/github_logo.png" alt="github logo from flaticon.com"> Fork</button>
-    </div>
+
 </div>
