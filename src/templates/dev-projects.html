@@ -54,7 +54,10 @@
                 <input ng-disabled="devProjects.complete" ng-model="completionDate" name="completionDate" type="date">
             </form>
             <button ng-hide="devProjects.complete" class="help-btn" ui-sref="codeKarmaParent.communityFeed">Ask for Help</button>
-            <button ng-hide="!devProjects.complete" class="submit-btn">Submit Project</button>
+            <div ng-hide="!devProjects.complete" class="tooltip">
+              <button class="submit-btn">Submit Project</button>
+              <p class="tooltiptext">submit a pull request to GitHub</p>
+            </div>
         </div>
     </div>
 </div>
