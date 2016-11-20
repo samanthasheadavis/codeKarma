@@ -1,15 +1,35 @@
 angular.module('codeKarmaApp').controller('AllProjectsController', function($state, $scope, $http, RequestService) {
 
     $scope.details = false;
-    this.category = "Bug Fix";
+    this.selectedProject = null;
 
-    $scope.toggleDetails = function() {
-        $scope.details = !$scope.details;
+
+    $scope.toggleDetails = function(project) {
+        project.show = !project.show;
     };
 
     this.getUrl = function() {
         this.url = RequestService.getProjectsUrl();
     };
+
+    $scope.getIcon = function(response) {
+
+        for (var index = 0; index < response.length; index++) {
+
+            if (response[index].fix_type === "Bug Fix") {
+                response[index].src = "bugfix";
+                response[index].alt = "Icon Fair";
+            } else if (response[index].fix_type === "Design Update") {
+                response[index].src = "design_update";
+                response[index].alt = "Oliviu Stoian";
+            } else if (response[index].fix_type === "New Feature") {
+                response[index].src = "new_feature";
+                response[index].alt = "Phil Goodwin";
+            }
+        }
+
+    };
+
 
     this.getProjects = function() {
         var settings = {
@@ -21,13 +41,17 @@ angular.module('codeKarmaApp').controller('AllProjectsController', function($sta
 
         $.ajax(settings).done(function(response) {
 
-          $scope.projects = response.all_projects;
-          console.log($scope.projects);
+            $scope.projects = response.all_projects;
+            console.log($scope.projects);
+            $scope.getIcon(response.all_projects);
 
-          $scope.$apply();
+            $scope.$apply();
 
         });
+
     };
+
+
 
     // fork project function
 
@@ -38,22 +62,7 @@ angular.module('codeKarmaApp').controller('AllProjectsController', function($sta
     // determine icon to show on project - grab category(fix_type )
 
 
-    this.getIcon = function(responseObj) {
 
-        this.category = responseObj.fix_type;
-
-        if (this.category === "Bug Fix") {
-            this.img = "bugfix";
-            this.alt = "Icon Fair";
-        } else if (this.category === "Design Update") {
-            this.img = "design_update";
-            this.alt = "Oliviu Stoian";
-        } else if (this.category === "New Feature") {
-            this.img = "new_feature";
-            this.alt = "Phil Goodwin";
-        }
-
-    };
 
     this.getUrl();
     $scope.projects = this.getProjects();
