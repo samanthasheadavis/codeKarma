@@ -50,34 +50,13 @@ angular.module('codeKarmaApp').controller('ClientProjectsController', function($
             "crossDomain": true,
             "url": "https://code-karma-api.herokuapp.com/projects/" + this.id + "?token=" + this.token,
             "method": "PUT",
-            "headers": {
-                "cache-control": "no-cache",
-            },
-            "processData": false,
-            "contentType": false,
-
             "data": this.updateProject
         };
 
         $.ajax(settings).done(function(response) {
             console.log(response);
+            this.show=false;
         });
-
-        // var settings = {
-        //     "async": true,
-        //     "crossDomain": true,
-        //     "url": "https://code-karma-api.herokuapp.com/projects/1?token=082915de-e826-4b76-945f-05bb37036104",
-        //     "method": "PUT",
-            // "headers": {
-            //     "cache-control": "no-cache",
-            //     "postman-token": "7fba87be-0701-814a-4d49-2bd257d9e7e4"
-            // },
-            // "processData": false,
-            // "contentType": false,
-        //     "mimeType": "multipart/form-data",
-        //     "data": form
-        // };
-
     };
 
     // post updated object to backend
