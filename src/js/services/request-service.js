@@ -27,9 +27,13 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
     }
 
     function getProjectsUrl() {
-        console.log('in getUrl');
         var url = "https://code-karma-api.herokuapp.com/projects" + "?token=" + token;
         return url;
+    }
+
+    function getClientProjectsUrl() {
+      var url = "https://code-karma-api.herokuapp.com/projects/" + userId + "?token=" + token;
+      return url;
     }
 
     function getDevUrl() {
@@ -94,6 +98,7 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
         getDevUrl: getDevUrl,
         setProgress: setProgress,
         setEstDate: setEstDate,
+        getClientProjectsUrl: getClientProjectsUrl
     };
 
 });
