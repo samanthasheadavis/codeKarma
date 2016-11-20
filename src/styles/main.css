@@ -65,11 +65,10 @@ ui-view {
   flex-direction: column;
   justify-content: flex-start;
   width: 80%;
-  height: 100%;
   padding-bottom: 40px; }
   .all-projects-container .searchForm {
     display: flex;
-    margin: 40px 0 0;
+    margin-top: 40px;
     width: 60%;
     margin-bottom: 40px; }
     .all-projects-container .searchForm textarea {
@@ -103,12 +102,14 @@ ui-view {
         background: #AAEFDF; }
   .all-projects-container .project-card {
     background: #ffffff;
-    height: 160px;
-    width: 60%;
-    box-shadow: 0px 0px 5px 0px #ced0ce;
     border-radius: 5px;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0; }
+    box-shadow: 0px 0px 5px 0px #ced0ce;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 30px 10px 0 10px;
+    padding-bottom: 20px;
+    width: 60%; }
     .all-projects-container .project-card .heading {
       display: flex;
       flex-direction: row;
@@ -127,20 +128,21 @@ ui-view {
           .all-projects-container .project-card .heading .categories .category-image:hover .tooltiptext {
             display: block; }
           .all-projects-container .project-card .heading .categories .category-image img {
-            height: 35px; }
+            height: 35px;
+            margin-right: 10px; }
           .all-projects-container .project-card .heading .categories .category-image .tooltiptext {
             background: #AAEFDF;
             border-radius: 5px;
             color: #191919;
             display: none;
-            font-size: 14px;
+            font-size: 12px;
             line-height: 16px;
             left: 80%;
             top: -10%;
             padding: 5px;
             position: absolute;
             text-align: center;
-            width: 110px;
+            width: 120px;
             z-index: 5; }
             .all-projects-container .project-card .heading .categories .category-image .tooltiptext:after {
               content: " ";
@@ -152,21 +154,22 @@ ui-view {
               border-style: solid;
               border-color: transparent #AAEFDF transparent transparent; }
             .all-projects-container .project-card .heading .categories .category-image .tooltiptext span {
-              letter-spacing: .1em; }
+              letter-spacing: .1em;
+              display: block; }
         .all-projects-container .project-card .heading .categories .languages {
           align-self: center;
-          margin-top: 15px; }
+          margin: 15px 10px 0 0; }
     .all-projects-container .project-card .project-contents {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      height: 99.5px; }
+      margin: 0 10px 0 10px; }
       .all-projects-container .project-card .project-contents p {
         align-self: flex-start;
         padding: 0 10px; }
       .all-projects-container .project-card .project-contents .details-btn {
         padding: 10px;
-        margin: 0 10px 10px;
+        margin: 0 10px 0 10px;
         border-radius: 5px;
         border: 3px solid #ffffff;
         height: 40px;
@@ -178,22 +181,29 @@ ui-view {
           outline: 0; }
   .all-projects-container .details {
     background: #ffffff;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    border-top-left-radius: none;
-    border-top-right-radius: none;
-    box-shadow: 0px 0px 5px 0px #ced0ce;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 40px;
-    width: 100%; }
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 15px; }
+    .all-projects-container .details.active {
+      display: flex; }
+    .all-projects-container .details hr {
+      width: 90%;
+      border: 0;
+      height: 0;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
+    .all-projects-container .details ul {
+      display: flex;
+      flex-direction: column;
+      align-self: flex-start;
+      margin: 0 10px; }
     .all-projects-container .details li {
       margin: 15px 10px; }
     .all-projects-container .details a {
       text-decoration: none;
       color: black; }
     .all-projects-container .details .fork-btn {
-      align-self: center;
       background: #AAEFDF;
       border-radius: 5px;
       border: 3px solid #ffffff;
@@ -202,9 +212,10 @@ ui-view {
       font-weight: bold;
       height: 40px;
       justify-content: center;
-      margin: 10px;
+      margin-right: 20px;
       padding: 10px;
-      width: 100px; }
+      width: 100px;
+      align-self: flex-end; }
       .all-projects-container .details .fork-btn img {
         height: 25px;
         margin-right: 10px;

@@ -36,22 +36,23 @@
         <button type="button" class="searchBtn">Search</button>
     </form>
 
-      <div class="project-card" ng-repeat="project in projects">
-        <div class="heading">
-            <h3 class="title">{{project.title}}</h3>
-            <div class="categories">
-                <div class="category-image tooltip">
-                    <img class="bug-fix" src="assets/bugfix.png">
-                    <p class="tooltiptext">this project is a <span>{{project.fix_type}}</span></p>
+    <div class="project-card" ng-repeat="project in projects">
+            <div class="heading">
+                <h3 class="title">{{project.title}}</h3>
+                <div class="categories">
+                    <div class="category-image tooltip">
+                        <img class="bug-fix" src="assets/bugfix.png">
+                        <p class="tooltiptext">this project is a <span>{{project.fix_type}}</span></p>
+                    </div>
+                    <p class="languages">HTML, CSS, JS</p>
                 </div>
-                <p class="languages">HTML, CSS, JS</p>
             </div>
-        </div>
-        <div class="project-contents">
-            <p class="snapshot">{{project.brief_description}}</p>
-            <button class="details-btn" ng-click="toggleDetails()">Details</button>
-        </div>
-        <div class="details" ng-show="details">
+            <div class="project-contents">
+                <p class="snapshot">{{project.brief_description}}</p>
+                <button class="details-btn" ng-click="toggleDetails(project)">Details</button>
+            </div>
+        <div class="details" ng-class="{'active': project.show}">
+            <hr>
             <ul class="project-details">
                 <li class="description">{{project.description}}</li>
                 <li class="client-url"><a href="#">nonprofitclienturl.com</a></li>

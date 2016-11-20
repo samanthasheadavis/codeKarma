@@ -1,10 +1,11 @@
 angular.module('codeKarmaApp').controller('AllProjectsController', function($state, $scope, $http, RequestService) {
 
     $scope.details = false;
-    this.category = "Bug Fix";
+    this.selectedProject = null;
 
-    $scope.toggleDetails = function() {
-        $scope.details = !$scope.details;
+
+    $scope.toggleDetails = function(project) {
+        project.show = !project.show;
     };
 
     this.getUrl = function() {

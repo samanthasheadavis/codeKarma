@@ -5,12 +5,11 @@
     flex-direction: column;
     justify-content: flex-start;
     width: 80%;
-    height: 100%;
     padding-bottom: 40px;
 
     .searchForm {
         display: flex;
-        margin: 40px 0 0;
+        margin-top: 40px;
         width: 60%;
         margin-bottom: 40px;
 
@@ -47,12 +46,14 @@
 
     .project-card {
         background: $white;
-        height: 160px;
-        width: 60%;
-        box-shadow: $box-shadow;
         border-radius: $border-radius;
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
+        box-shadow: $box-shadow;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin: 30px $hspace 0 $hspace;
+        padding-bottom: 20px;
+        width: 60%;
 
         .heading {
             display: flex;
@@ -80,6 +81,7 @@
 
                     img {
                         height: 35px;
+                        margin-right: $hspace;
                     }
 
                     .tooltiptext {
@@ -87,14 +89,14 @@
                         border-radius: $border-radius;
                         color: $charcoal;
                         display: none;
-                        font-size: 14px;
+                        font-size: 12px;
                         line-height: 16px;
                         left: 80%;
                         top: -10%;
                         padding: 5px;
                         position: absolute;
                         text-align: center;
-                        width: 110px;
+                        width: 120px;
                         z-index: 5;
 
                         &:after {
@@ -110,13 +112,14 @@
 
                         span {
                             letter-spacing: .1em;
+                            display: block;
                         }
                     }
                 }
 
                 .languages {
                     align-self: center;
-                    margin-top: $vspace;
+                    margin: $vspace $hspace 0 0;
                 }
             }
         }
@@ -125,7 +128,7 @@
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            height: 99.5px;
+            margin: 0 $hspace 0 $hspace;
 
             p {
                 align-self: flex-start;
@@ -134,7 +137,7 @@
 
             .details-btn {
                 padding: 10px;
-                margin: 0 10px 10px;
+                margin: 0 10px 0 10px;
                 border-radius: 5px;
                 border: 3px solid $white;
                 height: 40px;
@@ -154,15 +157,30 @@
 
     .details {
         background: $white;
-        border-bottom-left-radius: $border-radius;
-        border-bottom-right-radius: $border-radius;
-        border-top-left-radius: none;
-        border-top-right-radius: none;
-        box-shadow: $box-shadow;
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 40px;
+        display: none;
+        flex-direction: column;
         width: 100%;
+        margin-top: $vspace;
+
+
+        &.active {
+          display: flex;
+        }
+
+        hr {
+          width: 90%;
+          border: 0;
+          height: 0;
+          border-top: 1px solid rgba(0, 0, 0, 0.1);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        ul {
+          display: flex;
+          flex-direction: column;
+          align-self: flex-start;
+          margin: 0 $hspace;
+        }
 
         li {
             margin: $vspace $hspace;
@@ -174,7 +192,6 @@
         }
 
         .fork-btn {
-            align-self: center;
             background: $pop;
             border-radius: 5px;
             border: 3px solid $white;
@@ -183,15 +200,15 @@
             font-weight: bold;
             height: 40px;
             justify-content: center;
-            margin: 10px;
+            margin-right: 20px;
             padding: 10px;
             width: 100px;
+            align-self: flex-end;
 
             img {
               height: 25px;
               margin-right: 10px;
               margin-top: -5px;
-
             }
 
             &:hover {
