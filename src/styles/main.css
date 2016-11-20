@@ -596,58 +596,55 @@ ui-view {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 150px;
       margin-top: 40px;
       width: 100%; }
-      .community-feed-container .sidebar .user-stats .user-photo {
+      .community-feed-container .sidebar .user-stats img.user-photo {
         width: 75px;
-        height: 75px;
-        background: #e6e8e6;
-        margin-bottom: 15px; }
-        .community-feed-container .sidebar .user-stats .user-photo img {
-          width: 75px;
-          border-radius: 50%;
-          box-shadow: 0px 0px 5px 0px #ced0ce; }
-      .community-feed-container .sidebar .user-stats .username {
-        margin-bottom: 8px; }
-      .community-feed-container .sidebar .user-stats .points {
-        margin-bottom: 15px; }
-    .community-feed-container .sidebar .leaderboard {
-      background: #ffffff;
-      border-radius: 5px;
-      box-shadow: 0px 0px 5px 0px #ced0ce;
-      height: 250px;
-      margin-top: 40px;
-      margin-right: 10px;
-      width: 100%; }
-      .community-feed-container .sidebar .leaderboard hr {
-        width: 90%;
-        border: 0;
-        height: 0;
-        border-top: 1px solid rgba(0, 0, 0, 0.1);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
-      .community-feed-container .sidebar .leaderboard li {
-        display: flex;
-        flex-direction: row;
-        line-height: 30px;
-        width: 100%;
-        margin: 15px 10px; }
-        .community-feed-container .sidebar .leaderboard li h3 {
-          margin-top: 15px; }
-        .community-feed-container .sidebar .leaderboard li .prof-pic {
-          height: 30px;
-          width: 15%;
-          margin-right: 10px;
-          background: #e6e8e6; }
-        .community-feed-container .sidebar .leaderboard li .rank {
-          width: 12%; }
-        .community-feed-container .sidebar .leaderboard li .username {
-          margin-right: 10px;
-          width: 25%; }
-        .community-feed-container .sidebar .leaderboard li .points {
-          align-content: flex-end;
-          width: 32%;
-          text-align: right; }
+        border-radius: 50%;
+        box-shadow: 0px 0px 5px 0px #ced0ce;
+        margin: 15px 0; }
+    .community-feed-container .sidebar .username {
+      margin-bottom: 8px; }
+    .community-feed-container .sidebar .points {
+      margin-bottom: 15px; }
+    .community-feed-container .sidebar .rank {
+      margin-bottom: 15px; }
+  .community-feed-container .leaderboard {
+    background: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 0px #ced0ce;
+    height: 250px;
+    margin-top: 40px;
+    margin-right: 10px;
+    width: 100%; }
+    .community-feed-container .leaderboard hr {
+      width: 90%;
+      border: 0;
+      height: 0;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
+    .community-feed-container .leaderboard li {
+      display: flex;
+      flex-direction: row;
+      line-height: 30px;
+      width: 100%;
+      margin: 15px 10px; }
+      .community-feed-container .leaderboard li h3 {
+        margin-top: 15px; }
+      .community-feed-container .leaderboard li .prof-pic {
+        height: 30px;
+        width: 15%;
+        margin-right: 10px;
+        background: #e6e8e6; }
+      .community-feed-container .leaderboard li .rank {
+        width: 12%; }
+      .community-feed-container .leaderboard li .username {
+        margin-right: 10px;
+        width: 25%; }
+      .community-feed-container .leaderboard li .points {
+        align-content: flex-end;
+        width: 32%;
+        text-align: right; }
 
 .dev-dashboard-container {
   background: #e6e8e6;

@@ -21,7 +21,7 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
     this.getDev = function() {
 
       RequestService.getDev(function(response) {
-        $scope.currentUser = RequestService.createUser(response.data.info);
+        $scope.currentUser = RequestService.createUser(response.data);
         console.log($scope.currentUser);
       });
     };
