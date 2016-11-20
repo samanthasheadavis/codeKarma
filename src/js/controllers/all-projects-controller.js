@@ -17,13 +17,13 @@ angular.module('codeKarmaApp').controller('AllProjectsController', function($sta
         for (var index = 0; index < response.length; index++) {
 
             if (response[index].fix_type === "Bug Fix") {
-                response[index].src = "assets/bugfix.png";
+                response[index].src = "bugfix";
                 response[index].alt = "Icon Fair";
             } else if (response[index].fix_type === "Design Update") {
-                response[index].src = "assets/design_update.png";
+                response[index].src = "design_update";
                 response[index].alt = "Oliviu Stoian";
             } else if (response[index].fix_type === "New Feature") {
-                response[index].src = "assets/new_feature.png";
+                response[index].src = "new_feature";
                 response[index].alt = "Phil Goodwin";
             }
         }
