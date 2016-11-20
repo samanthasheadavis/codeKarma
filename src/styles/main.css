@@ -203,7 +203,6 @@ ui-view {
     .all-projects-container .details li {
       margin: 15px 10px; }
     .all-projects-container .details a {
-      text-decoration: none;
       color: black; }
     .all-projects-container .details .fork-btn {
       background: #AAEFDF;
