@@ -4,9 +4,9 @@
     height: 100vh;
 
     .flexContainer {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
 
         .feed {
             width: 60%;
@@ -159,81 +159,78 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 150px;
             margin-top: 40px;
             width: 100%;
 
-            .user-photo {
+            img.user-photo {
                 width: 75px;
-                height: 75px;
-                background: $lightGrey;
-                margin-bottom: $vspace;
-
-                img {
-                  width: 75px;
-                  border-radius: 50%;
-                  box-shadow: $box-shadow;
-                }
-            }
-
-            .username {
-                margin-bottom: 8px;
-            }
-
-            .points {
-                margin-bottom: $vspace;
+                border-radius: 50%;
+                box-shadow: $box-shadow;
+                margin: $vspace 0;
             }
         }
 
-        .leaderboard {
-            background: $white;
-            border-radius: $border-radius;
-            box-shadow: $box-shadow;
-            height: 250px;
-            margin-top: 40px;
-            margin-right: $hspace;
-            width: 100%;
+        .username {
+            margin-bottom: 8px;
+        }
 
-            hr {
-                width: 90%;
-                border: 0;
-                height: 0;
-                border-top: 1px solid rgba(0, 0, 0, 0.1);
-                border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        .points {
+            margin-bottom: $vspace;
+        }
+
+        .rank {
+          margin-bottom: $vspace;
+        }
+    }
+
+    .leaderboard {
+        background: $white;
+        border-radius: $border-radius;
+        box-shadow: $box-shadow;
+        height: 250px;
+        margin-top: 40px;
+        margin-right: $hspace;
+        width: 100%;
+
+        hr {
+            width: 90%;
+            border: 0;
+            height: 0;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        li {
+            display: flex;
+            flex-direction: row;
+            line-height: 30px;
+            width: 100%;
+            margin: $vspace $hspace;
+
+            h3 {
+                margin-top: $vspace;
             }
 
-            li {
-                display: flex;
-                flex-direction: row;
-                line-height: 30px;
-                width: 100%;
-                margin: $vspace $hspace;
+            .prof-pic {
+                height: 30px;
+                width: 15%;
+                margin-right: $hspace;
+                background: $lightGrey;
+            }
 
-                h3 {
-                    margin-top: $vspace;
-                }
+            .rank {
+                width: 12%;
+            }
 
-                .prof-pic {
-                    height: 30px;
-                    width: 15%;
-                    margin-right: $hspace;
-                    background: $lightGrey;
-                }
+            .username {
+                margin-right: $hspace;
+                width: 25%;
+            }
 
-                .rank {
-                    width: 12%;
-                }
-
-                .username {
-                    margin-right: $hspace;
-                    width: 25%;
-                }
-
-                .points {
-                    align-content: flex-end;
-                    width: 32%;
-                    text-align: right;
-                }
+            .points {
+                align-content: flex-end;
+                width: 32%;
+                text-align: right;
             }
         }
     }
