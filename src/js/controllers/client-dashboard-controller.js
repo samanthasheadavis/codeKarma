@@ -33,7 +33,7 @@ angular.module('codeKarmaApp').controller('ClientDashboardController', function(
     this.getClient = function() {
 
         RequestService.getClient(function(response) {
-            $scope.currentUser = RequestService.createUser(response.data.info);
+            $scope.currentUser = RequestService.createUser(response.data);
             console.log($scope.currentUser);
         });
     };
