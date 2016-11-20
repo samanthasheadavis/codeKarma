@@ -53,8 +53,8 @@ angular.module('codeKarmaApp').controller('AllProjectsController', function($sta
     // fork project function
 
     $scope.forkRepo = function(project) {
-
-
+      this.id = project.id;
+      RequestService.forkRepo(this.id);
     };
 
 
