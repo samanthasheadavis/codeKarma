@@ -20,7 +20,12 @@ angular.module('codeKarmaApp').controller('AllProjectsController', function($sta
         };
 
         $.ajax(settings).done(function(response) {
-            console.log(response);
+
+          $scope.projects = response.all_projects;
+          console.log($scope.projects);
+
+          $scope.$apply();
+
         });
     };
 
@@ -51,5 +56,5 @@ angular.module('codeKarmaApp').controller('AllProjectsController', function($sta
     };
 
     this.getUrl();
-    this.getProjects();
+    $scope.projects = this.getProjects();
 });

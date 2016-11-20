@@ -65,7 +65,8 @@ ui-view {
   flex-direction: column;
   justify-content: flex-start;
   width: 80%;
-  height: 100vh; }
+  height: 100%;
+  padding-bottom: 40px; }
   .all-projects-container .searchForm {
     display: flex;
     margin: 40px 0 0;
@@ -185,7 +186,7 @@ ui-view {
     display: flex;
     justify-content: space-between;
     margin-bottom: 40px;
-    width: 60%; }
+    width: 100%; }
     .all-projects-container .details li {
       margin: 15px 10px; }
     .all-projects-container .details a {
@@ -822,7 +823,8 @@ header {
   .home-container .main-container {
     display: flex;
     flex-direction: column;
-    justify-content: center; }
+    justify-content: center;
+    background: transparent; }
   .home-container button {
     padding: 10px;
     margin: 10px;
