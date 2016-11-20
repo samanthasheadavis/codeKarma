@@ -19,10 +19,6 @@ angular.module('codeKarmaApp').controller('ClientProjectsController', function($
         });
     };
 
-    $.ajax(settings).done(function(response) {
-        console.log(response);
-    });
-
     // collect edited data
 
     this.updateInfo = function(project) {
