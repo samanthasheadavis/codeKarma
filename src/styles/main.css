@@ -110,6 +110,8 @@ ui-view {
     margin: 30px 10px 0 10px;
     padding-bottom: 20px;
     width: 60%; }
+    .all-projects-container .project-card:first-of-type {
+      margin-top: 0; }
     .all-projects-container .project-card .heading {
       display: flex;
       flex-direction: row;
