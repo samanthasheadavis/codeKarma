@@ -39,20 +39,22 @@ angular.module('codeKarmaApp').controller('ClientProjectsController', function($
         this.show = true;
     };
 
+
     this.updateInfo = function() {
         console.log(this.updateProject);
+
+        this.token = RequestService.fetchToken();
 
         var settings = {
             "async": true,
             "crossDomain": true,
-            "url": this.url,
+            "url": "https://code-karma-api.herokuapp.com/projects/" + this.id + "?token=" + this.token,
             "method": "PUT",
             "data": this.updateProject
         };
 
         $.ajax(settings).done(function(response) {
             console.log(response);
-            $state.go('codeKarmaParent.clientProjects');
         });
 
 
