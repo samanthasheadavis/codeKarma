@@ -13,13 +13,19 @@ angular.module('codeKarmaApp').controller('ClientProjectsController', function($
     };
 
     $.ajax(settings).done(function(response) {
-      this.clientProjects = response;
+      $scope.projects = response;
         $scope.$apply();
     });
   };
 
   // collect edited data
 
+  this.updateInfo = function(project) {
+      project.showTitleEdit = !project.showTitleEdit;
+      project.showSnapshotEdit = !project.showSnapshotEdit;
+      project.showDescriptionEdit = !project.showDescriptionEdit;
+      project.showGithubRepoEdit = !project.showGithubRepoEdit;
+};
   // post updated object to backend
 
 this.getProjects();
