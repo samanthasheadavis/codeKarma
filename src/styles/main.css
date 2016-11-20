@@ -367,6 +367,10 @@ ui-view {
         .client-add-project-container .project-card form .submit-btn:hover {
           background: #AAEFDF; }
 
+.darken {
+  background: black;
+  z-index: 5; }
+
 .client-projects-container {
   align-items: center;
   background: #e6e8e6;
@@ -382,6 +386,52 @@ ui-view {
     box-shadow: 0px 0px 5px 0px #ced0ce;
     border-radius: 5px;
     margin-top: 40px; }
+
+.editModal {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: absolute;
+  top: -30px;
+  align-items: center;
+  justify-content: center; }
+  .editModal .modal-details {
+    background: white;
+    width: 50%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 0 200px 40px #4f4f4f;
+    border-radius: 5px; }
+  .editModal li {
+    margin: 0 0 15px 10px; }
+    .editModal li textarea {
+      width: 100%;
+      height: 50px;
+      outline: none;
+      border: none;
+      resize: none;
+      font-size: 14px;
+      font-family: "Raleway", sans-serif; }
+    .editModal li input {
+      box-sizing: border-box;
+      border: 1px solid #AAEFDF;
+      padding: 3px;
+      width: 100%;
+      font-family: "Raleway", sans-serif;
+      font-size: 14px; }
+    .editModal li h3 {
+      font-size: 30px;
+      display: inline; }
+    .editModal li h4 {
+      color: #ced0ce; }
+    .editModal li p {
+      display: inline; }
+    .editModal li:hover > a, .editModal li:hover > h3, .editModal li:hover > p {
+      background: #AAEFDF; }
+    .editModal li:hover > .editIcon {
+      display: inline; }
 
 .client-projects-container .project-details {
   display: flex;
@@ -403,7 +453,7 @@ ui-view {
       color: #ced0ce; }
     .client-projects-container .project-details li p {
       display: inline; }
-    .client-projects-container .project-details li:hover > a, .client-projects-container .project-details li:hover > p, .client-projects-container .project-details li:hover > h3 {
+    .client-projects-container .project-details li:hover > a, .client-projects-container .project-details li:hover > h3, .client-projects-container .project-details li:hover > p {
       background: #AAEFDF; }
     .client-projects-container .project-details li:hover > .editIcon {
       display: inline; }
