@@ -3,7 +3,6 @@ angular.module('codeKarmaApp').controller('AllProjectsController', function($sta
     $scope.details = false;
     this.selectedProject = null;
 
-
     $scope.toggleDetails = function(project) {
         project.show = !project.show;
     };
@@ -30,7 +29,6 @@ angular.module('codeKarmaApp').controller('AllProjectsController', function($sta
 
     };
 
-
     this.getProjects = function() {
         var settings = {
             "async": true,
@@ -44,7 +42,6 @@ angular.module('codeKarmaApp').controller('AllProjectsController', function($sta
             $scope.projects = response.all_projects;
             console.log($scope.projects);
             $scope.getIcon(response.all_projects);
-
             $scope.$apply();
 
         });
@@ -54,6 +51,11 @@ angular.module('codeKarmaApp').controller('AllProjectsController', function($sta
 
 
     // fork project function
+
+    $scope.forkRepo = function(project) {
+      this.id = project.id;
+      RequestService.forkRepo(this.id);
+    };
 
 
     // add project info to user object
