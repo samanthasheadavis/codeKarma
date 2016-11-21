@@ -254,7 +254,8 @@ ui-view {
     display: flex;
     justify-content: center;
     background: #ffffff;
-    width: 100%; }
+    width: 402px;
+    border-radius: 5px; }
     .client-dashboard-container .btnContainer .createProjectsBtn,
     .client-dashboard-container .btnContainer .myProjectsBtn {
       background: none;
@@ -394,10 +395,6 @@ ui-view {
           background: #AAEFDF;
           color: white; }
 
-.darken {
-  background: black;
-  z-index: 5; }
-
 .client-projects-container {
   align-items: center;
   background: #e6e8e6;
@@ -431,6 +428,22 @@ ui-view {
     justify-content: center;
     box-shadow: 0 0 200px 40px #4f4f4f;
     border-radius: 5px; }
+    .editModal .modal-details .updateBtn {
+      background: none;
+      border: 3px solid #AAEFDF;
+      border-radius: 5px;
+      color: #AAEFDF;
+      display: block;
+      font-size: 15px;
+      font-weight: bold;
+      margin: 10px;
+      padding: 10px;
+      position: relative;
+      text-transform: uppercase;
+      outline: none; }
+      .editModal .modal-details .updateBtn:hover {
+        background: #AAEFDF;
+        color: #ffffff; }
   .editModal li {
     margin: 0 0 15px 10px; }
     .editModal li textarea {
@@ -484,6 +497,23 @@ ui-view {
       background: #AAEFDF; }
     .client-projects-container .project-details li:hover > .editIcon {
       display: inline; }
+  .client-projects-container .project-details .editBtn {
+    background: none;
+    border: 3px solid #AAEFDF;
+    border-radius: 5px;
+    color: #AAEFDF;
+    display: block;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 10px;
+    padding: 10px;
+    position: relative;
+    text-transform: uppercase;
+    outline: none; }
+    .client-projects-container .project-details .editBtn:hover {
+      background: #AAEFDF;
+      color: #ffffff;
+      cursor: pointer; }
 
 .editIcon {
   width: 15px;
@@ -515,11 +545,10 @@ ui-view {
         resize: none;
         height: 20px;
         padding: 10px;
-        border: 3px solid #AAEFDF;
+        border: none;
         outline: none;
         width: 100%;
-        border-radius: 5px;
-        box-shadow: 0px 0px 5px 0px #ced0ce; }
+        border-radius: 5px 0 0 5px; }
         .community-feed-container .flexContainer .postForm textarea::-webkit-input-placeholder {
           color: #ced0ce; }
         .community-feed-container .flexContainer .postForm textarea::-moz-placeholder {
@@ -529,21 +558,15 @@ ui-view {
         .community-feed-container .flexContainer .postForm textarea:-ms-input-placeholder {
           color: #ced0ce; }
       .community-feed-container .flexContainer .postForm .askBtn {
-        background: none;
-        border: 3px solid #AAEFDF;
-        border-radius: 5px;
-        color: #AAEFDF;
-        display: block;
-        font-size: 15px;
-        font-weight: bold;
-        margin: 10px;
-        padding: 10px;
-        position: relative;
-        text-transform: uppercase;
+        border-radius: 0 5px 5px 0;
+        width: 100px;
+        border: none;
         outline: none;
-        margin-left: 10px;
-        margin-top: 0;
-        background: #ffffff; }
+        height: 41px;
+        margin: 0;
+        padding: 0;
+        font-family: "Raleway", sans-serif;
+        font-size: 1em; }
         .community-feed-container .flexContainer .postForm .askBtn:hover {
           background: #AAEFDF;
           color: white; }
@@ -599,11 +622,10 @@ ui-view {
           width: 100%;
           resize: none;
           padding: 10px;
-          border: 3px solid #AAEFDF;
+          border: 1px solid #e6e8e6;
           outline: none;
           height: 36px;
-          border-radius: 5px 0 0 5px;
-          box-shadow: 0px 0px 5px 0px #ced0ce; }
+          border-radius: 5px 0 0 5px; }
           .community-feed-container .flexContainer .commPost .responseForm textarea::-webkit-input-placeholder {
             color: #ced0ce; }
           .community-feed-container .flexContainer .commPost .responseForm textarea::-moz-placeholder {
@@ -613,19 +635,13 @@ ui-view {
           .community-feed-container .flexContainer .commPost .responseForm textarea:-ms-input-placeholder {
             color: #ced0ce; }
         .community-feed-container .flexContainer .commPost .responseForm .respondBtn {
-          background: none;
-          border: 3px solid #AAEFDF;
-          border-radius: 5px;
-          color: #AAEFDF;
-          display: block;
-          font-size: 9px;
-          font-weight: bold;
-          margin: 10px;
-          padding: 10px;
-          position: relative;
-          text-transform: uppercase;
+          border-radius: 0 5px 5px 0;
+          width: 100px;
+          border: none;
           outline: none;
-          margin: 0 0 0 10px; }
+          margin: 0;
+          font-family: "Raleway", sans-serif;
+          font-size: 1em; }
           .community-feed-container .flexContainer .commPost .responseForm .respondBtn:hover {
             background: #AAEFDF;
             color: white; }
@@ -702,7 +718,8 @@ ui-view {
     display: flex;
     justify-content: center;
     background: #ffffff;
-    width: 100%; }
+    width: 460px;
+    border-radius: 5px; }
     .dev-dashboard-container .btnContainer a {
       text-decoration: none;
       color: #4F4F4F;
@@ -733,7 +750,7 @@ ui-view {
         color: white; }
   .dev-dashboard-container .infoContainer {
     display: flex;
-    width: 402px;
+    width: 460px;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;

@@ -26,21 +26,25 @@
                 resize: none;
                 height: 20px;
                 padding: 10px;
-                border: 3px solid $pop;
+                border: none;
                 outline: none;
                 width: 100%;
-                border-radius: 5px;
-                box-shadow: $box-shadow;
+                border-radius: 5px 0 0 5px;
                 @include placeholder {
                     color: $midGrey;
                 }
             }
 
             .askBtn {
-              @include button(15px){};
-                margin-left: 10px;
-                margin-top: 0;
-                background: $white;
+                border-radius: 0 5px 5px 0;
+                width: 100px;
+                border: none;
+                outline: none;
+                height: 41px;
+                margin: 0;
+                padding: 0;
+                font-family: $raleway;
+                font-size: 1em;
 
                 &:hover {
                     background: $pop;
@@ -119,20 +123,23 @@
                     width: 100%;
                     resize: none;
                     padding: 10px;
-                    border: 3px solid $pop;
+                    border: 1px solid $lightGrey;
                     outline: none;
                     height: 36px;
                     border-radius: 5px 0 0 5px;
-                    box-shadow: $box-shadow;
                     @include placeholder {
                         color: $midGrey;
                     }
                 }
 
                 .respondBtn {
-                    @include button(9px){};
-                    margin: 0 0 0 10px;
-
+                  border-radius: 0 5px 5px 0;
+                  width: 100px;
+                  border: none;
+                  outline: none;
+                  margin: 0;
+                  font-family: $raleway;
+                  font-size: 1em;
 
                     &:hover {
                         background: $pop;
@@ -174,7 +181,7 @@
         }
 
         .rank {
-          margin-bottom: $vspace;
+            margin-bottom: $vspace;
         }
     }
 

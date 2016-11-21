@@ -1,6 +1,6 @@
 angular.module('codeKarmaApp').controller('ClientDashboardController', function($state, RequestService, $scope, $http) {
 
-// Have to edit this in service to make sure posting to correct url for updating client info
+    // Have to edit this in service to make sure posting to correct url for updating client info
     this.getUrl = function() {
         this.url = RequestService.getProjectsUrl();
     };
@@ -18,7 +18,7 @@ angular.module('codeKarmaApp').controller('ClientDashboardController', function(
         this.showLinkEdit = false;
         this.showNameEdit = false;
 
-    // might have to do two different posts, one for org name and one for org link
+        // might have to do two different posts, one for org name and one for org link
 
         // $http({
         //     method: "PUT",
@@ -30,12 +30,29 @@ angular.module('codeKarmaApp').controller('ClientDashboardController', function(
 
     };
 
+
     this.getClient = function() {
 
         RequestService.getClient(function(response) {
             $scope.currentUser = RequestService.createUser(response.data);
             console.log($scope.currentUser);
         });
+
+        //AJAX get for getClient
+
+        // var settings = {
+        //     "async": true,
+        //     "crossDomain": true,
+        //     "url": this.clientUrl,
+        //     "method": "GET"
+        // };
+
+        // $.ajax(settings).done(function(response) {
+        //     $scope.currentUser = response;
+        //     // $scope.$apply();
+        //     console.log($scope.currentUser);
+        // });
+
     };
 
     this.getClient();

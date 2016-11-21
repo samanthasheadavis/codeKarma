@@ -12,7 +12,8 @@
         display: flex;
         justify-content: center;
         background: $white;
-        width: 100%;
+        width: 460px;
+        border-radius: 5px;
 
         a {
           text-decoration: none;
@@ -38,7 +39,7 @@
 
     .infoContainer {
         display: flex;
-        width: 402px;
+        width: 460px;
         flex-direction: column;
         justify-content: space-around;
         align-items: center;

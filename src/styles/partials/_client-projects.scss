@@ -1,7 +1,3 @@
-.darken {
-    background: black;
-    z-index: 5;
-}
 
 .client-projects-container {
     align-items: center;
@@ -40,6 +36,17 @@
         justify-content: center;
         box-shadow: 0 0 200px 40px rgba(79,79,79,1);
         border-radius: 5px;
+
+        .updateBtn {
+          @include button(15px){};
+
+          &:hover {
+            background: $pop;
+            color: $white;
+          }
+
+        }
+
     }
 
     li {
@@ -128,6 +135,16 @@
         &:hover > .editIcon {
             display: inline;
         }
+    }
+
+    .editBtn {
+      @include button(15px) {};
+
+      &:hover {
+        background: $pop;
+        color: $white;
+        cursor: pointer;
+      }
     }
 }
 
