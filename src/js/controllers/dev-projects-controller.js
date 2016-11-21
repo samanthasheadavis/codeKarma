@@ -1,57 +1,58 @@
-angular.module('codeKarmaApp').controller('DevProjectsController', function($scope, $state, RequestService) {
+angular.module('codeKarmaApp').controller('DevProjectsController', function($scope, $state, RequestService, $rootScope) {
 
-  this.complete = false;
+    this.complete = false;
 
-  // get projects info
+    $scope.updateButton = function() {
 
-  // this.getProjects = function() {
-  //   RequestService.getProjects(function(response) {
-  //       $scope.projects = response;
-  //       console.log($scope.projects);
-  //     });
-  // };
+      console.log("in updateButton");
+      this.complete = true;
 
 
-
-  $scope.slider_floor_ceil = {
-        value: 10,
-        options: {
-            floor: 0,
-            ceil: 100,
-            step: 10
-        }
     };
 
-  // update and post progress
+    // get projects info
 
-  this.updateStatus = function(status) {
+    // this.getProjects = function() {
+    //   RequestService.getProjects(function(response) {
+    //       $scope.projects = response;
+    //       console.log($scope.projects);
+    //     });
+    // };
 
-    this.status = status;
+    // progress slider - will need to GET progress on page load
 
-    // if progress < 100%, show "ask for help" button
-    // if progress === 100%, show "submit project" and disable est. completion date
+    $scope.progress = 0;
 
-    if (this.status !== "100") {
-      this.complete = false;
-    } else if (this.status === "100") {
-      this.complete = true;
-    }
+    // update and post progress
 
-    // RequestService.setProgress(progress);
+    // this.updateProgress = function(status) {
+    //
+    //     this.status = status;
+    //
+    //     // if progress < 100%, show "ask for help" button
+    //     // if progress === 100%, show "submit project" and disable est. completion date
+    //
+    //     if (this.status !== "100") {
+    //         this.complete = false;
+    //     } else if (this.status === "100") {
+    //         this.complete = true;
+    //     }
+    //
+    //     // RequestService.setProgress(progress);
+    //
+    // };
 
-  };
+    this.updateEstDate = function(date) {
 
-  this.updateEstDate = function(date) {
+        // RequestService.setEstDate(date);
 
-    // RequestService.setEstDate(date);
-
-  };
+    };
 
 
 
-  // update and post est. completion date
+    // update and post est. completion date
 
 
-this.getProjects();
+    // this.getProjects();
 
 });

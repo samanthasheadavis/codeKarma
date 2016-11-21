@@ -78,7 +78,8 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
             image: response.image,
             github: response.github,
             orgName: response.organization_name,
-            orgSite: response.organization_site
+            orgSite: response.organization_site,
+            skills: response.skills || []
         };
         return currentUser;
     }
@@ -112,6 +113,36 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
       });
     }
 
+    function putSkills(skills){
+
+        $http({
+            method: 'PUT',
+            data: skills,
+            url: 'https://code-karma-api.herokuapp.com/developers/' + userId + '?token=' + token,
+        }).then(function successCallback(response) {
+            console.log(response);
+        }, function errorCallback(response) {
+            console.log(response);
+            return response;
+        });
+
+    }
+
+    function postSkills(skills){
+
+        $http({
+            method: 'POST',
+            data: skills,
+            url: 'https://code-karma-api.herokuapp.com/developers/' + userId + '?token=' + token,
+        }).then(function successCallback(response) {
+            console.log("success");
+        }, function errorCallback(response) {
+            console.log(response);
+            return response;
+        });
+
+    }
+
     return {
         getClient: getClient,
         getDev: getDev,
@@ -123,7 +154,9 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
         setEstDate: setEstDate,
         getClientProjectsUrl: getClientProjectsUrl,
         forkRepo: forkRepo,
-        fetchToken: fetchToken
+        fetchToken: fetchToken,
+        postSkills: postSkills,
+        putSkills: putSkills
     };
 
 });
