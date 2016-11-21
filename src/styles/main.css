@@ -436,7 +436,8 @@ ui-view {
   position: absolute;
   top: -30px;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  z-index: 6; }
   .editModal .modal-details {
     background: white;
     width: 50%;
