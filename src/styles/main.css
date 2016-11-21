@@ -303,12 +303,37 @@ ui-view {
       display: inline; }
     .client-dashboard-container .infoContainer p {
       display: inline; }
-    .client-dashboard-container .infoContainer .orgLink,
-    .client-dashboard-container .infoContainer .orgName,
+    .client-dashboard-container .infoContainer .gitHubLink,
     .client-dashboard-container .infoContainer .name,
-    .client-dashboard-container .infoContainer .gitHubLink {
+    .client-dashboard-container .infoContainer .orgLink,
+    .client-dashboard-container .infoContainer .orgName {
       font-size: 20px;
       margin: 15px 10px; }
+      .client-dashboard-container .infoContainer .gitHubLink input,
+      .client-dashboard-container .infoContainer .name input,
+      .client-dashboard-container .infoContainer .orgLink input,
+      .client-dashboard-container .infoContainer .orgName input {
+        width: 250px;
+        font-size: 20px;
+        outline: none;
+        border: 1px solid #e6e8e6;
+        font-family: "Raleway", sans-serif;
+        padding: 2px; }
+      .client-dashboard-container .infoContainer .gitHubLink .save,
+      .client-dashboard-container .infoContainer .name .save,
+      .client-dashboard-container .infoContainer .orgLink .save,
+      .client-dashboard-container .infoContainer .orgName .save {
+        background: none;
+        border: 3px solid #AAEFDF;
+        border-radius: 5px;
+        color: #AAEFDF;
+        font-size: 12px;
+        font-weight: bold;
+        margin: 10px;
+        padding: 6px;
+        position: relative;
+        text-transform: uppercase;
+        outline: none; }
     .client-dashboard-container .infoContainer .editIcon {
       width: 15px;
       margin-left: 10px;
@@ -410,7 +435,8 @@ ui-view {
   position: absolute;
   top: -30px;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  z-index: 6; }
   .editModal .modal-details {
     background: white;
     width: 50%;
@@ -419,7 +445,17 @@ ui-view {
     flex-direction: column;
     justify-content: center;
     box-shadow: 0 0 200px 40px #4f4f4f;
-    border-radius: 5px; }
+    border-radius: 5px;
+    position: relative; }
+    .editModal .modal-details .minimize {
+      position: absolute;
+      right: -5px;
+      top: -5px;
+      border-radius: 50%; }
+      .editModal .modal-details .minimize img {
+        width: 30px; }
+      .editModal .modal-details .minimize:hover {
+        cursor: pointer; }
     .editModal .modal-details .updateBtn {
       background: none;
       border: 3px solid #AAEFDF;
@@ -468,6 +504,8 @@ ui-view {
 .client-projects-container .project-details {
   display: flex;
   flex-direction: column; }
+  .client-projects-container .project-details .title {
+    display: flex; }
   .client-projects-container .project-details li {
     margin: 0 0 15px 10px; }
     .client-projects-container .project-details li textarea {
@@ -478,6 +516,9 @@ ui-view {
       resize: none;
       font-size: 14px;
       font-family: "Raleway", sans-serif; }
+    .client-projects-container .project-details li img {
+      width: 25px;
+      margin-left: 15px; }
     .client-projects-container .project-details li h3 {
       font-size: 30px;
       display: inline; }
@@ -485,10 +526,41 @@ ui-view {
       color: #ced0ce; }
     .client-projects-container .project-details li p {
       display: inline; }
-    .client-projects-container .project-details li:hover > a, .client-projects-container .project-details li:hover > h3, .client-projects-container .project-details li:hover > p {
-      background: #AAEFDF; }
     .client-projects-container .project-details li:hover > .editIcon {
       display: inline; }
+    .client-projects-container .project-details li .categories {
+      display: flex;
+      flex-direction: column; }
+      .client-projects-container .project-details li .categories .category-image {
+        position: relative; }
+        .client-projects-container .project-details li .categories .category-image:hover .tooltiptext {
+          display: block; }
+        .client-projects-container .project-details li .categories .category-image .tooltiptext {
+          background: #AAEFDF;
+          border-radius: 5px;
+          color: #191919;
+          display: none;
+          font-size: 12px;
+          line-height: 16px;
+          left: 140%;
+          top: -25%;
+          padding: 5px;
+          position: absolute;
+          text-align: center;
+          width: 120px;
+          z-index: 5; }
+          .client-projects-container .project-details li .categories .category-image .tooltiptext:after {
+            content: " ";
+            position: absolute;
+            top: 45%;
+            right: 100%;
+            margin-top: -5px;
+            border-width: 8px;
+            border-style: solid;
+            border-color: transparent #AAEFDF transparent transparent; }
+          .client-projects-container .project-details li .categories .category-image .tooltiptext span {
+            letter-spacing: 0.1em;
+            display: block; }
   .client-projects-container .project-details .editBtn {
     background: none;
     border: 3px solid #AAEFDF;
@@ -772,6 +844,29 @@ ui-view {
     .dev-dashboard-container .infoContainer .skills {
       font-size: 20px;
       margin: 15px 10px; }
+      .dev-dashboard-container .infoContainer .gitHubLink input,
+      .dev-dashboard-container .infoContainer .name input,
+      .dev-dashboard-container .infoContainer .skills input {
+        width: 250px;
+        font-size: 20px;
+        outline: none;
+        border: 1px solid #e6e8e6;
+        font-family: "Raleway", sans-serif;
+        padding: 2px; }
+      .dev-dashboard-container .infoContainer .gitHubLink .save,
+      .dev-dashboard-container .infoContainer .name .save,
+      .dev-dashboard-container .infoContainer .skills .save {
+        background: none;
+        border: 3px solid #AAEFDF;
+        border-radius: 5px;
+        color: #AAEFDF;
+        font-size: 12px;
+        font-weight: bold;
+        margin: 10px;
+        padding: 6px;
+        position: relative;
+        text-transform: uppercase;
+        outline: none; }
     .dev-dashboard-container .infoContainer .rank,
     .dev-dashboard-container .infoContainer .points,
     .dev-dashboard-container .infoContainer .contributions,

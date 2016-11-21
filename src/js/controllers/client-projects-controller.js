@@ -14,9 +14,25 @@ angular.module('codeKarmaApp').controller('ClientProjectsController', function($
 
         $.ajax(settings).done(function(response) {
             $scope.projects = response;
+            $scope.icons(response);
             $scope.$apply();
-            console.log($scope.projects);
         });
+    };
+
+    $scope.icons = function(response) {
+
+        for (var index = 0; index < response.length; index++) {
+            if (response[index].fix_type === "Bug Fix") {
+                response[index].img_src = "bugfix";
+                response[index].img_alt = "Icon Fair";
+            } else if (response[index].fix_type === "Design Update") {
+                response[index].img_src = "design_update";
+                response[index].img_alt = "Oliviu Stoian";
+            } else if (response[index].fix_type === "New Feature") {
+                response[index].img_src = "new_feature";
+                response[index].img_alt = "Phil Goodwin";
+            }
+        }
     };
 
     // collect edited data
@@ -54,9 +70,10 @@ angular.module('codeKarmaApp').controller('ClientProjectsController', function($
         };
 
         $.ajax(settings).done(function(response) {
-            console.log(response);
-            this.show=false;
+            this.show = false;
+            $state.reload();
         });
+
     };
 
     // post updated object to backend

@@ -48,8 +48,6 @@ angular.module('codeKarmaApp').controller('AllProjectsController', function($sta
 
     };
 
-
-
     // fork project function
 
     $scope.forkRepo = function(project) {
@@ -62,8 +60,6 @@ angular.module('codeKarmaApp').controller('AllProjectsController', function($sta
 
 
     // determine icon to show on project - grab category(fix_type )
-
-
 
 
     this.getUrl();

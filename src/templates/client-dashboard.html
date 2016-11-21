@@ -33,16 +33,16 @@
         </div>
 
         <div class="orgName">
-            <p>{{clientDashboard.clientInfo.orgName}}</p>
-            <img ng-click='clientDashboard.showNameEdit=true' class="editIcon" src="assets/editIcon.png" alt="edit by Laura Vilar from the Noun Project" />
-            <input type="text" name="orgName" ng-show='clientDashboard.showNameEdit' ng-model="clientDashboard.orgName">
+            <p ng-hide='clientDashboard.showNameEdit'>{{clientDashboard.clientInfo.orgName}}</p>
+            <img ng-hide='clientDashboard.showNameEdit' ng-click='clientDashboard.showNameEdit=true' class="editIcon" src="assets/editIcon.png" alt="edit by Laura Vilar from the Noun Project" />
+            <input type="text" name="orgName" ng-show='clientDashboard.showNameEdit' ng-model="clientDashboard.clientInfo.orgName">
             <button class="save" ng-show='clientDashboard.showNameEdit' ng-click="clientDashboard.updateInfo()">Save</button>
         </div>
 
         <div class="orgLink">
-            <p>{{clientDashboard.clientInfo.orgLink}}</p>
-            <img ng-click='clientDashboard.showLinkEdit=true' class="editIcon" src="assets/editIcon.png" alt="edit by Laura Vilar from the Noun Project" />
-            <input type="text" name="orgLink" ng-show='clientDashboard.showLinkEdit' ng-model="clientDashboard.orgLink">
+            <p ng-hide='clientDashboard.showLinkEdit'>{{clientDashboard.clientInfo.orgLink}}</p>
+            <img ng-hide='clientDashboard.showLinkEdit' ng-click='clientDashboard.showLinkEdit=true' class="editIcon" src="assets/editIcon.png" alt="edit by Laura Vilar from the Noun Project" />
+            <input type="text" name="orgLink" ng-show='clientDashboard.showLinkEdit' ng-model="clientDashboard.clientInfo.orgLink">
             <button class="save" ng-show='clientDashboard.showLinkEdit' ng-click="clientDashboard.updateInfo()">Save</button>
         </div>
 

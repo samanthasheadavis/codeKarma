@@ -18,14 +18,14 @@
 
         .createProjectsBtn,
         .myProjectsBtn {
-          @include button(12px){};
+            @include button(12px) {};
 
             &:hover {
                 background: $pop;
             }
 
             &:hover > a {
-              color: white;
+                color: white;
             }
         }
 
@@ -56,9 +56,9 @@
             margin: $vspace $hspace;
 
             img {
-              width: 150px;
-              border-radius: 50%;
-              box-shadow: $box-shadow;
+                width: 150px;
+                border-radius: 50%;
+                box-shadow: $box-shadow;
             }
         }
 
@@ -82,13 +82,35 @@
             display: inline;
         }
 
-
-        .orgLink,
-        .orgName,
+        .gitHubLink,
         .name,
-        .gitHubLink {
+        .orgLink,
+        .orgName {
             font-size: 20px;
             margin: $vspace $hspace;
+
+            input {
+                width: 250px;
+                font-size: 20px;
+                outline: none;
+                border: 1px solid $lightGrey;
+                font-family: $raleway;
+                padding: 2px; 
+            }
+
+            .save {
+              background: none;
+              border: 3px solid $pop;
+              border-radius: 5px;
+              color: $pop;
+              font-size: 12px;
+              font-weight: bold;
+              margin: 10px;
+              padding: 6px;
+              position: relative;
+              text-transform: uppercase;
+              outline: none;
+            }
         }
 
         .editIcon {

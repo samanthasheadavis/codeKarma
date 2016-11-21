@@ -37,22 +37,6 @@ angular.module('codeKarmaApp').controller('ClientDashboardController', function(
             $scope.currentUser = RequestService.createUser(response.data);
             console.log($scope.currentUser);
         });
-
-        //AJAX get for getClient
-
-        // var settings = {
-        //     "async": true,
-        //     "crossDomain": true,
-        //     "url": this.clientUrl,
-        //     "method": "GET"
-        // };
-
-        // $.ajax(settings).done(function(response) {
-        //     $scope.currentUser = response;
-        //     // $scope.$apply();
-        //     console.log($scope.currentUser);
-        // });
-
     };
 
     this.getClient();
