@@ -8,15 +8,23 @@ angular.module('codeKarmaApp').controller('ClientDashboardController', function(
     // orgName and orgLink refer to the 'organization name' and 'website link' fields.
 
     this.clientInfo = {
-      orgName: "Add a name for your organization",
-      orgLink: "Add a link to your website"
+      name: "Add a name for your organization",
+      site: "Add a link to your website"
     };
 
     $scope.handleInfo = function(response) {
+      console.log(response);
+
       if (response.orgName === null || response.orgSite === null) {
         this.showLinkEdit = false;
-        this.showNameEdit = false;
+        this.showNameEdit = true;
       }
+
+      this.newInfo = {
+        organization_name: response.orgName,
+        organization_site: response.orgSite
+      };
+
     };
 
     // updateInfo is the function that handles passing the updated org name or org link to the back end.
@@ -25,24 +33,21 @@ angular.module('codeKarmaApp').controller('ClientDashboardController', function(
         this.showLinkEdit = false;
         this.showNameEdit = false;
 
-        console.log(this.clientInfo);
-
         this.token = RequestService.fetchToken();
+        this.id = RequestService.fetchId();
 
         var settings = {
             "async": true,
             "crossDomain": true,
             "url": "https://code-karma-api.herokuapp.com/clients/" + this.id + "?token=" + this.token,
             "method": "PUT",
-            "data": this.clientInfo
+            "data": this.newInfo
         };
 
         $.ajax(settings).done(function(response) {
-            this.show = false;
-            $state.reload();
+          console.log(response);
+          $state.reload();
         });
-
-
     };
 
 
@@ -50,7 +55,6 @@ angular.module('codeKarmaApp').controller('ClientDashboardController', function(
 
         RequestService.getClient(function(response) {
             $scope.currentUser = RequestService.createUser(response.data);
-            console.log($scope.currentUser);
             $scope.handleInfo($scope.currentUser);
         });
     };

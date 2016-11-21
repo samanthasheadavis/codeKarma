@@ -30,6 +30,10 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
       return token;
     }
 
+    function fetchId() {
+      return userId;
+    }
+
     function getProjectsUrl() {
         var url = "https://code-karma-api.herokuapp.com/projects" + "?token=" + token;
         return url;
@@ -55,11 +59,6 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
         });
     }
 
-    // function getClient() {
-    //   var url = "https://code-karma-api.herokuapp.com/clients/" + userId + "?token=" + token;
-    //   return url;
-    // }
-
     function getDev(callback) {
         $http({
             method: 'GET',
@@ -70,7 +69,7 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
     }
 
     function createUser(response) {
-      console.log(response);
+
         currentUser = {
             username: response.nickname,
             name: response.name,
@@ -156,7 +155,8 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
         forkRepo: forkRepo,
         fetchToken: fetchToken,
         postSkills: postSkills,
-        putSkills: putSkills
+        putSkills: putSkills,
+        fetchId: fetchId
     };
 
 });
