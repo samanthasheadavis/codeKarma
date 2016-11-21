@@ -899,23 +899,26 @@ header {
     justify-content: center;
     background: transparent; }
   .home-container button {
-    padding: 10px;
-    margin: 10px;
+    background: none;
+    border: 3px solid #AAEFDF;
     border-radius: 5px;
-    outline: none;
-    width: 200px;
-    align-self: center;
-    background: transparent;
-    border: 1px solid #e6e8e6;
-    font-family: "Raleway", sans-serif;
-    font-size: 1em; }
+    color: #AAEFDF;
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px;
+    padding: 10px;
+    position: relative;
+    text-transform: uppercase;
+    outline: none; }
     .home-container button a {
-      text-decoration: none;
-      color: black;
-      font-family: "Raleway", sans-serif; }
+      color: #AAEFDF;
+      text-decoration: none; }
     .home-container button:hover {
       background: #AAEFDF;
-      border: none; }
+      color: white; }
+    .home-container button:hover > a {
+      color: white; }
   .home-container .continueBtnContainer {
     display: flex;
     justify-content: center; }

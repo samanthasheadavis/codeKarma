@@ -8,9 +8,9 @@
     height: 100vh;
 
     .btnContainer {
-      display: flex;
-      bottom: 0;
-      align-items: center;
+        display: flex;
+        bottom: 0;
+        align-items: center;
     }
 
     .main-container {
@@ -21,29 +21,44 @@
     }
 
     button {
-      padding: 10px;
-      margin: 10px;
-      border-radius: 5px;
-      outline: none;
-      width: 200px;
-      align-self: center;
-      background: transparent;
-      border: 1px solid $lightGrey;
-      font-family: $raleway;
-      font-size: 1em;
+        @include button(20px) {};
 
-      a {
-        text-decoration: none;
-        color: black;
-        font-family: $raleway;
-      }
+        a {
+            color: $pop;
+            text-decoration: none;
+        }
 
-      &:hover {
-        background: $pop;
-        border: none;
-      }
+        &:hover {
+          background: $pop;
+          color: white;
+        }
+
+        &:hover > a {
+          color: white;
+        }
     }
-
+    //  button {
+    // padding: 10px;
+    // margin: 10px;
+    // border-radius: 5px;
+    // outline: none;
+    // width: 200px;
+    // align-self: center;
+    // background: transparent;
+    // border: 1px solid $lightGrey;
+    // font-family: $raleway;
+    // font-size: 1em;
+    // a {
+    //   text-decoration: none;
+    //   color: black;
+    //   font-family: $raleway;
+    // }
+    //
+    // &:hover {
+    //   background: $pop;
+    //   border: none;
+    // }
+    //    }
     .continueBtnContainer {
         display: flex;
         justify-content: center;
