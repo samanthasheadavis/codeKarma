@@ -69,17 +69,17 @@ ui-view {
   .all-projects-container .searchForm {
     display: flex;
     margin-top: 40px;
-    margin-bottom: 40px; }
+    margin-bottom: 40px;
+    width: 60%; }
     .all-projects-container .searchForm textarea {
       resize: none;
       height: 20px;
       padding: 10px;
-      border: 3px solid #AAEFDF;
+      border: none;
       line-height: 20px;
       outline: none;
-      width: 300px;
-      border-radius: 5px;
-      box-shadow: 0px 0px 5px 0px #ced0ce; }
+      width: 100%;
+      border-radius: 5px 0 0 5px; }
       .all-projects-container .searchForm textarea::-webkit-input-placeholder {
         color: #ced0ce; }
       .all-projects-container .searchForm textarea::-moz-placeholder {
@@ -89,21 +89,14 @@ ui-view {
       .all-projects-container .searchForm textarea:-ms-input-placeholder {
         color: #ced0ce; }
     .all-projects-container .searchForm .searchBtn {
-      background: none;
-      border: 3px solid #AAEFDF;
-      border-radius: 5px;
-      color: #AAEFDF;
-      display: block;
-      font-size: 15px;
-      font-weight: bold;
-      margin: 10px;
-      padding: 10px;
-      position: relative;
-      text-transform: uppercase;
+      border-radius: 0 5px 5px 0;
+      width: 100px;
+      border: none;
       outline: none;
-      margin-left: 10px;
-      margin-top: 0;
-      background: #ffffff; }
+      margin: 0;
+      padding: 0;
+      font-family: "Raleway", sans-serif;
+      font-size: 1em; }
       .all-projects-container .searchForm .searchBtn:hover {
         background: #AAEFDF;
         color: white; }
@@ -114,7 +107,7 @@ ui-view {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    margin: 30px 10px 0 10px;
+    margin: 30px 10px 0;
     padding-bottom: 20px;
     width: 60%; }
     .all-projects-container .project-card:first-of-type {
@@ -163,7 +156,7 @@ ui-view {
               border-style: solid;
               border-color: transparent #AAEFDF transparent transparent; }
             .all-projects-container .project-card .heading .categories .category-image .tooltiptext span {
-              letter-spacing: .1em;
+              letter-spacing: 0.1em;
               display: block; }
         .all-projects-container .project-card .heading .categories .languages {
           align-self: center;
@@ -172,7 +165,7 @@ ui-view {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      margin: 0 10px 0 10px; }
+      margin: 0 10px; }
       .all-projects-container .project-card .project-contents p {
         align-self: flex-start;
         padding: 0 10px; }
