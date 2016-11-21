@@ -30,7 +30,6 @@
                 outline: none;
                 width: 100%;
                 border-radius: 5px 0 0 5px;
-                box-shadow: $box-shadow;
                 @include placeholder {
                     color: $midGrey;
                 }
@@ -41,13 +40,15 @@
                 width: 100px;
                 border: none;
                 outline: none;
-                height: 42px;
+                height: 41px;
                 margin: 0;
-                box-shadow: $box-shadow;
                 padding: 0;
+                font-family: $raleway;
+                font-size: 1em;
 
                 &:hover {
                     background: $pop;
+                    color: white;
                 }
             }
         }
@@ -122,26 +123,27 @@
                     width: 100%;
                     resize: none;
                     padding: 10px;
-                    border: none;
+                    border: 1px solid $lightGrey;
                     outline: none;
                     height: 36px;
                     border-radius: 5px 0 0 5px;
-                    box-shadow: $box-shadow;
                     @include placeholder {
                         color: $midGrey;
                     }
                 }
 
                 .respondBtn {
-                    border-radius: 0 5px 5px 0;
-                    width: 100px;
-                    border: none;
-                    outline: none;
-                    margin: 0;
-                    box-shadow: $box-shadow;
+                  border-radius: 0 5px 5px 0;
+                  width: 100px;
+                  border: none;
+                  outline: none;
+                  margin: 0;
+                  font-family: $raleway;
+                  font-size: 1em;
 
                     &:hover {
                         background: $pop;
+                        color: white;
                     }
                 }
             }
@@ -179,7 +181,7 @@
         }
 
         .rank {
-          margin-bottom: $vspace;
+            margin-bottom: $vspace;
         }
     }
 

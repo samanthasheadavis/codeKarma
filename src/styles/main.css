@@ -69,8 +69,8 @@ ui-view {
   .all-projects-container .searchForm {
     display: flex;
     margin-top: 40px;
-    width: 60%;
-    margin-bottom: 40px; }
+    margin-bottom: 40px;
+    width: 60%; }
     .all-projects-container .searchForm textarea {
       resize: none;
       height: 20px;
@@ -79,8 +79,7 @@ ui-view {
       line-height: 20px;
       outline: none;
       width: 100%;
-      border-radius: 5px 0 0 5px;
-      box-shadow: 0px 0px 5px 0px #ced0ce; }
+      border-radius: 5px 0 0 5px; }
       .all-projects-container .searchForm textarea::-webkit-input-placeholder {
         color: #ced0ce; }
       .all-projects-container .searchForm textarea::-moz-placeholder {
@@ -94,12 +93,13 @@ ui-view {
       width: 100px;
       border: none;
       outline: none;
-      height: 42px;
       margin: 0;
-      box-shadow: 0px 0px 5px 0px #ced0ce;
-      padding: 0; }
+      padding: 0;
+      font-family: "Raleway", sans-serif;
+      font-size: 1em; }
       .all-projects-container .searchForm .searchBtn:hover {
-        background: #AAEFDF; }
+        background: #AAEFDF;
+        color: white; }
   .all-projects-container .project-card {
     background: #ffffff;
     border-radius: 5px;
@@ -107,7 +107,7 @@ ui-view {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    margin: 30px 10px 0 10px;
+    margin: 30px 10px 0;
     padding-bottom: 20px;
     width: 60%; }
     .all-projects-container .project-card:first-of-type {
@@ -156,7 +156,7 @@ ui-view {
               border-style: solid;
               border-color: transparent #AAEFDF transparent transparent; }
             .all-projects-container .project-card .heading .categories .category-image .tooltiptext span {
-              letter-spacing: .1em;
+              letter-spacing: 0.1em;
               display: block; }
         .all-projects-container .project-card .heading .categories .languages {
           align-self: center;
@@ -165,20 +165,26 @@ ui-view {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      margin: 0 10px 0 10px; }
+      margin: 0 10px; }
       .all-projects-container .project-card .project-contents p {
         align-self: flex-start;
         padding: 0 10px; }
       .all-projects-container .project-card .project-contents .details-btn {
-        padding: 10px;
-        margin: 0 10px 0 10px;
+        background: none;
+        border: 3px solid #AAEFDF;
         border-radius: 5px;
-        border: 3px solid #ffffff;
-        height: 40px;
-        width: 100px;
-        align-self: flex-start; }
+        color: #AAEFDF;
+        display: block;
+        font-size: 12px;
+        font-weight: bold;
+        margin: 10px;
+        padding: 10px;
+        position: relative;
+        text-transform: uppercase;
+        outline: none; }
         .all-projects-container .project-card .project-contents .details-btn:hover {
-          background: #AAEFDF; }
+          background: #AAEFDF;
+          color: white; }
         .all-projects-container .project-card .project-contents .details-btn:focus {
           outline: 0; }
   .all-projects-container .details {
@@ -238,25 +244,34 @@ ui-view {
   .client-dashboard-container .btnContainer {
     margin: 40px 0 20px;
     display: flex;
-    justify-content: center; }
+    justify-content: center;
+    background: #ffffff;
+    width: 402px;
+    border-radius: 5px; }
     .client-dashboard-container .btnContainer .createProjectsBtn,
     .client-dashboard-container .btnContainer .myProjectsBtn {
-      height: 40px;
-      width: 200px;
-      outline: none;
-      border: none;
-      background: #ffffff; }
+      background: none;
+      border: 3px solid #AAEFDF;
+      border-radius: 5px;
+      color: #AAEFDF;
+      display: block;
+      font-size: 12px;
+      font-weight: bold;
+      margin: 10px;
+      padding: 10px;
+      position: relative;
+      text-transform: uppercase;
+      outline: none; }
       .client-dashboard-container .btnContainer .createProjectsBtn:hover,
       .client-dashboard-container .btnContainer .myProjectsBtn:hover {
         background: #AAEFDF; }
-    .client-dashboard-container .btnContainer .createProjectsBtn {
-      border-radius: 0 5px 5px 0; }
-    .client-dashboard-container .btnContainer .myProjectsBtn {
-      border-radius: 5px 0 0 5px; }
+      .client-dashboard-container .btnContainer .createProjectsBtn:hover > a,
+      .client-dashboard-container .btnContainer .myProjectsBtn:hover > a {
+        color: white; }
     .client-dashboard-container .btnContainer a {
       text-decoration: none;
       color: #4F4F4F;
-      font-size: 20px;
+      font-size: 15px;
       font-family: "Raleway", sans-serif; }
   .client-dashboard-container .infoContainer {
     display: flex;
@@ -354,21 +369,23 @@ ui-view {
           outline-color: #AAEFDF; }
       .client-add-project-container .project-card form .submit-btn {
         align-self: flex-end;
-        width: 150px;
-        height: 40px;
-        padding: 10px;
-        margin: 10px;
+        background: none;
+        border: 3px solid #AAEFDF;
         border-radius: 5px;
-        border: none;
-        background: #ced0ce; }
+        color: #AAEFDF;
+        display: block;
+        font-size: 15px;
+        font-weight: bold;
+        margin: 10px;
+        padding: 10px;
+        position: relative;
+        text-transform: uppercase;
+        outline: none; }
         .client-add-project-container .project-card form .submit-btn:focus {
           outline: 0; }
         .client-add-project-container .project-card form .submit-btn:hover {
-          background: #AAEFDF; }
-
-.darken {
-  background: black;
-  z-index: 5; }
+          background: #AAEFDF;
+          color: white; }
 
 .client-projects-container {
   align-items: center;
@@ -403,6 +420,22 @@ ui-view {
     justify-content: center;
     box-shadow: 0 0 200px 40px #4f4f4f;
     border-radius: 5px; }
+    .editModal .modal-details .updateBtn {
+      background: none;
+      border: 3px solid #AAEFDF;
+      border-radius: 5px;
+      color: #AAEFDF;
+      display: block;
+      font-size: 15px;
+      font-weight: bold;
+      margin: 10px;
+      padding: 10px;
+      position: relative;
+      text-transform: uppercase;
+      outline: none; }
+      .editModal .modal-details .updateBtn:hover {
+        background: #AAEFDF;
+        color: #ffffff; }
   .editModal li {
     margin: 0 0 15px 10px; }
     .editModal li textarea {
@@ -456,6 +489,23 @@ ui-view {
       background: #AAEFDF; }
     .client-projects-container .project-details li:hover > .editIcon {
       display: inline; }
+  .client-projects-container .project-details .editBtn {
+    background: none;
+    border: 3px solid #AAEFDF;
+    border-radius: 5px;
+    color: #AAEFDF;
+    display: block;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 10px;
+    padding: 10px;
+    position: relative;
+    text-transform: uppercase;
+    outline: none; }
+    .client-projects-container .project-details .editBtn:hover {
+      background: #AAEFDF;
+      color: #ffffff;
+      cursor: pointer; }
 
 .editIcon {
   width: 15px;
@@ -490,8 +540,7 @@ ui-view {
         border: none;
         outline: none;
         width: 100%;
-        border-radius: 5px 0 0 5px;
-        box-shadow: 0px 0px 5px 0px #ced0ce; }
+        border-radius: 5px 0 0 5px; }
         .community-feed-container .flexContainer .postForm textarea::-webkit-input-placeholder {
           color: #ced0ce; }
         .community-feed-container .flexContainer .postForm textarea::-moz-placeholder {
@@ -505,12 +554,14 @@ ui-view {
         width: 100px;
         border: none;
         outline: none;
-        height: 42px;
+        height: 41px;
         margin: 0;
-        box-shadow: 0px 0px 5px 0px #ced0ce;
-        padding: 0; }
+        padding: 0;
+        font-family: "Raleway", sans-serif;
+        font-size: 1em; }
         .community-feed-container .flexContainer .postForm .askBtn:hover {
-          background: #AAEFDF; }
+          background: #AAEFDF;
+          color: white; }
     .community-feed-container .flexContainer .commPost {
       display: flex;
       flex-direction: column;
@@ -563,11 +614,10 @@ ui-view {
           width: 100%;
           resize: none;
           padding: 10px;
-          border: none;
+          border: 1px solid #e6e8e6;
           outline: none;
           height: 36px;
-          border-radius: 5px 0 0 5px;
-          box-shadow: 0px 0px 5px 0px #ced0ce; }
+          border-radius: 5px 0 0 5px; }
           .community-feed-container .flexContainer .commPost .responseForm textarea::-webkit-input-placeholder {
             color: #ced0ce; }
           .community-feed-container .flexContainer .commPost .responseForm textarea::-moz-placeholder {
@@ -582,9 +632,11 @@ ui-view {
           border: none;
           outline: none;
           margin: 0;
-          box-shadow: 0px 0px 5px 0px #ced0ce; }
+          font-family: "Raleway", sans-serif;
+          font-size: 1em; }
           .community-feed-container .flexContainer .commPost .responseForm .respondBtn:hover {
-            background: #AAEFDF; }
+            background: #AAEFDF;
+            color: white; }
   .community-feed-container .sidebar {
     width: 25%; }
     .community-feed-container .sidebar .user-stats {
@@ -656,7 +708,10 @@ ui-view {
   .dev-dashboard-container .btnContainer {
     margin: 40px 0 20px;
     display: flex;
-    justify-content: center; }
+    justify-content: center;
+    background: #ffffff;
+    width: 460px;
+    border-radius: 5px; }
     .dev-dashboard-container .btnContainer a {
       text-decoration: none;
       color: #4F4F4F;
@@ -665,23 +720,29 @@ ui-view {
     .dev-dashboard-container .btnContainer .allProjectsBtn,
     .dev-dashboard-container .btnContainer .commFeedBtn,
     .dev-dashboard-container .btnContainer .myProjectsBtn {
+      background: none;
+      border: 3px solid #AAEFDF;
+      border-radius: 5px;
+      color: #AAEFDF;
+      display: block;
+      font-size: 15px;
+      font-weight: bold;
+      margin: 10px;
       padding: 10px;
-      height: 40px;
-      width: 133px;
-      outline: none;
-      border: none;
-      background: #ffffff; }
+      position: relative;
+      text-transform: uppercase;
+      outline: none; }
       .dev-dashboard-container .btnContainer .allProjectsBtn:hover,
       .dev-dashboard-container .btnContainer .commFeedBtn:hover,
       .dev-dashboard-container .btnContainer .myProjectsBtn:hover {
         background: #AAEFDF; }
-    .dev-dashboard-container .btnContainer .commFeedBtn {
-      border-radius: 0 5px 5px 0; }
-    .dev-dashboard-container .btnContainer .myProjectsBtn {
-      border-radius: 5px 0 0 5px; }
+      .dev-dashboard-container .btnContainer .allProjectsBtn:hover > a,
+      .dev-dashboard-container .btnContainer .commFeedBtn:hover > a,
+      .dev-dashboard-container .btnContainer .myProjectsBtn:hover > a {
+        color: white; }
   .dev-dashboard-container .infoContainer {
     display: flex;
-    width: 402px;
+    width: 460px;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
@@ -899,26 +960,36 @@ header {
   padding-top: 10px;
   width: 80%;
   height: 100vh; }
+  .home-container .btnContainer {
+    display: flex;
+    bottom: 0;
+    align-items: center; }
   .home-container .main-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     background: transparent; }
   .home-container button {
-    padding: 10px;
-    margin: 10px;
+    background: none;
+    border: 3px solid #AAEFDF;
     border-radius: 5px;
-    outline: none;
-    width: 150px;
-    align-self: center;
-    background: transparent;
-    border: 1px solid #e6e8e6;
+    color: #AAEFDF;
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px;
+    padding: 10px;
     position: relative;
-    overflow: hidden;
-    border-radius: 5px; }
+    text-transform: uppercase;
+    outline: none; }
     .home-container button a {
-      text-decoration: none;
-      color: black; }
+      color: #AAEFDF;
+      text-decoration: none; }
+    .home-container button:hover {
+      background: #AAEFDF;
+      color: white; }
+    .home-container button:hover > a {
+      color: white; }
   .home-container .continueBtnContainer {
     display: flex;
     justify-content: center; }

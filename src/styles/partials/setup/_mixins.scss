@@ -1,13 +1,14 @@
-@mixin buttonAfter {
-  position: absolute;
-  transition: .3s;
-  content: '';
-  width: 0;
-  left: 50%;
-  bottom: 0;
-  background: #f7f7f7;
-  height: 120%;
-  left: -10%;
-  transform: skewX(15deg);
-  z-index: -1;
+@mixin button($size) {
+  background: none;
+  border: 3px solid $pop;
+  border-radius: 5px;
+  color: $pop;
+  display: block;
+  font-size: $size;
+  font-weight: bold;
+  margin: 10px;
+  padding: 10px;
+  position: relative;
+  text-transform: uppercase;
+  outline: none;
 }

@@ -55,6 +55,11 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
         });
     }
 
+    // function getClient() {
+    //   var url = "https://code-karma-api.herokuapp.com/clients/" + userId + "?token=" + token;
+    //   return url;
+    // }
+
     function getDev(callback) {
         $http({
             method: 'GET',
