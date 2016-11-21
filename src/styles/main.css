@@ -304,12 +304,37 @@ ui-view {
       display: inline; }
     .client-dashboard-container .infoContainer p {
       display: inline; }
-    .client-dashboard-container .infoContainer .orgLink,
-    .client-dashboard-container .infoContainer .orgName,
+    .client-dashboard-container .infoContainer .gitHubLink,
     .client-dashboard-container .infoContainer .name,
-    .client-dashboard-container .infoContainer .gitHubLink {
+    .client-dashboard-container .infoContainer .orgLink,
+    .client-dashboard-container .infoContainer .orgName {
       font-size: 20px;
       margin: 15px 10px; }
+      .client-dashboard-container .infoContainer .gitHubLink input,
+      .client-dashboard-container .infoContainer .name input,
+      .client-dashboard-container .infoContainer .orgLink input,
+      .client-dashboard-container .infoContainer .orgName input {
+        width: 250px;
+        font-size: 20px;
+        outline: none;
+        border: 1px solid #e6e8e6;
+        font-family: "Raleway", sans-serif;
+        padding: 2px; }
+      .client-dashboard-container .infoContainer .gitHubLink .save,
+      .client-dashboard-container .infoContainer .name .save,
+      .client-dashboard-container .infoContainer .orgLink .save,
+      .client-dashboard-container .infoContainer .orgName .save {
+        background: none;
+        border: 3px solid #AAEFDF;
+        border-radius: 5px;
+        color: #AAEFDF;
+        font-size: 12px;
+        font-weight: bold;
+        margin: 10px;
+        padding: 6px;
+        position: relative;
+        text-transform: uppercase;
+        outline: none; }
     .client-dashboard-container .infoContainer .editIcon {
       width: 15px;
       margin-left: 10px;
@@ -819,6 +844,29 @@ ui-view {
     .dev-dashboard-container .infoContainer .skills {
       font-size: 20px;
       margin: 15px 10px; }
+      .dev-dashboard-container .infoContainer .gitHubLink input,
+      .dev-dashboard-container .infoContainer .name input,
+      .dev-dashboard-container .infoContainer .skills input {
+        width: 250px;
+        font-size: 20px;
+        outline: none;
+        border: 1px solid #e6e8e6;
+        font-family: "Raleway", sans-serif;
+        padding: 2px; }
+      .dev-dashboard-container .infoContainer .gitHubLink .save,
+      .dev-dashboard-container .infoContainer .name .save,
+      .dev-dashboard-container .infoContainer .skills .save {
+        background: none;
+        border: 3px solid #AAEFDF;
+        border-radius: 5px;
+        color: #AAEFDF;
+        font-size: 12px;
+        font-weight: bold;
+        margin: 10px;
+        padding: 6px;
+        position: relative;
+        text-transform: uppercase;
+        outline: none; }
     .dev-dashboard-container .infoContainer .rank,
     .dev-dashboard-container .infoContainer .points,
     .dev-dashboard-container .infoContainer .contributions,
