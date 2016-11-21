@@ -29,6 +29,7 @@
 
     <div class="editModal" ng-show='clientProjects.show'>
       <ul class="modal-details">
+        <p class="minimize" ng-click="clientProjects.show = false"><img src="assets/delete.png" alt="Delete by Huu Nguyen from the Noun Project"</p>
           <li class="title">
               <h3 class="title" ng-hide="project.showTitleEdit">{{clientProjects.updateProject.title}}</h3>
               <img ng-hide="project.showTitleEdit" ng-click='project.showTitleEdit = true' class="editIcon" src="assets/editIcon.png" alt="edit by Laura Vilar from the Noun Project" />

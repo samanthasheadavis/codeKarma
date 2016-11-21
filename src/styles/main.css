@@ -420,7 +420,17 @@ ui-view {
     flex-direction: column;
     justify-content: center;
     box-shadow: 0 0 200px 40px #4f4f4f;
-    border-radius: 5px; }
+    border-radius: 5px;
+    position: relative; }
+    .editModal .modal-details .minimize {
+      position: absolute;
+      right: -5px;
+      top: -5px;
+      border-radius: 50%; }
+      .editModal .modal-details .minimize img {
+        width: 30px; }
+      .editModal .modal-details .minimize:hover {
+        cursor: pointer; }
     .editModal .modal-details .updateBtn {
       background: none;
       border: 3px solid #AAEFDF;
