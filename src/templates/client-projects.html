@@ -34,28 +34,24 @@
                     <h3 class="title" ng-hide="project.showTitleEdit">{{clientProjects.updateProject.title}}</h3>
                     <img ng-hide="project.showTitleEdit" ng-click='project.showTitleEdit = true' class="editIcon" src="assets/editIcon.png" alt="edit by Laura Vilar from the Noun Project" />
                     <input type="text" name="title" ng-show='project.showTitleEdit' ng-model='clientProjects.updateProject.title'>
-                    <!-- <button class="save" ng-show="project.showTitleEdit" ng-click="clientProjects.saveInfo()">Save</button> -->
                 </li>
                 <li class="snapshot">
                     <h4>Brief Description</h4>
-                    <p ng-hide="project.showSnapshotEdit">{{clientProjects.updateProject.snapshot}}</p>
+                    <p ng-hide="project.showSnapshotEdit">{{clientProjects.updateProject.brief_description}}</p>
                     <img ng-hide="project.showSnapshotEdit" ng-click='project.showSnapshotEdit = true' class="editIcon" src="assets/editIcon.png" alt="edit by Laura Vilar from the Noun Project" />
-                    <input type="text" name="snapshot" ng-show='project.showSnapshotEdit' ng-model="clientProjects.updateProject.snapshot">
-                    <!-- <button class="save" ng-show='project.showSnapshotEdit' ng-click="clientProjects.saveInfo()">Save</button> -->
+                    <input type="text" name="snapshot" ng-show='project.showSnapshotEdit' ng-model="clientProjects.updateProject.brief_description">
                 </li>
                 <li class="description">
                     <h4>Description</h4>
                     <p ng-hide="project.showDescriptionEdit">{{clientProjects.updateProject.description}}</p>
                     <img ng-hide="project.showDescriptionEdit" ng-click='project.showDescriptionEdit = true' class="editIcon" src="assets/editIcon.png" alt="edit by Laura Vilar from the Noun Project" />
                     <textarea type="text" name="description" ng-show='project.showDescriptionEdit' ng-model="clientProjects.updateProject.description"></textarea>
-                    <!-- <button class="save" ng-show='project.showDescriptionEdit' ng-click="clientProjects.saveInfo()">Save</button> -->
                 </li>
                 <li class="github-repo">
                     <h4>GitHub Repo URL</h4>
-                    <a ng-hide="project.showGithubRepoEdit">{{clientProjects.updateProject.repoUrl}}</a>
+                    <a ng-hide="project.showGithubRepoEdit">{{clientProjects.updateProject.github_repo_url}}</a>
                     <img ng-hide="project.showGithubRepoEdit" ng-click='project.showGithubRepoEdit = true' class="editIcon" src="assets/editIcon.png" alt="edit by Laura Vilar from the Noun Project" />
-                    <input type="text" name="githubRepo" ng-show='project.showGithubRepoEdit' ng-model="clientProjects.updateProject.repoUrl">
-                    <!-- <button class="save" ng-show='project.showGithubRepoEdit' ng-click="clientProjects.saveInfo()">Save</button> -->
+                    <input type="text" name="githubRepo" ng-show='project.showGithubRepoEdit' ng-model="clientProjects.updateProject.github_repo_url">
                 </li>
                 <li class="progress">
                     <h4>Developer Progress</h4>

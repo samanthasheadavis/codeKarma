@@ -70,9 +70,10 @@ angular.module('codeKarmaApp').controller('ClientProjectsController', function($
         };
 
         $.ajax(settings).done(function(response) {
-            console.log(response);
             this.show = false;
+            $state.reload();
         });
+
     };
 
     // post updated object to backend
