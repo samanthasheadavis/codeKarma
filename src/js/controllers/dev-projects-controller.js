@@ -4,7 +4,7 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
 
     $scope.updateButton = function() {
 
-      console.log("what the fuck is happening?");
+      console.log("in updateButton");
       this.complete = true;
 
 

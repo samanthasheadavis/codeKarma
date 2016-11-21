@@ -3,7 +3,7 @@ angular.module('codeKarmaApp').directive("slider", function() {
         restrict: 'A',
         scope: {
             progress: "=model",
-            updateButton: "&"
+            updateButton: "&updateButton"
         },
         link: function(scope, devProjects) {
             var setModel = function(value) {
