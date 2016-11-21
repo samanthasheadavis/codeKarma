@@ -34,6 +34,7 @@
 
         <div class="orgName">
             <p ng-hide='clientDashboard.showNameEdit'>{{clientDashboard.clientInfo.orgName}}</p>
+            <p ng-show="clientDashboard.showNameEdit">{{currentUser.orgName}}</p>
             <img ng-hide='clientDashboard.showNameEdit' ng-click='clientDashboard.showNameEdit=true' class="editIcon" src="assets/editIcon.png" alt="edit by Laura Vilar from the Noun Project" />
             <input type="text" name="orgName" ng-show='clientDashboard.showNameEdit' ng-model="clientDashboard.clientInfo.orgName">
             <button class="save" ng-show='clientDashboard.showNameEdit' ng-click="clientDashboard.updateInfo()">Save</button>
@@ -41,6 +42,7 @@
 
         <div class="orgLink">
             <p ng-hide='clientDashboard.showLinkEdit'>{{clientDashboard.clientInfo.orgLink}}</p>
+            <p ng-show='clientDashboard.showLinkEdit'>{{currentUser.orgSite}}</p>
             <img ng-hide='clientDashboard.showLinkEdit' ng-click='clientDashboard.showLinkEdit=true' class="editIcon" src="assets/editIcon.png" alt="edit by Laura Vilar from the Noun Project" />
             <input type="text" name="orgLink" ng-show='clientDashboard.showLinkEdit' ng-model="clientDashboard.clientInfo.orgLink">
             <button class="save" ng-show='clientDashboard.showLinkEdit' ng-click="clientDashboard.updateInfo()">Save</button>

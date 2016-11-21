@@ -5,11 +5,18 @@ angular.module('codeKarmaApp').controller('ClientDashboardController', function(
         this.url = RequestService.getProjectsUrl();
     };
 
-    // orgName and orgLink refer to the 'organization name' and 'website link' fieds.
+    // orgName and orgLink refer to the 'organization name' and 'website link' fields.
 
     this.clientInfo = {
-        orgName: "Your Organization's Name",
-        orgLink: "Your Website Link"
+      orgName: "Add a name for your organization",
+      orgLink: "Add a link to your website"
+    };
+
+    $scope.handleInfo = function(response) {
+      if (response.orgName === null || response.orgSite === null) {
+        this.showLinkEdit = false;
+        this.showNameEdit = false;
+      }
     };
 
     // updateInfo is the function that handles passing the updated org name or org link to the back end.
@@ -18,15 +25,23 @@ angular.module('codeKarmaApp').controller('ClientDashboardController', function(
         this.showLinkEdit = false;
         this.showNameEdit = false;
 
-        // might have to do two different posts, one for org name and one for org link
+        console.log(this.clientInfo);
 
-        // $http({
-        //     method: "PUT",
-        //     url: this.url,
-        //     data: this.clientInfo
-        // }).then(function successCallback(response) {
-        //     console.log(response);
-        // });
+        this.token = RequestService.fetchToken();
+
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://code-karma-api.herokuapp.com/clients/" + this.id + "?token=" + this.token,
+            "method": "PUT",
+            "data": this.clientInfo
+        };
+
+        $.ajax(settings).done(function(response) {
+            this.show = false;
+            $state.reload();
+        });
+
 
     };
 
@@ -36,6 +51,7 @@ angular.module('codeKarmaApp').controller('ClientDashboardController', function(
         RequestService.getClient(function(response) {
             $scope.currentUser = RequestService.createUser(response.data);
             console.log($scope.currentUser);
+            $scope.handleInfo($scope.currentUser);
         });
     };
 
