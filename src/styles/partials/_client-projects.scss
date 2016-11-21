@@ -126,6 +126,11 @@
             font-family: $raleway;
         }
 
+        img {
+          width: 25px;
+          margin-left: 15px;
+        }
+
         h3 {
             font-size: 30px;
             display: inline;
@@ -137,12 +142,6 @@
 
         p {
             display: inline;
-        }
-
-        &:hover > a,
-        &:hover > h3,
-        &:hover > p {
-            background: $pop;
         }
 
         &:hover > .editIcon {

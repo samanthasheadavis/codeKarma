@@ -489,6 +489,9 @@ ui-view {
       resize: none;
       font-size: 14px;
       font-family: "Raleway", sans-serif; }
+    .client-projects-container .project-details li img {
+      width: 25px;
+      margin-left: 15px; }
     .client-projects-container .project-details li h3 {
       font-size: 30px;
       display: inline; }
@@ -496,8 +499,6 @@ ui-view {
       color: #ced0ce; }
     .client-projects-container .project-details li p {
       display: inline; }
-    .client-projects-container .project-details li:hover > a, .client-projects-container .project-details li:hover > h3, .client-projects-container .project-details li:hover > p {
-      background: #AAEFDF; }
     .client-projects-container .project-details li:hover > .editIcon {
       display: inline; }
   .client-projects-container .project-details .editBtn {
