@@ -10,18 +10,17 @@
     .searchForm {
         display: flex;
         margin-top: 40px;
-        width: 60%;
         margin-bottom: 40px;
 
         textarea {
             resize: none;
             height: 20px;
             padding: 10px;
-            border: none;
+            border: 3px solid $pop;
             line-height: 20px;
             outline: none;
-            width: 100%;
-            border-radius: 5px 0 0 5px;
+            width: 300px;
+            border-radius: 5px;
             box-shadow: $box-shadow;
             @include placeholder {
                 color: $midGrey;
@@ -29,17 +28,14 @@
         }
 
         .searchBtn {
-            border-radius: 0 5px 5px 0;
-            width: 100px;
-            border: none;
-            outline: none;
-            height: 42px;
-            margin: 0;
-            box-shadow: $box-shadow;
-            padding: 0;
+          @include button(15px){};
+            margin-left: 10px;
+            margin-top: 0;
+            background: $white;
 
             &:hover {
                 background: $pop;
+                color: white;
             }
         }
     }
@@ -140,16 +136,11 @@
             }
 
             .details-btn {
-                padding: 10px;
-                margin: 0 10px 0 10px;
-                border-radius: 5px;
-                border: 3px solid $white;
-                height: 40px;
-                width: 100px;
-                align-self: flex-start;
+              @include button(12px){};
 
                 &:hover {
                     background: $pop;
+                    color: white;
                 }
 
                 &:focus {

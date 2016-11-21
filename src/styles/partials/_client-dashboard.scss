@@ -12,32 +12,26 @@
         margin: 40px 0 20px;
         display: flex;
         justify-content: center;
+        background: $white;
+        width: 100%;
 
         .createProjectsBtn,
         .myProjectsBtn {
-            height: 40px;
-            width: 200px;
-            outline: none;
-            border: none;
-            background: $white;
+          @include button(12px){};
 
             &:hover {
                 background: $pop;
             }
-        }
 
-        .createProjectsBtn {
-            border-radius: 0 5px 5px 0;
-        }
-
-        .myProjectsBtn {
-            border-radius: 5px 0 0 5px;
+            &:hover > a {
+              color: white;
+            }
         }
 
         a {
             text-decoration: none;
             color: $darkGrey;
-            font-size: 20px;
+            font-size: 15px;
             font-family: $raleway;
         }
     }
