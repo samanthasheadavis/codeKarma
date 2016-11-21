@@ -14,7 +14,6 @@ angular.module('codeKarmaApp').controller('ClientProjectsController', function($
 
         $.ajax(settings).done(function(response) {
             $scope.projects = response;
-            console.log($scope.projects);
             $scope.icons(response);
             $scope.$apply();
         });
@@ -23,7 +22,6 @@ angular.module('codeKarmaApp').controller('ClientProjectsController', function($
     $scope.icons = function(response) {
 
         for (var index = 0; index < response.length; index++) {
-          console.log(response[index].fix_type);
             if (response[index].fix_type === "Bug Fix") {
                 response[index].img_src = "bugfix";
                 response[index].img_alt = "Icon Fair";
