@@ -738,12 +738,14 @@ ui-view {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-content: flex-start;
   width: 80%;
   height: 100vh; }
   .dev-projects-container .project-card {
     background: #ffffff;
-    margin-bottom: 40px;
-    padding: 15px 10px;
+    align-self: flex-start;
+    padding: 15px 10px 0 10px;
+    margin-top: 40px;
     width: 60%;
     box-shadow: 0px 0px 5px 0px #ced0ce;
     border-radius: 5px; }
@@ -822,6 +824,16 @@ ui-view {
       border-width: 8px;
       border-style: solid;
       border-color: transparent #AAEFDF transparent transparent; }
+
+.dev-projects-container .update {
+  padding: 10px;
+  margin-top: 25px;
+  border-radius: 5px;
+  border: none;
+  height: 30px;
+  width: 100px; }
+  .dev-projects-container .update:hover {
+    background: #AAEFDF; }
 
 header {
   background: linear-gradient(#4F4F4F, #191919);

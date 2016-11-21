@@ -1,6 +1,14 @@
-angular.module('codeKarmaApp').controller('DevProjectsController', function($scope, $state, RequestService) {
+angular.module('codeKarmaApp').controller('DevProjectsController', function($scope, $state, RequestService, $rootScope) {
 
     this.complete = false;
+
+    $scope.updateButton = function() {
+
+      console.log("what the fuck is happening?");
+      this.complete = true;
+
+
+    };
 
     // get projects info
 
@@ -11,35 +19,28 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
     //     });
     // };
 
-    // delete this if slider doesn't work
+    // progress slider - will need to GET progress on page load
 
-    
-    $scope.price = 0;
-
-    $scope.setPrice = function(price) {
-        $scope.price = price;
-    };
-
-
+    $scope.progress = 0;
 
     // update and post progress
 
-    this.updateStatus = function(status) {
-
-        this.status = status;
-
-        // if progress < 100%, show "ask for help" button
-        // if progress === 100%, show "submit project" and disable est. completion date
-
-        if (this.status !== "100") {
-            this.complete = false;
-        } else if (this.status === "100") {
-            this.complete = true;
-        }
-
-        // RequestService.setProgress(progress);
-
-    };
+    // this.updateProgress = function(status) {
+    //
+    //     this.status = status;
+    //
+    //     // if progress < 100%, show "ask for help" button
+    //     // if progress === 100%, show "submit project" and disable est. completion date
+    //
+    //     if (this.status !== "100") {
+    //         this.complete = false;
+    //     } else if (this.status === "100") {
+    //         this.complete = true;
+    //     }
+    //
+    //     // RequestService.setProgress(progress);
+    //
+    // };
 
     this.updateEstDate = function(date) {
 

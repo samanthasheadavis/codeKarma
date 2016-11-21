@@ -38,8 +38,8 @@
                 <!-- <label for="status">percent complete</label> -->
 
                 <div class="status">
-                  progress :  {{price}}%
-                <div slider id="flat-slider" model="price" class="cdbl-slider"></div>
+                  progress :  <span class="progress">{{progress}}</span>%
+                <div slider id="flat-slider" model="progress"></div>
                 </div>
                 <!-- <select ng-model="status" class="status" ng-change="devProjects.updateStatus(status)">
                 <option class="0">0</option>
@@ -55,9 +55,9 @@
                 <option class="100">100</option>
                 </select> -->
 
-
                 <label for="completion-date" class="date">est. completion date</label>
                 <input ng-disabled="devProjects.complete" ng-model="completionDate" name="completionDate" type="date">
+                <button type="submit" class="update" ngClick="updateProgress(progress)">Update</button>
             </form>
             <button ng-hide="devProjects.complete" class="help-btn" ui-sref="codeKarmaParent.communityFeed">Ask for Help</button>
             <div ng-hide="!devProjects.complete" class="tooltip">
