@@ -76,7 +76,9 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
             name: response.name,
             email: response.email,
             image: response.image,
-            github: response.github
+            github: response.github,
+            orgName: response.organization_name,
+            orgSite: response.organization_site
         };
         return currentUser;
     }
