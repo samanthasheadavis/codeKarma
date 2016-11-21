@@ -70,14 +70,15 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
     }
 
     function createUser(response) {
-        currentUser = {
-            username: response.info.nickname,
-            name: response.info.name,
-            email: response.info.email,
-            image: response.info.image,
-            github: response.info.urls.GitHub
-        };
-        return currentUser;
+        // currentUser = {
+        //     username: response.github_oauth_data.info.nickname,
+        //     name: response.info.name,
+        //     email: response.info.email,
+        //     image: response.info.image,
+        //     github: response.info.urls.GitHub
+        // };
+        console.log(response);
+        // return currentUser;
     }
 
     function setProgress(progress) {

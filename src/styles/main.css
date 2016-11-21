@@ -479,6 +479,8 @@ ui-view {
 .client-projects-container .project-details {
   display: flex;
   flex-direction: column; }
+  .client-projects-container .project-details .title {
+    display: flex; }
   .client-projects-container .project-details li {
     margin: 0 0 15px 10px; }
     .client-projects-container .project-details li textarea {
@@ -501,6 +503,39 @@ ui-view {
       display: inline; }
     .client-projects-container .project-details li:hover > .editIcon {
       display: inline; }
+    .client-projects-container .project-details li .categories {
+      display: flex;
+      flex-direction: column; }
+      .client-projects-container .project-details li .categories .category-image {
+        position: relative; }
+        .client-projects-container .project-details li .categories .category-image:hover .tooltiptext {
+          display: block; }
+        .client-projects-container .project-details li .categories .category-image .tooltiptext {
+          background: #AAEFDF;
+          border-radius: 5px;
+          color: #191919;
+          display: none;
+          font-size: 12px;
+          line-height: 16px;
+          left: 140%;
+          top: -25%;
+          padding: 5px;
+          position: absolute;
+          text-align: center;
+          width: 120px;
+          z-index: 5; }
+          .client-projects-container .project-details li .categories .category-image .tooltiptext:after {
+            content: " ";
+            position: absolute;
+            top: 45%;
+            right: 100%;
+            margin-top: -5px;
+            border-width: 8px;
+            border-style: solid;
+            border-color: transparent #AAEFDF transparent transparent; }
+          .client-projects-container .project-details li .categories .category-image .tooltiptext span {
+            letter-spacing: 0.1em;
+            display: block; }
   .client-projects-container .project-details .editBtn {
     background: none;
     border: 3px solid #AAEFDF;
