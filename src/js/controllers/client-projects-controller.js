@@ -66,7 +66,6 @@ angular.module('codeKarmaApp').controller('ClientProjectsController', function($
             "crossDomain": true,
             "url": "https://code-karma-api.herokuapp.com/projects/" + this.id + "?token=" + this.token,
             "method": "PUT",
-            "dataType": "jsonp",
             "data": this.updateProject
         };
 
