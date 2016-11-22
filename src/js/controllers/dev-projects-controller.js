@@ -21,8 +21,6 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
         });
     };
 
-
-
     // progress slider - will need to GET progress on page load
 
     $scope.progress = 0;
