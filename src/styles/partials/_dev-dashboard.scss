@@ -16,7 +16,7 @@
         margin: 40px 0 20px;
         display: flex;
         justify-content: center;
-        background: $white;
+        background: $pop;
         width: 460px;
         border-radius: 5px;
         box-shadow: $box-shadow;
@@ -36,10 +36,11 @@
 
         a {
           text-decoration: none;
-          color: $darkGrey;
+          color: $charcoal;
           font-size: 14px;
           font-family: $raleway;
           font-weight: bold;
+          padding-bottom: 5px;
 
           @include media (mobile) {
             font-size: 13px;
@@ -53,8 +54,8 @@
         .allProjectsBtn, .commFeedBtn, .myProjectsBtn {
           height: 50px;
           width: 33.33%;
-          border: 3px solid $pop;
-          background: $white;
+          border: none;
+          background: $pop;
 
           &:hover {
             background: $pop;
@@ -69,16 +70,28 @@
         .myProjectsBtn {
           border-bottom-left-radius: $border-radius;
           border-top-left-radius: $border-radius;
+
+          &:hover a {
+            border-bottom: 5px solid $white;
+          }
         }
 
         .allProjectsBtn {
-          border-right: none;
-          border-left: none;
+          border-right: 3px solid $lightGrey;
+          border-left: 3px solid $lightGrey;
+
+          &:hover a {
+            border-bottom: 5px solid $white;
+          }
         }
 
         .commFeedBtn {
           border-bottom-right-radius: $border-radius;
           border-top-right-radius: $border-radius;
+
+          &:hover a {
+            border-bottom: 5px solid $white;
+          }
         }
 
         // .allProjectsBtn,
