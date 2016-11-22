@@ -21,11 +21,11 @@ angular.module('codeKarmaApp').directive("slider", function() {
                     scope.$apply(function() {
                         scope.progress = ui.value;
                         if (scope.progress !== 100) {
-                            ctrl.complete = false;
+                            // ctrl.complete = false;
                             setModel(false);
                         } else if (scope.progress === 100) {
                           setModel(true);
-                            ctrl.complete = true;
+                            // ctrl.complete = true;
                             scope.updateButton();
                         }
                     });

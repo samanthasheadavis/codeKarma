@@ -33,29 +33,30 @@
                 <button type="button" class="askBtn" ng-click="communityFeed.addPost()">Ask</button>
             </form>
 
-            <div class="commPost">
+            <div class="commPost" ng-repeat="post in posts">
 
                 <div class="postContainer">
-                    <img class="questioner-img" src="{{posts.questioner_image}}" alt="{{posts.questioner}}">
-                    <p class="question">{{posts.question}}</p>
-                    <p class="likeAmount"><span>{{posts.likes}}</span> Likes</p>
+                    <img class="questioner-img" src="{{post.questioner_image}}" alt="{{post.questioner}}">
+                    <p class="question">{{post.question}}</p>
+                    <p class="likeAmount"><span>{{post.likes}}</span> Likes</p>
                     <img class="like" src="assets/like.png" alt="like by dilayorganci from the Noun Project" ng-click="communityFeed.updateLikes(communityFeed.likes)">
                 </div>
 
                 <div class="postInfoContainer">
-                    <h1 class="name">{{posts.questioner}}</h1>
-                    <p class="timeElapsed"><span class="timeStamp">{{posts.timeElapsed}}</span> ago</p>
+                    <h1 class="name">{{post.questioner}}</h1>
+                    <p class="timeElapsed"><span class="timeStamp">{{post.timeElapsed}}</span> ago</p>
                 </div>
 
                 <div class="responsesContainer">
-                    <p class='response'>
-                        Cool story bro.
-                    </p>
+                  <div class="response" ng-repeat="comment in post.comments">
+                    <p class="" >{{comment.comment}}</p>
+                  </div>
+
                 </div>
 
                 <div class="responseForm">
                     <textarea name="post" placeholder="Post a response" ng-model="communityFeed.response"></textarea>
-                    <button type="button" class="respondBtn" ng-click="communityFeed.addResponse(communityFeed.response)">Post</button>
+                    <button type="button" class="respondBtn" ng-click="communityFeed.addResponse(communityFeed.response, posts.question_id)">Post</button>
                 </div>
 
             </div>
