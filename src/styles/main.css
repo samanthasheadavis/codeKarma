@@ -634,6 +634,7 @@ ui-view {
       margin-bottom: 40px; }
       .community-feed-container .flexContainer .postForm textarea {
         resize: none;
+        background: #e6e8e6;
         font-size: 18px;
         height: 20px;
         padding: 10px;
@@ -714,7 +715,7 @@ ui-view {
           .community-feed-container .flexContainer .commPost .responsesContainer .response .commenter-photo {
             height: 40px;
             border-radius: 50%;
-            border: 2px solid #AAEFDF;
+            border: 2px solid #4F4F4F;
             align-self: center; }
           .community-feed-container .flexContainer .commPost .responsesContainer .response .comment {
             align-self: center; }
@@ -796,7 +797,7 @@ ui-view {
     .community-feed-container .sidebar .rank {
       margin-bottom: 15px; }
   .community-feed-container .leaderboard {
-    background: #ffffff;
+    background: rgba(170, 239, 223, 0.6);
     border-radius: 5px;
     box-shadow: 0px 0px 5px 0px #ced0ce;
     height: 250px;
@@ -816,12 +817,12 @@ ui-view {
       width: 100%;
       margin: 15px 10px; }
       .community-feed-container .leaderboard li h3 {
-        margin-top: 15px; }
+        margin-top: 15px;
+        font-weight: bold; }
       .community-feed-container .leaderboard li .prof-pic {
-        height: 30px;
-        width: 15%;
-        margin-right: 10px;
-        background: #e6e8e6; }
+        height: 40px;
+        border-radius: 10px;
+        margin-right: 10px; }
       .community-feed-container .leaderboard li .rank {
         width: 12%; }
       .community-feed-container .leaderboard li .username {
@@ -1202,7 +1203,7 @@ header {
       align-items: center;
       display: flex; }
     header .navList .active {
-      background: #e6e8e6;
+      background: #ffffff;
       color: #191919; }
   header a {
     text-decoration: none;

@@ -18,15 +18,13 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
             // this.time = $scope.posts.created.slice(11, 19);
             // $scope.posts.timeElapsed = this.date + ' ' + this.time;
 
-            console.log($scope.posts);
-
             for (var index = 0; index < $scope.posts.length; index++) {
 
                 if ($scope.posts[index].comments.length > 0) {
                     var currentPost = $scope.posts[index].comments;
 
                     for (var commIndex = 0; commIndex < currentPost.length; commIndex++) {
-                      
+
                         this.commentDate = currentPost[commIndex].created.slice(0, 10);
                         this.commentTime = currentPost[commIndex].created.slice(11, 19);
                         currentPost[commIndex].commentTimestamp = this.commentDate + ' ' + this.commentTime;
@@ -65,8 +63,16 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
         });
     };
 
+    this.getLeaderboard = function() {
+      RequestService.getLeaderboard(function(response) {
+        console.log(response);
+        $scope.leaderboard = response.all_developer_rankings;
+      });
+    };
+
 
 
     this.getDev();
     this.getPosts();
+    this.getLeaderboard();
 });

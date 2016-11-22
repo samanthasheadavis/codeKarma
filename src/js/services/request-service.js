@@ -146,19 +146,15 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
 
     }
 
-    function getLeaderboard() {
+    function getLeaderboard(callback) {
       var settings = {
           "async": true,
           "crossDomain": true,
-          "url": 'url',
+          "url": 'https://code-karma-api.herokuapp.com/developers/rank?token=' + token,
           "method": "GET"
       };
 
-      $.ajax(settings).done(function(response) {
-
-          console.log(response);
-
-        });
+      $.ajax(settings).done(callback);
     }
 
     function postQuestion(post) {
@@ -226,7 +222,7 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
         getLeaderboard: getLeaderboard,
         postQuestion: postQuestion,
         getPosts: getPosts,
-        postComment: postComment
+        postComment: postComment,
     };
 
 });

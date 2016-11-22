@@ -24,6 +24,7 @@
 
             textarea {
                 resize: none;
+                background: $lightGrey;
                 font-size: 18px;
                 height: 20px;
                 padding: 10px;
@@ -119,7 +120,7 @@
                     .commenter-photo {
                       height: 40px;
                       border-radius: 50%;
-                      border: 2px solid $pop;
+                      border: 2px solid $darkGrey;
                       align-self: center;
                     }
 
@@ -239,7 +240,7 @@
     }
 
     .leaderboard {
-        background: $white;
+        background: rgba(170, 239, 223, .6);
         border-radius: $border-radius;
         box-shadow: $box-shadow;
         height: 250px;
@@ -264,13 +265,13 @@
 
             h3 {
                 margin-top: $vspace;
+                font-weight: bold;
             }
 
             .prof-pic {
-                height: 30px;
-                width: 15%;
+                height: 40px;
+                border-radius: 10px;
                 margin-right: $hspace;
-                background: $lightGrey;
             }
 
             .rank {
