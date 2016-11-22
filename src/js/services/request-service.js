@@ -188,6 +188,24 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
       $.ajax(settings).done(callback);
     }
 
+    function postComment(post) {
+      var settings = {
+          "async": true,
+          "crossDomain": true,
+          "url": 'https://code-karma-api.herokuapp.com/karma_comments?token=' + token,
+          "method": "POST",
+          "data": post
+      };
+
+      $.ajax(settings).done(function(response) {
+
+          console.log(response);
+
+        });
+    }
+
+
+
 
 
     return {
@@ -207,7 +225,8 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
         getDevProjects: getDevProjects,
         getLeaderboard: getLeaderboard,
         postQuestion: postQuestion,
-        getPosts: getPosts
+        getPosts: getPosts,
+        postComment: postComment
     };
 
 });

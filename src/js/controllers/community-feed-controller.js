@@ -2,36 +2,35 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
 
     this.post = '';
     this.response = '';
-    this.likes = 12;
 
     this.addPost = function() {
-        console.log(this.post);
-
         this.newQuestion = {
           "karma_question": this.post
         };
         RequestService.postQuestion(this.newQuestion);
-
         this.post = '';
     };
 
     this.getPosts = function () {
       RequestService.getPosts(function(response) {
-        $scope.posts = response[0];
-        console.log($scope.posts);
-
+        $scope.posts = response[1];
         this.date = $scope.posts.created.slice(0, 10);
         this.time = $scope.posts.created.slice(11, 19);
         $scope.posts.timeElapsed = this.date + ' ' + this.time;
-        console.log($scope.posts.timeElapsed);
 
-
+        console.log($scope.posts);
       });
 
     };
 
-    this.addResponse = function(response) {
-      var newResponse = $('<p>').attr('class', 'response').html(response).appendTo('.responsesContainer');
+    this.addResponse = function(comment) {
+      var newResponse = $('<p>').attr('class', 'response').html(comment).appendTo('.responsesContainer');
+
+      this.newComment = {
+        "karma_comment": comment
+      };
+      RequestService.postComment(this.newComment);
+      this.response = '';
     };
 
     this.updateLikes = function(likes) {
