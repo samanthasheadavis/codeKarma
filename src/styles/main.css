@@ -615,7 +615,7 @@ ui-view {
 .community-feed-container {
   background: #e6e8e6;
   width: 80%;
-  height: 100vh; }
+  height: 100%; }
   .community-feed-container .flexContainer {
     display: flex;
     flex-direction: row;

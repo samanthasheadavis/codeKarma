@@ -13,21 +13,23 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
 
     this.getPosts = function () {
       RequestService.getPosts(function(response) {
-        $scope.posts = response[1];
-        this.date = $scope.posts.created.slice(0, 10);
-        this.time = $scope.posts.created.slice(11, 19);
-        $scope.posts.timeElapsed = this.date + ' ' + this.time;
+        $scope.posts = response;
+        // this.date = $scope.posts.created.slice(0, 10);
+        // this.time = $scope.posts.created.slice(11, 19);
+        // $scope.posts.timeElapsed = this.date + ' ' + this.time;
 
         console.log($scope.posts);
+        $scope.$apply();
       });
 
     };
 
-    this.addResponse = function(comment) {
-      var newResponse = $('<p>').attr('class', 'response').html(comment).appendTo('.responsesContainer');
+    this.addResponse = function(comment, id) {
+      // var newResponse = $('<p>').attr('class', 'response').html(comment).appendTo('.responsesContainer');
 
       this.newComment = {
-        "karma_comment": comment
+        "karma_comment": comment,
+        "karma_question_id": id
       };
       RequestService.postComment(this.newComment);
       this.response = '';

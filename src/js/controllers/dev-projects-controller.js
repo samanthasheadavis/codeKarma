@@ -1,12 +1,13 @@
-angular.module('codeKarmaApp').controller('DevProjectsController', function($scope, $state, RequestService, $rootScope) {
+angular.module('codeKarmaApp').controller('DevProjectsController', function($scope, $state, RequestService) {
 
-    this.complete = false;
+    this.projectComplete = false;
 
     $scope.updateButton = function() {
 
       console.log("in updateButton");
-      this.complete = true;
-      console.log(this.complete);
+      this.projectComplete = true;
+      console.log(this.projectComplete);
+      // $scope.$apply();
 
     };
 
