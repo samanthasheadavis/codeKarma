@@ -11,16 +11,16 @@ angular.module('codeKarmaApp').controller('DevDashboardController', function($st
     this.updateInfo = function(value) {
       console.log('in updateInfo');
         if ($scope.currentUser.skills.length === 0) {
-          console.log('in skills false');
-            this.skills = [];
-            this.skills.push(this.newSkill);
-            $scope.currentUser.skills = this.skills;
-            RequestService.postSkills($scope.currentUser.skills);
+            this.skills = {
+              "skills": this.newSkill
+            };
+            RequestService.putSkills(this.skills);
             this.newSkill = '';
         } else if ($scope.currentUser.skills.length > 0) {
-          console.log('in skills true');
-            $scope.currentUser.skills.push(this.newSkill);
-            RequestService.putSkills($scope.currentUser.skills);
+          this.skills = {
+            "skills": $scope.currentUser.skills + ', ' + this.newSkill
+          };
+            RequestService.putSkills(this.skills);
             this.newSkill = '';
         }
 

@@ -783,35 +783,32 @@ ui-view {
     justify-content: center;
     background: #ffffff;
     width: 460px;
-    border-radius: 5px; }
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 0px #ced0ce; }
     .dev-dashboard-container .btnContainer a {
       text-decoration: none;
       color: #4F4F4F;
       font-size: 14px;
-      font-family: "Raleway", sans-serif; }
-    .dev-dashboard-container .btnContainer .allProjectsBtn,
-    .dev-dashboard-container .btnContainer .commFeedBtn,
-    .dev-dashboard-container .btnContainer .myProjectsBtn {
-      background: none;
+      font-family: "Raleway", sans-serif;
+      font-weight: bold; }
+    .dev-dashboard-container .btnContainer .allProjectsBtn, .dev-dashboard-container .btnContainer .commFeedBtn, .dev-dashboard-container .btnContainer .myProjectsBtn {
+      height: 50px;
+      width: 33.33%;
       border: 3px solid #AAEFDF;
-      border-radius: 5px;
-      color: #AAEFDF;
-      display: block;
-      font-size: 15px;
-      font-weight: bold;
-      margin: 10px;
-      padding: 10px;
-      position: relative;
-      text-transform: uppercase;
-      outline: none; }
-      .dev-dashboard-container .btnContainer .allProjectsBtn:hover,
-      .dev-dashboard-container .btnContainer .commFeedBtn:hover,
-      .dev-dashboard-container .btnContainer .myProjectsBtn:hover {
+      background: #ffffff; }
+      .dev-dashboard-container .btnContainer .allProjectsBtn:hover, .dev-dashboard-container .btnContainer .commFeedBtn:hover, .dev-dashboard-container .btnContainer .myProjectsBtn:hover {
         background: #AAEFDF; }
-      .dev-dashboard-container .btnContainer .allProjectsBtn:hover > a,
-      .dev-dashboard-container .btnContainer .commFeedBtn:hover > a,
-      .dev-dashboard-container .btnContainer .myProjectsBtn:hover > a {
-        color: white; }
+      .dev-dashboard-container .btnContainer .allProjectsBtn:focus, .dev-dashboard-container .btnContainer .commFeedBtn:focus, .dev-dashboard-container .btnContainer .myProjectsBtn:focus {
+        outline: 0; }
+    .dev-dashboard-container .btnContainer .myProjectsBtn {
+      border-bottom-left-radius: 5px;
+      border-top-left-radius: 5px; }
+    .dev-dashboard-container .btnContainer .allProjectsBtn {
+      border-right: none;
+      border-left: none; }
+    .dev-dashboard-container .btnContainer .commFeedBtn {
+      border-bottom-right-radius: 5px;
+      border-top-right-radius: 5px; }
   .dev-dashboard-container .infoContainer {
     display: flex;
     width: 460px;

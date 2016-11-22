@@ -14,27 +14,60 @@
         background: $white;
         width: 460px;
         border-radius: 5px;
+        box-shadow: $box-shadow;
 
         a {
           text-decoration: none;
           color: $darkGrey;
           font-size: 14px;
           font-family: $raleway;
+          font-weight: bold;
         }
 
-        .allProjectsBtn,
-        .commFeedBtn,
+        .allProjectsBtn, .commFeedBtn, .myProjectsBtn {
+          height: 50px;
+          width: 33.33%;
+          border: 3px solid $pop;
+          background: $white;
+
+          &:hover {
+            background: $pop;
+          }
+
+          &:focus {
+            outline: 0;
+          }
+
+        }
+
         .myProjectsBtn {
-          @include button(15px){};
-
-            &:hover {
-              background: $pop;
-            }
-
-            &:hover > a {
-              color: white;
-            }
+          border-bottom-left-radius: $border-radius;
+          border-top-left-radius: $border-radius;
         }
+
+        .allProjectsBtn {
+          border-right: none;
+          border-left: none;
+        }
+
+        .commFeedBtn {
+          border-bottom-right-radius: $border-radius;
+          border-top-right-radius: $border-radius;
+        }
+
+        // .allProjectsBtn,
+        // .commFeedBtn,
+        // .myProjectsBtn {
+        //   @include button(15px){};
+        //
+        //     &:hover {
+        //       background: $pop;
+        //     }
+        //
+        //     &:hover > a {
+        //       color: white;
+        //     }
+        // }
     }
 
     .infoContainer {

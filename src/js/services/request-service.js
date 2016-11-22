@@ -105,7 +105,7 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
     function forkRepo(id) {
       $http({
           method: 'POST',
-          url: 'https://code-karma-api.herokuapp.com/projects/' + id + '?token=' + token
+            url: 'https://code-karma-api.herokuapp.com/projects/' + id + '?token=' + token
       }).then(function successCallback(response) {
         $state.go('codeKarmaParent.devProjects');
       }, function errorCallback(response) {
@@ -115,20 +115,35 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
 
     function putSkills(skills){
 
-        $http({
-            method: 'PUT',
-            data: skills,
-            url: 'https://code-karma-api.herokuapp.com/developers/' + userId + '?token=' + token,
-        }).then(function successCallback(response) {
-            console.log(response);
-        }, function errorCallback(response) {
-            console.log(response);
-            return response;
-        });
+      console.log(skills);
+
+      var settings = {
+          "async": true,
+          "crossDomain": true,
+          "url": 'https://code-karma-api.herokuapp.com/developers/' + userId + '?token=' + token,
+          "method": "PUT",
+          "data": skills
+      };
+      $.ajax(settings).done(function(response) {
+          console.log(response);
+      });
+
+        // $http({
+        //     method: 'PUT',
+        //     data: skills,
+        //     url: 'https://code-karma-api.herokuapp.com/developers/' + userId + '?token=' + token,
+        // }).then(function successCallback(response) {
+        //     console.log(response);
+        // }, function errorCallback(response) {
+        //     console.log(response);
+        //     return response;
+        // });
 
     }
 
     function postSkills(skills){
+
+        console.log(skills);
 
         $http({
             method: 'POST',
