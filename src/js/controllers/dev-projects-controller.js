@@ -10,6 +10,10 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
 
     };
 
+    this.pullRequest = function() {
+      this.showModal = true;
+    };
+
     // get projects info
 
     this.getProjects = function() {

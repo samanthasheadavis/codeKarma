@@ -982,6 +982,11 @@ ui-view {
     background: #ffffff;
     box-shadow: 0 0 200px 40px #4f4f4f;
     border-radius: 5px; }
+    .dev-projects-container .pull-request-modal img {
+      width: 30px;
+      position: absolute;
+      right: -5px;
+      top: -5px; }
     .dev-projects-container .pull-request-modal h1 {
       font-size: 20px;
       margin-bottom: 10px; }

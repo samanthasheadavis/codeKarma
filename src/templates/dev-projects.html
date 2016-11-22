@@ -27,7 +27,8 @@
         </nav>
     </header>
 
-    <div class="pull-request-modal">
+    <div class="pull-request-modal" ng-show="devProjects.showModal">
+      <img src="assets/delete.png" alt="Delete by Huu Nguyen from the Noun Project" ng-click="devProjects.showModal = false">
       <h1>Project Title Pull Request</h1>
       <p class="project-body">Body text</p>
       <div class="select-container">
@@ -47,7 +48,7 @@
     </div>
 
     <div class="project-card">
-        <h3 class="title">Org Name - Project Title</h3>
+        <h3 class="title" ng-click="devProjects.pullRequest()">Org Name - Project Title</h3>
         <div class="details">
             <form>
                 <!-- <label for="status">percent complete</label> -->
@@ -72,11 +73,11 @@
 
                 <label for="completion-date" class="date">est. completion date</label>
                 <input ng-disabled="devProjects.complete" ng-model="completionDate" name="completionDate" type="date">
-                <button type="submit" class="update" ngClick="updateProgress(progress)">Update</button>
+                <button type="submit" class="update" ng-click="updateProgress(progress)">Update</button>
             </form>
             <button ng-hide="devProjects.complete" class="help-btn" ui-sref="codeKarmaParent.communityFeed">Ask for Help</button>
             <div ng-hide="!devProjects.complete" class="tooltip">
-              <button class="submit-btn">Submit Project</button>
+              <button class="submit-btn" ng-click="devProjects.pullRequest()">Submit Project</button>
               <p class="tooltiptext">submit a pull request to GitHub</p>
             </div>
         </div>
