@@ -35,6 +35,7 @@ this.getDev = function() {
     RequestService.getDev(function(response) {
         console.log(response);
         $scope.currentUser = RequestService.createUser(response.data);
+        // $scope.skillsList = $scope.currentUser.skills.split(', ');
     });
 };
 

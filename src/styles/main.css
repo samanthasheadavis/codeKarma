@@ -878,13 +878,16 @@ ui-view {
     .dev-dashboard-container .infoContainer .skills {
       height: auto; }
       .dev-dashboard-container .infoContainer .skills p {
-        display: block; }
+        display: block;
+        margin-bottom: 15px; }
     .dev-dashboard-container .infoContainer .editIcon {
       width: 15px;
       margin-left: 10px;
       display: none; }
       .dev-dashboard-container .infoContainer .editIcon:hover {
         cursor: pointer; }
+    .dev-dashboard-container .infoContainer .skills-header {
+      font-weight: bold; }
 
 .dev-projects-container {
   background: #e6e8e6;

@@ -156,6 +156,7 @@
 
           p {
             display: block;
+            margin-bottom: $vspace;
           }
         }
 
@@ -167,6 +168,10 @@
             &:hover {
                 cursor: pointer;
             }
+        }
+
+        .skills-header {
+          font-weight: bold;
         }
     }
 }

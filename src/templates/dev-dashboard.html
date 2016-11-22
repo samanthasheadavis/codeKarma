@@ -46,8 +46,9 @@
         </div>
 
         <div class="skills">
-            <p>Skills</p>
-            <p ng-repeat="skill in devDashboard.skills">{{skill}}</p>
+            <p class="skills-header">SKILLS</p>
+            <!-- <p ng-repeat="skill in skillsList">{{skill}}</p> -->
+            <p class="skills-list">{{currentUser.skills}}</p>
             <img ng-click='devDashboard.showSkillEdit=true' class="editIcon" src="assets/plus.png" alt="Plus by Eagle Eye from the Noun Project" />
             <input type="text" name="skill" ng-show='devDashboard.showSkillEdit' ng-model="devDashboard.newSkill">
             <button class="save" ng-show='devDashboard.showSkillEdit' ng-click="devDashboard.updateInfo('skills')">Save</button>
