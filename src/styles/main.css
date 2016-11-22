@@ -1092,6 +1092,9 @@ header {
       height: 50px;
       align-items: center;
       display: flex; }
+    header .navList .active {
+      background: #e6e8e6;
+      color: #191919; }
   header a {
     text-decoration: none;
     position: relative;

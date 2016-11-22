@@ -41,6 +41,11 @@ header {
             align-items: center;
             display: flex;
         }
+
+        .active {
+          background: $lightGrey;
+          color: $charcoal;
+        }
     }
 
     a {
