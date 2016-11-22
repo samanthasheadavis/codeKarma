@@ -15,11 +15,19 @@ header {
         font-family: $catamaran;
         font-weight: 900;
         letter-spacing: 0.1em;
+
+        &:hover {
+          cursor: pointer;
+        }
     }
 
     img {
         height: 40px;
         margin-left: $hspace;
+        
+        &:hover {
+          cursor: pointer;
+        }
     }
 
     .navList {

@@ -776,7 +776,8 @@ ui-view {
   flex-direction: column;
   align-items: center;
   width: 80%;
-  justify-content: flex-start; }
+  justify-content: flex-start;
+  transition: all .5s ease; }
   @media only screen and (max-width: 700px) {
     .dev-dashboard-container {
       width: 100%; } }
@@ -787,7 +788,8 @@ ui-view {
     background: #ffffff;
     width: 460px;
     border-radius: 5px;
-    box-shadow: 0px 0px 5px 0px #ced0ce; }
+    box-shadow: 0px 0px 5px 0px #ced0ce;
+    transition: all .5s ease; }
     @media only screen and (max-width: 525px) {
       .dev-dashboard-container .btnContainer {
         width: 400px; } }
@@ -836,7 +838,8 @@ ui-view {
     background: #ffffff;
     box-shadow: 0px 0px 5px 0px #ced0ce;
     border-radius: 5px;
-    margin-bottom: 50px; }
+    margin-bottom: 50px;
+    transition: all .5s ease; }
     @media only screen and (max-width: 525px) {
       .dev-dashboard-container .infoContainer {
         width: 400px; } }
@@ -846,17 +849,13 @@ ui-view {
     @media only screen and (max-width: 330px) {
       .dev-dashboard-container .infoContainer {
         width: 280px; } }
-    .dev-dashboard-container .infoContainer .profilePic {
+    .dev-dashboard-container .infoContainer img.profilePic {
       margin-top: 20px;
-      width: 150px;
       height: 150px;
       box-shadow: 0px 0px 5px 0px #ced0ce;
       border-radius: 50%;
-      margin: 15px 10px; }
-      .dev-dashboard-container .infoContainer .profilePic img {
-        width: 150px;
-        border-radius: 50%;
-        box-shadow: 0px 0px 5px 0px #ced0ce; }
+      margin: 15px 10px;
+      border: none; }
     .dev-dashboard-container .infoContainer:hover > .skills > p.skills-list {
       background: #AAEFDF; }
     .dev-dashboard-container .infoContainer:hover > .skills > .editIcon {
@@ -1034,9 +1033,13 @@ header {
     font-family: "Catamaran", sans-serif;
     font-weight: 900;
     letter-spacing: 0.1em; }
+    header h1:hover {
+      cursor: pointer; }
   header img {
     height: 40px;
     margin-left: 10px; }
+    header img:hover {
+      cursor: pointer; }
   header .navList {
     display: flex;
     flex-direction: row;
