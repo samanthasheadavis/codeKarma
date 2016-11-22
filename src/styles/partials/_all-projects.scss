@@ -119,11 +119,17 @@
                             display: block;
                         }
                     }
+
+                }
+
+                .bold {
+                  font-weight: bold;
                 }
 
                 .languages {
                     align-self: center;
                     margin: $vspace $hspace 0 0;
+                    display: inline;
                 }
             }
         }
