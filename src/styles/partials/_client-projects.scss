@@ -1,22 +1,3 @@
-.client-projects-container {
-    align-items: center;
-    background: $lightGrey;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 80%;
-
-    .project-card {
-        background: $white;
-        border: 1px solid $midGrey;
-        padding: $vspace $hspace;
-        width: 60%;
-        box-shadow: $box-shadow;
-        border-radius: $border-radius;
-        margin-top: 40px;
-    }
-}
-
 .editModal {
     width: 100%;
     height: 100%;
@@ -107,6 +88,30 @@
         &:hover > .editIcon {
             display: inline;
         }
+    }
+}
+
+.modal-up {
+  filter: blur(2px);
+}
+
+
+.client-projects-container {
+    align-items: center;
+    background: $lightGrey;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 80%;
+
+    .project-card {
+        background: $white;
+        border: 1px solid $midGrey;
+        padding: $vspace $hspace;
+        width: 60%;
+        box-shadow: $box-shadow;
+        border-radius: $border-radius;
+        margin-top: 40px;
     }
 }
 

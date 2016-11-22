@@ -1,3 +1,86 @@
+.pull-request-modal {
+    padding: 15px;
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    top: 30%;
+    z-index: 5;
+    background: $white;
+    box-shadow: 0 0 200px 40px rgba(79,79,79,1);
+    border-radius: 5px;
+    transform: scale(1.5);
+
+    img {
+      width: 30px;
+      position: absolute;
+      right: -5px;
+      top: -5px;
+    }
+
+    h1 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    p {
+        padding: 5px;
+        margin: 5px;
+    }
+
+    .select-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+
+        .sub-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            margin: 10px;
+            border-top: 1px solid $lightGrey;
+            border-left: 1px solid $lightGrey;
+            position: relative;
+
+            select {
+                width: 50%;
+                font-size: 15px;
+                border: none;
+                outline: none;
+                height: 20px;
+                margin: 0 5px 10px 10px;
+                background: $pop;
+
+            }
+
+            p {
+                padding: 5px;
+                margin: 10px 5px 5px 10px;
+
+                span {
+                    padding: 1px 8px 3px;
+                    background: white;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: -10px;
+                    left: -10px;
+                    color: $midGrey;
+                    font-size: 20px;
+                    border-top: 1px solid $lightGrey;
+                    border-left: 1px solid $lightGrey;
+                }
+            }
+        }
+
+        .sub-container:nth-child(2) {
+          margin-left: 15px;
+        }
+    }
+}
+.modal-up {
+  filter: blur(2px);
+}
+
 .dev-projects-container {
     background: $lightGrey;
     display: flex;
@@ -6,78 +89,6 @@
     align-content: flex-start;
     width: 80%;
     height: 100vh;
-
-    .pull-request-modal {
-        padding: 15px;
-        display: flex;
-        position: fixed;
-        flex-direction: column;
-        top: 30%;
-        z-index: 5;
-        background: $white;
-        box-shadow: 0 0 200px 40px rgba(79,79,79,1);
-        border-radius: 5px;
-
-        h1 {
-            font-size: 20px;
-            margin-bottom: 10px;
-        }
-
-        p {
-            padding: 5px;
-            margin: 5px;
-        }
-
-        .select-container {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            flex-wrap: wrap;
-
-            .sub-container {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-around;
-                margin: 10px;
-                border-top: 1px solid $lightGrey;
-                border-left: 1px solid $lightGrey;
-                position: relative;
-
-                select {
-                    width: 50%;
-                    font-size: 15px;
-                    border: none;
-                    outline: none;
-                    height: 20px;
-                    margin: 0 5px 10px 10px;
-                    background: $pop;
-
-                }
-
-                p {
-                    padding: 5px;
-                    margin: 10px 5px 5px 10px;
-
-                    span {
-                        padding: 1px 8px 3px;
-                        background: white;
-                        border-radius: 50%;
-                        position: absolute;
-                        top: -10px;
-                        left: -10px;
-                        color: $midGrey;
-                        font-size: 20px;
-                        border-top: 1px solid $lightGrey;
-                        border-left: 1px solid $lightGrey;
-                    }
-                }
-            }
-
-            .sub-container:nth-child(2) {
-              margin-left: 15px;
-            }
-        }
-    }
 
     .project-card {
         background: $white;
