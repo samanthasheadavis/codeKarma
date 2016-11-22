@@ -31,7 +31,7 @@
         <button type="button" class="searchBtn">Search</button>
     </form>
 
-    <div class="project-card" ng-repeat="project in projects">
+    <div class="project-card" ng-repeat="project in projects | orderBy: '-'">
             <div class="heading">
                 <h3 class="title">{{project.title}}</h3>
                 <div class="categories">
