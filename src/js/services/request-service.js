@@ -144,7 +144,7 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
 
         });
 
-    }
+    }   
 
 
     return {
