@@ -1,3 +1,37 @@
+<div class="editModal" ng-show='clientProjects.show'>
+    <ul class="modal-details">
+        <p class="minimize" ng-click="clientProjects.quitModal()"><img src="assets/delete.png" alt="Delete by Huu Nguyen from the Noun Project" </p>
+            <li class="title">
+                <h3 class="title" ng-hide="project.showTitleEdit">{{clientProjects.updateProject.title}}</h3>
+                <img ng-hide="project.showTitleEdit" ng-click='project.showTitleEdit = true' class="editIcon" src="assets/editIcon.png" alt="edit by Laura Vilar from the Noun Project" />
+                <input type="text" name="title" ng-show='project.showTitleEdit' ng-model='clientProjects.updateProject.title'>
+            </li>
+            <li class="snapshot">
+                <h4>Brief Description</h4>
+                <p ng-hide="project.showSnapshotEdit">{{clientProjects.updateProject.brief_description}}</p>
+                <img ng-hide="project.showSnapshotEdit" ng-click='project.showSnapshotEdit = true' class="editIcon" src="assets/editIcon.png" alt="edit by Laura Vilar from the Noun Project" />
+                <input type="text" name="snapshot" ng-show='project.showSnapshotEdit' ng-model="clientProjects.updateProject.brief_description">
+            </li>
+            <li class="description">
+                <h4>Description</h4>
+                <p ng-hide="project.showDescriptionEdit">{{clientProjects.updateProject.description}}</p>
+                <img ng-hide="project.showDescriptionEdit" ng-click='project.showDescriptionEdit = true' class="editIcon" src="assets/editIcon.png" alt="edit by Laura Vilar from the Noun Project" />
+                <textarea type="text" name="description" ng-show='project.showDescriptionEdit' ng-model="clientProjects.updateProject.description"></textarea>
+            </li>
+            <li class="github-repo">
+                <h4>GitHub Repo URL</h4>
+                <a ng-hide="project.showGithubRepoEdit">{{clientProjects.updateProject.github_repo_url}}</a>
+                <img ng-hide="project.showGithubRepoEdit" ng-click='project.showGithubRepoEdit = true' class="editIcon" src="assets/editIcon.png" alt="edit by Laura Vilar from the Noun Project" />
+                <input type="text" name="githubRepo" ng-show='project.showGithubRepoEdit' ng-model="clientProjects.updateProject.github_repo_url">
+            </li>
+            <li class="progress">
+                <h4>Developer Progress</h4>
+                <p>developer progress</p>
+            </li>
+            <button class="updateBtn" ng-click="clientProjects.updateInfo()">Update</button>
+    </ul>
+</div>
+
 <div class="client-projects-container">
     <header>
         <img src="assets/lotus_blue.png" alt="Lotus by Muhammad Faizal Rahman Hakim from the Noun Project" />
@@ -25,40 +59,6 @@
             </div>
         </nav>
     </header>
-
-    <div class="editModal" ng-show='clientProjects.show'>
-        <ul class="modal-details">
-            <p class="minimize" ng-click="clientProjects.show = false"><img src="assets/delete.png" alt="Delete by Huu Nguyen from the Noun Project" </p>
-                <li class="title">
-                    <h3 class="title" ng-hide="project.showTitleEdit">{{clientProjects.updateProject.title}}</h3>
-                    <img ng-hide="project.showTitleEdit" ng-click='project.showTitleEdit = true' class="editIcon" src="assets/editIcon.png" alt="edit by Laura Vilar from the Noun Project" />
-                    <input type="text" name="title" ng-show='project.showTitleEdit' ng-model='clientProjects.updateProject.title'>
-                </li>
-                <li class="snapshot">
-                    <h4>Brief Description</h4>
-                    <p ng-hide="project.showSnapshotEdit">{{clientProjects.updateProject.brief_description}}</p>
-                    <img ng-hide="project.showSnapshotEdit" ng-click='project.showSnapshotEdit = true' class="editIcon" src="assets/editIcon.png" alt="edit by Laura Vilar from the Noun Project" />
-                    <input type="text" name="snapshot" ng-show='project.showSnapshotEdit' ng-model="clientProjects.updateProject.brief_description">
-                </li>
-                <li class="description">
-                    <h4>Description</h4>
-                    <p ng-hide="project.showDescriptionEdit">{{clientProjects.updateProject.description}}</p>
-                    <img ng-hide="project.showDescriptionEdit" ng-click='project.showDescriptionEdit = true' class="editIcon" src="assets/editIcon.png" alt="edit by Laura Vilar from the Noun Project" />
-                    <textarea type="text" name="description" ng-show='project.showDescriptionEdit' ng-model="clientProjects.updateProject.description"></textarea>
-                </li>
-                <li class="github-repo">
-                    <h4>GitHub Repo URL</h4>
-                    <a ng-hide="project.showGithubRepoEdit">{{clientProjects.updateProject.github_repo_url}}</a>
-                    <img ng-hide="project.showGithubRepoEdit" ng-click='project.showGithubRepoEdit = true' class="editIcon" src="assets/editIcon.png" alt="edit by Laura Vilar from the Noun Project" />
-                    <input type="text" name="githubRepo" ng-show='project.showGithubRepoEdit' ng-model="clientProjects.updateProject.github_repo_url">
-                </li>
-                <li class="progress">
-                    <h4>Developer Progress</h4>
-                    <p>developer progress</p>
-                </li>
-                <button class="updateBtn" ng-click="clientProjects.updateInfo()">Update</button>
-        </ul>
-    </div>
 
     <div class="project-card" ng-repeat="project in projects">
         <ul class="project-details">

@@ -45,6 +45,7 @@ angular.module('codeKarmaApp').controller('ClientProjectsController', function($
     };
 
     this.edit = function(title, briefDescription, description, repoUrl, id) {
+      $('.client-projects-container').addClass('modal-up');
         this.updateProject = {
             title: title,
             brief_description: briefDescription,
@@ -55,6 +56,10 @@ angular.module('codeKarmaApp').controller('ClientProjectsController', function($
         this.show = true;
     };
 
+    this.quitModal = function() {
+      this.show = false;
+      $('.client-projects-container').removeClass('modal-up');
+    };
 
     this.updateInfo = function() {
         console.log(this.updateProject);
