@@ -77,10 +77,10 @@ ui-view {
       resize: none;
       height: 20px;
       padding: 10px;
-      border: none;
       line-height: 20px;
       outline: none;
       width: 100%;
+      border: 1px solid #e6e8e6;
       border-radius: 5px 0 0 5px; }
       .all-projects-container .searchForm textarea::-webkit-input-placeholder {
         color: #ced0ce; }
