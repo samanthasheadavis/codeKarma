@@ -77,10 +77,10 @@ ui-view {
       resize: none;
       height: 20px;
       padding: 10px;
-      border: none;
       line-height: 20px;
       outline: none;
       width: 100%;
+      border: 1px solid #e6e8e6;
       border-radius: 5px 0 0 5px; }
       .all-projects-container .searchForm textarea::-webkit-input-placeholder {
         color: #ced0ce; }
@@ -160,9 +160,12 @@ ui-view {
             .all-projects-container .project-card .heading .categories .category-image .tooltiptext span {
               letter-spacing: 0.1em;
               display: block; }
+        .all-projects-container .project-card .heading .categories .bold {
+          font-weight: bold; }
         .all-projects-container .project-card .heading .categories .languages {
           align-self: center;
-          margin: 15px 10px 0 0; }
+          margin: 15px 10px 0 0;
+          display: inline; }
     .all-projects-container .project-card .project-contents {
       display: flex;
       flex-direction: row;

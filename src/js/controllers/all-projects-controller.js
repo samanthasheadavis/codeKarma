@@ -40,14 +40,18 @@ angular.module('codeKarmaApp').controller('AllProjectsController', function($sta
         $.ajax(settings).done(function(response) {
 
             $scope.projects = response.all_projects;
-            console.log($scope.projects);
             $scope.getIcon(response.all_projects);
             $scope.$apply();
-
+            $scope.languages($scope.projects);
         });
 
     };
 
+    $scope.languages = function(response) {
+      for (index = 0; index<response.length; index++) {
+        if (response[index].languages.language_percent);
+      }
+    };
     // fork project function
 
     $scope.forkRepo = function(project) {
