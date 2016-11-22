@@ -269,17 +269,33 @@ ui-view {
       font-family: "Raleway", sans-serif;
       font-weight: bold;
       text-transform: uppercase;
-      padding-bottom: 5px; }
+      padding-bottom: 5px;
+      position: relative;
+      display: inline-block;
+      transition: color 0.2s ease; }
+      .client-dashboard-container .btnContainer a:hover::after, .client-dashboard-container .btnContainer a:hover::before {
+        width: 100%;
+        left: 0; }
+    .client-dashboard-container .btnContainer a::after, .client-dashboard-container .btnContainer a::before {
+      content: '';
+      position: absolute;
+      top: calc(100% + 5px);
+      width: 0;
+      right: 0;
+      height: 3px; }
+    .client-dashboard-container .btnContainer a::before {
+      transition: width 0.25s cubic-bezier(0.51, 0.18, 0, 0.88) 0.1s;
+      background: #4F4F4F; }
+    .client-dashboard-container .btnContainer a::after {
+      transition: width 0.2s cubic-bezier(0.29, 0.18, 0.26, 0.83);
+      background: #ffffff; }
     .client-dashboard-container .btnContainer .myProjectsBtn {
       border-bottom-left-radius: 5px;
-      border-top-left-radius: 5px; }
-      .client-dashboard-container .btnContainer .myProjectsBtn:hover a {
-        border-bottom: 5px solid #ffffff; }
+      border-top-left-radius: 5px;
+      border-right: 3px solid #e6e8e6; }
     .client-dashboard-container .btnContainer .createProjectsBtn {
       border-bottom-right-radius: 5px;
       border-top-right-radius: 5px; }
-      .client-dashboard-container .btnContainer .createProjectsBtn:hover a {
-        border-bottom: 5px solid #ffffff; }
   .client-dashboard-container .infoContainer {
     display: flex;
     width: 402px;
@@ -812,13 +828,32 @@ ui-view {
       font-size: 14px;
       font-family: "Raleway", sans-serif;
       font-weight: bold;
-      padding-bottom: 5px; }
+      padding-bottom: 5px;
+      position: relative;
+      display: inline-block;
+      transition: color 0.2s ease; }
       @media only screen and (max-width: 440px) {
         .dev-dashboard-container .btnContainer a {
           font-size: 13px; } }
       @media only screen and (max-width: 330px) {
         .dev-dashboard-container .btnContainer a {
           font-size: 12px; } }
+      .dev-dashboard-container .btnContainer a:hover::after, .dev-dashboard-container .btnContainer a:hover::before {
+        width: 100%;
+        left: 0; }
+    .dev-dashboard-container .btnContainer a::after, .dev-dashboard-container .btnContainer a::before {
+      content: '';
+      position: absolute;
+      top: calc(100% + 5px);
+      width: 0;
+      right: 0;
+      height: 3px; }
+    .dev-dashboard-container .btnContainer a::before {
+      transition: width 0.25s cubic-bezier(0.51, 0.18, 0, 0.88) 0.1s;
+      background: #4F4F4F; }
+    .dev-dashboard-container .btnContainer a::after {
+      transition: width 0.2s cubic-bezier(0.29, 0.18, 0.26, 0.83);
+      background: #ffffff; }
     .dev-dashboard-container .btnContainer .allProjectsBtn, .dev-dashboard-container .btnContainer .commFeedBtn, .dev-dashboard-container .btnContainer .myProjectsBtn {
       height: 50px;
       width: 33.33%;
@@ -831,18 +866,12 @@ ui-view {
     .dev-dashboard-container .btnContainer .myProjectsBtn {
       border-bottom-left-radius: 5px;
       border-top-left-radius: 5px; }
-      .dev-dashboard-container .btnContainer .myProjectsBtn:hover a {
-        border-bottom: 5px solid #ffffff; }
     .dev-dashboard-container .btnContainer .allProjectsBtn {
       border-right: 3px solid #e6e8e6;
       border-left: 3px solid #e6e8e6; }
-      .dev-dashboard-container .btnContainer .allProjectsBtn:hover a {
-        border-bottom: 5px solid #ffffff; }
     .dev-dashboard-container .btnContainer .commFeedBtn {
       border-bottom-right-radius: 5px;
       border-top-right-radius: 5px; }
-      .dev-dashboard-container .btnContainer .commFeedBtn:hover a {
-        border-bottom: 5px solid #ffffff; }
   .dev-dashboard-container .infoContainer {
     display: flex;
     width: 460px;

@@ -41,6 +41,9 @@
           font-family: $raleway;
           font-weight: bold;
           padding-bottom: 5px;
+          position: relative;
+          display: inline-block;
+          transition: color 0.2s ease;
 
           @include media (mobile) {
             font-size: 13px;
@@ -49,6 +52,37 @@
           @include media (mobileSmall) {
             font-size: 12px;
           }
+
+          &:hover {
+
+              &::after,
+              &::before {
+                  width: 100%;
+                  left: 0;
+              }
+          }
+        }
+
+        a {
+            &::after,
+            &::before {
+                content: '';
+                position: absolute;
+                top: calc(100% + 5px);
+                width: 0;
+                right: 0;
+                height: 3px;
+            }
+
+            &::before {
+                transition: width 0.25s cubic-bezier(0.51, 0.18, 0, 0.88) 0.1s;
+                background: $darkGrey;
+            }
+
+            &::after {
+                transition: width 0.2s cubic-bezier(0.29, 0.18, 0.26, 0.83);
+                background: $white;
+            }
         }
 
         .allProjectsBtn, .commFeedBtn, .myProjectsBtn {
@@ -70,28 +104,16 @@
         .myProjectsBtn {
           border-bottom-left-radius: $border-radius;
           border-top-left-radius: $border-radius;
-
-          &:hover a {
-            border-bottom: 5px solid $white;
-          }
         }
 
         .allProjectsBtn {
           border-right: 3px solid $lightGrey;
           border-left: 3px solid $lightGrey;
-
-          &:hover a {
-            border-bottom: 5px solid $white;
-          }
         }
 
         .commFeedBtn {
           border-bottom-right-radius: $border-radius;
           border-top-right-radius: $border-radius;
-
-          &:hover a {
-            border-bottom: 5px solid $white;
-          }
         }
     }
 
