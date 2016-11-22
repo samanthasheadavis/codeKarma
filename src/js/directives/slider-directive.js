@@ -5,9 +5,11 @@ angular.module('codeKarmaApp').directive("slider", function() {
             progress: "=model",
             updateButton: "&updateButton"
         },
-        link: function(scope, devProjects) {
+        controller: 'DevProjectsController',
+        controllerAs: 'devProjects',
+        link: function(scope, element, attributes, ctrl) {
             var setModel = function(value) {
-                scope.model = value;
+                ctrl.complete = value;
             };
 
             $("#flat-slider").slider({
@@ -19,13 +21,12 @@ angular.module('codeKarmaApp').directive("slider", function() {
                     scope.$apply(function() {
                         scope.progress = ui.value;
                         if (scope.progress !== 100) {
-                            devProjects.complete = false;
-                            console.log(devProjects.complete);
+                            ctrl.complete = false;
+                            setModel(false);
                         } else if (scope.progress === 100) {
-                            devProjects.complete = true;
-
+                          setModel(true);
+                            ctrl.complete = true;
                             scope.updateButton();
-                            console.log(devProjects.complete);
                         }
                     });
                 }

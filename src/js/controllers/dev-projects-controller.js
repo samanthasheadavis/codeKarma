@@ -6,7 +6,7 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
 
       console.log("in updateButton");
       this.complete = true;
-
+      console.log(this.complete);
 
     };
 
