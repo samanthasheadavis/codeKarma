@@ -830,7 +830,7 @@ ui-view {
         width: 150px;
         border-radius: 50%;
         box-shadow: 0px 0px 5px 0px #ced0ce; }
-    .dev-dashboard-container .infoContainer:hover > .skills > p {
+    .dev-dashboard-container .infoContainer:hover > .skills > p.skills-list {
       background: #AAEFDF; }
     .dev-dashboard-container .infoContainer:hover > .skills > .editIcon {
       display: inline; }
