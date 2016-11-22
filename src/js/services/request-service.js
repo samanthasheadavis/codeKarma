@@ -140,11 +140,54 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
             // $scope.projects = response.all_projects;
             // console.log($scope.projects);
             // $scope.getIcon(response.all_projects);
-            $scope.$apply();
+            // $scope.$apply();
 
         });
 
-    }   
+    }
+
+    function getLeaderboard() {
+      var settings = {
+          "async": true,
+          "crossDomain": true,
+          "url": 'url',
+          "method": "GET"
+      };
+
+      $.ajax(settings).done(function(response) {
+
+          console.log(response);
+
+        });
+    }
+
+    function postQuestion(post) {
+      var settings = {
+          "async": true,
+          "crossDomain": true,
+          "url": 'https://code-karma-api.herokuapp.com/karma_questions?token=' + token,
+          "method": "POST",
+          "data": post
+      };
+
+      $.ajax(settings).done(function(response) {
+
+          console.log(response);
+
+        });
+    }
+
+    function getPosts(callback) {
+      var settings = {
+          "async": true,
+          "crossDomain": true,
+          "url": 'https://code-karma-api.herokuapp.com/karma_comments?token=' + token,
+          "method": "GET",
+      };
+
+      $.ajax(settings).done(callback);
+    }
+
 
 
     return {
@@ -161,7 +204,10 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
         fetchToken: fetchToken,
         putSkills: putSkills,
         fetchId: fetchId,
-        getDevProjects: getDevProjects
+        getDevProjects: getDevProjects,
+        getLeaderboard: getLeaderboard,
+        postQuestion: postQuestion,
+        getPosts: getPosts
     };
 
 });

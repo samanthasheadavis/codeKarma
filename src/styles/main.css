@@ -672,7 +672,7 @@ ui-view {
         box-sizing: border-box;
         display: flex;
         justify-content: space-between; }
-        .community-feed-container .flexContainer .commPost .postContainer .profile {
+        .community-feed-container .flexContainer .commPost .postContainer .questioner-img {
           border: 1px solid #e6e8e6;
           border-radius: 50%;
           width: 50px;
@@ -682,11 +682,11 @@ ui-view {
           width: 60%;
           padding: 10px;
           color: #4F4F4F; }
-        .community-feed-container .flexContainer .commPost .postContainer img {
+        .community-feed-container .flexContainer .commPost .postContainer img.like {
           width: 25px;
           height: 25px;
           border-radius: 5px; }
-          .community-feed-container .flexContainer .commPost .postContainer img:hover {
+          .community-feed-container .flexContainer .commPost .postContainer img.like:hover {
             background: #AAEFDF; }
       .community-feed-container .flexContainer .commPost .postInfoContainer {
         display: flex;
