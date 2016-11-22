@@ -11,7 +11,13 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
     };
 
     this.pullRequest = function() {
+      $('.dev-projects-container').addClass('modal-up');
       this.showModal = true;
+    };
+
+    this.closeModal = function() {
+      this.showModal = false;
+      $('.dev-projects-container').removeClass('modal-up');
     };
 
     // get projects info
