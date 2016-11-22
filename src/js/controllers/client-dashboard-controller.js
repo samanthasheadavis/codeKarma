@@ -5,11 +5,26 @@ angular.module('codeKarmaApp').controller('ClientDashboardController', function(
         this.url = RequestService.getProjectsUrl();
     };
 
-    // orgName and orgLink refer to the 'organization name' and 'website link' fieds.
+    // orgName and orgLink refer to the 'organization name' and 'website link' fields.
 
     this.clientInfo = {
-        orgName: "Your Organization's Name",
-        orgLink: "Your Website Link"
+      name: "Add a name for your organization",
+      site: "Add a link to your website"
+    };
+
+    $scope.handleInfo = function(response) {
+      console.log(response);
+
+      if (response.orgName === null || response.orgSite === null) {
+        this.showLinkEdit = false;
+        this.showNameEdit = true;
+      }
+
+      this.newInfo = {
+        organization_name: response.orgName,
+        organization_site: response.orgSite
+      };
+
     };
 
     // updateInfo is the function that handles passing the updated org name or org link to the back end.
@@ -18,16 +33,21 @@ angular.module('codeKarmaApp').controller('ClientDashboardController', function(
         this.showLinkEdit = false;
         this.showNameEdit = false;
 
-        // might have to do two different posts, one for org name and one for org link
+        this.token = RequestService.fetchToken();
+        this.id = RequestService.fetchId();
 
-        // $http({
-        //     method: "PUT",
-        //     url: this.url,
-        //     data: this.clientInfo
-        // }).then(function successCallback(response) {
-        //     console.log(response);
-        // });
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://code-karma-api.herokuapp.com/clients/" + this.id + "?token=" + this.token,
+            "method": "PUT",
+            "data": this.newInfo
+        };
 
+        $.ajax(settings).done(function(response) {
+          console.log(response);
+          $state.reload();
+        });
     };
 
 
@@ -35,7 +55,7 @@ angular.module('codeKarmaApp').controller('ClientDashboardController', function(
 
         RequestService.getClient(function(response) {
             $scope.currentUser = RequestService.createUser(response.data);
-            console.log($scope.currentUser);
+            $scope.handleInfo($scope.currentUser);
         });
     };
 
