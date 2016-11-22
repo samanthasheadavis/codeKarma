@@ -455,7 +455,7 @@ ui-view {
   width: 100%;
   height: 100%;
   display: flex;
-  position: absolute;
+  position: fixed;
   top: -30px;
   align-items: center;
   justify-content: center;
@@ -972,10 +972,63 @@ ui-view {
   align-content: flex-start;
   width: 80%;
   height: 100vh; }
+  .dev-projects-container .pull-request-modal {
+    padding: 15px;
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    top: 30%;
+    z-index: 5;
+    background: #ffffff;
+    box-shadow: 0 0 200px 40px #4f4f4f;
+    border-radius: 5px; }
+    .dev-projects-container .pull-request-modal h1 {
+      font-size: 20px;
+      margin-bottom: 10px; }
+    .dev-projects-container .pull-request-modal p {
+      padding: 5px;
+      margin: 5px; }
+    .dev-projects-container .pull-request-modal .select-container {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap; }
+      .dev-projects-container .pull-request-modal .select-container .sub-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        margin: 10px;
+        border-top: 1px solid #e6e8e6;
+        border-left: 1px solid #e6e8e6;
+        position: relative; }
+        .dev-projects-container .pull-request-modal .select-container .sub-container select {
+          width: 50%;
+          font-size: 15px;
+          border: none;
+          outline: none;
+          height: 20px;
+          margin: 0 5px 10px 10px;
+          background: #AAEFDF; }
+        .dev-projects-container .pull-request-modal .select-container .sub-container p {
+          padding: 5px;
+          margin: 10px 5px 5px 10px; }
+          .dev-projects-container .pull-request-modal .select-container .sub-container p span {
+            padding: 1px 8px 3px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            color: #ced0ce;
+            font-size: 20px;
+            border-top: 1px solid #e6e8e6;
+            border-left: 1px solid #e6e8e6; }
+      .dev-projects-container .pull-request-modal .select-container .sub-container:nth-child(2) {
+        margin-left: 15px; }
   .dev-projects-container .project-card {
     background: #ffffff;
     align-self: flex-start;
-    padding: 15px 10px 0 10px;
+    padding: 15px 10px 0;
     margin-top: 40px;
     width: 60%;
     box-shadow: 0px 0px 5px 0px #ced0ce;
@@ -999,7 +1052,7 @@ ui-view {
           .dev-projects-container .project-card .details form select:focus {
             outline: 0; }
         .dev-projects-container .project-card .details form label.date {
-          margin: 30px 0 15px 0; }
+          margin: 30px 0 15px; }
         .dev-projects-container .project-card .details form input {
           border-radius: 5px;
           border: 1px solid #ced0ce;
