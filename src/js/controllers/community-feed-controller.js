@@ -41,7 +41,6 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
 
     this.addResponse = function(comment, id) {
         // var newResponse = $('<p>').attr('class', 'response').html(comment).appendTo('.responsesContainer');
-
         this.newComment = {
             "karma_comment": comment,
             "karma_question_id": id
@@ -57,22 +56,37 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
     };
 
     this.getDev = function() {
-
         RequestService.getDev(function(response) {
             $scope.currentUser = RequestService.createUser(response.data);
+            getLeaderboard();
         });
     };
 
-    this.getLeaderboard = function() {
-      RequestService.getLeaderboard(function(response) {
-        console.log(response);
-        $scope.leaderboard = response.all_developer_rankings;
-      });
-    };
+    function findUserStats(array, attr, value) {
+        for (var index = 0; index < array.length; index += 1) {
+            if (array[index][attr] === value) {
+              $scope.currentUserStats = {
+                username: $scope.leaderboard[index].developer_name,
+                points: $scope.leaderboard[index].karma_points,
+                image: $scope.leaderboard[index].developer_image,
+                total_devs: $scope.leaderboard[index].total_developers,
+                rank: $scope.leaderboard[index].developer_rank
+              };
+              $scope.$apply();
+            }
+        }
+        return -1;
+    }
 
+    function getLeaderboard() {
+        RequestService.getLeaderboard(function(response) {
+            $scope.leaderboard = response.all_developer_rankings;
+            findUserStats($scope.leaderboard, 'developer_name', $scope.currentUser.username);
 
+        });
+    }
 
     this.getDev();
     this.getPosts();
-    this.getLeaderboard();
+
 });
