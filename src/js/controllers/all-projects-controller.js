@@ -62,10 +62,6 @@ angular.module('codeKarmaApp').controller('AllProjectsController', function($sta
 
     this.keyword = '';
 
-    this.search = function() {
-      console.log(this.keyword);
-    };
-
 
     this.getUrl();
     $scope.projects = this.getProjects();
