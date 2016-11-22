@@ -1,143 +1,151 @@
-.home-container {
-    background: $white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 10px;
-    width: 80%;
-    height: 100vh;
+#wrapper {
+  width: 100%;
+  // background: linear-gradient(to left, #4CB8C4 , $pop);
+  display: flex;
+  justify-content: center;
+  height: auto;
 
-    .btnContainer {
-        display: flex;
-        bottom: 0;
-        align-items: center;
-    }
-
-    .main-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        background: transparent;
-    }
-
-    button {
-        @include button(20px) {};
-
-        a {
-            color: $pop;
-            text-decoration: none;
-        }
-
-        &:hover {
-          background: $pop;
-          color: white;
-        }
-
-        &:hover > a {
-          color: white;
-        }
-    }
-    //  button {
-    // padding: 10px;
-    // margin: 10px;
-    // border-radius: 5px;
-    // outline: none;
-    // width: 200px;
-    // align-self: center;
-    // background: transparent;
-    // border: 1px solid $lightGrey;
-    // font-family: $raleway;
-    // font-size: 1em;
-    // a {
-    //   text-decoration: none;
-    //   color: black;
-    //   font-family: $raleway;
-    // }
-    //
-    // &:hover {
-    //   background: $pop;
-    //   border: none;
-    // }
-    //    }
-    .continueBtnContainer {
-        display: flex;
-        justify-content: center;
-    }
-
-    h1 {
-        font-size: 5em;
-    }
-
-    h2 {
-        margin: 20px 0;
-        font-size: 1.5em;
-        align-self: center;
-    }
-
-    .about {
-        display: flex;
-        height: 130vh;
-        flex-direction: column;
-        justify-content: flex-start;
-        position: absolute;
-        top: 100vh;
+    .home-container {
         background: $white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 10px;
         width: 80%;
+        height: 100vh;
 
-        .aboutContainer {
+        .btnContainer {
             display: flex;
+            bottom: 0;
             align-items: center;
-            justify-content: space-around;
         }
 
-        .aboutSubContainer {
+        .main-container {
             display: flex;
+            flex-direction: column;
             justify-content: center;
-            padding: 10px;
+            background: transparent;
+        }
 
-            .mission {
-                flex-shrink: 20;
+        button {
+            @include button(20px) {};
+
+            a {
+                color: $pop;
+                text-decoration: none;
             }
 
-            .section {
+            &:hover {
+                background: $pop;
+                color: white;
+            }
+
+            &:hover > a {
+                color: white;
+            }
+        }
+        //  button {
+        // padding: 10px;
+        // margin: 10px;
+        // border-radius: 5px;
+        // outline: none;
+        // width: 200px;
+        // align-self: center;
+        // background: transparent;
+        // border: 1px solid $lightGrey;
+        // font-family: $raleway;
+        // font-size: 1em;
+        // a {
+        //   text-decoration: none;
+        //   color: black;
+        //   font-family: $raleway;
+        // }
+        //
+        // &:hover {
+        //   background: $pop;
+        //   border: none;
+        // }
+        //    }
+        .continueBtnContainer {
+            display: flex;
+            justify-content: center;
+        }
+
+        h1 {
+            font-size: 5em;
+        }
+
+        h2 {
+            margin: 20px 0;
+            font-size: 1.5em;
+            align-self: center;
+        }
+
+        .about {
+            display: flex;
+            height: 130vh;
+            flex-direction: column;
+            justify-content: flex-start;
+            position: absolute;
+            top: 100vh;
+            background: $white;
+            width: 80%;
+
+            .aboutContainer {
                 display: flex;
-                flex-direction: column;
-                justify-content: flex-start;
                 align-items: center;
-                margin: 15px;
-                border: 1px solid darken(white, 5%);
+                justify-content: space-around;
+            }
+
+            .aboutSubContainer {
+                display: flex;
+                justify-content: center;
                 padding: 10px;
 
-                h2 {
-                    color: $pop;
-                    border-bottom: 1px solid $midGrey;
+                .mission {
+                    flex-shrink: 20;
                 }
 
-                p {
-                    color: $darkGrey;
-                    line-height: 1.25;
-                    text-align: center;
-                }
-
-                .member {
+                .section {
                     display: flex;
                     flex-direction: column;
+                    justify-content: flex-start;
                     align-items: center;
-                    justify-content: center;
-                    margin-top: 10px;
+                    margin: 15px;
+                    border: 1px solid darken(white, 5%);
+                    padding: 10px;
 
-                    .memberName {
-                        font-weight: bold;
-                        font-size: 20px;
+                    h2 {
+                        color: $pop;
+                        border-bottom: 1px solid $midGrey;
                     }
 
-                    .profile {
-                        width: 50px;
-                        border-radius: 50%;
+                    p {
+                        color: $darkGrey;
+                        line-height: 1.25;
+                        text-align: center;
                     }
 
-                    .mediaPic {
-                        width: 50px;
+                    .member {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        margin-top: 10px;
+
+                        .memberName {
+                            font-weight: bold;
+                            font-size: 20px;
+                        }
+
+                        .profile {
+                            width: 50px;
+                            border-radius: 50%;
+                        }
+
+                        .mediaPic {
+                            width: 50px;
+                        }
                     }
                 }
             }

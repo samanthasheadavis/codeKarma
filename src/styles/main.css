@@ -1194,101 +1194,106 @@ header {
     transition: width 0.2s cubic-bezier(0.29, 0.18, 0.26, 0.83);
     background: #AAEFDF; }
 
-.home-container {
-  background: #ffffff;
+#wrapper {
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 10px;
-  width: 80%;
-  height: 100vh; }
-  .home-container .btnContainer {
-    display: flex;
-    bottom: 0;
-    align-items: center; }
-  .home-container .main-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background: transparent; }
-  .home-container button {
-    background: none;
-    border: 3px solid #AAEFDF;
-    border-radius: 5px;
-    color: #AAEFDF;
-    display: block;
-    font-size: 20px;
-    font-weight: bold;
-    margin: 10px;
-    padding: 10px;
-    position: relative;
-    text-transform: uppercase;
-    outline: none; }
-    .home-container button a {
-      color: #AAEFDF;
-      text-decoration: none; }
-    .home-container button:hover {
-      background: #AAEFDF;
-      color: white; }
-    .home-container button:hover > a {
-      color: white; }
-  .home-container .continueBtnContainer {
-    display: flex;
-    justify-content: center; }
-  .home-container h1 {
-    font-size: 5em; }
-  .home-container h2 {
-    margin: 20px 0;
-    font-size: 1.5em;
-    align-self: center; }
-  .home-container .about {
-    display: flex;
-    height: 130vh;
-    flex-direction: column;
-    justify-content: flex-start;
-    position: absolute;
-    top: 100vh;
+  justify-content: center;
+  height: auto; }
+  #wrapper .home-container {
     background: #ffffff;
-    width: 80%; }
-    .home-container .about .aboutContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+    width: 80%;
+    height: 100vh; }
+    #wrapper .home-container .btnContainer {
       display: flex;
-      align-items: center;
-      justify-content: space-around; }
-    .home-container .about .aboutSubContainer {
+      bottom: 0;
+      align-items: center; }
+    #wrapper .home-container .main-container {
       display: flex;
+      flex-direction: column;
       justify-content: center;
-      padding: 10px; }
-      .home-container .about .aboutSubContainer .mission {
-        flex-shrink: 20; }
-      .home-container .about .aboutSubContainer .section {
+      background: transparent; }
+    #wrapper .home-container button {
+      background: none;
+      border: 3px solid #AAEFDF;
+      border-radius: 5px;
+      color: #AAEFDF;
+      display: block;
+      font-size: 20px;
+      font-weight: bold;
+      margin: 10px;
+      padding: 10px;
+      position: relative;
+      text-transform: uppercase;
+      outline: none; }
+      #wrapper .home-container button a {
+        color: #AAEFDF;
+        text-decoration: none; }
+      #wrapper .home-container button:hover {
+        background: #AAEFDF;
+        color: white; }
+      #wrapper .home-container button:hover > a {
+        color: white; }
+    #wrapper .home-container .continueBtnContainer {
+      display: flex;
+      justify-content: center; }
+    #wrapper .home-container h1 {
+      font-size: 5em; }
+    #wrapper .home-container h2 {
+      margin: 20px 0;
+      font-size: 1.5em;
+      align-self: center; }
+    #wrapper .home-container .about {
+      display: flex;
+      height: 130vh;
+      flex-direction: column;
+      justify-content: flex-start;
+      position: absolute;
+      top: 100vh;
+      background: #ffffff;
+      width: 80%; }
+      #wrapper .home-container .about .aboutContainer {
         display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
         align-items: center;
-        margin: 15px;
-        border: 1px solid #f2f2f2;
+        justify-content: space-around; }
+      #wrapper .home-container .about .aboutSubContainer {
+        display: flex;
+        justify-content: center;
         padding: 10px; }
-        .home-container .about .aboutSubContainer .section h2 {
-          color: #AAEFDF;
-          border-bottom: 1px solid #ced0ce; }
-        .home-container .about .aboutSubContainer .section p {
-          color: #4F4F4F;
-          line-height: 1.25;
-          text-align: center; }
-        .home-container .about .aboutSubContainer .section .member {
+        #wrapper .home-container .about .aboutSubContainer .mission {
+          flex-shrink: 20; }
+        #wrapper .home-container .about .aboutSubContainer .section {
           display: flex;
           flex-direction: column;
+          justify-content: flex-start;
           align-items: center;
-          justify-content: center;
-          margin-top: 10px; }
-          .home-container .about .aboutSubContainer .section .member .memberName {
-            font-weight: bold;
-            font-size: 20px; }
-          .home-container .about .aboutSubContainer .section .member .profile {
-            width: 50px;
-            border-radius: 50%; }
-          .home-container .about .aboutSubContainer .section .member .mediaPic {
-            width: 50px; }
+          margin: 15px;
+          border: 1px solid #f2f2f2;
+          padding: 10px; }
+          #wrapper .home-container .about .aboutSubContainer .section h2 {
+            color: #AAEFDF;
+            border-bottom: 1px solid #ced0ce; }
+          #wrapper .home-container .about .aboutSubContainer .section p {
+            color: #4F4F4F;
+            line-height: 1.25;
+            text-align: center; }
+          #wrapper .home-container .about .aboutSubContainer .section .member {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px; }
+            #wrapper .home-container .about .aboutSubContainer .section .member .memberName {
+              font-weight: bold;
+              font-size: 20px; }
+            #wrapper .home-container .about .aboutSubContainer .section .member .profile {
+              width: 50px;
+              border-radius: 50%; }
+            #wrapper .home-container .about .aboutSubContainer .section .member .mediaPic {
+              width: 50px; }
 
 .redirect-container {
   background: #e6e8e6;
