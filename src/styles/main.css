@@ -777,6 +777,9 @@ ui-view {
   align-items: center;
   width: 80%;
   justify-content: flex-start; }
+  @media only screen and (max-width: 700px) {
+    .dev-dashboard-container {
+      width: 100%; } }
   .dev-dashboard-container .btnContainer {
     margin: 40px 0 20px;
     display: flex;
@@ -785,12 +788,27 @@ ui-view {
     width: 460px;
     border-radius: 5px;
     box-shadow: 0px 0px 5px 0px #ced0ce; }
+    @media only screen and (max-width: 525px) {
+      .dev-dashboard-container .btnContainer {
+        width: 400px; } }
+    @media only screen and (max-width: 440px) {
+      .dev-dashboard-container .btnContainer {
+        width: 300px; } }
+    @media only screen and (max-width: 330px) {
+      .dev-dashboard-container .btnContainer {
+        width: 280px; } }
     .dev-dashboard-container .btnContainer a {
       text-decoration: none;
       color: #4F4F4F;
       font-size: 14px;
       font-family: "Raleway", sans-serif;
       font-weight: bold; }
+      @media only screen and (max-width: 440px) {
+        .dev-dashboard-container .btnContainer a {
+          font-size: 13px; } }
+      @media only screen and (max-width: 330px) {
+        .dev-dashboard-container .btnContainer a {
+          font-size: 12px; } }
     .dev-dashboard-container .btnContainer .allProjectsBtn, .dev-dashboard-container .btnContainer .commFeedBtn, .dev-dashboard-container .btnContainer .myProjectsBtn {
       height: 50px;
       width: 33.33%;
@@ -819,6 +837,15 @@ ui-view {
     box-shadow: 0px 0px 5px 0px #ced0ce;
     border-radius: 5px;
     margin-bottom: 50px; }
+    @media only screen and (max-width: 525px) {
+      .dev-dashboard-container .infoContainer {
+        width: 400px; } }
+    @media only screen and (max-width: 440px) {
+      .dev-dashboard-container .infoContainer {
+        width: 300px; } }
+    @media only screen and (max-width: 330px) {
+      .dev-dashboard-container .infoContainer {
+        width: 280px; } }
     .dev-dashboard-container .infoContainer .profilePic {
       margin-top: 20px;
       width: 150px;
