@@ -58,7 +58,13 @@ angular.module('codeKarmaApp').controller('AllProjectsController', function($sta
     // add project info to user object
 
 
-    // determine icon to show on project - grab category(fix_type )
+    // Search functionality
+
+    this.keyword = '';
+
+    this.search = function() {
+      console.log(this.keyword);
+    };
 
 
     this.getUrl();
