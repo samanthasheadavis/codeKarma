@@ -633,6 +633,7 @@ ui-view {
       margin-bottom: 40px; }
       .community-feed-container .flexContainer .postForm textarea {
         resize: none;
+        font-size: 18px;
         height: 20px;
         padding: 10px;
         border: none;
@@ -640,13 +641,17 @@ ui-view {
         width: 100%;
         border-radius: 5px 0 0 5px; }
         .community-feed-container .flexContainer .postForm textarea::-webkit-input-placeholder {
-          color: #ced0ce; }
+          color: #4F4F4F;
+          font-size: 18px; }
         .community-feed-container .flexContainer .postForm textarea::-moz-placeholder {
-          color: #ced0ce; }
+          color: #4F4F4F;
+          font-size: 18px; }
         .community-feed-container .flexContainer .postForm textarea:-moz-placeholder {
-          color: #ced0ce; }
+          color: #4F4F4F;
+          font-size: 18px; }
         .community-feed-container .flexContainer .postForm textarea:-ms-input-placeholder {
-          color: #ced0ce; }
+          color: #4F4F4F;
+          font-size: 18px; }
       .community-feed-container .flexContainer .postForm .askBtn {
         border-radius: 0 5px 5px 0;
         width: 100px;
@@ -697,6 +702,7 @@ ui-view {
         box-sizing: border-box; }
         .community-feed-container .flexContainer .commPost .responsesContainer .response {
           display: flex;
+          justify-content: flex-start;
           box-sizing: border-box;
           margin: 15px 0;
           width: 100%;
@@ -704,6 +710,37 @@ ui-view {
           border-radius: 5px;
           color: dimgray;
           padding: 10px; }
+          .community-feed-container .flexContainer .commPost .responsesContainer .response .commenter-photo {
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid #AAEFDF;
+            align-self: center; }
+          .community-feed-container .flexContainer .commPost .responsesContainer .response .comment {
+            align-self: center; }
+          .community-feed-container .flexContainer .commPost .responsesContainer .response .comment-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center; }
+            .community-feed-container .flexContainer .commPost .responsesContainer .response .comment-container .commenter-name {
+              margin: 15px 10px;
+              font-weight: bold;
+              color: #191919; }
+            .community-feed-container .flexContainer .commPost .responsesContainer .response .comment-container .comment-data {
+              align-self: flex-start;
+              display: flex;
+              justify-content: flex-end;
+              flex-direction: row;
+              margin: 10px 0 0 10px; }
+            .community-feed-container .flexContainer .commPost .responsesContainer .response .comment-container .comment-time, .community-feed-container .flexContainer .commPost .responsesContainer .response .comment-container .like-text, .community-feed-container .flexContainer .commPost .responsesContainer .response .comment-container .like-comment {
+              align-self: flex-end; }
+            .community-feed-container .flexContainer .commPost .responsesContainer .response .comment-container .comment-time {
+              font-size: 12px;
+              margin-right: 15px; }
+            .community-feed-container .flexContainer .commPost .responsesContainer .response .comment-container .like-text {
+              font-size: 14px;
+              margin-right: 5px; }
+            .community-feed-container .flexContainer .commPost .responsesContainer .response .comment-container .like-comment {
+              height: 14px; }
       .community-feed-container .flexContainer .commPost .responseForm {
         display: flex; }
         .community-feed-container .flexContainer .commPost .responseForm textarea {
