@@ -9,37 +9,32 @@ angular.module('codeKarmaApp').controller('DevDashboardController', function($st
     };
 
     this.updateInfo = function(value) {
-      console.log('in updateInfo');
         if ($scope.currentUser.skills.length === 0) {
             this.skills = {
-              "skills": this.newSkill
+                "skills": this.newSkill
             };
             RequestService.putSkills(this.skills);
             this.newSkill = '';
         } else if ($scope.currentUser.skills.length > 0) {
-          this.skills = {
-            "skills": $scope.currentUser.skills + ', ' + this.newSkill
-          };
+            this.skills = {
+                "skills": $scope.currentUser.skills + ', ' + this.newSkill
+            };
             RequestService.putSkills(this.skills);
             this.newSkill = '';
         }
 
-    this.showLinkEdit = false;
-    this.showNameEdit = false;
-    this.showSkillEdit = false;
-};
+        this.showLinkEdit = false;
+        this.showNameEdit = false;
+        this.showSkillEdit = false;
+    };
 
+    this.getDev = function() {
+        RequestService.getDev(function(response) {
+            $scope.currentUser = RequestService.createUser(response.data);
+        });
+    };
 
-
-this.getDev = function() {
-    RequestService.getDev(function(response) {
-        console.log(response);
-        $scope.currentUser = RequestService.createUser(response.data);
-        // $scope.skillsList = $scope.currentUser.skills.split(', ');
-    });
-};
-
-this.getDev();
-this.getUrl();
+    this.getDev();
+    this.getUrl();
 
 });

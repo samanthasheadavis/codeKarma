@@ -6,10 +6,9 @@
     align-items: center;
     width: 80%;
     justify-content: flex-start;
-    transition: all .5s ease;
-
+    transition: all 0.5s ease;
     @include media(tablet) {
-      width: 100%;
+        width: 100%;
     }
 
     .btnContainer {
@@ -20,78 +19,74 @@
         width: 460px;
         border-radius: 5px;
         box-shadow: $box-shadow;
-        transition: all .5s ease;
-
+        transition: all 0.5s ease;
         @include media (mobileLarge) {
-          width: 400px;
+            width: 400px;
         }
-
         @include media (mobile) {
-          width: 300px;
+            width: 300px;
         }
-
         @include media (mobileSmall) {
-          width: 280px;
+            width: 280px;
         }
 
         a {
-          text-decoration: none;
-          color: $charcoal;
-          font-size: 14px;
-          font-family: $raleway;
-          font-weight: bold;
-          padding-bottom: 5px;
-
-          @include media (mobile) {
-            font-size: 13px;
-          }
-
-          @include media (mobileSmall) {
-            font-size: 12px;
-          }
+            text-decoration: none;
+            color: $charcoal;
+            font-size: 14px;
+            font-family: $raleway;
+            font-weight: bold;
+            padding-bottom: 5px;
+            @include media (mobile) {
+                font-size: 13px;
+            }
+            @include media (mobileSmall) {
+                font-size: 12px;
+            }
         }
 
-        .allProjectsBtn, .commFeedBtn, .myProjectsBtn {
-          height: 50px;
-          width: 33.33%;
-          border: none;
-          background: $pop;
-
-          &:hover {
+        .allProjectsBtn,
+        .commFeedBtn,
+        .myProjectsBtn {
+            height: 50px;
+            width: 33.33%;
+            border: none;
             background: $pop;
-          }
 
-          &:focus {
-            outline: 0;
-          }
+            &:hover {
+                background: $pop;
+            }
 
+            &:focus {
+                outline: 0;
+            }
         }
 
         .myProjectsBtn {
-          border-bottom-left-radius: $border-radius;
-          border-top-left-radius: $border-radius;
+            border-bottom-left-radius: $border-radius;
+            border-top-left-radius: $border-radius;
 
-          &:hover a {
-            border-bottom: 5px solid $white;
-          }
+            &:hover a {
+                border-bottom: 5px solid $white;
+            }
         }
 
         .allProjectsBtn {
-          border-right: 3px solid $lightGrey;
-          border-left: 3px solid $lightGrey;
+            border-right: 3px solid $lightGrey;
+            border-left: 3px solid $lightGrey;
 
-          &:hover a {
-            border-bottom: 5px solid $white;
-          }
+            &:hover a {
+                border-bottom: 5px solid $white;
+            }
         }
 
         .commFeedBtn {
-          border-bottom-right-radius: $border-radius;
-          border-top-right-radius: $border-radius;
+            border-bottom-right-radius: $border-radius;
+            border-top-right-radius: $border-radius;
 
-          &:hover a {
-            border-bottom: 5px solid $white;
-          }
+            &:hover a {
+                border-bottom: 5px solid $white;
+            }
         }
     }
 
@@ -105,18 +100,15 @@
         box-shadow: $box-shadow;
         border-radius: 5px;
         margin-bottom: 50px;
-        transition: all .5s ease;
-
+        transition: all 0.5s ease;
         @include media (mobileLarge) {
-          width: 400px;
+            width: 400px;
         }
-
         @include media (mobile) {
-          width: 300px;
+            width: 300px;
         }
-
         @include media (mobileSmall) {
-          width: 280px;
+            width: 280px;
         }
 
         img.profilePic {
@@ -129,11 +121,11 @@
         }
 
         &:hover > .skills > p.skills-list {
-          background: $pop;
+            background: $pop;
         }
 
         &:hover > .skills > .editIcon {
-          display: inline;
+            display: inline;
         }
 
         p {
@@ -156,40 +148,40 @@
             }
 
             .save {
-              background: none;
-              border: 3px solid $pop;
-              border-radius: 5px;
-              color: $pop;
-              font-size: 12px;
-              font-weight: bold;
-              margin: 10px;
-              padding: 6px;
-              position: relative;
-              text-transform: uppercase;
-              outline: none;
+                background: none;
+                border: 3px solid $pop;
+                border-radius: 5px;
+                color: $pop;
+                font-size: 12px;
+                font-weight: bold;
+                margin: 10px;
+                padding: 6px;
+                position: relative;
+                text-transform: uppercase;
+                outline: none;
             }
         }
 
-        .rank,
-        .points,
         .contributions,
+        .points,
+        .rank,
         .skills {
-          height: 20px;
-          width: 100%;
-          text-align: center;
-          border-top: 1px solid lightGrey;
-          font-size: 20px;
-          padding: $vspace 0;
-          margin: 0;
+            height: 20px;
+            width: 100%;
+            text-align: center;
+            border-top: 1px solid lightGrey;
+            font-size: 20px;
+            padding: $vspace 0;
+            margin: 0;
         }
 
         .skills {
-          height: auto;
+            height: auto;
 
-          p {
-            display: block;
-            margin-bottom: $vspace;
-          }
+            p {
+                display: block;
+                margin-bottom: $vspace;
+            }
         }
 
         .editIcon {
@@ -203,7 +195,7 @@
         }
 
         .skills-header {
-          font-weight: bold;
+            font-weight: bold;
         }
     }
 }

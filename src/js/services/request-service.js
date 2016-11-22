@@ -45,7 +45,6 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
     }
 
     function getDevUrl() {
-        console.log('in getUrl');
         var url = "https://code-karma-api.herokuapp.com/developers/" + userId + "?token=" + token;
         return url;
     }
@@ -114,8 +113,6 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
 
     function putSkills(skills){
 
-      console.log(skills);
-
       var settings = {
           "async": true,
           "crossDomain": true,
@@ -124,38 +121,31 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
           "data": skills
       };
       $.ajax(settings).done(function(response) {
-          console.log(response);
+        return response;
       });
-
-        // $http({
-        //     method: 'PUT',
-        //     data: skills,
-        //     url: 'https://code-karma-api.herokuapp.com/developers/' + userId + '?token=' + token,
-        // }).then(function successCallback(response) {
-        //     console.log(response);
-        // }, function errorCallback(response) {
-        //     console.log(response);
-        //     return response;
-        // });
-
     }
 
-    function postSkills(skills){
+    function getDevProjects() {
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": 'https://code-karma-api.herokuapp.com/developer_projects/' + userId + '?token=' + token,
+            "method": "GET"
+        };
 
-        console.log(skills);
+        $.ajax(settings).done(function(response) {
 
-        $http({
-            method: 'POST',
-            data: skills,
-            url: 'https://code-karma-api.herokuapp.com/developers/' + userId + '?token=' + token,
-        }).then(function successCallback(response) {
-            console.log("success");
-        }, function errorCallback(response) {
             console.log(response);
-            return response;
+
+            // $scope.projects = response.all_projects;
+            // console.log($scope.projects);
+            // $scope.getIcon(response.all_projects);
+            $scope.$apply();
+
         });
 
     }
+
 
     return {
         getClient: getClient,
@@ -169,9 +159,9 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
         getClientProjectsUrl: getClientProjectsUrl,
         forkRepo: forkRepo,
         fetchToken: fetchToken,
-        postSkills: postSkills,
         putSkills: putSkills,
-        fetchId: fetchId
+        fetchId: fetchId,
+        getDevProjects: getDevProjects
     };
 
 });

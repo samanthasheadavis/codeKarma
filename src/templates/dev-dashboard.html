@@ -3,47 +3,34 @@
         <img ui-sref="codeKarmaParent.home" src="assets/lotus_blue.png" alt="Lotus by Muhammad Faizal Rahman Hakim from the Noun Project" />
         <h1 ui-sref="codeKarmaParent.home">Code Karma</h1>
     </header>
-
     <div class="btnContainer">
         <button class="myProjectsBtn"><a ui-sref="codeKarmaParent.devProjects">MY PROJECTS</a></button>
         <button class="allProjectsBtn"><a ui-sref="codeKarmaParent.allProjects">ALL PROJECTS</a></button>
         <button class="commFeedBtn"><a ui-sref="codeKarmaParent.communityFeed">COMMUNITY FEED</a></button>
     </div>
-
     <div class="infoContainer">
-
         <img class="profilePic" alt="{{currentUser.name}}" src="{{currentUser.image}}" ng-cloak>
-
         <div class="name">
             <p>{{currentUser.name}}</p>
         </div>
-
         <div class="gitHubLink">
             <p>{{currentUser.github}}</p>
         </div>
-
         <div class="rank">
             <p>All Time Rank: <span class="rankNum">24</span> out of <span class="totalRank">1,242</span</p>
         </div>
-
         <div class="points">
           <p><span class="totalPoints">1,205</span> points</p>
         </div>
-
         <div class="contributions">
             <p><span class="totalContribs">12</span> contributions</p>
         </div>
-
         <div class="skills">
             <p class="skills-header">SKILLS</p>
-            <!-- <p ng-repeat="skill in skillsList">{{skill}}</p> -->
             <p class="skills-list">{{currentUser.skills}}</p>
             <img ng-click='devDashboard.showSkillEdit=true' class="editIcon" src="assets/plus.png" alt="Plus by Eagle Eye from the Noun Project" />
             <input type="text" name="skill" ng-show='devDashboard.showSkillEdit' ng-model="devDashboard.newSkill">
             <button class="save" ng-show='devDashboard.showSkillEdit' ng-click="devDashboard.updateInfo('skills')">Save</button>
         </div>
-
-
     </div>
-
 </div>

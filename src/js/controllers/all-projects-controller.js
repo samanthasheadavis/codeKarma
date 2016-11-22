@@ -55,7 +55,6 @@ angular.module('codeKarmaApp').controller('AllProjectsController', function($sta
       RequestService.forkRepo(this.id);
     };
 
-
     // add project info to user object
 
 

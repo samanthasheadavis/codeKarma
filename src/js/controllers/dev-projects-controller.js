@@ -12,12 +12,16 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
 
     // get projects info
 
-    // this.getProjects = function() {
-    //   RequestService.getProjects(function(response) {
-    //       $scope.projects = response;
-    //       console.log($scope.projects);
-    //     });
-    // };
+    this.getProjects = function() {
+      RequestService.getDevProjects(function(response) {
+
+          console.log(response);
+          // $scope.projects = response;
+          // console.log($scope.projects);
+        });
+    };
+
+
 
     // progress slider - will need to GET progress on page load
 
@@ -53,6 +57,6 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
     // update and post est. completion date
 
 
-    // this.getProjects();
+    this.getProjects();
 
 });

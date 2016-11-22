@@ -777,7 +777,7 @@ ui-view {
   align-items: center;
   width: 80%;
   justify-content: flex-start;
-  transition: all .5s ease; }
+  transition: all 0.5s ease; }
   @media only screen and (max-width: 700px) {
     .dev-dashboard-container {
       width: 100%; } }
@@ -789,7 +789,7 @@ ui-view {
     width: 460px;
     border-radius: 5px;
     box-shadow: 0px 0px 5px 0px #ced0ce;
-    transition: all .5s ease; }
+    transition: all 0.5s ease; }
     @media only screen and (max-width: 525px) {
       .dev-dashboard-container .btnContainer {
         width: 400px; } }
@@ -812,14 +812,20 @@ ui-view {
       @media only screen and (max-width: 330px) {
         .dev-dashboard-container .btnContainer a {
           font-size: 12px; } }
-    .dev-dashboard-container .btnContainer .allProjectsBtn, .dev-dashboard-container .btnContainer .commFeedBtn, .dev-dashboard-container .btnContainer .myProjectsBtn {
+    .dev-dashboard-container .btnContainer .allProjectsBtn,
+    .dev-dashboard-container .btnContainer .commFeedBtn,
+    .dev-dashboard-container .btnContainer .myProjectsBtn {
       height: 50px;
       width: 33.33%;
       border: none;
       background: #AAEFDF; }
-      .dev-dashboard-container .btnContainer .allProjectsBtn:hover, .dev-dashboard-container .btnContainer .commFeedBtn:hover, .dev-dashboard-container .btnContainer .myProjectsBtn:hover {
+      .dev-dashboard-container .btnContainer .allProjectsBtn:hover,
+      .dev-dashboard-container .btnContainer .commFeedBtn:hover,
+      .dev-dashboard-container .btnContainer .myProjectsBtn:hover {
         background: #AAEFDF; }
-      .dev-dashboard-container .btnContainer .allProjectsBtn:focus, .dev-dashboard-container .btnContainer .commFeedBtn:focus, .dev-dashboard-container .btnContainer .myProjectsBtn:focus {
+      .dev-dashboard-container .btnContainer .allProjectsBtn:focus,
+      .dev-dashboard-container .btnContainer .commFeedBtn:focus,
+      .dev-dashboard-container .btnContainer .myProjectsBtn:focus {
         outline: 0; }
     .dev-dashboard-container .btnContainer .myProjectsBtn {
       border-bottom-left-radius: 5px;
@@ -846,7 +852,7 @@ ui-view {
     box-shadow: 0px 0px 5px 0px #ced0ce;
     border-radius: 5px;
     margin-bottom: 50px;
-    transition: all .5s ease; }
+    transition: all 0.5s ease; }
     @media only screen and (max-width: 525px) {
       .dev-dashboard-container .infoContainer {
         width: 400px; } }
@@ -897,9 +903,9 @@ ui-view {
         position: relative;
         text-transform: uppercase;
         outline: none; }
-    .dev-dashboard-container .infoContainer .rank,
-    .dev-dashboard-container .infoContainer .points,
     .dev-dashboard-container .infoContainer .contributions,
+    .dev-dashboard-container .infoContainer .points,
+    .dev-dashboard-container .infoContainer .rank,
     .dev-dashboard-container .infoContainer .skills {
       height: 20px;
       width: 100%;
