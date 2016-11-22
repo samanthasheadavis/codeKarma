@@ -36,15 +36,15 @@
             <div class="commPost">
 
                 <div class="postContainer">
-                    <div class="profile"></div>
-                    <p class="question">Sometimes when I eat 15 bags of M&amp;Ms consecutively I feel less than my best. Could use some insight into this.</p>
-                    <p class="likeAmount"><span>{{communityFeed.likes}}</span> Likes</p>
-                    <img src="assets/like.png" alt="like by dilayorganci from the Noun Project" ng-click="communityFeed.updateLikes(communityFeed.likes)">
+                    <img class="questioner-img" src="{{posts.questioner_image}}" alt="{{posts.questioner}}">
+                    <p class="question">{{posts.question}}</p>
+                    <p class="likeAmount"><span>{{posts.likes}}</span> Likes</p>
+                    <img class="like" src="assets/like.png" alt="like by dilayorganci from the Noun Project" ng-click="communityFeed.updateLikes(communityFeed.likes)">
                 </div>
 
                 <div class="postInfoContainer">
-                    <h1 class="name">Samantha Davis</h1>
-                    <p class="timeElapsed"><span class="timeStamp">15 </span><span class="timeUnit">minutes</span> ago</p>
+                    <h1 class="name">{{posts.questioner}}</h1>
+                    <p class="timeElapsed"><span class="timeStamp">{{posts.timeElapsed}}</span> ago</p>
                 </div>
 
                 <div class="responsesContainer">

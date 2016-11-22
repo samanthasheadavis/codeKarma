@@ -6,6 +6,28 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
 
     this.addPost = function() {
         console.log(this.post);
+
+        this.newQuestion = {
+          "karma_question": this.post
+        };
+        RequestService.postQuestion(this.newQuestion);
+
+        this.post = '';
+    };
+
+    this.getPosts = function () {
+      RequestService.getPosts(function(response) {
+        $scope.posts = response[0];
+        console.log($scope.posts);
+
+        this.date = $scope.posts.created.slice(0, 10);
+        this.time = $scope.posts.created.slice(11, 19);
+        $scope.posts.timeElapsed = this.date + ' ' + this.time;
+        console.log($scope.posts.timeElapsed);
+
+
+      });
+
     };
 
     this.addResponse = function(response) {
@@ -22,9 +44,11 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
 
       RequestService.getDev(function(response) {
         $scope.currentUser = RequestService.createUser(response.data);
-        console.log($scope.currentUser);
       });
     };
 
+
+
     this.getDev();
+    this.getPosts();
 });
