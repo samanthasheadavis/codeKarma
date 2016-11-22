@@ -245,34 +245,41 @@ ui-view {
     margin: 40px 0 20px;
     display: flex;
     justify-content: center;
-    background: #ffffff;
+    background: #AAEFDF;
     width: 402px;
-    border-radius: 5px; }
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 0px #ced0ce;
+    transition: all 0.5s ease; }
     .client-dashboard-container .btnContainer .createProjectsBtn,
     .client-dashboard-container .btnContainer .myProjectsBtn {
-      background: none;
-      border: 3px solid #AAEFDF;
-      border-radius: 5px;
-      color: #AAEFDF;
-      display: block;
-      font-size: 12px;
-      font-weight: bold;
-      margin: 10px;
-      padding: 10px;
-      position: relative;
-      text-transform: uppercase;
-      outline: none; }
+      height: 50px;
+      width: 50%;
+      border: none;
+      background: #AAEFDF; }
       .client-dashboard-container .btnContainer .createProjectsBtn:hover,
       .client-dashboard-container .btnContainer .myProjectsBtn:hover {
         background: #AAEFDF; }
-      .client-dashboard-container .btnContainer .createProjectsBtn:hover > a,
-      .client-dashboard-container .btnContainer .myProjectsBtn:hover > a {
-        color: white; }
+      .client-dashboard-container .btnContainer .createProjectsBtn:focus,
+      .client-dashboard-container .btnContainer .myProjectsBtn:focus {
+        outline: 0; }
     .client-dashboard-container .btnContainer a {
       text-decoration: none;
-      color: #4F4F4F;
+      color: #191919;
       font-size: 15px;
-      font-family: "Raleway", sans-serif; }
+      font-family: "Raleway", sans-serif;
+      font-weight: bold;
+      text-transform: uppercase;
+      padding-bottom: 5px; }
+    .client-dashboard-container .btnContainer .myProjectsBtn {
+      border-bottom-left-radius: 5px;
+      border-top-left-radius: 5px; }
+      .client-dashboard-container .btnContainer .myProjectsBtn:hover a {
+        border-bottom: 5px solid #ffffff; }
+    .client-dashboard-container .btnContainer .createProjectsBtn {
+      border-bottom-right-radius: 5px;
+      border-top-right-radius: 5px; }
+      .client-dashboard-container .btnContainer .createProjectsBtn:hover a {
+        border-bottom: 5px solid #ffffff; }
   .client-dashboard-container .infoContainer {
     display: flex;
     width: 402px;

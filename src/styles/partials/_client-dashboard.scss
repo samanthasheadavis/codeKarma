@@ -12,28 +12,54 @@
         margin: 40px 0 20px;
         display: flex;
         justify-content: center;
-        background: $white;
+        background: $pop;
         width: 402px;
         border-radius: 5px;
+        box-shadow: $box-shadow;
+        transition: all 0.5s ease;
 
         .createProjectsBtn,
         .myProjectsBtn {
-            @include button(12px) {};
+            height: 50px;
+            width: 50%;
+            border: none;
+            background: $pop;
 
             &:hover {
                 background: $pop;
             }
 
-            &:hover > a {
-                color: white;
+            &:focus {
+                outline: 0;
             }
         }
 
         a {
             text-decoration: none;
-            color: $darkGrey;
+            color: $charcoal;
             font-size: 15px;
             font-family: $raleway;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding-bottom: 5px;
+        }
+
+        .myProjectsBtn {
+            border-bottom-left-radius: $border-radius;
+            border-top-left-radius: $border-radius;
+
+            &:hover a {
+                border-bottom: 5px solid $white;
+            }
+        }
+
+        .createProjectsBtn {
+            border-bottom-right-radius: $border-radius;
+            border-top-right-radius: $border-radius;
+
+            &:hover a {
+                border-bottom: 5px solid $white;
+            }
         }
     }
 
@@ -95,21 +121,21 @@
                 outline: none;
                 border: 1px solid $lightGrey;
                 font-family: $raleway;
-                padding: 2px; 
+                padding: 2px;
             }
 
             .save {
-              background: none;
-              border: 3px solid $pop;
-              border-radius: 5px;
-              color: $pop;
-              font-size: 12px;
-              font-weight: bold;
-              margin: 10px;
-              padding: 6px;
-              position: relative;
-              text-transform: uppercase;
-              outline: none;
+                background: none;
+                border: 3px solid $pop;
+                border-radius: 5px;
+                color: $pop;
+                font-size: 12px;
+                font-weight: bold;
+                margin: 10px;
+                padding: 6px;
+                position: relative;
+                text-transform: uppercase;
+                outline: none;
             }
         }
 
