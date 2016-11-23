@@ -1028,6 +1028,10 @@ ui-view {
         position: relative;
         text-transform: uppercase;
         outline: none; }
+    .dev-dashboard-container .infoContainer span.totalPoints {
+      font-weight: 700; }
+    .dev-dashboard-container .infoContainer .rank-heading {
+      font-weight: bold; }
     .dev-dashboard-container .infoContainer .contributions,
     .dev-dashboard-container .infoContainer .points,
     .dev-dashboard-container .infoContainer .rank,
