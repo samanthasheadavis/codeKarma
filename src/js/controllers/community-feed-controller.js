@@ -39,13 +39,12 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
     };
 
     this.addResponse = function(comment, id) {
-        // var newResponse = $('<p>').attr('class', 'response').html(comment).appendTo('.responsesContainer');
         this.newComment = {
             "karma_comment": comment,
             "karma_question_id": id
         };
         RequestService.postComment(this.newComment);
-        this.response = '';
+
     };
 
     this.updateQuestionLikes = function(likes, id) {

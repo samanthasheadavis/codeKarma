@@ -135,7 +135,7 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
         var settings = {
             "async": true,
             "crossDomain": true,
-            "url": 'https://code-karma-api.herokuapp.com/developer_projects/' + userId + '?token=' + token,
+            "url": 'https://code-karma-api.herokuapp.com/developers_my_projects/' + userId + '?token=' + token,
             "method": "GET"
         };
 
@@ -235,9 +235,6 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
         // return response;
       });
     }
-
-
-
 
 
     return {

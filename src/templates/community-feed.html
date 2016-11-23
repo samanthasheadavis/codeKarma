@@ -56,8 +56,8 @@
                     </div>
                 </div>
                 <div class="responseForm">
-                    <textarea name="post" placeholder="Post a response" ng-model="communityFeed.response"></textarea>
-                    <button type="button" class="respondBtn" ng-click="communityFeed.addResponse(communityFeed.response, posts.question_id)">Post</button>
+                    <textarea id="post.question_id" name="post" placeholder="Post a response" ng-model="post.response"></textarea>
+                    <button type="button" class="respondBtn" ng-click="communityFeed.addResponse(post.response, post.question_id)">Post</button>
                 </div>
             </div>
         </div>
