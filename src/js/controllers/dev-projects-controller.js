@@ -16,12 +16,12 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
       $('div.tooltip').removeClass('active');
     };
 
-    this.pullRequest = function() {
+    this.pullRequest = function(id) {
       $('.dev-projects-container').addClass('modal-up');
       this.showModal = true;
+      this.projectId = id;
 
       this.token = RequestService.fetchToken();
-      this.projectId = 2;
       this.branchUrl = "https://code-karma-api.herokuapp.com/branches/" + this.projectId + "?token=" + this.token;
 
       var settings = {
@@ -34,8 +34,6 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
       $.ajax(settings).done(function(response) {
           $scope.headBranches = response.head_branches;
           $scope.baseBranches = response.base_branches;
-          console.log($scope.baseBranches);
-          console.log($scope.headBranches);
 
           $scope.$apply();
       });
