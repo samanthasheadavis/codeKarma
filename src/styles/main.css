@@ -675,7 +675,7 @@ ui-view {
       flex-direction: column;
       box-sizing: border-box;
       background: #ffffff;
-      border: 1px solid #ced0ce;
+      border-left: 10px solid #AAEFDF;
       padding: 15px 10px;
       width: 100%;
       box-shadow: 0px 0px 5px 0px #ced0ce;
@@ -684,32 +684,43 @@ ui-view {
       .community-feed-container .flexContainer .commPost .postContainer {
         box-sizing: border-box;
         display: flex;
-        justify-content: space-between; }
+        justify-content: space-between;
+        margin-bottom: 15px; }
         .community-feed-container .flexContainer .commPost .postContainer .questioner-img {
+          align-self: center;
           border-radius: 50%;
           width: 50px;
-          height: 50px;
-          margin-bottom: 15px; }
+          height: 50px; }
         .community-feed-container .flexContainer .commPost .postContainer .question {
           width: 60%;
-          padding: 10px;
-          color: #4F4F4F; }
-        .community-feed-container .flexContainer .commPost .postContainer img.like {
-          width: 25px;
-          height: 25px;
-          border-radius: 5px; }
-          .community-feed-container .flexContainer .commPost .postContainer img.like:hover {
-            background: #AAEFDF; }
+          color: #4F4F4F;
+          align-self: center; }
+        .community-feed-container .flexContainer .commPost .postContainer .like-container {
+          display: flex;
+          flex-direction: column; }
+          .community-feed-container .flexContainer .commPost .postContainer .like-container .likeAmount {
+            align-self: flex-end; }
+          .community-feed-container .flexContainer .commPost .postContainer .like-container img.like {
+            align-self: flex-end;
+            width: 25px;
+            height: 25px;
+            border-radius: 5px;
+            margin-bottom: 10px; }
+            .community-feed-container .flexContainer .commPost .postContainer .like-container img.like:hover {
+              background: #AAEFDF; }
       .community-feed-container .flexContainer .commPost .postInfoContainer {
         display: flex;
-        justify-content: space-between; }
+        justify-content: space-between;
+        margin-bottom: 15px; }
+        .community-feed-container .flexContainer .commPost .postInfoContainer h1 {
+          font-weight: bold; }
       .community-feed-container .flexContainer .commPost .responsesContainer {
         box-sizing: border-box; }
         .community-feed-container .flexContainer .commPost .responsesContainer .response {
           display: flex;
           justify-content: flex-start;
           box-sizing: border-box;
-          margin: 15px 0;
+          margin-bottom: 15px;
           width: 100%;
           background: #e6e8e6;
           border-radius: 5px;
@@ -728,6 +739,7 @@ ui-view {
             justify-content: center; }
             .community-feed-container .flexContainer .commPost .responsesContainer .response .comment-container .commenter-name {
               margin: 15px 10px;
+              font-size: 14px;
               font-weight: bold;
               color: #191919; }
             .community-feed-container .flexContainer .commPost .responsesContainer .response .comment-container .comment-data {
@@ -736,7 +748,9 @@ ui-view {
               justify-content: flex-end;
               flex-direction: row;
               margin: 10px 0 0 10px; }
-            .community-feed-container .flexContainer .commPost .responsesContainer .response .comment-container .comment-time, .community-feed-container .flexContainer .commPost .responsesContainer .response .comment-container .like-text, .community-feed-container .flexContainer .commPost .responsesContainer .response .comment-container .like-comment {
+            .community-feed-container .flexContainer .commPost .responsesContainer .response .comment-container .comment-time,
+            .community-feed-container .flexContainer .commPost .responsesContainer .response .comment-container .like-comment,
+            .community-feed-container .flexContainer .commPost .responsesContainer .response .comment-container .like-text {
               align-self: flex-end; }
             .community-feed-container .flexContainer .commPost .responsesContainer .response .comment-container .comment-time {
               font-size: 12px;
@@ -779,7 +793,7 @@ ui-view {
   .community-feed-container .sidebar {
     width: 25%; }
     .community-feed-container .sidebar .user-stats {
-      background: #ffffff;
+      background: rgba(170, 239, 223, 0.5);
       border-radius: 5px;
       box-shadow: 0px 0px 5px 0px #ced0ce;
       display: flex;
@@ -794,16 +808,18 @@ ui-view {
         box-shadow: 0px 0px 5px 0px #ced0ce;
         margin: 15px 0; }
     .community-feed-container .sidebar .username {
-      margin-bottom: 8px; }
+      margin-bottom: 8px;
+      font-weight: bold; }
     .community-feed-container .sidebar .points {
       margin-bottom: 15px; }
-    .community-feed-container .sidebar .rank {
+    .community-feed-container .sidebar p.rank {
       margin-bottom: 15px; }
+      .community-feed-container .sidebar p.rank span {
+        font-weight: bold; }
   .community-feed-container .leaderboard {
-    background: rgba(170, 239, 223, 0.6);
     border-radius: 5px;
     box-shadow: 0px 0px 5px 0px #ced0ce;
-    height: 250px;
+    font-size: 14px;
     margin-top: 40px;
     margin-right: 10px;
     width: 100%; }
@@ -816,12 +832,13 @@ ui-view {
     .community-feed-container .leaderboard li {
       display: flex;
       flex-direction: row;
-      line-height: 30px;
+      line-height: 40px;
       width: 100%;
       margin: 15px 10px; }
       .community-feed-container .leaderboard li h3 {
         margin-top: 15px;
-        font-weight: bold; }
+        font-weight: bold;
+        font-size: 18px; }
       .community-feed-container .leaderboard li .prof-pic {
         height: 40px;
         border-radius: 10px;

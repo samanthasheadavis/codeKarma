@@ -33,8 +33,10 @@
                 <div class="postContainer">
                     <img class="questioner-img" src="{{post.questioner_image}}" alt="{{post.questioner}}">
                     <p class="question">{{post.question}}</p>
-                    <p class="likeAmount"><span>{{post.likes}}</span> Likes</p>
+                    <div class="like-container">
                     <img class="like" src="assets/like.png" alt="like by dilayorganci from the Noun Project" ng-click="communityFeed.updateLikes(communityFeed.likes)">
+                    <p class="likeAmount"><span>{{post.likes}}</span> Likes</p>
+                    </div>
                 </div>
                 <div class="postInfoContainer">
                     <h1 class="name">{{post.questioner}}</h1>
@@ -66,7 +68,7 @@
                 <img class="user-photo" alt="{{currentUserStats.username}}" src="{{currentUserStats.image}}">
                 <p class="username">{{currentUserStats.username}}</p>
                 <p class="points">{{currentUserStats.points}} points</p>
-                <p class="rank">All Time Rank: #<span>{{currentUserStats.rank}}</span> of {{currentUserStats.total_devs}}</p>
+                <p class="rank">All Time Rank:<span class="rank"> #{{currentUserStats.rank}}</span> of <span class="totalDevs">{{currentUserStats.total_devs}}</span></p>
             </div>
             <div class="leaderboard">
                 <ul>
