@@ -87,7 +87,7 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
         var settings = {
             "async": true,
             "crossDomain": true,
-            "url": 'https://code-karma-api.herokuapp.com/projects/' + id + '?token=' + token,
+            "url": 'https://code-karma-api.herokuapp.com/developer_projects/' + id + '?token=' + token,
             "method": "PUT",
             "data": progress
         };
@@ -151,7 +151,7 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
         });
 
     }
-    
+
     function getLeaderboard(callback) {
       var settings = {
           "async": true,

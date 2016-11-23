@@ -617,7 +617,7 @@ ui-view {
     cursor: pointer; }
 
 .community-feed-container {
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.6);
   width: 80%;
   height: 100%; }
   @media only screen and (max-width: 700px) {
@@ -1028,6 +1028,10 @@ ui-view {
         position: relative;
         text-transform: uppercase;
         outline: none; }
+    .dev-dashboard-container .infoContainer span.totalPoints {
+      font-weight: 700; }
+    .dev-dashboard-container .infoContainer .rank-heading {
+      font-weight: bold; }
     .dev-dashboard-container .infoContainer .contributions,
     .dev-dashboard-container .infoContainer .points,
     .dev-dashboard-container .infoContainer .rank,

@@ -13,17 +13,20 @@
         <div class="name">
             <p>{{currentUser.name}}</p>
         </div>
+        <div class="username">
+            <p>{{currentUserStats.username}}</p>
+        </div>
         <div class="gitHubLink">
             <p>{{currentUser.github}}</p>
         </div>
         <div class="rank">
-            <p>All Time Rank: <span class="rankNum">24</span> out of <span class="totalRank">1,242</span</p>
+            <p><span class="rank-heading">All Time Rank:</span> <span class="rankNum"> #{{currentUserStats.rank}}</span> out of <span class="totalRank">{{currentUserStats.total_devs}}</span</p>
         </div>
         <div class="points">
-          <p><span class="totalPoints">1,205</span> points</p>
+          <p><span class="totalPoints">{{currentUserStats.points}}</span> points</p>
         </div>
         <div class="contributions">
-            <p><span class="totalContribs">12</span> contributions</p>
+            <p><span class="totalContribs">{{currentUserStats.contributions}}</span> contributions</p>
         </div>
         <div class="skills">
             <p class="skills-header">SKILLS</p>

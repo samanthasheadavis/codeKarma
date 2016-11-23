@@ -9,6 +9,8 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
       $('div.tooltip').addClass('active');
     };
 
+    // remove pull request button when progress < 100%
+
     this.revertButton = function() {
       $('button.help-btn').addClass('active');
       $('div.tooltip').removeClass('active');
@@ -86,10 +88,11 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
     // update and post progress
 
     $scope.updateProgress = function(progress, date, id) {
+      console.log(id);
 
         this.status = {
-          "progress": progress,
-          "date": date
+          "percentage_complete": progress,
+          "est_completion_date": date
         };
 
         RequestService.setProgress(this.status, id);
