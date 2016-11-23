@@ -13,10 +13,18 @@ angular.module('codeKarmaApp').controller('ClientProjectsController', function($
         };
 
         $.ajax(settings).done(function(response) {
+          console.log(response);
             $scope.projects = response;
             $scope.icons(response);
             $scope.$apply();
+            $scope.handleProgress(response);
         });
+    };
+
+    $scope.handleProgress = function(response) {
+      for (count=0; count<response.length; count++) {
+        console.log(response[count].developer_project);
+      }
     };
 
     $scope.icons = function(response) {
