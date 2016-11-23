@@ -698,7 +698,7 @@ ui-view {
         margin-bottom: 15px; }
         .community-feed-container .flexContainer .commPost .postContainer .questioner-img {
           align-self: center;
-          border-radius: 50%;
+          border-radius: 5px;
           width: 50px;
           height: 50px; }
         .community-feed-container .flexContainer .commPost .postContainer .question {
@@ -739,7 +739,7 @@ ui-view {
           padding: 10px; }
           .community-feed-container .flexContainer .commPost .responsesContainer .response .commenter-photo {
             height: 40px;
-            border-radius: 50%;
+            border-radius: 5px;
             border: 2px solid #4F4F4F;
             align-self: center; }
           .community-feed-container .flexContainer .commPost .responsesContainer .response .comment {

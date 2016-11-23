@@ -1,6 +1,6 @@
 angular.module('codeKarmaApp').service('RequestService', function($http, $location, $state) {
 
-    var token = '';
+    var token;
     var currentUser = '';
     var userId = '';
 

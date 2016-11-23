@@ -86,7 +86,7 @@
 
                 .questioner-img {
                     align-self: center;
-                    border-radius: 50%;
+                    border-radius: $border-radius;
                     width: 50px;
                     height: 50px;
                 }
@@ -146,7 +146,7 @@
 
                     .commenter-photo {
                         height: 40px;
-                        border-radius: 50%;
+                        border-radius: $border-radius;
                         border: 2px solid $darkGrey;
                         align-self: center;
                     }
