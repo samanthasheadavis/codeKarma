@@ -51,7 +51,7 @@
         </nav>
     </header>
 
-    <div class="project-card">
+    <div class="project-card" ng-repeat="project in projects">
         <h3 class="title" ng-click="devProjects.pullRequest()">Org Name - Project Title</h3>
         <div class="details">
             <form>
@@ -61,19 +61,6 @@
                   progress :  <span class="progress">{{progress}}</span>%
                 <div slider id="flat-slider" model="progress"></div>
                 </div>
-                <!-- <select ng-model="status" class="status" ng-change="devProjects.updateStatus(status)">
-                <option class="0">0</option>
-                <option class="10">10</option>
-                <option class="20">20</option>
-                <option class="30">30</option>
-                <option class="40">40</option>
-                <option class="50">50</option>
-                <option class="60">60</option>
-                <option class="70">70</option>
-                <option class="80">80</option>
-                <option class="90">90</option>
-                <option class="100">100</option>
-                </select> -->
 
                 <label for="completion-date" class="date">est. completion date</label>
                 <input ng-model="completionDate" name="completionDate" type="date">
