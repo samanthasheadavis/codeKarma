@@ -57,7 +57,6 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
     };
 
     this.submitRequest = function() {
-      console.log($scope.pullInfo);
 
       this.requestUrl = "https://code-karma-api.herokuapp.com/developer_projects/" + this.projectId + "?token=" + this.token;
 
@@ -66,7 +65,7 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
           "crossDomain": true,
           "url": this.requestUrl,
           "method": "POST",
-          "data": this.pullInfo
+          "data": $scope.pullInfo
       };
 
       $.ajax(settings).done(function(response) {
