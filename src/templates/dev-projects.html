@@ -52,13 +52,14 @@
     </header>
 
     <div class="project-card" ng-repeat="project in projects">
-        <h3 class="title">Org Name - Project Title</h3>
+        <h3 class="title">{{project.organization_name}}</h3>
+        <p class="brief-description">{{project.brief_description}}</p>
         <div class="details">
             <form>
                 <div class="status">
                   progress :  <span class="progress">{{progress}}</span>%
                 <div slider id="flat-slider" model="progress"></div>
-                </div>
+                </div>  
 
                 <label for="completion-date" class="date">est. completion date</label>
                 <input ng-model="completionDate" name="completionDate" type="date">

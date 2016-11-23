@@ -131,7 +131,7 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
         });
     }
 
-    function getDevProjects() {
+    function getDevProjects(callback) {
         var settings = {
             "async": true,
             "crossDomain": true,
@@ -139,16 +139,7 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
             "method": "GET"
         };
 
-        $.ajax(settings).done(function(response) {
-
-            console.log(response);
-
-            // $scope.projects = response.all_projects;
-            // console.log($scope.projects);
-            // $scope.getIcon(response.all_projects);
-            // $scope.$apply();
-
-        });
+        $.ajax(settings).done(callback);
 
     }
 

@@ -82,13 +82,13 @@
 }
 
 .dev-projects-container {
-    background: $white;
+    background: rgba(255,255,255, .6);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-content: flex-start;
     width: 80%;
-    height: 100vh;
+    height: 100%;
 
     .project-card {
         background: $white;
@@ -101,6 +101,10 @@
 
         h3 {
             font-size: 30px;
+        }
+
+        .brief-description {
+          margin: $vspace 0 0 $hspace;
         }
 
         .details {

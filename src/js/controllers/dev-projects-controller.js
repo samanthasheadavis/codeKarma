@@ -78,10 +78,9 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
 
     this.getProjects = function() {
       RequestService.getDevProjects(function(response) {
-
-          console.log(response);
-          // $scope.projects = response;
-          // console.log($scope.projects);
+          $scope.projects = response.my_developer_projects;
+          console.log($scope.projects);
+          $scope.$apply();
         });
     };
 
