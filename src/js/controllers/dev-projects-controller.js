@@ -17,6 +17,27 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
     this.pullRequest = function() {
       $('.dev-projects-container').addClass('modal-up');
       this.showModal = true;
+
+      this.token = RequestService.fetchToken();
+      this.projectId = 1;
+      this.branchUrl = "https://code-karma-api.herokuapp.com/branches/" + this.projectId + "?token=" + this.token;
+
+      var settings = {
+          "async": true,
+          "crossDomain": true,
+          "url": this.branchUrl,
+          "method": "GET"
+      };
+
+      $.ajax(settings).done(function(response) {
+          $scope.headBranches = response.head_branches;
+          $scope.baseBranches = response.base_branches;
+          console.log($scope.baseBranches);
+          console.log($scope.headBranches);
+
+          $scope.$apply();
+      });
+
     };
 
     this.closeModal = function() {
@@ -24,12 +45,39 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
       $('.dev-projects-container').removeClass('modal-up');
     };
 
+    // get info from pull request form fields
+
+    $scope.pullInfo = {
+      title: '',
+      body: '',
+      head: '',
+      base: ''
+    };
+
+    this.submitRequest = function() {
+      console.log($scope.pullInfo);
+
+      this.requestUrl = "https://code-karma-api.herokuapp.com/developer_projects/" + this.projectId + "?token=" + this.token;
+
+      var settings = {
+          "async": true,
+          "crossDomain": true,
+          "url": this.requestUrl,
+          "method": "POST"
+      };
+
+      $.ajax(settings).done(function(response) {
+        console.log(response);
+      });
+
+  };
+
     // get projects info
 
     this.getProjects = function() {
       RequestService.getDevProjects(function(response) {
 
-          console.log(response);
+          // console.log(response);
           // $scope.projects = response;
           // console.log($scope.projects);
         });

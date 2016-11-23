@@ -46,11 +46,8 @@ angular.module('codeKarmaApp').controller('AllProjectsController', function($sta
         });
 
     };
-
     $scope.languages = function(response) {
-      for (index = 0; index<response.length; index++) {
-        if (response[index].languages.language_percent);
-      }
+
     };
     // fork project function
 
