@@ -57,7 +57,7 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
     this.submitRequest = function() {
 
       this.requestUrl = "https://code-karma-api.herokuapp.com/developer_projects/" + this.projectId + "?token=" + this.token;
-
+      console.log($scope.pullInfo);
       var settings = {
           "async": true,
           "crossDomain": true,
