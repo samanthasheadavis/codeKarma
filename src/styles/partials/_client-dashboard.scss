@@ -1,5 +1,5 @@
 .client-dashboard-container {
-    background: $lightGrey;
+    background: $white;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -96,7 +96,6 @@
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
-        background: $white;
         box-shadow: $box-shadow;
         border-radius: 5px;
 

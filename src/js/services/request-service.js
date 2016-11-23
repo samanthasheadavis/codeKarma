@@ -151,20 +151,16 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
         });
 
     }
+    
+    function getLeaderboard(callback) {
+      var settings = {
+          "async": true,
+          "crossDomain": true,
+          "url": 'https://code-karma-api.herokuapp.com/developers/rank?token=' + token,
+          "method": "GET"
+      };
 
-    function getLeaderboard() {
-        var settings = {
-            "async": true,
-            "crossDomain": true,
-            "url": 'url',
-            "method": "GET"
-        };
-
-        $.ajax(settings).done(function(response) {
-
-            console.log(response);
-
-        });
+      $.ajax(settings).done(callback);
     }
 
     function postQuestion(post) {
@@ -210,6 +206,36 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
         });
     }
 
+    function updateQuestionLikes(likes, id){
+
+      var settings = {
+          "async": true,
+          "crossDomain": true,
+          "url": 'https://code-karma-api.herokuapp.com/karma_question/' + id + '?token=' + token,
+          "method": "PUT",
+          "data": likes
+      };
+      $.ajax(settings).done(function(response) {
+        console.log(response);
+        // return response;
+      });
+    }
+
+    function updateCommentLikes(likes, id){
+
+      var settings = {
+          "async": true,
+          "crossDomain": true,
+          "url": 'https://code-karma-api.herokuapp.com/karma_comment/' + id + '?token=' + token,
+          "method": "PUT",
+          "data": likes
+      };
+      $.ajax(settings).done(function(response) {
+        console.log(response);
+        // return response;
+      });
+    }
+
 
 
 
@@ -232,7 +258,9 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
         getLeaderboard: getLeaderboard,
         postQuestion: postQuestion,
         getPosts: getPosts,
-        postComment: postComment
+        postComment: postComment,
+        updateQuestionLikes: updateQuestionLikes,
+        updateCommentLikes: updateCommentLikes
     };
 
 });

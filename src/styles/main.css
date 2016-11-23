@@ -48,19 +48,21 @@ table {
   border-spacing: 0; }
 
 body {
-  background: #ced0ce;
+  background-image: url("../../assets/bright_squares.png");
   width: 100%;
-  font-family: "Raleway", sans-serif; }
+  font-family: "Raleway", sans-serif;
+  height: 100%; }
 
 ui-view {
   display: flex;
   justify-content: center;
-  width: 100%; }
+  width: 100%;
+  height: 100%; }
 
 /***** Site Components ******/
 .all-projects-container {
   align-items: center;
-  background: #e6e8e6;
+  background: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -75,10 +77,10 @@ ui-view {
       resize: none;
       height: 20px;
       padding: 10px;
-      border: none;
       line-height: 20px;
       outline: none;
       width: 100%;
+      border: 1px solid #e6e8e6;
       border-radius: 5px 0 0 5px; }
       .all-projects-container .searchForm textarea::-webkit-input-placeholder {
         color: #ced0ce; }
@@ -158,9 +160,12 @@ ui-view {
             .all-projects-container .project-card .heading .categories .category-image .tooltiptext span {
               letter-spacing: 0.1em;
               display: block; }
+        .all-projects-container .project-card .heading .categories .bold {
+          font-weight: bold; }
         .all-projects-container .project-card .heading .categories .languages {
           align-self: center;
-          margin: 15px 10px 0 0; }
+          margin: 15px 10px 0 0;
+          display: inline; }
     .all-projects-container .project-card .project-contents {
       display: flex;
       flex-direction: row;
@@ -233,7 +238,7 @@ ui-view {
         outline: 0; }
 
 .client-dashboard-container {
-  background: #e6e8e6;
+  background: #ffffff;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -302,7 +307,6 @@ ui-view {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    background: #ffffff;
     box-shadow: 0px 0px 5px 0px #ced0ce;
     border-radius: 5px; }
     .client-dashboard-container .infoContainer .profilePic {
@@ -366,7 +370,7 @@ ui-view {
 
 .client-add-project-container {
   align-items: center;
-  background: #e6e8e6;
+  background: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -513,7 +517,7 @@ ui-view {
 
 .client-projects-container {
   align-items: center;
-  background: #e6e8e6;
+  background: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -613,9 +617,12 @@ ui-view {
     cursor: pointer; }
 
 .community-feed-container {
-  background: #e6e8e6;
+  background: #ffffff;
   width: 80%;
   height: 100%; }
+  @media only screen and (max-width: 700px) {
+    .community-feed-container {
+      width: 100%; } }
   .community-feed-container .flexContainer {
     display: flex;
     flex-direction: row;
@@ -633,6 +640,8 @@ ui-view {
       margin-bottom: 40px; }
       .community-feed-container .flexContainer .postForm textarea {
         resize: none;
+        background: #e6e8e6;
+        font-size: 18px;
         height: 20px;
         padding: 10px;
         border: none;
@@ -640,13 +649,17 @@ ui-view {
         width: 100%;
         border-radius: 5px 0 0 5px; }
         .community-feed-container .flexContainer .postForm textarea::-webkit-input-placeholder {
-          color: #ced0ce; }
+          color: #4F4F4F;
+          font-size: 18px; }
         .community-feed-container .flexContainer .postForm textarea::-moz-placeholder {
-          color: #ced0ce; }
+          color: #4F4F4F;
+          font-size: 18px; }
         .community-feed-container .flexContainer .postForm textarea:-moz-placeholder {
-          color: #ced0ce; }
+          color: #4F4F4F;
+          font-size: 18px; }
         .community-feed-container .flexContainer .postForm textarea:-ms-input-placeholder {
-          color: #ced0ce; }
+          color: #4F4F4F;
+          font-size: 18px; }
       .community-feed-container .flexContainer .postForm .askBtn {
         border-radius: 0 5px 5px 0;
         width: 100px;
@@ -665,7 +678,7 @@ ui-view {
       flex-direction: column;
       box-sizing: border-box;
       background: #ffffff;
-      border: 1px solid #ced0ce;
+      border-left: 10px solid #AAEFDF;
       padding: 15px 10px;
       width: 100%;
       box-shadow: 0px 0px 5px 0px #ced0ce;
@@ -674,36 +687,82 @@ ui-view {
       .community-feed-container .flexContainer .commPost .postContainer {
         box-sizing: border-box;
         display: flex;
-        justify-content: space-between; }
+        justify-content: space-between;
+        margin-bottom: 15px; }
         .community-feed-container .flexContainer .commPost .postContainer .questioner-img {
+          align-self: center;
           border-radius: 50%;
           width: 50px;
-          height: 50px;
-          margin-bottom: 15px; }
+          height: 50px; }
         .community-feed-container .flexContainer .commPost .postContainer .question {
           width: 60%;
-          padding: 10px;
-          color: #4F4F4F; }
-        .community-feed-container .flexContainer .commPost .postContainer img.like {
-          width: 25px;
-          height: 25px;
-          border-radius: 5px; }
-          .community-feed-container .flexContainer .commPost .postContainer img.like:hover {
-            background: #AAEFDF; }
+          color: #4F4F4F;
+          align-self: center; }
+        .community-feed-container .flexContainer .commPost .postContainer .like-container {
+          display: flex;
+          flex-direction: column; }
+          .community-feed-container .flexContainer .commPost .postContainer .like-container .likeAmount {
+            align-self: flex-end; }
+          .community-feed-container .flexContainer .commPost .postContainer .like-container img.like {
+            align-self: flex-end;
+            width: 25px;
+            height: 25px;
+            border-radius: 5px;
+            margin-bottom: 10px; }
+            .community-feed-container .flexContainer .commPost .postContainer .like-container img.like:hover {
+              background: #AAEFDF; }
       .community-feed-container .flexContainer .commPost .postInfoContainer {
         display: flex;
-        justify-content: space-between; }
+        justify-content: space-between;
+        margin-bottom: 15px; }
+        .community-feed-container .flexContainer .commPost .postInfoContainer h1 {
+          font-weight: bold; }
       .community-feed-container .flexContainer .commPost .responsesContainer {
         box-sizing: border-box; }
         .community-feed-container .flexContainer .commPost .responsesContainer .response {
           display: flex;
+          justify-content: flex-start;
           box-sizing: border-box;
-          margin: 15px 0;
+          margin-bottom: 15px;
           width: 100%;
           background: #e6e8e6;
           border-radius: 5px;
           color: dimgray;
           padding: 10px; }
+          .community-feed-container .flexContainer .commPost .responsesContainer .response .commenter-photo {
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid #4F4F4F;
+            align-self: center; }
+          .community-feed-container .flexContainer .commPost .responsesContainer .response .comment {
+            align-self: center; }
+          .community-feed-container .flexContainer .commPost .responsesContainer .response .comment-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center; }
+            .community-feed-container .flexContainer .commPost .responsesContainer .response .comment-container .commenter-name {
+              margin: 15px 10px;
+              font-size: 14px;
+              font-weight: bold;
+              color: #191919; }
+            .community-feed-container .flexContainer .commPost .responsesContainer .response .comment-container .comment-data {
+              align-self: flex-start;
+              display: flex;
+              justify-content: flex-end;
+              flex-direction: row;
+              margin: 10px 0 0 10px; }
+            .community-feed-container .flexContainer .commPost .responsesContainer .response .comment-container .comment-time,
+            .community-feed-container .flexContainer .commPost .responsesContainer .response .comment-container .like-comment,
+            .community-feed-container .flexContainer .commPost .responsesContainer .response .comment-container .like-text {
+              align-self: flex-end; }
+            .community-feed-container .flexContainer .commPost .responsesContainer .response .comment-container .comment-time {
+              font-size: 12px;
+              margin-right: 15px; }
+            .community-feed-container .flexContainer .commPost .responsesContainer .response .comment-container .like-text {
+              font-size: 14px;
+              margin-right: 5px; }
+            .community-feed-container .flexContainer .commPost .responsesContainer .response .comment-container .like-comment {
+              height: 14px; }
       .community-feed-container .flexContainer .commPost .responseForm {
         display: flex; }
         .community-feed-container .flexContainer .commPost .responseForm textarea {
@@ -736,9 +795,13 @@ ui-view {
             color: white; }
   .community-feed-container .sidebar {
     width: 25%; }
+    @media only screen and (max-width: 700px) {
+      .community-feed-container .sidebar {
+        width: 30%; } }
     .community-feed-container .sidebar .user-stats {
       background: #ffffff;
       border-radius: 5px;
+      border-bottom: 10px solid #AAEFDF;
       box-shadow: 0px 0px 5px 0px #ced0ce;
       display: flex;
       flex-direction: column;
@@ -747,21 +810,31 @@ ui-view {
       margin-top: 40px;
       width: 100%; }
       .community-feed-container .sidebar .user-stats img.user-photo {
-        width: 80px;
-        border-radius: 50%;
+        width: 90px;
+        border-radius: 10px;
         box-shadow: 0px 0px 5px 0px #ced0ce;
         margin: 15px 0; }
-    .community-feed-container .sidebar .username {
-      margin-bottom: 8px; }
+      .community-feed-container .sidebar .user-stats hr {
+        width: 90%;
+        border: 0;
+        height: 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
+    .community-feed-container .sidebar .userstat-username {
+      margin-bottom: 8px;
+      font-weight: bold;
+      font-size: 20px; }
     .community-feed-container .sidebar .points {
+      margin: 8px 0; }
+    .community-feed-container .sidebar p.rank {
       margin-bottom: 15px; }
-    .community-feed-container .sidebar .rank {
-      margin-bottom: 15px; }
+      .community-feed-container .sidebar p.rank span {
+        font-weight: bold; }
   .community-feed-container .leaderboard {
-    background: #ffffff;
     border-radius: 5px;
+    border-bottom: 10px solid #AAEFDF;
     box-shadow: 0px 0px 5px 0px #ced0ce;
-    height: 250px;
+    font-size: 14px;
     margin-top: 40px;
     margin-right: 10px;
     width: 100%; }
@@ -774,19 +847,24 @@ ui-view {
     .community-feed-container .leaderboard li {
       display: flex;
       flex-direction: row;
-      line-height: 30px;
+      line-height: 40px;
       width: 100%;
       margin: 15px 10px; }
+      .community-feed-container .leaderboard li.title {
+        margin-left: 0; }
       .community-feed-container .leaderboard li h3 {
-        margin-top: 15px; }
+        margin-top: 15px;
+        font-weight: bold;
+        font-size: 18px;
+        text-align: center;
+        width: 100%; }
       .community-feed-container .leaderboard li .prof-pic {
-        height: 30px;
-        width: 15%;
-        margin-right: 10px;
-        background: #e6e8e6; }
+        height: 40px;
+        border-radius: 10px;
+        margin-right: 10px; }
       .community-feed-container .leaderboard li .rank {
         width: 12%; }
-      .community-feed-container .leaderboard li .username {
+      .community-feed-container .leaderboard li .leader-username {
         margin-right: 10px;
         width: 25%; }
       .community-feed-container .leaderboard li .points {
@@ -795,7 +873,7 @@ ui-view {
         text-align: right; }
 
 .dev-dashboard-container {
-  background: #e6e8e6;
+  background: #ffffff;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -1030,7 +1108,7 @@ ui-view {
   filter: blur(2px); }
 
 .dev-projects-container {
-  background: #e6e8e6;
+  background: #ffffff;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -1170,7 +1248,7 @@ header {
       align-items: center;
       display: flex; }
     header .navList .active {
-      background: #e6e8e6;
+      background: #ffffff;
       color: #191919; }
   header a {
     text-decoration: none;
@@ -1208,41 +1286,56 @@ header {
   padding-top: 10px;
   width: 80%;
   height: 100vh; }
-  .home-container .btnContainer {
-    display: flex;
-    bottom: 0;
-    align-items: center; }
   .home-container .main-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     background: transparent; }
   .home-container button {
-    background: none;
-    border: 3px solid #AAEFDF;
+    height: 50px;
+    border: none;
+    background: #AAEFDF;
+    margin: 0 10px;
     border-radius: 5px;
-    color: #AAEFDF;
-    display: block;
-    font-size: 20px;
-    font-weight: bold;
-    margin: 10px;
     padding: 10px;
+    width: 215px;
+    outline: none; }
+    .home-container button:hover {
+      background: #7fe7cf;
+      cursor: pointer; }
+  .home-container a {
+    text-decoration: none;
+    color: #191919;
+    font-size: 15px;
+    font-family: "Raleway", sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
     position: relative;
+    display: inline-block;
+    transition: color 0.2s ease; }
+  .home-container .aboutBtn {
+    height: 50px;
+    border: none;
+    background: #AAEFDF;
+    margin: 0 0 20px 0;
+    border-radius: 5px;
+    padding: 10px;
+    width: 200px;
+    font-family: "Raleway", sans-serif;
+    font-size: 1em;
+    font-weight: bold;
     text-transform: uppercase;
     outline: none; }
-    .home-container button a {
-      color: #AAEFDF;
-      text-decoration: none; }
-    .home-container button:hover {
-      background: #AAEFDF;
-      color: white; }
-    .home-container button:hover > a {
-      color: white; }
+    .home-container .aboutBtn:hover {
+      background: #7fe7cf;
+      cursor: pointer; }
   .home-container .continueBtnContainer {
     display: flex;
-    justify-content: center; }
+    justify-content: center;
+    transition: all 0.5s ease; }
   .home-container h1 {
-    font-size: 5em; }
+    font-size: 4em;
+    text-align: center; }
   .home-container h2 {
     margin: 20px 0;
     font-size: 1.5em;
