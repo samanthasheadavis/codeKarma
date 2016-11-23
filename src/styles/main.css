@@ -793,8 +793,9 @@ ui-view {
   .community-feed-container .sidebar {
     width: 25%; }
     .community-feed-container .sidebar .user-stats {
-      background: rgba(170, 239, 223, 0.5);
+      background: #ffffff;
       border-radius: 5px;
+      border-bottom: 10px solid #AAEFDF;
       box-shadow: 0px 0px 5px 0px #ced0ce;
       display: flex;
       flex-direction: column;
@@ -803,21 +804,29 @@ ui-view {
       margin-top: 40px;
       width: 100%; }
       .community-feed-container .sidebar .user-stats img.user-photo {
-        width: 80px;
-        border-radius: 50%;
+        width: 90px;
+        border-radius: 10px;
         box-shadow: 0px 0px 5px 0px #ced0ce;
         margin: 15px 0; }
-    .community-feed-container .sidebar .username {
+      .community-feed-container .sidebar .user-stats hr {
+        width: 90%;
+        border: 0;
+        height: 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
+    .community-feed-container .sidebar .userstat-username {
       margin-bottom: 8px;
-      font-weight: bold; }
+      font-weight: bold;
+      font-size: 20px; }
     .community-feed-container .sidebar .points {
-      margin-bottom: 15px; }
+      margin: 8px 0; }
     .community-feed-container .sidebar p.rank {
       margin-bottom: 15px; }
       .community-feed-container .sidebar p.rank span {
         font-weight: bold; }
   .community-feed-container .leaderboard {
     border-radius: 5px;
+    border-bottom: 10px solid #AAEFDF;
     box-shadow: 0px 0px 5px 0px #ced0ce;
     font-size: 14px;
     margin-top: 40px;
@@ -835,17 +844,21 @@ ui-view {
       line-height: 40px;
       width: 100%;
       margin: 15px 10px; }
+      .community-feed-container .leaderboard li.title {
+        margin-left: 0; }
       .community-feed-container .leaderboard li h3 {
         margin-top: 15px;
         font-weight: bold;
-        font-size: 18px; }
+        font-size: 18px;
+        text-align: center;
+        width: 100%; }
       .community-feed-container .leaderboard li .prof-pic {
         height: 40px;
         border-radius: 10px;
         margin-right: 10px; }
       .community-feed-container .leaderboard li .rank {
         width: 12%; }
-      .community-feed-container .leaderboard li .username {
+      .community-feed-container .leaderboard li .leader-username {
         margin-right: 10px;
         width: 25%; }
       .community-feed-container .leaderboard li .points {

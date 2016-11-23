@@ -14,6 +14,8 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
     this.getPosts = function() {
         RequestService.getPosts(function(response) {
             $scope.posts = response;
+
+            console.log($scope.posts);
             // this.date = $scope.posts.created.slice(0, 10);
             // this.time = $scope.posts.created.slice(11, 19);
             // $scope.posts.timeElapsed = this.date + ' ' + this.time;
@@ -28,12 +30,9 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
                         this.commentDate = currentPost[commIndex].created.slice(0, 10);
                         this.commentTime = currentPost[commIndex].created.slice(11, 19);
                         currentPost[commIndex].commentTimestamp = this.commentDate + ' ' + this.commentTime;
-
-                        console.log(currentPost[commIndex].commentTimestamp);
                     }
                 }
             }
-
             $scope.$apply();
         });
 
@@ -49,10 +48,13 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
         this.response = '';
     };
 
-    this.updateLikes = function(likes) {
-        console.log(likes);
+    this.updateLikes = function(likes, id) {
         likes++;
-        this.likes = likes;
+        this.likes = {
+          "likes": likes,
+        };
+        console.log(this.likes);
+        RequestService.updateLikes(this.likes, id);
     };
 
     this.getDev = function() {

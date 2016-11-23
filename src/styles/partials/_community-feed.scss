@@ -226,9 +226,9 @@
         width: 25%;
 
         .user-stats {
-            // background: $white;
-            background: rgba(170, 239, 223, .5);
+            background: $white;
             border-radius: $border-radius;
+            border-bottom: 10px solid $pop;
             box-shadow: $box-shadow;
             display: flex;
             flex-direction: column;
@@ -238,20 +238,31 @@
             width: 100%;
 
             img.user-photo {
-                width: 80px;
-                border-radius: 50%;
+                width: 90px;
+                border-radius: 10px;
                 box-shadow: $box-shadow;
                 margin: $vspace 0;
             }
+
+            hr {
+                width: 90%;
+                border: 0;
+                height: 0;
+                border-top: 1px solid rgba(0, 0, 0, 0.1);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            }
         }
 
-        .username {
+
+
+        .userstat-username {
             margin-bottom: 8px;
             font-weight: bold;
+            font-size: 20px;
         }
 
         .points {
-            margin-bottom: $vspace;
+            margin: 8px 0;
         }
 
         p.rank {
@@ -264,8 +275,8 @@
     }
 
     .leaderboard {
-        // background: rgba(170, 239, 223, .6);
         border-radius: $border-radius;
+        border-bottom: 10px solid $pop;
         box-shadow: $box-shadow;
         font-size: 14px;
         margin-top: 40px;
@@ -287,10 +298,16 @@
             width: 100%;
             margin: $vspace $hspace;
 
+            &.title {
+              margin-left: 0;
+            }
+
             h3 {
                 margin-top: $vspace;
                 font-weight: bold;
                 font-size: 18px;
+                text-align: center;
+                width: 100%;
             }
 
             .prof-pic {
@@ -303,7 +320,7 @@
                 width: 12%;
             }
 
-            .username {
+            .leader-username {
                 margin-right: $hspace;
                 width: 25%;
             }
