@@ -1124,13 +1124,13 @@ ui-view {
   filter: blur(2px); }
 
 .dev-projects-container {
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.6);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-content: flex-start;
   width: 80%;
-  height: 100vh; }
+  height: 100%; }
   .dev-projects-container .project-card {
     background: #ffffff;
     align-self: flex-start;
@@ -1141,6 +1141,8 @@ ui-view {
     border-radius: 5px; }
     .dev-projects-container .project-card h3 {
       font-size: 30px; }
+    .dev-projects-container .project-card .brief-description {
+      margin: 15px 0 0 10px; }
     .dev-projects-container .project-card .details {
       display: flex;
       flex-direction: row;
