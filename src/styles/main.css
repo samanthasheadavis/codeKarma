@@ -104,6 +104,7 @@ ui-view {
         color: white; }
   .all-projects-container .project-card {
     background: #ffffff;
+    border-left: 10px solid #AAEFDF;
     border-radius: 5px;
     box-shadow: 0px 0px 5px 0px #ced0ce;
     display: flex;
@@ -1134,6 +1135,7 @@ ui-view {
   height: 100%; }
   .dev-projects-container .project-card {
     background: #ffffff;
+    border-left: 10px solid #AAEFDF;
     align-self: flex-start;
     padding: 15px 10px 0;
     margin-top: 40px;

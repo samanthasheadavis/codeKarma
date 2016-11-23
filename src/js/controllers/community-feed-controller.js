@@ -48,18 +48,16 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
     };
 
     this.updateQuestionLikes = function(likes, id) {
-        likes++;
         this.likes = {
-          "likes": likes,
+          "question_like": likes,
         };
         console.log(this.likes);
         RequestService.updateQuestionLikes(this.likes, id);
     };
 
     this.updateCommentLikes = function(likes, id) {
-        likes++;
         this.likes = {
-          "likes": likes,
+          "comment_like": likes,
         };
         console.log(this.likes);
         RequestService.updateCommentLikes(this.likes, id);
