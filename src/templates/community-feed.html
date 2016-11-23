@@ -29,7 +29,7 @@
                 <button type="button" class="askBtn" ng-click="communityFeed.addPost()">Ask</button>
             </form>
 
-            <div class="commPost" ng-repeat="post in posts">
+            <div class="commPost" ng-repeat="post in posts | orderBy: '-'">
                 <div class="postContainer">
                     <img class="questioner-img" src="{{post.questioner_image}}" alt="{{post.questioner}}">
                     <p class="question">{{post.question}}</p>
