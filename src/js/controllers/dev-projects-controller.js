@@ -77,12 +77,12 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
     // get projects info
 
     this.getProjects = function() {
-      RequestService.getDevProjects(function(response) {
-
-          // console.log(response);
-          // $scope.projects = response;
-          // console.log($scope.projects);
-        });
+      // RequestService.getDevProjects(function(response) {
+      //
+      //     // console.log(response);
+      //     // $scope.projects = response;
+      //     // console.log($scope.projects);
+      //   });
     };
 
     // update and post progress
