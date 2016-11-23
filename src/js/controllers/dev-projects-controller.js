@@ -65,7 +65,8 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
           "async": true,
           "crossDomain": true,
           "url": this.requestUrl,
-          "method": "POST"
+          "method": "POST",
+          "data": this.pullInfo
       };
 
       $.ajax(settings).done(function(response) {
