@@ -1,14 +1,17 @@
 angular.module('codeKarmaApp').controller('DevProjectsController', function($scope, $state, RequestService) {
 
-    this.projectComplete = false;
+    $scope.progress = 0;
 
-    $scope.updateButton = function() {
+    // show pull request button when progress === 100%
 
-      console.log("in updateButton");
-      this.projectComplete = true;
-      console.log(this.projectComplete);
-      // $scope.$apply();
+    this.updateButton = function() {
+      $('button.help-btn').removeClass('active');
+      $('div.tooltip').addClass('active');
+    };
 
+    this.revertButton = function() {
+      $('button.help-btn').addClass('active');
+      $('div.tooltip').removeClass('active');
     };
 
     this.pullRequest = function() {
@@ -32,38 +35,18 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
         });
     };
 
-    // progress slider - will need to GET progress on page load
-
-    $scope.progress = 0;
-
     // update and post progress
 
-    // this.updateProgress = function(status) {
-    //
-    //     this.status = status;
-    //
-    //     // if progress < 100%, show "ask for help" button
-    //     // if progress === 100%, show "submit project" and disable est. completion date
-    //
-    //     if (this.status !== "100") {
-    //         this.complete = false;
-    //     } else if (this.status === "100") {
-    //         this.complete = true;
-    //     }
-    //
-    //     // RequestService.setProgress(progress);
-    //
-    // };
+    $scope.updateProgress = function(progress, date, id) {
 
-    this.updateEstDate = function(date) {
+        this.status = {
+          "progress": progress,
+          "date": date
+        };
 
-        // RequestService.setEstDate(date);
+        RequestService.setProgress(this.status, id);
 
     };
-
-
-
-    // update and post est. completion date
 
 
     this.getProjects();

@@ -142,15 +142,20 @@
                 }
             }
 
+            .help-btn {
+              display: none;
+            }
+
+
             .help-btn,
             .submit-btn {
-                padding: 10px;
                 margin: 10px;
                 border-radius: 5px;
                 border: none;
                 height: 40px;
                 width: 100px;
                 align-self: center;
+                align-items: center;
 
                 &:hover {
                     background: $pop;
@@ -160,16 +165,24 @@
                     outline: 0;
                 }
             }
+
+            .help-btn.active {
+              display: block;
+            }
         }
     }
 }
 
-.dev-projects-container .tooltip {
-    display: flex;
+div.tooltip {
+    display: none;
     justify-content: center;
     position: relative;
     height: 40px;
     align-self: center;
+
+    &.active {
+      display: flex;
+    }
 
     &:hover .tooltiptext {
         display: block;

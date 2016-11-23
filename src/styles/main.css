@@ -1073,31 +1073,37 @@ ui-view {
           height: 25px; }
           .dev-projects-container .project-card .details form input:focus {
             outline: 0; }
+      .dev-projects-container .project-card .details .help-btn {
+        display: none; }
       .dev-projects-container .project-card .details .help-btn,
       .dev-projects-container .project-card .details .submit-btn {
-        padding: 10px;
         margin: 10px;
         border-radius: 5px;
         border: none;
         height: 40px;
         width: 100px;
-        align-self: center; }
+        align-self: center;
+        align-items: center; }
         .dev-projects-container .project-card .details .help-btn:hover,
         .dev-projects-container .project-card .details .submit-btn:hover {
           background: #AAEFDF; }
         .dev-projects-container .project-card .details .help-btn:focus,
         .dev-projects-container .project-card .details .submit-btn:focus {
           outline: 0; }
+      .dev-projects-container .project-card .details .help-btn.active {
+        display: block; }
 
-.dev-projects-container .tooltip {
-  display: flex;
+div.tooltip {
+  display: none;
   justify-content: center;
   position: relative;
   height: 40px;
   align-self: center; }
-  .dev-projects-container .tooltip:hover .tooltiptext {
+  div.tooltip.active {
+    display: flex; }
+  div.tooltip:hover .tooltiptext {
     display: block; }
-  .dev-projects-container .tooltip .tooltiptext {
+  div.tooltip .tooltiptext {
     background: #AAEFDF;
     border-radius: 5px;
     color: #191919;
@@ -1111,7 +1117,7 @@ ui-view {
     text-align: center;
     width: 120px;
     z-index: 5; }
-    .dev-projects-container .tooltip .tooltiptext:after {
+    div.tooltip .tooltiptext:after {
       content: " ";
       position: absolute;
       top: 45%;

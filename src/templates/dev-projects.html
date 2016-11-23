@@ -73,11 +73,11 @@
                 </select> -->
 
                 <label for="completion-date" class="date">est. completion date</label>
-                <input ng-disabled="devProjects.projectComplete" ng-model="completionDate" name="completionDate" type="date">
-                <button type="submit" class="update" ng-click="updateProgress(progress)">Update</button>
+                <input ng-model="completionDate" name="completionDate" type="date">
+                <button type="submit" class="update" ng-click="updateProgress(progress, completionDate, 1)">Update</button>
             </form>
-            <button ng-hide="devProjects.projectComplete" class="help-btn" ui-sref="codeKarmaParent.communityFeed">Ask for Help</button>
-            <div ng-hide="!devProjects.projectComplete" class="tooltip">
+            <button class="help-btn active" ui-sref="codeKarmaParent.communityFeed">Ask for Help</button>
+            <div class="tooltip">
               <button class="submit-btn" ng-click="devProjects.pullRequest()">Open a Pull Request</button>
               <p class="tooltiptext">submit a pull request to GitHub</p>
             </div>
