@@ -38,10 +38,11 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
     // update and post progress
 
     $scope.updateProgress = function(progress, date, id) {
+      console.log(id);
 
         this.status = {
-          "progress": progress,
-          "date": date
+          "percentage_complete": progress,
+          "est_completion_date": date
         };
 
         RequestService.setProgress(this.status, id);
