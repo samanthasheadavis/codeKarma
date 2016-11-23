@@ -39,7 +39,10 @@
                         <img class="bug-fix" src="assets/{{project.img_src}}.png" alt="Created by {{project.img_alt}} from Noun Project">
                         <p class="tooltiptext">this project is a <span>{{project.fix_type}}</span></p>
                     </div>
-                    <p class="languages" ng-repeat="language in project.languages">{{language.language_name}}</p>
+                    <div class="category-image tooltip" ng-repeat="language in project.languages">
+                      <p class="languages">{{language.language_name}}</p>
+                      <p class="tooltiptext">{{language.language_percent}}%</p>
+                    </div>
                 </div>
             </div>
             <div class="project-contents">

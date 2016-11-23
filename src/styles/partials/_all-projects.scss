@@ -83,6 +83,10 @@
                         display: block;
                     }
 
+                    &:hover > .languages {
+                      border: 3px solid $pop;
+                    }
+
                     img {
                         height: 35px;
                         margin-right: $hspace;
@@ -95,8 +99,8 @@
                         display: none;
                         font-size: 12px;
                         line-height: 16px;
-                        left: 80%;
-                        top: -10%;
+                        left: 95%;
+                        top: -4%;
                         padding: 5px;
                         position: absolute;
                         text-align: center;
@@ -130,6 +134,8 @@
                     align-self: center;
                     margin: $vspace $hspace 0 0;
                     display: inline;
+                    padding: 5px;
+
                 }
             }
         }

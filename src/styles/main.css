@@ -131,6 +131,8 @@ ui-view {
           position: relative; }
           .all-projects-container .project-card .heading .categories .category-image:hover .tooltiptext {
             display: block; }
+          .all-projects-container .project-card .heading .categories .category-image:hover > .languages {
+            border: 3px solid #AAEFDF; }
           .all-projects-container .project-card .heading .categories .category-image img {
             height: 35px;
             margin-right: 10px; }
@@ -141,8 +143,8 @@ ui-view {
             display: none;
             font-size: 12px;
             line-height: 16px;
-            left: 80%;
-            top: -10%;
+            left: 95%;
+            top: -4%;
             padding: 5px;
             position: absolute;
             text-align: center;
@@ -165,7 +167,8 @@ ui-view {
         .all-projects-container .project-card .heading .categories .languages {
           align-self: center;
           margin: 15px 10px 0 0;
-          display: inline; }
+          display: inline;
+          padding: 5px; }
     .all-projects-container .project-card .project-contents {
       display: flex;
       flex-direction: row;
