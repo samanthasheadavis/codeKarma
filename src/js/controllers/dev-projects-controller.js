@@ -21,7 +21,7 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
       this.showModal = true;
 
       this.token = RequestService.fetchToken();
-      this.projectId = 1;
+      this.projectId = 2;
       this.branchUrl = "https://code-karma-api.herokuapp.com/branches/" + this.projectId + "?token=" + this.token;
 
       var settings = {
