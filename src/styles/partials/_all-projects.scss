@@ -46,6 +46,7 @@
 
     .project-card {
         background: $white;
+        border-left: $accent-border;
         border-radius: $border-radius;
         box-shadow: $box-shadow;
         display: flex;

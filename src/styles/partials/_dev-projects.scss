@@ -92,6 +92,7 @@
 
     .project-card {
         background: $white;
+        border-left: $accent-border;
         align-self: flex-start;
         padding: $vspace $hspace 0;
         margin-top: 40px;
