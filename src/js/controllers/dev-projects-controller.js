@@ -9,6 +9,8 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
       $('div.tooltip').addClass('active');
     };
 
+    // remove pull request button when progress < 100%
+
     this.revertButton = function() {
       $('button.help-btn').addClass('active');
       $('div.tooltip').removeClass('active');
