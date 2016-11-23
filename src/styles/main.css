@@ -632,7 +632,11 @@ ui-view {
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      align-items: center; }
+      align-items: center;
+      transition: all .5s ease; }
+      @media only screen and (max-width: 525px) {
+        .community-feed-container .flexContainer .feed {
+          width: 85%; } }
     .community-feed-container .flexContainer .postForm {
       display: flex;
       margin: 40px 0 0;
@@ -710,7 +714,8 @@ ui-view {
             border-radius: 5px;
             margin-bottom: 10px; }
             .community-feed-container .flexContainer .commPost .postContainer .like-container img.like:hover {
-              background: #AAEFDF; }
+              background: #AAEFDF;
+              cursor: pointer; }
       .community-feed-container .flexContainer .commPost .postInfoContainer {
         display: flex;
         justify-content: space-between;
@@ -798,8 +803,11 @@ ui-view {
     @media only screen and (max-width: 700px) {
       .community-feed-container .sidebar {
         width: 30%; } }
+    @media only screen and (max-width: 525px) {
+      .community-feed-container .sidebar {
+        display: none; } }
     .community-feed-container .sidebar .user-stats {
-      background: #ffffff;
+      background: rgba(230, 232, 230, 0.6);
       border-radius: 5px;
       border-bottom: 10px solid #AAEFDF;
       box-shadow: 0px 0px 5px 0px #ced0ce;
@@ -831,6 +839,7 @@ ui-view {
       .community-feed-container .sidebar p.rank span {
         font-weight: bold; }
   .community-feed-container .leaderboard {
+    background: rgba(230, 232, 230, 0.6);
     border-radius: 5px;
     border-bottom: 10px solid #AAEFDF;
     box-shadow: 0px 0px 5px 0px #ced0ce;

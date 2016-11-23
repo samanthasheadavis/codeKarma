@@ -18,6 +18,12 @@
             flex-direction: column;
             justify-content: flex-start;
             align-items: center;
+            transition: all .5s ease;
+
+            @include media(mobileLarge) {
+              width: 85%;
+            }
+
         }
 
         .postForm {
@@ -108,6 +114,7 @@
 
                         &:hover {
                             background: $pop;
+                            cursor: pointer;
                         }
                     }
                 }
@@ -233,9 +240,13 @@
           width: 30%;
         }
 
+        @include media(mobileLarge) {
+          display: none;
+        }
+
 
         .user-stats {
-            background: $white;
+            background: rgba(230,232,230, .6);
             border-radius: $border-radius;
             border-bottom: 10px solid $pop;
             box-shadow: $box-shadow;
@@ -284,6 +295,7 @@
     }
 
     .leaderboard {
+        background: rgba(230,232,230, .6);
         border-radius: $border-radius;
         border-bottom: 10px solid $pop;
         box-shadow: $box-shadow;
