@@ -3,6 +3,10 @@
     width: 80%;
     height: 100%;
 
+    @include media(tablet) {
+      width: 100%;
+    }
+
     .flexContainer {
         display: flex;
         flex-direction: row;
@@ -224,6 +228,11 @@
 
     .sidebar {
         width: 25%;
+
+        @include media(tablet) {
+          width: 30%;
+        }
+
 
         .user-stats {
             background: $white;

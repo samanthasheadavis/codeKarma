@@ -34,7 +34,7 @@
                     <img class="questioner-img" src="{{post.questioner_image}}" alt="{{post.questioner}}">
                     <p class="question">{{post.question}}</p>
                     <div class="like-container">
-                    <img class="like" src="assets/like.png" alt="like by dilayorganci from the Noun Project" ng-click="communityFeed.updateLikes(post.likes, post.question_id)">
+                    <img class="like" src="assets/like.png" alt="like by dilayorganci from the Noun Project" ng-click="communityFeed.updateQuestionLikes(post.likes, post.question_id)">
                     <p class="likeAmount"><span>{{post.likes}}</span> Likes</p>
                     </div>
                 </div>
@@ -50,7 +50,7 @@
                             <div class="comment-data">
                                 <p class="comment-time">{{comment.commentTimestamp}}</p>
                                 <p class="like-text">Like</p>
-                                <img class="like-comment" src="assets/like.png" alt="like by dilayorganci from the Noun Project">
+                                <img class="like-comment" src="assets/like.png" alt="like by dilayorganci from the Noun Project" ng-click="communityFeed.updateCommentLikes(comment.likes, comment.karma_comment_id)">
                             </div>
                         </div>
                     </div>

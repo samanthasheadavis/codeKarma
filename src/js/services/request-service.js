@@ -200,12 +200,27 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
         });
     }
 
-    function updateLikes(likes, id){
+    function updateQuestionLikes(likes, id){
 
       var settings = {
           "async": true,
           "crossDomain": true,
           "url": 'https://code-karma-api.herokuapp.com/karma_question/' + id + '?token=' + token,
+          "method": "PUT",
+          "data": likes
+      };
+      $.ajax(settings).done(function(response) {
+        console.log(response);
+        // return response;
+      });
+    }
+
+    function updateCommentLikes(likes, id){
+
+      var settings = {
+          "async": true,
+          "crossDomain": true,
+          "url": 'https://code-karma-api.herokuapp.com/karma_comment/' + id + '?token=' + token,
           "method": "PUT",
           "data": likes
       };
@@ -238,7 +253,8 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
         postQuestion: postQuestion,
         getPosts: getPosts,
         postComment: postComment,
-        updateLikes: updateLikes
+        updateQuestionLikes: updateQuestionLikes,
+        updateCommentLikes: updateCommentLikes
     };
 
 });

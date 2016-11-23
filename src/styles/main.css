@@ -620,6 +620,9 @@ ui-view {
   background: #ffffff;
   width: 80%;
   height: 100%; }
+  @media only screen and (max-width: 700px) {
+    .community-feed-container {
+      width: 100%; } }
   .community-feed-container .flexContainer {
     display: flex;
     flex-direction: row;
@@ -792,6 +795,9 @@ ui-view {
             color: white; }
   .community-feed-container .sidebar {
     width: 25%; }
+    @media only screen and (max-width: 700px) {
+      .community-feed-container .sidebar {
+        width: 30%; } }
     .community-feed-container .sidebar .user-stats {
       background: #ffffff;
       border-radius: 5px;
