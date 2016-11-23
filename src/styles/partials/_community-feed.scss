@@ -71,7 +71,7 @@
             flex-direction: column;
             box-sizing: border-box;
             background: $white;
-            border-left: 10px solid $pop;
+            border-left: $accent-border;
             padding: $vspace $hspace;
             width: 100%;
             box-shadow: $box-shadow;
@@ -248,7 +248,7 @@
         .user-stats {
             background: rgba(230,232,230, .6);
             border-radius: $border-radius;
-            border-bottom: 10px solid $pop;
+            border-bottom: $accent-border;
             box-shadow: $box-shadow;
             display: flex;
             flex-direction: column;
@@ -297,7 +297,7 @@
     .leaderboard {
         background: rgba(230,232,230, .6);
         border-radius: $border-radius;
-        border-bottom: 10px solid $pop;
+        border-bottom: $accent-border;
         box-shadow: $box-shadow;
         font-size: 14px;
         margin-top: 40px;

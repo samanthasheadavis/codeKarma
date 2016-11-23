@@ -980,7 +980,8 @@ ui-view {
     box-shadow: 0px 0px 5px 0px #ced0ce;
     border-radius: 5px;
     margin-bottom: 50px;
-    transition: all 0.5s ease; }
+    transition: all 0.5s ease;
+    border-bottom: 10px solid #AAEFDF; }
     @media only screen and (max-width: 525px) {
       .dev-dashboard-container .infoContainer {
         width: 400px; } }
