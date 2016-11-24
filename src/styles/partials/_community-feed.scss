@@ -2,7 +2,13 @@
     background: rgba(255,255,255, .6);
     width: 80%;
     height: 100%;
-    @include media(tablet) {
+    transition: all .5s ease;
+
+    @include media(desktop) {
+        width: 85%;
+    }
+
+    @include media(desktopSmall) {
         width: 100%;
     }
 
@@ -18,6 +24,11 @@
             justify-content: flex-start;
             align-items: center;
             transition: all 0.5s ease;
+
+            @include media(desktopSmall) {
+                width: 55%;
+            }
+
             @include media(mobileLarge) {
                 width: 85%;
             }
@@ -232,8 +243,17 @@
 
     .sidebar {
         width: 25%;
-        @include media(tablet) {
+
+        @include media(desktop) {
             width: 30%;
+        }
+
+        @include media(desktopSmall) {
+            width: 33%;
+        }
+
+        @include media(tablet) {
+            width: 35%;
         }
         @include media(mobileLarge) {
             display: none;
@@ -300,13 +320,16 @@
             text-align: center;
             width: 100%;
             color: $charcoal;
-            letter-spacing: .1em;
+            letter-spacing: 0.1em;
             background: $pop;
             padding: $vspace 0;
             font-weight: bold;
             font-size: 18px;
-        }
 
+            @include media(tablet) {
+                font-size: 16px;
+            }
+        }
 
         li {
             background: $lightGrey;
@@ -318,51 +341,71 @@
             width: 100%;
             padding: $vspace 0;
 
+            @include media(tabletLarge) {
+                flex-direction: column;
+                justify-content: center;
+                padding: $vspace 0 0 0;
+            }
+
             &:nth-child(odd) {
-              background: $white;
+                background: $white;
             }
 
             &:hover {
-              -webkit-transform: scale(1.1);
-              -ms-transform: scale(1.1);
-              transform: scale(1.1);
-              -webkit-box-shadow: 0 8px 6px -6px black;
-              -moz-box-shadow: 0 8px 6px -6px black;
-              box-shadow: 0 8px 6px -6px black;
-
+                -webkit-transform: scale(1.1);
+                -ms-transform: scale(1.1);
+                transform: scale(1.1);
+                -webkit-box-shadow: 0 8px 6px -6px black;
+                -moz-box-shadow: 0 8px 6px -6px black;
+                box-shadow: 0 8px 6px -6px black;
             }
 
             .flex-left {
-              display: flex;
-              justify-content: left;
-
-              .prof-pic-container {
-                margin-right: $hspace;
                 display: flex;
-                justify-content: center;
+                justify-content: left;
+                align-self: left;
 
-                .prof-pic {
-                  width: 40px;
-                  border-radius: 10px;
-                  align-self: center;
+                @include media(tabletLarge) {
+                    width: 100%;
+                    font-size: 14px;
                 }
-              }
-              .rank {
-                  margin: 0 $hspace;
-                  width: 20px;
-              }
 
-              .leader-username {
-                  margin-right: $hspace;
-              }
+                .prof-pic-container {
+                    margin-right: $hspace;
+                    display: flex;
+                    justify-content: center;
 
+                    .prof-pic {
+                        width: 40px;
+                        border-radius: 10px;
+                        align-self: center;
+                    }
+                }
 
+                .rank {
+                    margin: 0 $hspace;
+                    width: 20px;
+
+                    @include media(tabletLarge) {
+                        width: 15px;
+                    }
+                }
+
+                .leader-username {
+                    margin-right: $hspace;
+                }
             }
-
 
             .points {
                 text-align: right;
                 margin: 0 $hspace 0 0;
+
+                @include media(tabletLarge) {
+                    line-height: 25px;
+                    align-self: flex-end;
+                    margin-bottom: $vspace;
+                    font-size: 16px;
+                }
             }
         }
     }
