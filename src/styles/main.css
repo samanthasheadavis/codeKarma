@@ -62,7 +62,7 @@ ui-view {
 /***** Site Components ******/
 .all-projects-container {
   align-items: center;
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.6);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -637,7 +637,7 @@ ui-view {
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
-      transition: all .5s ease; }
+      transition: all 0.5s ease; }
       @media only screen and (max-width: 525px) {
         .community-feed-container .flexContainer .feed {
           width: 85%; } }
@@ -851,32 +851,37 @@ ui-view {
     margin-top: 40px;
     margin-right: 10px;
     width: 100%; }
-    .community-feed-container .leaderboard hr {
-      width: 90%;
-      border: 0;
-      height: 0;
-      border-top: 1px solid rgba(0, 0, 0, 0.1);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
+    .community-feed-container .leaderboard h3 {
+      text-align: center;
+      width: 100%;
+      color: #191919;
+      letter-spacing: .1em;
+      background: #AAEFDF;
+      padding: 15px 0;
+      font-weight: bold;
+      font-size: 18px; }
     .community-feed-container .leaderboard li {
+      background: #e6e8e6;
       display: flex;
       flex-direction: row;
       line-height: 40px;
-      width: 100%;
-      margin: 15px 10px; }
-      .community-feed-container .leaderboard li.title {
-        margin-left: 0; }
-      .community-feed-container .leaderboard li h3 {
-        margin-top: 15px;
-        font-weight: bold;
-        font-size: 18px;
-        text-align: center;
-        width: 100%; }
+      width: 100%; }
+      .community-feed-container .leaderboard li:nth-child(odd) {
+        background: #ffffff; }
+      .community-feed-container .leaderboard li:hover {
+        -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        transform: scale(1.1);
+        -webkit-box-shadow: 0 8px 6px -6px black;
+        -moz-box-shadow: 0 8px 6px -6px black;
+        box-shadow: 0 8px 6px -6px black; }
       .community-feed-container .leaderboard li .prof-pic {
         height: 40px;
         border-radius: 10px;
         margin-right: 10px; }
       .community-feed-container .leaderboard li .rank {
-        width: 12%; }
+        width: 12%;
+        margin: 0 10px; }
       .community-feed-container .leaderboard li .leader-username {
         margin-right: 10px;
         width: 25%; }
@@ -886,7 +891,7 @@ ui-view {
         text-align: right; }
 
 .dev-dashboard-container {
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.6);
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
