@@ -75,21 +75,28 @@
                 <h3>Leaders This Week</h3>
                 <ul>
                     <li class="one">
+                        <div class="flex-left">
                         <p class="rank">#1</p>
-                        <img class="prof-pic" src="{{leaderboard[0].developer_image}}" alt="{{leaderboard[0].developer_name}}">
+                        <div class="prof-pic-container"><img class="prof-pic" src="{{leaderboard[0].developer_image}}" alt="{{leaderboard[0].developer_name}}"></div>
                         <p class="leader-username">{{leaderboard[0].developer_name}}</p>
+                      </div>
                         <p class="points">{{leaderboard[0].karma_points}} pts</p>
+
                     </li>
                     <li class="two">
+                      <div class="flex-left">
                       <p class="rank">#2</p>
-                      <img class="prof-pic" src="{{leaderboard[1].developer_image}}" alt="{{leaderboard[1].developer_name}}">
-                      <p class="username">{{leaderboard[1].developer_name}}</p>
+                      <div class="prof-pic-container"><img class="prof-pic" src="{{leaderboard[1].developer_image}}" alt="{{leaderboard[1].developer_name}}"></div>
+                      <p class="leader-username">{{leaderboard[1].developer_name}}</p>
+                    </div>
                       <p class="points">{{leaderboard[1].karma_points}} pts</p>
                     </li>
                     <li class="three">
+                      <div class="flex-left">
                       <p class="rank">#3</p>
-                      <img class="prof-pic" src="{{leaderboard[2].developer_image}}" alt="{{leaderboard[2].developer_name}}">
-                      <p class="username">{{leaderboard[2].developer_name}}</p>
+                      <div class="prof-pic-container"><img class="prof-pic" src="{{leaderboard[2].developer_image}}" alt="{{leaderboard[2].developer_name}}"></div>
+                      <p class="leader-username">{{leaderboard[2].developer_name}}</p>
+                    </div>
                       <p class="points">{{leaderboard[2].karma_points}} pts</p>
                     </li>
                 </ul>

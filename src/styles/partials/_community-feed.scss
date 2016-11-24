@@ -298,7 +298,6 @@
 
         h3 {
             text-align: center;
-            // height: 100%;
             width: 100%;
             color: $charcoal;
             letter-spacing: .1em;
@@ -313,8 +312,11 @@
             background: $lightGrey;
             display: flex;
             flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
             line-height: 40px;
             width: 100%;
+            padding: $vspace 0;
 
             &:nth-child(odd) {
               background: $white;
@@ -330,26 +332,37 @@
 
             }
 
-            .prof-pic {
-                height: 40px;
-                border-radius: 10px;
+            .flex-left {
+              display: flex;
+              justify-content: left;
+
+              .prof-pic-container {
                 margin-right: $hspace;
+                display: flex;
+                justify-content: center;
+
+                .prof-pic {
+                  width: 40px;
+                  border-radius: 10px;
+                  align-self: center;
+                }
+              }
+              .rank {
+                  margin: 0 $hspace;
+                  width: 20px;
+              }
+
+              .leader-username {
+                  margin-right: $hspace;
+              }
+
+
             }
 
-            .rank {
-                width: 12%;
-                margin: 0 $hspace;
-            }
-
-            .leader-username {
-                margin-right: $hspace;
-                width: 25%;
-            }
 
             .points {
-                align-content: flex-end;
-                width: 32%;
                 text-align: right;
+                margin: 0 $hspace 0 0;
             }
         }
     }
