@@ -37,12 +37,14 @@ header {
     }
 
     @include media(tablet) {
+      display: none;
       flex-direction: column;
       height: 320px;
       padding: 10px;
       width: auto;
       position: absolute;
       padding-top: 130px;
+      text-align: center
     }
 
     h1 {
