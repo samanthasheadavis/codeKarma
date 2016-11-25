@@ -6,9 +6,11 @@ header {
     align-items: center;
     flex-direction: row;
     width: 100%;
+    transition: $responsive;
     @include media(tabletLarge) {
       height: 60px;
     }
+
     @include media(tablet) {
       flex-direction: column;
       height: 320px;
