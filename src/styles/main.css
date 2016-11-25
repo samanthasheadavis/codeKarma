@@ -746,12 +746,12 @@ ui-view {
           color: dimgray;
           padding: 10px; }
           .community-feed-container .flexContainer .commPost .responsesContainer .response .commenter-photo {
-            height: 40px;
+            width: 40px;
             border-radius: 5px;
             border: 2px solid #4F4F4F;
             align-self: center; }
           .community-feed-container .flexContainer .commPost .responsesContainer .response .comment {
-            align-self: center; }
+            align-self: flex-start; }
           .community-feed-container .flexContainer .commPost .responsesContainer .response .comment-container {
             display: flex;
             flex-direction: column;
