@@ -152,15 +152,16 @@
             }
 
 
-            .help-btn,
-            .submit-btn {
-                margin: 10px;
+            .help-btn {
+                margin-bottom: 15px;
                 border-radius: 5px;
                 border: none;
                 height: 40px;
-                width: 100px;
-                align-self: center;
+                align-self: flex-end;
                 align-items: center;
+                font-family: $raleway;
+                font-size: 1em;
+                padding: 10px;
 
                 &:hover {
                     background: $pop;
@@ -169,6 +170,16 @@
                 &:focus {
                     outline: 0;
                 }
+            }
+
+            .submit-btn {
+              @include button(15px);
+              height: 60px;
+
+              &:hover {
+                background: $pop;
+                color: $charcoal;
+              }
             }
 
             .help-btn.active {
@@ -222,14 +233,19 @@ div.tooltip {
 }
 
 .dev-projects-container .update {
-    padding: 10px;
     margin-top: 25px;
     border-radius: 5px;
     border: none;
-    height: 30px;
+    height: 40px;
     width: 100px;
+    font-family: $raleway;
+    font-size: 1em;
 
     &:hover {
         background: $pop;
     }
+}
+
+.update {
+
 }

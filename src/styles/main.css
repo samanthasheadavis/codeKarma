@@ -187,7 +187,7 @@ ui-view {
         background: none;
         border: 3px solid #AAEFDF;
         border-radius: 5px;
-        color: #AAEFDF;
+        color: #191919;
         display: block;
         font-size: 12px;
         font-weight: bold;
@@ -433,7 +433,7 @@ ui-view {
         background: none;
         border: 3px solid #AAEFDF;
         border-radius: 5px;
-        color: #AAEFDF;
+        color: #191919;
         display: block;
         font-size: 15px;
         font-weight: bold;
@@ -480,7 +480,7 @@ ui-view {
       background: none;
       border: 3px solid #AAEFDF;
       border-radius: 5px;
-      color: #AAEFDF;
+      color: #191919;
       display: block;
       font-size: 15px;
       font-weight: bold;
@@ -638,7 +638,7 @@ ui-view {
     background: none;
     border: 3px solid #AAEFDF;
     border-radius: 5px;
-    color: #AAEFDF;
+    color: #191919;
     display: block;
     font-size: 15px;
     font-weight: bold;
@@ -1315,21 +1315,37 @@ ui-view {
             outline: 0; }
       .dev-projects-container .project-card .details .help-btn {
         display: none; }
-      .dev-projects-container .project-card .details .help-btn,
-      .dev-projects-container .project-card .details .submit-btn {
-        margin: 10px;
+      .dev-projects-container .project-card .details .help-btn {
+        margin-bottom: 15px;
         border-radius: 5px;
         border: none;
         height: 40px;
-        width: 100px;
-        align-self: center;
-        align-items: center; }
-        .dev-projects-container .project-card .details .help-btn:hover,
-        .dev-projects-container .project-card .details .submit-btn:hover {
+        align-self: flex-end;
+        align-items: center;
+        font-family: "Raleway", sans-serif;
+        font-size: 1em;
+        padding: 10px; }
+        .dev-projects-container .project-card .details .help-btn:hover {
           background: #AAEFDF; }
-        .dev-projects-container .project-card .details .help-btn:focus,
-        .dev-projects-container .project-card .details .submit-btn:focus {
+        .dev-projects-container .project-card .details .help-btn:focus {
           outline: 0; }
+      .dev-projects-container .project-card .details .submit-btn {
+        background: none;
+        border: 3px solid #AAEFDF;
+        border-radius: 5px;
+        color: #191919;
+        display: block;
+        font-size: 15px;
+        font-weight: bold;
+        margin: 10px;
+        padding: 10px;
+        position: relative;
+        text-transform: uppercase;
+        outline: none;
+        height: 60px; }
+        .dev-projects-container .project-card .details .submit-btn:hover {
+          background: #AAEFDF;
+          color: #191919; }
       .dev-projects-container .project-card .details .help-btn.active {
         display: block; }
 
@@ -1368,12 +1384,13 @@ div.tooltip {
       border-color: transparent #AAEFDF transparent transparent; }
 
 .dev-projects-container .update {
-  padding: 10px;
   margin-top: 25px;
   border-radius: 5px;
   border: none;
-  height: 30px;
-  width: 100px; }
+  height: 40px;
+  width: 100px;
+  font-family: "Raleway", sans-serif;
+  font-size: 1em; }
   .dev-projects-container .update:hover {
     background: #AAEFDF; }
 
