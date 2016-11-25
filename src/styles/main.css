@@ -67,7 +67,14 @@ ui-view {
   flex-direction: column;
   justify-content: flex-start;
   width: 80%;
-  padding-bottom: 40px; }
+  padding-bottom: 40px;
+  transition: all 0.5s ease; }
+  @media only screen and (max-width: 1220px) {
+    .all-projects-container {
+      width: 85%; } }
+  @media only screen and (max-width: 1000px) {
+    .all-projects-container {
+      width: 100%; } }
   .all-projects-container .searchForm {
     display: flex;
     margin-top: 40px;
@@ -384,7 +391,14 @@ ui-view {
   flex-direction: column;
   justify-content: flex-start;
   width: 80%;
-  height: 100vh; }
+  height: 100vh;
+  transition: all 0.5s ease; }
+  @media only screen and (max-width: 1220px) {
+    .client-add-project-container {
+      width: 85%; } }
+  @media only screen and (max-width: 1000px) {
+    .client-add-project-container {
+      width: 100%; } }
   .client-add-project-container .project-card {
     background: #ffffff;
     border: 1px solid #ced0ce;
@@ -530,7 +544,14 @@ ui-view {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  width: 80%; }
+  width: 80%;
+  transition: all 0.5s ease; }
+  @media only screen and (max-width: 1220px) {
+    .client-projects-container {
+      width: 85%; } }
+  @media only screen and (max-width: 1000px) {
+    .client-projects-container {
+      width: 100%; } }
   .client-projects-container .project-card {
     background: #ffffff;
     border: 1px solid #ced0ce;
@@ -1273,7 +1294,14 @@ ui-view {
   justify-content: center;
   align-content: flex-start;
   width: 80%;
-  height: 100%; }
+  height: 100%;
+  transition: all 0.5s ease; }
+  @media only screen and (max-width: 1220px) {
+    .dev-projects-container {
+      width: 85%; } }
+  @media only screen and (max-width: 1000px) {
+    .dev-projects-container {
+      width: 100%; } }
   .dev-projects-container .project-card {
     background: #ffffff;
     border-left: 10px solid #AAEFDF;

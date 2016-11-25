@@ -6,6 +6,13 @@
     justify-content: flex-start;
     width: 80%;
     padding-bottom: 40px;
+    transition: all 0.5s ease;
+    @include media(desktop) {
+        width: 85%;
+    }
+    @include media(desktopSmall) {
+        width: 100%;
+    }
 
     .searchForm {
         display: flex;
