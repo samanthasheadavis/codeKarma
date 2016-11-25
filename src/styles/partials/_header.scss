@@ -1,13 +1,26 @@
 .mobile-nav {
   margin-top: 15px;
   transition: all .2s ease;
+  display: none;
+  z-index: 3;
+  text-align: center;
+
+  @include media(tablet) {
+    display: block;
+  }
   img {
-    width: 75px;
+    width: 50px;
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 
-  &:hover {
-    transform: scale(1.05);
+  h1 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 10px 0;
   }
+
 }
 
 header {
@@ -29,8 +42,7 @@ header {
       padding: 10px;
       width: auto;
       position: absolute;
-      left: 0;
-      top: 0;
+      padding-top: 130px;
     }
 
     h1 {
@@ -42,8 +54,7 @@ header {
         font-weight: 900;
         letter-spacing: 0.1em;
         @include media(tablet) {
-          margin-top: 10px;
-          margin-left: 0;
+          display: none;
         }
 
         &:hover {
@@ -57,6 +68,10 @@ header {
 
         &:hover {
           cursor: pointer;
+        }
+
+        @include media(tablet) {
+          margin-left: 0;
         }
     }
 
@@ -83,6 +98,7 @@ header {
             }
             @include media(tablet) {
               width: 100%;
+              justify-content: center;
             }
         }
 

@@ -1424,11 +1424,21 @@ div.tooltip {
 
 .mobile-nav {
   margin-top: 15px;
-  transition: all .2s ease; }
+  transition: all .2s ease;
+  display: none;
+  z-index: 3;
+  text-align: center; }
+  @media only screen and (max-width: 700px) {
+    .mobile-nav {
+      display: block; } }
   .mobile-nav img {
-    width: 75px; }
-  .mobile-nav:hover {
-    transform: scale(1.05); }
+    width: 50px; }
+    .mobile-nav img:hover {
+      transform: scale(1.05); }
+  .mobile-nav h1 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 10px 0; }
 
 header {
   background: linear-gradient(#4F4F4F, #191919);
@@ -1449,8 +1459,7 @@ header {
       padding: 10px;
       width: auto;
       position: absolute;
-      left: 0;
-      top: 0; } }
+      padding-top: 130px; } }
   header h1 {
     margin-top: 2px;
     font-size: 24px;
@@ -1461,8 +1470,7 @@ header {
     letter-spacing: 0.1em; }
     @media only screen and (max-width: 700px) {
       header h1 {
-        margin-top: 10px;
-        margin-left: 0; } }
+        display: none; } }
     header h1:hover {
       cursor: pointer; }
   header img {
@@ -1470,6 +1478,9 @@ header {
     margin-left: 10px; }
     header img:hover {
       cursor: pointer; }
+    @media only screen and (max-width: 700px) {
+      header img {
+        margin-left: 0; } }
   header .navList {
     display: flex;
     flex-direction: row;
@@ -1492,7 +1503,8 @@ header {
           height: 60px; } }
       @media only screen and (max-width: 700px) {
         header .navList .navItem {
-          width: 100%; } }
+          width: 100%;
+          justify-content: center; } }
     header .navList .active {
       background: #ffffff;
       color: #191919; }
