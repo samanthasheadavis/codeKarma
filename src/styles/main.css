@@ -75,21 +75,26 @@ ui-view {
     width: 60%; }
     .all-projects-container .searchForm textarea {
       resize: none;
+      background: #e6e8e6;
+      border: none;
       height: 20px;
       padding: 10px;
       line-height: 20px;
       outline: none;
       width: 100%;
-      border: 1px solid #e6e8e6;
       border-radius: 5px 0 0 5px; }
       .all-projects-container .searchForm textarea::-webkit-input-placeholder {
-        color: #ced0ce; }
+        color: #4F4F4F;
+        font-size: 18px; }
       .all-projects-container .searchForm textarea::-moz-placeholder {
-        color: #ced0ce; }
+        color: #4F4F4F;
+        font-size: 18px; }
       .all-projects-container .searchForm textarea:-moz-placeholder {
-        color: #ced0ce; }
+        color: #4F4F4F;
+        font-size: 18px; }
       .all-projects-container .searchForm textarea:-ms-input-placeholder {
-        color: #ced0ce; }
+        color: #4F4F4F;
+        font-size: 18px; }
     .all-projects-container .searchForm .searchBtn {
       border-radius: 0 5px 5px 0;
       width: 100px;
@@ -780,12 +785,11 @@ ui-view {
           color: dimgray;
           padding: 10px; }
           .community-feed-container .flexContainer .commPost .responsesContainer .response .commenter-photo {
-            height: 40px;
+            width: 35px;
             border-radius: 5px;
-            border: 2px solid #4F4F4F;
             align-self: center; }
           .community-feed-container .flexContainer .commPost .responsesContainer .response .comment {
-            align-self: center; }
+            align-self: flex-start; }
           .community-feed-container .flexContainer .commPost .responsesContainer .response .comment-container {
             display: flex;
             flex-direction: column;
