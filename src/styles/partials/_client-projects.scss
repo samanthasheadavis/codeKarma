@@ -126,26 +126,18 @@
     .progress {
       .progress-container {
         margin-top: 10px;
-        padding: 10px;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        background: rgba(230,232,230, .6);
-        border-radius: $border-radius;
-        box-shadow: $box-shadow;
 
         p {
           width: 30%;
-        }
-
-        p:nth-child(3) {
-          flex-grow: 5;
         }
       }
     }
 
     li {
-        margin: 0 0 $vspace $hspace;
+        margin: 0 $hspace $vspace $hspace;
 
         textarea {
             width: 100%;
