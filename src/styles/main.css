@@ -540,6 +540,13 @@ ui-view {
   flex-direction: column; }
   .client-projects-container .project-details .title {
     display: flex; }
+  .client-projects-container .project-details .progress .progress-container {
+    display: flex;
+    flex-wrap: wrap; }
+    .client-projects-container .project-details .progress .progress-container p {
+      width: 30%; }
+    .client-projects-container .project-details .progress .progress-container p:nth-child(3) {
+      flex-grow: 5; }
   .client-projects-container .project-details li {
     margin: 0 0 15px 10px; }
     .client-projects-container .project-details li textarea {
