@@ -34,9 +34,9 @@
 
 <div class="client-projects-container">
   <div class="mobile-nav">
-    <img src="assets/menu.png" alt="menu by unlimicon from the Noun Project">
+    <img src="assets/menu.png" alt="menu by unlimicon from the Noun Project" ng-click="show = !show">
   </div>
-    <header>
+    <header ng-show="show">
         <img ui-sref="codeKarmaParent.home" src="assets/lotus_blue.png" alt="Lotus by Muhammad Faizal Rahman Hakim from the Noun Project" />
         <h1 ui-sref="codeKarmaParent.home">Code Karma</h1>
         <nav class="nav">
