@@ -1422,6 +1422,14 @@ div.tooltip {
   .dev-projects-container .update:hover {
     background: #AAEFDF; }
 
+.mobile-nav {
+  margin-top: 15px;
+  transition: all .2s ease; }
+  .mobile-nav img {
+    width: 75px; }
+  .mobile-nav:hover {
+    transform: scale(1.05); }
+
 header {
   background: linear-gradient(#4F4F4F, #191919);
   height: 50px;
