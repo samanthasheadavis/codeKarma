@@ -15,15 +15,17 @@
 
         textarea {
             resize: none;
+            background: $lightGrey;
+            border: none;
             height: 20px;
             padding: 10px;
             line-height: 20px;
             outline: none;
             width: 100%;
-            border: 1px solid $lightGrey;
             border-radius: 5px 0 0 5px;
             @include placeholder {
-                color: $midGrey;
+                color: $darkGrey;
+                font-size: 18px;
             }
         }
 
