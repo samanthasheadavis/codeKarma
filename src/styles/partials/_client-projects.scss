@@ -125,8 +125,14 @@
 
     .progress {
       .progress-container {
+        margin-top: 10px;
+        padding: 10px;
         display: flex;
         flex-wrap: wrap;
+        align-items: center;
+        background: rgba(230,232,230, .6);
+        border-radius: $border-radius;
+        box-shadow: $box-shadow;
 
         p {
           width: 30%;

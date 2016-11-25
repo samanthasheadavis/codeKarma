@@ -85,10 +85,10 @@
                 <h4>GitHub Repo URL</h4>
                 <a>{{project.github_repo_url}}</a>
             </li>
-            <li class="progress">
+            <li class="Developer progress">
                 <h4>Developer Progress</h4>
                 <div class="progress-container" ng-repeat = "dev in project.developer_project">
-                  <p>Developer: {{dev.developer}}</p>
+                  <p>{{dev.developer}}</p>
                   <p>{{dev.percent_complete}}% done</p>
                   <p>Completion Date: {{dev.completion_dates}}</p>
                 </div>

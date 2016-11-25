@@ -541,8 +541,14 @@ ui-view {
   .client-projects-container .project-details .title {
     display: flex; }
   .client-projects-container .project-details .progress .progress-container {
+    margin-top: 10px;
+    padding: 10px;
     display: flex;
-    flex-wrap: wrap; }
+    flex-wrap: wrap;
+    align-items: center;
+    background: rgba(230, 232, 230, 0.6);
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 0px #ced0ce; }
     .client-projects-container .project-details .progress .progress-container p {
       width: 30%; }
     .client-projects-container .project-details .progress .progress-container p:nth-child(3) {

@@ -1,6 +1,5 @@
 angular.module('codeKarmaApp').controller('ClientProjectsController', function($state, RequestService, $scope) {
     this.message = "in ClientProjectsController";
-
     // Collect client projects
     this.getProjects = function() {
         this.url = RequestService.getClientProjectsUrl();
