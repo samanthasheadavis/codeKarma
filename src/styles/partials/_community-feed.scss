@@ -2,12 +2,10 @@
     background: rgba(255,255,255, .6);
     width: 80%;
     height: 100%;
-    transition: all .5s ease;
-
+    transition: all 0.5s ease;
     @include media(desktop) {
         width: 85%;
     }
-
     @include media(desktopSmall) {
         width: 100%;
     }
@@ -16,6 +14,11 @@
         display: flex;
         flex-direction: row;
         justify-content: space-around;
+        @include media(mobileLarge) {
+            flex-direction: column-reverse;
+            justify-content: center;
+            align-items: center;
+        }
 
         .feed {
             width: 60%;
@@ -24,11 +27,9 @@
             justify-content: flex-start;
             align-items: center;
             transition: all 0.5s ease;
-
             @include media(desktopSmall) {
                 width: 55%;
             }
-
             @include media(mobileLarge) {
                 width: 85%;
             }
@@ -36,9 +37,12 @@
 
         .postForm {
             display: flex;
-            margin: 40px 0 0;
+            margin: 40px 0;
             width: 100%;
-            margin-bottom: 40px;
+
+            @include media(mobileLarge) {
+              margin: 30px 0;
+            }
 
             textarea {
                 resize: none;
@@ -93,10 +97,10 @@
                 margin-bottom: $vspace;
 
                 .questioner-img {
-                    align-self: center;
                     border-radius: $border-radius;
                     width: 50px;
                     height: 50px;
+                    margin-right: $hspace;
                 }
 
                 .question {
@@ -111,6 +115,7 @@
 
                     .likeAmount {
                         align-self: flex-end;
+                        text-align: right;
                     }
 
                     img.like {
@@ -155,7 +160,8 @@
                     .commenter-photo {
                         width: 35px;
                         border-radius: $border-radius;
-                        align-self: center;
+                        align-self: flex-start;
+                        margin-right: $hspace;
                     }
 
                     .comment {
@@ -168,7 +174,7 @@
                         justify-content: center;
 
                         .commenter-name {
-                            margin: $vspace $hspace;
+                            margin: $vspace $hspace $vspace 0;
                             font-size: 14px;
                             font-weight: bold;
                             color: $charcoal;
@@ -179,7 +185,7 @@
                             display: flex;
                             justify-content: flex-end;
                             flex-direction: row;
-                            margin: 10px 0 0 $hspace;
+                            margin: 10px 0 0 0;
                         }
 
                         .comment-time,
@@ -246,16 +252,14 @@
         @include media(desktop) {
             width: 30%;
         }
-
         @include media(desktopSmall) {
             width: 33%;
         }
-
         @include media(tablet) {
             width: 35%;
         }
         @include media(mobileLarge) {
-            display: none;
+            width: 85%;
         }
 
         .user-stats {
@@ -268,13 +272,37 @@
             justify-content: center;
             align-items: center;
             margin-top: 40px;
+            transition: all .5s ease;
             width: 100%;
+
+            @include media(mobileLarge) {
+                display: block;
+                border: none;
+                box-shadow: none;
+                background: none;
+                margin-top: 30px;
+            }
+
+            @include media(mobileSmall) {
+              display: flex;
+            }
 
             img.user-photo {
                 width: 90px;
                 border-radius: 10px;
                 box-shadow: $box-shadow;
                 margin: $vspace 0;
+
+                @include media(mobileLarge) {
+                  width: 50px;
+                  margin: $vspace $hspace 0 $hspace;
+                  float: left;
+                }
+
+                @include media(mobileSmall) {
+                  float: none;
+                  margin-top: 0;
+                }
             }
 
             hr {
@@ -283,6 +311,10 @@
                 height: 0;
                 border-top: 1px solid rgba(0, 0, 0, 0.1);
                 border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+
+                @include media(mobileLarge) {
+                    display: none;
+                }
             }
         }
 
@@ -290,14 +322,42 @@
             margin-bottom: 8px;
             font-weight: bold;
             font-size: 20px;
+
+            @include media(mobileLarge) {
+                padding-top: $vspace;
+            }
+
+            @include media(mobileSmall) {
+                margin: 5px 0;
+                padding-top: 0;
+            }
+
         }
 
         .points {
             margin: 8px 0;
+
+            @include media(mobileLarge) {
+                margin: 0;
+                float: left;
+            }
         }
 
         p.rank {
             margin-bottom: $vspace;
+
+            @include media(mobileLarge) {
+                text-align: right;
+                padding-right: $hspace;
+                margin-bottom: 0;
+            }
+
+            @include media(mobile) {
+                clear: both;
+            }
+            @include media(mobileSmall) {
+                padding-top: 5px;
+            }
 
             span {
                 font-weight: bold;
@@ -314,6 +374,9 @@
         margin-top: 40px;
         margin-right: $hspace;
         width: 100%;
+        @include media(mobileLarge) {
+            display: none;
+        }
 
         h3 {
             text-align: center;
@@ -324,7 +387,6 @@
             padding: $vspace 0;
             font-weight: bold;
             font-size: 18px;
-
             @include media(tablet) {
                 font-size: 16px;
             }
@@ -358,7 +420,6 @@
                 justify-content: left;
                 align-self: left;
                 width: 100%;
-
                 @include media(tabletLarge) {
                     font-size: 14px;
                 }
@@ -379,7 +440,6 @@
                     margin: 0 $hspace;
                     width: 20px;
                     font-size: 16px;
-
                     @include media(tabletLarge) {
                         width: 15px;
                     }
@@ -397,7 +457,6 @@
                 align-self: flex-end;
                 line-height: 18px;
                 font-size: 18px;
-
                 @include media(tabletLarge) {
                     font-size: 16px;
                     line-height: 16px;
