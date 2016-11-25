@@ -107,6 +107,7 @@
     .project-card {
         background: $white;
         border: 1px solid $midGrey;
+        border-left: $accent-border;
         padding: $vspace $hspace;
         width: 60%;
         box-shadow: $box-shadow;
@@ -123,8 +124,56 @@
       display: flex;
     }
 
+    .progress {
+      position: relative;
+      .progress-container {
+        padding: 5px;
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        background: $lightGrey;
+        border-radius: 5px;
+        flex-direction: column;
+
+        .percent-container {
+          display: flex;
+          margin-bottom: 10px;
+
+          .progress-bar {
+            width: 200px;
+            height: 10px;
+            background: $white;
+            margin: 4px 10px;
+            border-radius: 3px;
+            position: relative;
+
+            .filler {
+              width: 200px;
+              height: 10px;
+              position: absolute;
+              background: $pop;
+              border-radius: 3px;
+            }
+          }
+        }
+
+        p {
+          margin-left: 5px;
+
+          span {
+            font-weight: bold;
+          }
+        }
+
+        p:nth-child(3) {
+          align-self: flex-start;
+        }
+      }
+    }
+
     li {
-        margin: 0 0 $vspace $hspace;
+        margin: 0 $hspace $vspace $hspace;
 
         textarea {
             width: 100%;
@@ -203,7 +252,7 @@
         }
     }
 
-    
+
 
     .editBtn {
         @include button(15px) {};

@@ -1,6 +1,5 @@
 angular.module('codeKarmaApp').controller('ClientProjectsController', function($state, RequestService, $scope) {
     this.message = "in ClientProjectsController";
-
     // Collect client projects
     this.getProjects = function() {
         this.url = RequestService.getClientProjectsUrl();
@@ -16,14 +15,24 @@ angular.module('codeKarmaApp').controller('ClientProjectsController', function($
           console.log(response);
             $scope.projects = response;
             $scope.icons(response);
-            $scope.$apply();
             $scope.handleProgress(response);
+            $scope.$apply();
         });
     };
 
     $scope.handleProgress = function(response) {
       for (count=0; count<response.length; count++) {
-        console.log(response[count].developer_project);
+        if (response[count].developer_project.length === 0) {
+          console.log('null');
+        } else {
+          for (index = 0; index<response[count].developer_project.length; index++) {
+            if (response[count].developer_project[index].completion_dates !== null) {
+              var dateString = response[count].developer_project[index].completion_dates;
+              var date = dateString.slice(0, 15);
+              response[count].developer_project[index].completion_dates = date;
+            }
+          }
+        }
       }
     };
 
