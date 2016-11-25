@@ -541,29 +541,39 @@ ui-view {
   flex-direction: column; }
   .client-projects-container .project-details .title {
     display: flex; }
-  .client-projects-container .project-details .progress .progress-container {
-    padding: 5px;
-    margin-top: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    background: #e6e8e6;
-    border-radius: 5px;
-    flex-direction: column; }
-    .client-projects-container .project-details .progress .progress-container .percent-container {
-      display: flex; }
-      .client-projects-container .project-details .progress .progress-container .percent-container .progress-bar {
-        width: 200px;
-        height: 10px;
-        background: #ffffff;
-        margin: 4px 10px;
-        border-radius: 3px; }
-    .client-projects-container .project-details .progress .progress-container p {
-      margin-left: 5px; }
-      .client-projects-container .project-details .progress .progress-container p span {
-        font-weight: bold; }
-    .client-projects-container .project-details .progress .progress-container p:nth-child(3) {
-      align-self: flex-start; }
+  .client-projects-container .project-details .progress {
+    position: relative; }
+    .client-projects-container .project-details .progress .progress-container {
+      padding: 5px;
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      background: #e6e8e6;
+      border-radius: 5px;
+      flex-direction: column; }
+      .client-projects-container .project-details .progress .progress-container .percent-container {
+        display: flex;
+        margin-bottom: 10px; }
+        .client-projects-container .project-details .progress .progress-container .percent-container .progress-bar {
+          width: 200px;
+          height: 10px;
+          background: #ffffff;
+          margin: 4px 10px;
+          border-radius: 3px;
+          position: relative; }
+          .client-projects-container .project-details .progress .progress-container .percent-container .progress-bar .filler {
+            width: 200px;
+            height: 10px;
+            position: absolute;
+            background: #AAEFDF;
+            border-radius: 3px; }
+      .client-projects-container .project-details .progress .progress-container p {
+        margin-left: 5px; }
+        .client-projects-container .project-details .progress .progress-container p span {
+          font-weight: bold; }
+      .client-projects-container .project-details .progress .progress-container p:nth-child(3) {
+        align-self: flex-start; }
   .client-projects-container .project-details li {
     margin: 0 10px 15px 10px; }
     .client-projects-container .project-details li textarea {

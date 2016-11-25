@@ -125,6 +125,7 @@
     }
 
     .progress {
+      position: relative;
       .progress-container {
         padding: 5px;
         margin-top: 10px;
@@ -137,6 +138,7 @@
 
         .percent-container {
           display: flex;
+          margin-bottom: 10px;
 
           .progress-bar {
             width: 200px;
@@ -144,6 +146,15 @@
             background: $white;
             margin: 4px 10px;
             border-radius: 3px;
+            position: relative;
+
+            .filler {
+              width: 200px;
+              height: 10px;
+              position: absolute;
+              background: $pop;
+              border-radius: 3px;
+            }
           }
         }
 
