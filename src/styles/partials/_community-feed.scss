@@ -334,18 +334,12 @@
         li {
             background: $lightGrey;
             display: flex;
-            flex-direction: row;
-            justify-content: space-between;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
             line-height: 40px;
             width: 100%;
-            padding: $vspace 0;
-
-            @include media(tabletLarge) {
-                flex-direction: column;
-                justify-content: center;
-                padding: $vspace 0 0 0;
-            }
+            padding: 10px 0;
 
             &:nth-child(odd) {
                 background: $white;
@@ -364,9 +358,9 @@
                 display: flex;
                 justify-content: left;
                 align-self: left;
+                width: 100%;
 
                 @include media(tabletLarge) {
-                    width: 100%;
                     font-size: 14px;
                 }
 
@@ -385,6 +379,7 @@
                 .rank {
                     margin: 0 $hspace;
                     width: 20px;
+                    font-size: 16px;
 
                     @include media(tabletLarge) {
                         width: 15px;
@@ -393,18 +388,20 @@
 
                 .leader-username {
                     margin-right: $hspace;
+                    font-size: 16px;
                 }
             }
 
             .points {
                 text-align: right;
                 margin: 0 $hspace 0 0;
+                align-self: flex-end;
+                line-height: 18px;
+                font-size: 18px;
 
                 @include media(tabletLarge) {
-                    line-height: 25px;
-                    align-self: flex-end;
-                    margin-bottom: $vspace;
                     font-size: 16px;
+                    line-height: 16px;
                 }
             }
         }
