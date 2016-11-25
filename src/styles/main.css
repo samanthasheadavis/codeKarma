@@ -1430,6 +1430,18 @@ header {
   align-items: center;
   flex-direction: row;
   width: 100%; }
+  @media only screen and (max-width: 780px) {
+    header {
+      height: 60px; } }
+  @media only screen and (max-width: 700px) {
+    header {
+      flex-direction: column;
+      height: 320px;
+      padding: 10px;
+      width: auto;
+      position: absolute;
+      left: 0;
+      top: 0; } }
   header h1 {
     margin-top: 2px;
     font-size: 24px;
@@ -1438,6 +1450,10 @@ header {
     font-family: "Catamaran", sans-serif;
     font-weight: 900;
     letter-spacing: 0.1em; }
+    @media only screen and (max-width: 700px) {
+      header h1 {
+        margin-top: 10px;
+        margin-left: 0; } }
     header h1:hover {
       cursor: pointer; }
   header img {
@@ -1449,11 +1465,25 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-between; }
+    @media only screen and (max-width: 700px) {
+      header .navList {
+        flex-direction: column;
+        align-items: center; } }
     header .navList .navItem {
       padding: 0 20px;
       height: 50px;
       align-items: center;
-      display: flex; }
+      display: flex;
+      transition: all 0.5s ease; }
+      @media only screen and (max-width: 1000px) {
+        header .navList .navItem {
+          padding: 0 11px; } }
+      @media only screen and (max-width: 780px) {
+        header .navList .navItem {
+          height: 60px; } }
+      @media only screen and (max-width: 700px) {
+        header .navList .navItem {
+          width: 100%; } }
     header .navList .active {
       background: #ffffff;
       color: #191919; }
@@ -1461,11 +1491,18 @@ header {
     text-decoration: none;
     position: relative;
     display: inline-block;
-    font-size: 20px;
+    font-size: 19px;
     font-weight: 300;
     color: #ffffff;
     transition: color 0.2s ease;
-    padding: 3px 0; }
+    padding: 3px 0;
+    transition: all 0.5s ease; }
+    @media only screen and (max-width: 1000px) {
+      header a {
+        font-size: 18px; } }
+    @media only screen and (max-width: 780px) {
+      header a {
+        text-align: center; } }
     header a:hover {
       color: #aaa; }
       header a:hover::after, header a:hover::before {
