@@ -15,13 +15,32 @@
 
 
 @mixin media($bp) {
+
+      @if $bp == desktop {
+         @media only screen and (max-width: 1220px) {
+              @content;
+         }
+     }
+
+     @if $bp == desktopSmall {
+        @media only screen and (max-width: 1000px) {
+             @content;
+        }
+    }
+
+    @if $bp == tabletLarge {
+       @media only screen and (max-width: 780px) {
+            @content;
+       }
+   }
+   
      @if $bp == tablet {
         @media only screen and (max-width: 700px) {
              @content;
         }
     }
     @if $bp == mobileLarge {
-         @media only screen and (max-width: 525px ){
+         @media only screen and (max-width: 560px ){
             @content;
         }
     }

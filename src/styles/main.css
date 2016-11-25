@@ -62,7 +62,7 @@ ui-view {
 /***** Site Components ******/
 .all-projects-container {
   align-items: center;
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.6);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -630,8 +630,12 @@ ui-view {
 .community-feed-container {
   background: rgba(255, 255, 255, 0.6);
   width: 80%;
-  height: 100%; }
-  @media only screen and (max-width: 700px) {
+  height: 100%;
+  transition: all .5s ease; }
+  @media only screen and (max-width: 1220px) {
+    .community-feed-container {
+      width: 85%; } }
+  @media only screen and (max-width: 1000px) {
     .community-feed-container {
       width: 100%; } }
   .community-feed-container .flexContainer {
@@ -644,8 +648,11 @@ ui-view {
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
-      transition: all .5s ease; }
-      @media only screen and (max-width: 525px) {
+      transition: all 0.5s ease; }
+      @media only screen and (max-width: 1000px) {
+        .community-feed-container .flexContainer .feed {
+          width: 55%; } }
+      @media only screen and (max-width: 560px) {
         .community-feed-container .flexContainer .feed {
           width: 85%; } }
     .community-feed-container .flexContainer .postForm {
@@ -811,10 +818,16 @@ ui-view {
             color: white; }
   .community-feed-container .sidebar {
     width: 25%; }
-    @media only screen and (max-width: 700px) {
+    @media only screen and (max-width: 1220px) {
       .community-feed-container .sidebar {
         width: 30%; } }
-    @media only screen and (max-width: 525px) {
+    @media only screen and (max-width: 1000px) {
+      .community-feed-container .sidebar {
+        width: 33%; } }
+    @media only screen and (max-width: 700px) {
+      .community-feed-container .sidebar {
+        width: 35%; } }
+    @media only screen and (max-width: 560px) {
       .community-feed-container .sidebar {
         display: none; } }
     .community-feed-container .sidebar .user-stats {
@@ -858,42 +871,77 @@ ui-view {
     margin-top: 40px;
     margin-right: 10px;
     width: 100%; }
-    .community-feed-container .leaderboard hr {
-      width: 90%;
-      border: 0;
-      height: 0;
-      border-top: 1px solid rgba(0, 0, 0, 0.1);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
+    .community-feed-container .leaderboard h3 {
+      text-align: center;
+      width: 100%;
+      color: #191919;
+      letter-spacing: 0.1em;
+      background: #AAEFDF;
+      padding: 15px 0;
+      font-weight: bold;
+      font-size: 18px; }
+      @media only screen and (max-width: 700px) {
+        .community-feed-container .leaderboard h3 {
+          font-size: 16px; } }
     .community-feed-container .leaderboard li {
+      background: #e6e8e6;
       display: flex;
       flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
       line-height: 40px;
       width: 100%;
-      margin: 15px 10px; }
-      .community-feed-container .leaderboard li.title {
-        margin-left: 0; }
-      .community-feed-container .leaderboard li h3 {
-        margin-top: 15px;
-        font-weight: bold;
-        font-size: 18px;
-        text-align: center;
-        width: 100%; }
-      .community-feed-container .leaderboard li .prof-pic {
-        height: 40px;
-        border-radius: 10px;
-        margin-right: 10px; }
-      .community-feed-container .leaderboard li .rank {
-        width: 12%; }
-      .community-feed-container .leaderboard li .leader-username {
-        margin-right: 10px;
-        width: 25%; }
+      padding: 15px 0; }
+      @media only screen and (max-width: 780px) {
+        .community-feed-container .leaderboard li {
+          flex-direction: column;
+          justify-content: center;
+          padding: 15px 0 0 0; } }
+      .community-feed-container .leaderboard li:nth-child(odd) {
+        background: #ffffff; }
+      .community-feed-container .leaderboard li:hover {
+        -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        transform: scale(1.1);
+        -webkit-box-shadow: 0 8px 6px -6px black;
+        -moz-box-shadow: 0 8px 6px -6px black;
+        box-shadow: 0 8px 6px -6px black; }
+      .community-feed-container .leaderboard li .flex-left {
+        display: flex;
+        justify-content: left;
+        align-self: left; }
+        @media only screen and (max-width: 780px) {
+          .community-feed-container .leaderboard li .flex-left {
+            width: 100%;
+            font-size: 14px; } }
+        .community-feed-container .leaderboard li .flex-left .prof-pic-container {
+          margin-right: 10px;
+          display: flex;
+          justify-content: center; }
+          .community-feed-container .leaderboard li .flex-left .prof-pic-container .prof-pic {
+            width: 40px;
+            border-radius: 10px;
+            align-self: center; }
+        .community-feed-container .leaderboard li .flex-left .rank {
+          margin: 0 10px;
+          width: 20px; }
+          @media only screen and (max-width: 780px) {
+            .community-feed-container .leaderboard li .flex-left .rank {
+              width: 15px; } }
+        .community-feed-container .leaderboard li .flex-left .leader-username {
+          margin-right: 10px; }
       .community-feed-container .leaderboard li .points {
-        align-content: flex-end;
-        width: 32%;
-        text-align: right; }
+        text-align: right;
+        margin: 0 10px 0 0; }
+        @media only screen and (max-width: 780px) {
+          .community-feed-container .leaderboard li .points {
+            line-height: 25px;
+            align-self: flex-end;
+            margin-bottom: 15px;
+            font-size: 16px; } }
 
 .dev-dashboard-container {
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.6);
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -913,7 +961,7 @@ ui-view {
     border-radius: 5px;
     box-shadow: 0px 0px 5px 0px #ced0ce;
     transition: all 0.5s ease; }
-    @media only screen and (max-width: 525px) {
+    @media only screen and (max-width: 560px) {
       .dev-dashboard-container .btnContainer {
         width: 400px; } }
     @media only screen and (max-width: 440px) {
@@ -990,7 +1038,7 @@ ui-view {
     margin-bottom: 50px;
     transition: all 0.5s ease;
     border-bottom: 10px solid #AAEFDF; }
-    @media only screen and (max-width: 525px) {
+    @media only screen and (max-width: 560px) {
       .dev-dashboard-container .infoContainer {
         width: 400px; } }
     @media only screen and (max-width: 440px) {

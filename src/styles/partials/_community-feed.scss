@@ -2,9 +2,14 @@
     background: rgba(255,255,255, .6);
     width: 80%;
     height: 100%;
+    transition: all .5s ease;
 
-    @include media(tablet) {
-      width: 100%;
+    @include media(desktop) {
+        width: 85%;
+    }
+
+    @include media(desktopSmall) {
+        width: 100%;
     }
 
     .flexContainer {
@@ -18,12 +23,15 @@
             flex-direction: column;
             justify-content: flex-start;
             align-items: center;
-            transition: all .5s ease;
+            transition: all 0.5s ease;
 
-            @include media(mobileLarge) {
-              width: 85%;
+            @include media(desktopSmall) {
+                width: 55%;
             }
 
+            @include media(mobileLarge) {
+                width: 85%;
+            }
         }
 
         .postForm {
@@ -98,8 +106,8 @@
                 }
 
                 .like-container {
-                  display: flex;
-                  flex-direction: column;
+                    display: flex;
+                    flex-direction: column;
 
                     .likeAmount {
                         align-self: flex-end;
@@ -236,14 +244,20 @@
     .sidebar {
         width: 25%;
 
+        @include media(desktop) {
+            width: 30%;
+        }
+
+        @include media(desktopSmall) {
+            width: 33%;
+        }
+
         @include media(tablet) {
-          width: 30%;
+            width: 35%;
         }
-
         @include media(mobileLarge) {
-          display: none;
+            display: none;
         }
-
 
         .user-stats {
             background: rgba(230,232,230, .6);
@@ -273,8 +287,6 @@
             }
         }
 
-
-
         .userstat-username {
             margin-bottom: 8px;
             font-weight: bold;
@@ -289,7 +301,7 @@
             margin-bottom: $vspace;
 
             span {
-              font-weight: bold;
+                font-weight: bold;
             }
         }
     }
@@ -304,52 +316,96 @@
         margin-right: $hspace;
         width: 100%;
 
-        hr {
-            width: 90%;
-            border: 0;
-            height: 0;
-            border-top: 1px solid rgba(0, 0, 0, 0.1);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        h3 {
+            text-align: center;
+            width: 100%;
+            color: $charcoal;
+            letter-spacing: 0.1em;
+            background: $pop;
+            padding: $vspace 0;
+            font-weight: bold;
+            font-size: 18px;
+
+            @include media(tablet) {
+                font-size: 16px;
+            }
         }
 
         li {
+            background: $lightGrey;
             display: flex;
             flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
             line-height: 40px;
             width: 100%;
-            margin: $vspace $hspace;
+            padding: $vspace 0;
 
-            &.title {
-              margin-left: 0;
+            @include media(tabletLarge) {
+                flex-direction: column;
+                justify-content: center;
+                padding: $vspace 0 0 0;
             }
 
-            h3 {
-                margin-top: $vspace;
-                font-weight: bold;
-                font-size: 18px;
-                text-align: center;
-                width: 100%;
+            &:nth-child(odd) {
+                background: $white;
             }
 
-            .prof-pic {
-                height: 40px;
-                border-radius: 10px;
-                margin-right: $hspace;
+            &:hover {
+                -webkit-transform: scale(1.1);
+                -ms-transform: scale(1.1);
+                transform: scale(1.1);
+                -webkit-box-shadow: 0 8px 6px -6px black;
+                -moz-box-shadow: 0 8px 6px -6px black;
+                box-shadow: 0 8px 6px -6px black;
             }
 
-            .rank {
-                width: 12%;
-            }
+            .flex-left {
+                display: flex;
+                justify-content: left;
+                align-self: left;
 
-            .leader-username {
-                margin-right: $hspace;
-                width: 25%;
+                @include media(tabletLarge) {
+                    width: 100%;
+                    font-size: 14px;
+                }
+
+                .prof-pic-container {
+                    margin-right: $hspace;
+                    display: flex;
+                    justify-content: center;
+
+                    .prof-pic {
+                        width: 40px;
+                        border-radius: 10px;
+                        align-self: center;
+                    }
+                }
+
+                .rank {
+                    margin: 0 $hspace;
+                    width: 20px;
+
+                    @include media(tabletLarge) {
+                        width: 15px;
+                    }
+                }
+
+                .leader-username {
+                    margin-right: $hspace;
+                }
             }
 
             .points {
-                align-content: flex-end;
-                width: 32%;
                 text-align: right;
+                margin: 0 $hspace 0 0;
+
+                @include media(tabletLarge) {
+                    line-height: 25px;
+                    align-self: flex-end;
+                    margin-bottom: $vspace;
+                    font-size: 16px;
+                }
             }
         }
     }

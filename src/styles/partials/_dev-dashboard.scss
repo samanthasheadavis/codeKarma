@@ -1,5 +1,5 @@
 .dev-dashboard-container {
-    background: $white;
+    background: rgba(255,255,255, .6);
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -126,7 +126,7 @@
         margin-bottom: 50px;
         transition: all 0.5s ease;
         border-bottom: $accent-border;
-        
+
         @include media (mobileLarge) {
             width: 400px;
         }
