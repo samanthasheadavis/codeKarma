@@ -1,6 +1,8 @@
 angular.module('codeKarmaApp').directive("slider", function() {
     return {
-        restrict: 'A',
+        restrict: 'E',
+        replace: true,
+        transclude: true,
         scope: {
             progress: "=model",
             updateButton: "&updateButton"
@@ -8,6 +10,7 @@ angular.module('codeKarmaApp').directive("slider", function() {
         controller: 'DevProjectsController',
         controllerAs: 'devProjects',
         link: function(scope, element, attributes, ctrl) {
+
             var setModel = function(value) {
                 ctrl.complete = value;
             };
