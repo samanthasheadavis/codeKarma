@@ -529,6 +529,7 @@ ui-view {
   .client-projects-container .project-card {
     background: #ffffff;
     border: 1px solid #ced0ce;
+    border-left: 10px solid #AAEFDF;
     padding: 15px 10px;
     width: 60%;
     box-shadow: 0px 0px 5px 0px #ced0ce;
@@ -541,12 +542,28 @@ ui-view {
   .client-projects-container .project-details .title {
     display: flex; }
   .client-projects-container .project-details .progress .progress-container {
+    padding: 5px;
     margin-top: 10px;
     display: flex;
     flex-wrap: wrap;
-    align-items: center; }
+    align-items: flex-start;
+    background: #e6e8e6;
+    border-radius: 5px;
+    flex-direction: column; }
+    .client-projects-container .project-details .progress .progress-container .percent-container {
+      display: flex; }
+      .client-projects-container .project-details .progress .progress-container .percent-container .progress-bar {
+        width: 200px;
+        height: 10px;
+        background: #ffffff;
+        margin: 4px 10px;
+        border-radius: 3px; }
     .client-projects-container .project-details .progress .progress-container p {
-      width: 30%; }
+      margin-left: 5px; }
+      .client-projects-container .project-details .progress .progress-container p span {
+        font-weight: bold; }
+    .client-projects-container .project-details .progress .progress-container p:nth-child(3) {
+      align-self: flex-start; }
   .client-projects-container .project-details li {
     margin: 0 10px 15px 10px; }
     .client-projects-container .project-details li textarea {
