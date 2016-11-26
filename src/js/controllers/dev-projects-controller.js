@@ -2,16 +2,29 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
 
     $scope.progress = 0;
 
+
+
     // show pull request button when progress === 100%
 
-    this.updateButton = function() {
-      $('button.help-btn').removeClass('active');
-      $('div.tooltip').addClass('active');
+    this.updateButton = function(progress, id) {
+      for (var index = 0; index < $scope.projects.length; index++) {
+          if ($scope.projects[index].id === id ) {
+              console.log(id);
+              $scope.projects[index].progress = progress;
+              console.log($scope.projects[index]);
+          }
+      }
+      console.log(progress);
+      $('.' + id).toggleClass('active');
+      // $('button.help-btn .' + id).removeClass('active');
+      // $('div.tooltip .' + id).addClass('active');
     };
 
     // remove pull request button when progress < 100%
 
-    this.revertButton = function() {
+    this.revertButton = function(progress) {
+      this.progress = progress;
+      console.log(progress);
       $('button.help-btn').addClass('active');
       $('div.tooltip').removeClass('active');
     };

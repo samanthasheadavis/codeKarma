@@ -1,10 +1,10 @@
 angular.module('codeKarmaApp').directive("slider", function() {
     return {
-        restrict: 'E',
+        restrict: 'A',
         replace: true,
-        transclude: true,
         scope: {
             progress: "=model",
+            project: "=project",
             updateButton: "&updateButton"
         },
         controller: 'DevProjectsController',
@@ -25,10 +25,10 @@ angular.module('codeKarmaApp').directive("slider", function() {
                         scope.progress = ui.value;
                         if (scope.progress !== 100) {
                             setModel(false);
-                            ctrl.revertButton();
+                            ctrl.revertButton(scope.progress, scope.project);
                         } else if (scope.progress === 100) {
                             setModel(true);
-                            ctrl.updateButton();
+                            ctrl.updateButton(scope.progress, scope.project);
                         }
                     });
                 }
