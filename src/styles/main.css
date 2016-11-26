@@ -1232,7 +1232,7 @@ ui-view {
         position: relative;
         text-transform: uppercase;
         outline: none; }
-    .dev-dashboard-container .infoContainer span.totalPoints {
+    .dev-dashboard-container .infoContainer p.totalPoints {
       font-weight: 700; }
     .dev-dashboard-container .infoContainer .rank-heading {
       font-weight: bold; }
