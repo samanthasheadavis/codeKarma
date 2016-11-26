@@ -444,7 +444,6 @@ ui-view {
   flex-direction: column;
   justify-content: flex-start;
   width: 80%;
-  height: 100vh;
   transition: all 0.5s ease; }
   @media only screen and (max-width: 1220px) {
     .client-add-project-container {
@@ -461,7 +460,15 @@ ui-view {
     flex-direction: column;
     padding: 15px 10px;
     width: 60%;
-    margin-top: 40px; }
+    margin-top: 40px;
+    transition: all 0.5s ease; }
+    @media only screen and (max-width: 780px) {
+      .client-add-project-container .project-card {
+        width: 75%;
+        margin-bottom: 50px; } }
+    @media only screen and (max-width: 440px) {
+      .client-add-project-container .project-card {
+        width: 85%; } }
     .client-add-project-container .project-card h3 {
       font-size: 30px;
       margin-bottom: 15px; }
@@ -474,7 +481,14 @@ ui-view {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        width: 80%; }
+        width: 80%;
+        transition: all 0.5s ease; }
+        @media only screen and (max-width: 700px) {
+          .client-add-project-container .project-card form .select-box {
+            width: 90%; } }
+        @media only screen and (max-width: 440px) {
+          .client-add-project-container .project-card form .select-box {
+            width: 95%; } }
         .client-add-project-container .project-card form .select-box select {
           background: #ffffff;
           border: 1px solid #ced0ce;
@@ -487,12 +501,31 @@ ui-view {
             outline: 0; }
       .client-add-project-container .project-card form label {
         margin-bottom: 10px;
-        width: 80%; }
+        width: 80%;
+        font-size: 1em;
+        font-weight: bold;
+        transition: all 0.5s ease; }
+        @media only screen and (max-width: 700px) {
+          .client-add-project-container .project-card form label {
+            width: 90%; } }
+        @media only screen and (max-width: 700px) {
+          .client-add-project-container .project-card form label {
+            width: 95%; } }
       .client-add-project-container .project-card form input {
         width: 80%;
         height: 25px;
         margin-bottom: 15px;
-        text-indent: 10px; }
+        text-indent: 10px;
+        border: 1px solid #e6e8e6;
+        border-radius: 5px;
+        transition: all 0.5s ease; }
+        @media only screen and (max-width: 700px) {
+          .client-add-project-container .project-card form input {
+            width: 90%; } }
+        @media only screen and (max-width: 700px) {
+          .client-add-project-container .project-card form input {
+            width: 95%;
+            text-indent: 3px; } }
         .client-add-project-container .project-card form input:focus {
           outline-color: #AAEFDF; }
       .client-add-project-container .project-card form .submit-btn {
