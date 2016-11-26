@@ -281,7 +281,7 @@ ui-view {
         width: 300px; } }
     @media only screen and (max-width: 330px) {
       .client-dashboard-container .btnContainer {
-        width: 280px; } }
+        width: 240px; } }
     .client-dashboard-container .btnContainer .createProjectsBtn,
     .client-dashboard-container .btnContainer .myProjectsBtn {
       height: 50px;
@@ -345,6 +345,10 @@ ui-view {
     border-radius: 5px;
     border-bottom: 10px solid #AAEFDF;
     margin-bottom: 50px; }
+    @media only screen and (max-width: 440px) {
+      .client-dashboard-container .infoContainer {
+        width: auto;
+        padding: 15px 10px; } }
     .client-dashboard-container .infoContainer .profilePic {
       margin-top: 20px;
       width: 150px;
@@ -366,9 +370,9 @@ ui-view {
     .client-dashboard-container .infoContainer p {
       display: inline;
       transition: all 0.5s ease; }
-      @media only screen and (max-width: 440px) {
+      @media only screen and (max-width: 330px) {
         .client-dashboard-container .infoContainer p {
-          font-size: 17px; } }
+          font-size: 14px; } }
     .client-dashboard-container .infoContainer .gitHubLink,
     .client-dashboard-container .infoContainer .name,
     .client-dashboard-container .infoContainer .orgLink,
@@ -416,6 +420,12 @@ ui-view {
     .client-dashboard-container .infoContainer .orgLink,
     .client-dashboard-container .infoContainer .orgName {
       padding-top: 5px; }
+    @media only screen and (max-width: 440px) {
+      .client-dashboard-container .infoContainer .gitHubLink p {
+        font-size: 17px; } }
+    @media only screen and (max-width: 330px) {
+      .client-dashboard-container .infoContainer .gitHubLink p {
+        font-size: 12px; } }
     .client-dashboard-container .infoContainer .editIcon {
       width: 15px;
       margin-left: 10px;
