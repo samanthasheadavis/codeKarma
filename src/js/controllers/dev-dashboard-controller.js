@@ -26,6 +26,8 @@ angular.module('codeKarmaApp').controller('DevDashboardController', function($st
         this.showLinkEdit = false;
         this.showNameEdit = false;
         this.showSkillEdit = false;
+
+        this.getDev();
     };
 
     this.getDev = function() {
