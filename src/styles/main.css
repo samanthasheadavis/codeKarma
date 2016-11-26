@@ -342,12 +342,12 @@ ui-view {
     justify-content: space-around;
     align-items: center;
     box-shadow: 0px 0px 5px 0px #ced0ce;
-    border-radius: 5px; }
+    border-radius: 5px;
+    border-bottom: 10px solid #AAEFDF; }
     .client-dashboard-container .infoContainer .profilePic {
       margin-top: 20px;
       width: 150px;
       height: 150px;
-      box-shadow: 0px 0px 5px 0px #ced0ce;
       border-radius: 50%;
       margin: 15px 10px; }
       .client-dashboard-container .infoContainer .profilePic img {
@@ -368,9 +368,12 @@ ui-view {
     .client-dashboard-container .infoContainer .name,
     .client-dashboard-container .infoContainer .orgLink,
     .client-dashboard-container .infoContainer .orgName {
+      height: 20px;
+      width: 100%;
+      text-align: center;
       font-size: 20px;
-      margin: 15px 10px;
-      text-align: center; }
+      padding: 15px 0;
+      margin: 0; }
       .client-dashboard-container .infoContainer .gitHubLink input,
       .client-dashboard-container .infoContainer .name input,
       .client-dashboard-container .infoContainer .orgLink input,
@@ -396,6 +399,9 @@ ui-view {
         position: relative;
         text-transform: uppercase;
         outline: none; }
+    .client-dashboard-container .infoContainer .orgLink,
+    .client-dashboard-container .infoContainer .orgName {
+      border-top: 1px solid lightGrey; }
     .client-dashboard-container .infoContainer .editIcon {
       width: 15px;
       margin-left: 10px;
@@ -1193,7 +1199,6 @@ ui-view {
     .dev-dashboard-container .infoContainer img.profilePic {
       margin-top: 20px;
       height: 150px;
-      box-shadow: 0px 0px 5px 0px #ced0ce;
       border-radius: 50%;
       margin: 15px 10px;
       border: none; }
