@@ -53,8 +53,8 @@
                             <p class="comment"><span class="commenter-name">{{comment.commenter}} </span> {{comment.comment}}</p>
                             <div class="comment-data">
                                 <p class="comment-time">{{comment.commentTimestamp}}</p>
-                                <p class="like-text">Like</p>
-                                <img class="like-comment" src="assets/like.png" alt="like by dilayorganci from the Noun Project" ng-click="communityFeed.updateCommentLikes(comment.likes, comment.karma_comment_id)">
+                                <p class="like-text">{{comment.likes}}</p>
+                                <img class="like-comment" src="assets/like.png" alt="like by dilayorganci from the Noun Project" ng-click="communityFeed.updateCommentLikes(comment.likes, comment.id)">
                             </div>
                         </div>
                     </div>

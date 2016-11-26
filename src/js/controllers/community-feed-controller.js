@@ -2,37 +2,40 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
 
     this.post = '';
     this.response = '';
+    var self = this;
 
     this.addPost = function() {
+
         this.newQuestion = {
             "karma_question": this.post
         };
-        RequestService.postQuestion(this.newQuestion);
+        RequestService.postQuestion(this.newQuestion, function(response) {
+          self.getPosts();
+        });
+
         this.post = '';
     };
 
     this.getPosts = function() {
         RequestService.getPosts(function(response) {
             $scope.posts = response;
-
             console.log($scope.posts);
+            // console.log($scope.posts);
             // this.date = $scope.posts.created.slice(0, 10);
             // this.time = $scope.posts.created.slice(11, 19);
             // $scope.posts.timeElapsed = this.date + ' ' + this.time;
 
             for (var index = 0; index < $scope.posts.length; index++) {
-
                 if ($scope.posts[index].comments.length > 0) {
                     var currentPost = $scope.posts[index].comments;
-
                     for (var commIndex = 0; commIndex < currentPost.length; commIndex++) {
-
                         this.commentDate = currentPost[commIndex].created.slice(0, 10);
                         this.commentTime = currentPost[commIndex].created.slice(11, 19);
                         currentPost[commIndex].commentTimestamp = this.commentDate + ' ' + this.commentTime;
                     }
                 }
             }
+
             $scope.$apply();
         });
 
@@ -52,15 +55,21 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
           "question_like": likes,
         };
         console.log(this.likes);
-        RequestService.updateQuestionLikes(this.likes, id);
+        RequestService.updateQuestionLikes(this.likes, id, function(response) {
+          self.getPosts();
+        });
+
     };
 
     this.updateCommentLikes = function(likes, id) {
+        console.log(id);
         this.likes = {
           "comment_like": likes,
         };
         console.log(this.likes);
-        RequestService.updateCommentLikes(this.likes, id);
+        RequestService.updateCommentLikes(this.likes, id, function(response) {
+          self.getPosts();
+        });
     };
 
     this.getDev = function() {

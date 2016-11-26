@@ -154,7 +154,7 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
       $.ajax(settings).done(callback);
     }
 
-    function postQuestion(post) {
+    function postQuestion(post, callback) {
         var settings = {
             "async": true,
             "crossDomain": true,
@@ -163,11 +163,8 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
             "data": post
         };
 
-        $.ajax(settings).done(function(response) {
+        $.ajax(settings).done(callback);
 
-            console.log(response);
-
-        });
     }
 
     function getPosts(callback) {
@@ -195,7 +192,7 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
         });
     }
 
-    function updateQuestionLikes(likes, id){
+    function updateQuestionLikes(likes, id, callback){
 
       var settings = {
           "async": true,
@@ -204,13 +201,10 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
           "method": "PUT",
           "data": likes
       };
-      $.ajax(settings).done(function(response) {
-        console.log(response);
-        // return response;
-      });
+      $.ajax(settings).done(callback);
     }
 
-    function updateCommentLikes(likes, id){
+    function updateCommentLikes(likes, id, callback){
 
       var settings = {
           "async": true,
@@ -219,10 +213,7 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
           "method": "PUT",
           "data": likes
       };
-      $.ajax(settings).done(function(response) {
-        console.log(response);
-        // return response;
-      });
+      $.ajax(settings).done(callback);
     }
 
 
