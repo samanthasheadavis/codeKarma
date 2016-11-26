@@ -1,5 +1,5 @@
 .client-dashboard-container {
-    background: $white;
+    background: rgba(255,255,255, .6);
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -7,6 +7,9 @@
     width: 80%;
     height: 100vh;
     justify-content: flex-start;
+    @include media(tablet) {
+        width: 100%;
+    }
 
     .btnContainer {
         margin: 40px 0 20px;
@@ -17,6 +20,15 @@
         border-radius: 5px;
         box-shadow: $box-shadow;
         transition: all 0.5s ease;
+        @include media (mobileLarge) {
+            width: 400px;
+        }
+        @include media (mobile) {
+            width: 300px;
+        }
+        @include media (mobileSmall) {
+            width: 280px;
+        }
 
         .createProjectsBtn,
         .myProjectsBtn {
@@ -45,6 +57,14 @@
             position: relative;
             display: inline-block;
             transition: color 0.2s ease;
+            @include media (mobile) {
+              font-size: 13px;
+            }
+
+            @include media (mobileSmall) {
+              font-size: 12px;
+            }
+
 
             &:hover {
 
@@ -91,6 +111,7 @@
     }
 
     .infoContainer {
+        background: $white;
         display: flex;
         width: 402px;
         flex-direction: column;
