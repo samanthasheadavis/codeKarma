@@ -1262,6 +1262,14 @@ ui-view {
       font-size: 20px;
       padding: 15px 0;
       margin: 0; }
+    .dev-dashboard-container .infoContainer .header {
+      font-weight: bold;
+      margin-bottom: 5px; }
+    .dev-dashboard-container .infoContainer .icon {
+      margin-top: 15px;
+      width: 20px; }
+    .dev-dashboard-container .infoContainer .gitHubLink {
+      margin-top: 5px; }
     .dev-dashboard-container .infoContainer .skills {
       height: auto; }
       .dev-dashboard-container .infoContainer .skills p {
