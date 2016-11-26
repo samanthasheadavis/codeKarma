@@ -691,6 +691,24 @@ ui-view {
   @media only screen and (max-width: 1000px) {
     .community-feed-container {
       width: 100%; } }
+  @media only screen and (max-width: 700px) {
+    .community-feed-container header {
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%); } }
+  .community-feed-container .mobile-nav {
+    height: 85px; }
+    .community-feed-container .mobile-nav h1 {
+      position: absolute;
+      z-index: 3;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%); }
+    .community-feed-container .mobile-nav img {
+      position: absolute;
+      z-index: 3;
+      top: 50px;
+      left: 46%; }
   .community-feed-container .flexContainer {
     display: flex;
     flex-direction: row;
@@ -834,7 +852,7 @@ ui-view {
               display: flex;
               justify-content: flex-end;
               flex-direction: row;
-              margin: 10px 0 0 0; }
+              margin: 10px 0 0; }
             .community-feed-container .flexContainer .commPost .responsesContainer .response .comment-container .comment-time,
             .community-feed-container .flexContainer .commPost .responsesContainer .response .comment-container .like-comment,
             .community-feed-container .flexContainer .commPost .responsesContainer .response .comment-container .like-text {
@@ -901,7 +919,7 @@ ui-view {
       justify-content: center;
       align-items: center;
       margin-top: 40px;
-      transition: all .5s ease;
+      transition: all 0.5s ease;
       width: 100%; }
       @media only screen and (max-width: 560px) {
         .community-feed-container .sidebar .user-stats {
@@ -921,7 +939,7 @@ ui-view {
         @media only screen and (max-width: 560px) {
           .community-feed-container .sidebar .user-stats img.user-photo {
             width: 50px;
-            margin: 15px 10px 0 10px;
+            margin: 15px 10px 0;
             float: left; } }
         @media only screen and (max-width: 330px) {
           .community-feed-container .sidebar .user-stats img.user-photo {
@@ -1291,8 +1309,9 @@ ui-view {
   background: rgba(255, 255, 255, 0.6);
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  align-content: flex-start;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
   width: 80%;
   height: 100%;
   transition: all 0.5s ease; }
@@ -1305,7 +1324,6 @@ ui-view {
   .dev-projects-container .project-card {
     background: #ffffff;
     border-left: 10px solid #AAEFDF;
-    align-self: flex-start;
     padding: 15px 10px 0;
     margin-top: 40px;
     width: 60%;
@@ -1454,12 +1472,15 @@ header {
       height: 60px; } }
   @media only screen and (max-width: 700px) {
     header {
+      display: none;
       flex-direction: column;
       height: 320px;
       padding: 10px;
-      width: auto;
+      width: 250px;
       position: absolute;
-      padding-top: 130px; } }
+      padding-top: 130px;
+      text-align: center;
+      z-index: 1; } }
   header h1 {
     margin-top: 2px;
     font-size: 24px;
