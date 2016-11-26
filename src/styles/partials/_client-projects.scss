@@ -139,6 +139,14 @@
         box-shadow: $box-shadow;
         border-radius: $border-radius;
         margin-top: 40px;
+        transition: $responsive;
+        @include media(tabletLarge) {
+          width: 75%;
+        }
+        @include media(mobileLarge) {
+          width: 80%;
+        }
+
     }
 }
 
@@ -173,6 +181,9 @@
             margin: 4px 10px;
             border-radius: 3px;
             position: relative;
+            @include media(mobile) {
+              width: 100px;
+            }
 
             .filler {
               width: 200px;
@@ -219,6 +230,9 @@
         h3 {
             font-size: 30px;
             display: inline;
+            @include media(mobile) {
+              font-size: 25px;
+            }
         }
 
         h4 {
@@ -227,6 +241,13 @@
 
         p {
             display: inline;
+        }
+
+        a {
+          transition: $responsive;
+          @include media(mobileLarge) {
+            overflow-wrap: break-word;
+          }
         }
 
         &:hover > .editIcon {

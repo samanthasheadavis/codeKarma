@@ -628,7 +628,14 @@ ui-view {
     width: 60%;
     box-shadow: 0px 0px 5px 0px #ced0ce;
     border-radius: 5px;
-    margin-top: 40px; }
+    margin-top: 40px;
+    transition: all 0.5s ease; }
+    @media only screen and (max-width: 780px) {
+      .client-projects-container .project-card {
+        width: 75%; } }
+    @media only screen and (max-width: 560px) {
+      .client-projects-container .project-card {
+        width: 80%; } }
 
 .client-projects-container .project-details {
   display: flex;
@@ -656,6 +663,9 @@ ui-view {
           margin: 4px 10px;
           border-radius: 3px;
           position: relative; }
+          @media only screen and (max-width: 440px) {
+            .client-projects-container .project-details .progress .progress-container .percent-container .progress-bar {
+              width: 100px; } }
           .client-projects-container .project-details .progress .progress-container .percent-container .progress-bar .filler {
             width: 200px;
             height: 10px;
@@ -684,10 +694,18 @@ ui-view {
     .client-projects-container .project-details li h3 {
       font-size: 30px;
       display: inline; }
+      @media only screen and (max-width: 440px) {
+        .client-projects-container .project-details li h3 {
+          font-size: 25px; } }
     .client-projects-container .project-details li h4 {
       color: #ced0ce; }
     .client-projects-container .project-details li p {
       display: inline; }
+    .client-projects-container .project-details li a {
+      transition: all 0.5s ease; }
+      @media only screen and (max-width: 560px) {
+        .client-projects-container .project-details li a {
+          overflow-wrap: break-word; } }
     .client-projects-container .project-details li:hover > .editIcon {
       display: inline; }
     .client-projects-container .project-details li .categories {
