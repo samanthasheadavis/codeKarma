@@ -364,7 +364,11 @@ ui-view {
     .client-dashboard-container .infoContainer:hover > .orgLink > .editIcon {
       display: inline; }
     .client-dashboard-container .infoContainer p {
-      display: inline; }
+      display: inline;
+      transition: all 0.5s ease; }
+      @media only screen and (max-width: 440px) {
+        .client-dashboard-container .infoContainer p {
+          font-size: 17px; } }
     .client-dashboard-container .infoContainer .gitHubLink,
     .client-dashboard-container .infoContainer .name,
     .client-dashboard-container .infoContainer .orgLink,

@@ -150,6 +150,10 @@
 
         p {
             display: inline;
+            transition: $responsive;
+            @include media(mobile) {
+              font-size: 17px;
+            }
         }
 
         .gitHubLink,
