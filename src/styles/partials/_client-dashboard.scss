@@ -1,12 +1,14 @@
 .client-dashboard-container {
-    background: $white;
+    background: rgba(255,255,255, .6);
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
     width: 80%;
-    height: 100vh;
     justify-content: flex-start;
+    transition: $responsive;
+    @include media(tablet) {
+        width: 100%;
+    }
 
     .btnContainer {
         margin: 40px 0 20px;
@@ -17,6 +19,15 @@
         border-radius: 5px;
         box-shadow: $box-shadow;
         transition: all 0.5s ease;
+        @include media (mobileLarge) {
+            width: 400px;
+        }
+        @include media (mobile) {
+            width: 300px;
+        }
+        @include media (mobileSmall) {
+            width: 240px;
+        }
 
         .createProjectsBtn,
         .myProjectsBtn {
@@ -45,9 +56,14 @@
             position: relative;
             display: inline-block;
             transition: color 0.2s ease;
+            @include media (mobile) {
+                font-size: 13px;
+            }
+            @include media (mobileSmall) {
+                font-size: 12px;
+            }
 
             &:hover {
-
                 &::after,
                 &::before {
                     width: 100%;
@@ -91,6 +107,7 @@
     }
 
     .infoContainer {
+        background: $white;
         display: flex;
         width: 402px;
         flex-direction: column;
@@ -98,12 +115,17 @@
         align-items: center;
         box-shadow: $box-shadow;
         border-radius: 5px;
+        border-bottom: $accent-border;
+        margin-bottom: 50px;
+        @include media (mobile) {
+          width: auto;
+          padding: $vspace $hspace;
+        }
 
         .profilePic {
             margin-top: 20px;
             width: 150px;
             height: 150px;
-            box-shadow: $box-shadow;
             border-radius: 50%;
             margin: $vspace $hspace;
 
@@ -132,14 +154,25 @@
 
         p {
             display: inline;
+            transition: $responsive;
+            margin-left: 15px;
+
+            @include media(mobileSmall) {
+              font-size: 14px;
+            }
         }
 
         .gitHubLink,
         .name,
         .orgLink,
-        .orgName {
+        .orgName,
+        .username {
+            height: 20px;
+            width: 100%;
+            text-align: center;
             font-size: 20px;
-            margin: $vspace $hspace;
+            padding: $vspace 0;
+            margin: 0;
 
             input {
                 width: 250px;
@@ -148,6 +181,7 @@
                 border: 1px solid $lightGrey;
                 font-family: $raleway;
                 padding: 2px;
+                margin-left: 25px;
             }
 
             .save {
@@ -163,6 +197,38 @@
                 text-transform: uppercase;
                 outline: none;
             }
+        }
+
+        .orgLink,
+        .orgName {
+          margin: 0 0 37px 0;
+        }
+
+        img {
+            width: 20px;
+        }
+
+        .header {
+          font-weight: bold;
+        }
+
+        .username,
+        .gitHubLink,
+        .orgLink,
+        .orgName {
+          padding-top: 5px;
+        }
+
+        .gitHubLink {
+
+          p {
+            @include media(mobile) {
+              font-size: 17px;
+            }
+            @include media(mobileSmall) {
+              font-size: 12px;
+            }
+          }
         }
 
         .editIcon {

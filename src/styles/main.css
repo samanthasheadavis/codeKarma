@@ -254,14 +254,16 @@ ui-view {
         outline: 0; }
 
 .client-dashboard-container {
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.6);
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
   width: 80%;
-  height: 100vh;
-  justify-content: flex-start; }
+  justify-content: flex-start;
+  transition: all 0.5s ease; }
+  @media only screen and (max-width: 700px) {
+    .client-dashboard-container {
+      width: 100%; } }
   .client-dashboard-container .btnContainer {
     margin: 40px 0 20px;
     display: flex;
@@ -271,6 +273,15 @@ ui-view {
     border-radius: 5px;
     box-shadow: 0px 0px 5px 0px #ced0ce;
     transition: all 0.5s ease; }
+    @media only screen and (max-width: 560px) {
+      .client-dashboard-container .btnContainer {
+        width: 400px; } }
+    @media only screen and (max-width: 440px) {
+      .client-dashboard-container .btnContainer {
+        width: 300px; } }
+    @media only screen and (max-width: 330px) {
+      .client-dashboard-container .btnContainer {
+        width: 240px; } }
     .client-dashboard-container .btnContainer .createProjectsBtn,
     .client-dashboard-container .btnContainer .myProjectsBtn {
       height: 50px;
@@ -294,6 +305,12 @@ ui-view {
       position: relative;
       display: inline-block;
       transition: color 0.2s ease; }
+      @media only screen and (max-width: 440px) {
+        .client-dashboard-container .btnContainer a {
+          font-size: 13px; } }
+      @media only screen and (max-width: 330px) {
+        .client-dashboard-container .btnContainer a {
+          font-size: 12px; } }
       .client-dashboard-container .btnContainer a:hover::after, .client-dashboard-container .btnContainer a:hover::before {
         width: 100%;
         left: 0; }
@@ -318,18 +335,24 @@ ui-view {
       border-bottom-right-radius: 5px;
       border-top-right-radius: 5px; }
   .client-dashboard-container .infoContainer {
+    background: #ffffff;
     display: flex;
     width: 402px;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     box-shadow: 0px 0px 5px 0px #ced0ce;
-    border-radius: 5px; }
+    border-radius: 5px;
+    border-bottom: 10px solid #AAEFDF;
+    margin-bottom: 50px; }
+    @media only screen and (max-width: 440px) {
+      .client-dashboard-container .infoContainer {
+        width: auto;
+        padding: 15px 10px; } }
     .client-dashboard-container .infoContainer .profilePic {
       margin-top: 20px;
       width: 150px;
       height: 150px;
-      box-shadow: 0px 0px 5px 0px #ced0ce;
       border-radius: 50%;
       margin: 15px 10px; }
       .client-dashboard-container .infoContainer .profilePic img {
@@ -345,27 +368,40 @@ ui-view {
     .client-dashboard-container .infoContainer:hover > .orgLink > .editIcon {
       display: inline; }
     .client-dashboard-container .infoContainer p {
-      display: inline; }
+      display: inline;
+      transition: all 0.5s ease;
+      margin-left: 15px; }
+      @media only screen and (max-width: 330px) {
+        .client-dashboard-container .infoContainer p {
+          font-size: 14px; } }
     .client-dashboard-container .infoContainer .gitHubLink,
     .client-dashboard-container .infoContainer .name,
     .client-dashboard-container .infoContainer .orgLink,
-    .client-dashboard-container .infoContainer .orgName {
+    .client-dashboard-container .infoContainer .orgName,
+    .client-dashboard-container .infoContainer .username {
+      height: 20px;
+      width: 100%;
+      text-align: center;
       font-size: 20px;
-      margin: 15px 10px; }
+      padding: 15px 0;
+      margin: 0; }
       .client-dashboard-container .infoContainer .gitHubLink input,
       .client-dashboard-container .infoContainer .name input,
       .client-dashboard-container .infoContainer .orgLink input,
-      .client-dashboard-container .infoContainer .orgName input {
+      .client-dashboard-container .infoContainer .orgName input,
+      .client-dashboard-container .infoContainer .username input {
         width: 250px;
         font-size: 20px;
         outline: none;
         border: 1px solid #e6e8e6;
         font-family: "Raleway", sans-serif;
-        padding: 2px; }
+        padding: 2px;
+        margin-left: 25px; }
       .client-dashboard-container .infoContainer .gitHubLink .save,
       .client-dashboard-container .infoContainer .name .save,
       .client-dashboard-container .infoContainer .orgLink .save,
-      .client-dashboard-container .infoContainer .orgName .save {
+      .client-dashboard-container .infoContainer .orgName .save,
+      .client-dashboard-container .infoContainer .username .save {
         background: none;
         border: 3px solid #AAEFDF;
         border-radius: 5px;
@@ -377,6 +413,24 @@ ui-view {
         position: relative;
         text-transform: uppercase;
         outline: none; }
+    .client-dashboard-container .infoContainer .orgLink,
+    .client-dashboard-container .infoContainer .orgName {
+      margin: 0 0 37px 0; }
+    .client-dashboard-container .infoContainer img {
+      width: 20px; }
+    .client-dashboard-container .infoContainer .header {
+      font-weight: bold; }
+    .client-dashboard-container .infoContainer .username,
+    .client-dashboard-container .infoContainer .gitHubLink,
+    .client-dashboard-container .infoContainer .orgLink,
+    .client-dashboard-container .infoContainer .orgName {
+      padding-top: 5px; }
+    @media only screen and (max-width: 440px) {
+      .client-dashboard-container .infoContainer .gitHubLink p {
+        font-size: 17px; } }
+    @media only screen and (max-width: 330px) {
+      .client-dashboard-container .infoContainer .gitHubLink p {
+        font-size: 12px; } }
     .client-dashboard-container .infoContainer .editIcon {
       width: 15px;
       margin-left: 10px;
@@ -386,12 +440,10 @@ ui-view {
 
 .client-add-project-container {
   align-items: center;
-  background: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   width: 80%;
-  height: 100vh;
   transition: all 0.5s ease; }
   @media only screen and (max-width: 1220px) {
     .client-add-project-container {
@@ -408,7 +460,15 @@ ui-view {
     flex-direction: column;
     padding: 15px 10px;
     width: 60%;
-    margin-top: 40px; }
+    margin-top: 40px;
+    transition: all 0.5s ease; }
+    @media only screen and (max-width: 780px) {
+      .client-add-project-container .project-card {
+        width: 75%;
+        margin-bottom: 50px; } }
+    @media only screen and (max-width: 440px) {
+      .client-add-project-container .project-card {
+        width: 85%; } }
     .client-add-project-container .project-card h3 {
       font-size: 30px;
       margin-bottom: 15px; }
@@ -421,7 +481,14 @@ ui-view {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        width: 80%; }
+        width: 80%;
+        transition: all 0.5s ease; }
+        @media only screen and (max-width: 700px) {
+          .client-add-project-container .project-card form .select-box {
+            width: 90%; } }
+        @media only screen and (max-width: 440px) {
+          .client-add-project-container .project-card form .select-box {
+            width: 95%; } }
         .client-add-project-container .project-card form .select-box select {
           background: #ffffff;
           border: 1px solid #ced0ce;
@@ -434,12 +501,31 @@ ui-view {
             outline: 0; }
       .client-add-project-container .project-card form label {
         margin-bottom: 10px;
-        width: 80%; }
+        width: 80%;
+        font-size: 1em;
+        font-weight: bold;
+        transition: all 0.5s ease; }
+        @media only screen and (max-width: 700px) {
+          .client-add-project-container .project-card form label {
+            width: 90%; } }
+        @media only screen and (max-width: 700px) {
+          .client-add-project-container .project-card form label {
+            width: 95%; } }
       .client-add-project-container .project-card form input {
         width: 80%;
         height: 25px;
         margin-bottom: 15px;
-        text-indent: 10px; }
+        text-indent: 10px;
+        border: 1px solid #e6e8e6;
+        border-radius: 5px;
+        transition: all 0.5s ease; }
+        @media only screen and (max-width: 700px) {
+          .client-add-project-container .project-card form input {
+            width: 90%; } }
+        @media only screen and (max-width: 700px) {
+          .client-add-project-container .project-card form input {
+            width: 95%;
+            text-indent: 3px; } }
         .client-add-project-container .project-card form input:focus {
           outline-color: #AAEFDF; }
       .client-add-project-container .project-card form .submit-btn {
@@ -480,7 +566,14 @@ ui-view {
     justify-content: center;
     box-shadow: 0 0 200px 40px #4f4f4f;
     border-radius: 5px;
-    position: relative; }
+    position: relative;
+    transition: all 0.5s ease; }
+    @media only screen and (max-width: 700px) {
+      .editModal .modal-details {
+        width: 65%; } }
+    @media only screen and (max-width: 560px) {
+      .editModal .modal-details {
+        width: 80%; } }
     .editModal .modal-details .minimize {
       position: absolute;
       right: -5px;
@@ -530,6 +623,14 @@ ui-view {
       color: #ced0ce; }
     .editModal li p {
       display: inline; }
+    .editModal li a {
+      transition: all 0.5s ease; }
+      @media only screen and (max-width: 780px) {
+        .editModal li a {
+          font-size: 14px; } }
+      @media only screen and (max-width: 440px) {
+        .editModal li a {
+          overflow-wrap: break-word; } }
     .editModal li:hover > a, .editModal li:hover > h3, .editModal li:hover > p {
       background: #AAEFDF; }
     .editModal li:hover > .editIcon {
@@ -540,7 +641,7 @@ ui-view {
 
 .client-projects-container {
   align-items: center;
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.6);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -560,7 +661,14 @@ ui-view {
     width: 60%;
     box-shadow: 0px 0px 5px 0px #ced0ce;
     border-radius: 5px;
-    margin-top: 40px; }
+    margin-top: 40px;
+    transition: all 0.5s ease; }
+    @media only screen and (max-width: 780px) {
+      .client-projects-container .project-card {
+        width: 75%; } }
+    @media only screen and (max-width: 560px) {
+      .client-projects-container .project-card {
+        width: 80%; } }
 
 .client-projects-container .project-details {
   display: flex;
@@ -588,6 +696,9 @@ ui-view {
           margin: 4px 10px;
           border-radius: 3px;
           position: relative; }
+          @media only screen and (max-width: 440px) {
+            .client-projects-container .project-details .progress .progress-container .percent-container .progress-bar {
+              width: 100px; } }
           .client-projects-container .project-details .progress .progress-container .percent-container .progress-bar .filler {
             width: 200px;
             height: 10px;
@@ -616,10 +727,18 @@ ui-view {
     .client-projects-container .project-details li h3 {
       font-size: 30px;
       display: inline; }
+      @media only screen and (max-width: 440px) {
+        .client-projects-container .project-details li h3 {
+          font-size: 25px; } }
     .client-projects-container .project-details li h4 {
       color: #ced0ce; }
     .client-projects-container .project-details li p {
       display: inline; }
+    .client-projects-container .project-details li a {
+      transition: all 0.5s ease; }
+      @media only screen and (max-width: 560px) {
+        .client-projects-container .project-details li a {
+          overflow-wrap: break-word; } }
     .client-projects-container .project-details li:hover > .editIcon {
       display: inline; }
     .client-projects-container .project-details li .categories {
@@ -1190,7 +1309,6 @@ ui-view {
     .dev-dashboard-container .infoContainer img.profilePic {
       margin-top: 20px;
       height: 150px;
-      box-shadow: 0px 0px 5px 0px #ced0ce;
       border-radius: 50%;
       margin: 15px 10px;
       border: none; }
@@ -1243,6 +1361,14 @@ ui-view {
       font-size: 20px;
       padding: 15px 0;
       margin: 0; }
+    .dev-dashboard-container .infoContainer .header {
+      font-weight: bold;
+      margin-bottom: 5px; }
+    .dev-dashboard-container .infoContainer .icon {
+      margin-top: 15px;
+      width: 20px; }
+    .dev-dashboard-container .infoContainer .gitHubLink {
+      margin-top: 5px; }
     .dev-dashboard-container .infoContainer .skills {
       height: auto; }
       .dev-dashboard-container .infoContainer .skills p {

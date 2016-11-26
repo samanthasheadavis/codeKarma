@@ -1,12 +1,10 @@
 .client-add-project-container {
     align-items: center;
-    background: $white;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     width: 80%;
-    height: 100vh;
-    transition: all 0.5s ease;
+    transition: $responsive;
     @include media(desktop) {
         width: 85%;
     }
@@ -24,6 +22,14 @@
         padding: $vspace $hspace;
         width: 60%;
         margin-top: 40px;
+        transition: $responsive;
+        @include media(tabletLarge) {
+          width: 75%;
+          margin-bottom: 50px;
+        }
+        @include media(mobile) {
+          width: 85%;
+        }
 
         h3 {
             font-size: 30px;
@@ -41,6 +47,14 @@
                 flex-direction: column;
                 justify-content: center;
                 width: 80%;
+                transition: $responsive;
+                @include media(tablet) {
+                  width: 90%;
+                }
+                @include media(mobile) {
+                  width: 95%;
+                }
+
 
                 select {
                     background: $white;
@@ -60,6 +74,15 @@
             label {
                 margin-bottom: 10px;
                 width: 80%;
+                font-size: 1em;
+                font-weight: bold;
+                transition: $responsive;
+                @include media(tablet) {
+                  width: 90%;
+                }
+                @include media(tablet) {
+                  width: 95%;
+                }
             }
 
             input {
@@ -67,6 +90,16 @@
                 height: 25px;
                 margin-bottom: $vspace;
                 text-indent: 10px;
+                border: 1px solid $lightGrey;
+                border-radius: 5px;
+                transition: $responsive;
+                @include media(tablet) {
+                  width: 90%;
+                }
+                @include media(tablet) {
+                  width: 95%;
+                  text-indent: 3px;
+                }
 
                 &:focus {
                     outline-color: $pop;
@@ -76,13 +109,6 @@
             .submit-btn {
                 align-self: flex-end;
                 @include button(15px) {};
-                // width: 150px;
-                // height: 40px;
-                // padding: 10px;
-                // margin: 10px;
-                // border-radius: $border-radius;
-                // border: none;
-                // background: $midGrey;
 
                 &:focus {
                     outline: 0;
