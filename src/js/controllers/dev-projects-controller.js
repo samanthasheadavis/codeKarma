@@ -1,8 +1,6 @@
 angular.module('codeKarmaApp').controller('DevProjectsController', function($scope, $state, RequestService) {
-
+    $scope.ownsProjects = true;
     $scope.progress = 0;
-
-
 
     // show pull request button when progress === 100%
 
@@ -90,7 +88,11 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
     this.getProjects = function() {
       RequestService.getDevProjects(function(response) {
           $scope.projects = response.my_developer_projects;
-          console.log($scope.projects);
+          if ($scope.projects.length === 0) {
+            $scope.ownsProjects = false;
+          } else {
+            $scope.ownsProjects = true;
+          }
           $scope.$apply();
         });
     };
@@ -109,7 +111,13 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
 
     };
 
+    this.getDev = function() {
+        RequestService.getDev(function(response) {
+            $scope.currentUser = RequestService.createUser(response.data);
+        });
+    };
 
+    this.getDev();
     this.getProjects();
 
 });

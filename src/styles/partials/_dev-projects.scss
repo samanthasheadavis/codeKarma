@@ -11,10 +11,10 @@
     transform: scale(1.5);
 
     img {
-      width: 30px;
-      position: absolute;
-      right: -5px;
-      top: -5px;
+        width: 30px;
+        position: absolute;
+        right: -5px;
+        top: -5px;
     }
 
     h1 {
@@ -50,7 +50,6 @@
                 height: 20px;
                 margin: 0 5px 10px 10px;
                 background: $pop;
-
             }
 
             p {
@@ -73,12 +72,13 @@
         }
 
         .sub-container:nth-child(2) {
-          margin-left: 15px;
+            margin-left: 15px;
         }
     }
 }
+
 .modal-up {
-  filter: blur(2px);
+    filter: blur(2px);
 }
 
 .dev-projects-container {
@@ -98,6 +98,34 @@
         width: 100%;
     }
 
+    .no-project {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 40px;
+
+        h3, p {
+          padding-left: $hspace;
+        }
+
+        p {
+          margin-top: $vspace;
+          font-size: 20px;
+          line-height: 24px;
+
+          a {
+            font-weight: bold;
+            text-decoration: none;
+            color: $charcoal;
+          }
+        }
+
+        .fork {
+            height: 100px;
+            margin: 0 $hspace $vspace $hspace;
+        }
+    }
+
+    .no-project,
     .project-card {
         background: $white;
         border-left: $accent-border;
@@ -112,7 +140,7 @@
         }
 
         .brief-description {
-          margin: $vspace 0 0 $hspace;
+            margin: $vspace 0 0 $hspace;
         }
 
         .details {
@@ -155,9 +183,8 @@
             }
 
             .help-btn {
-              display: none;
+                display: none;
             }
-
 
             .help-btn {
                 margin-bottom: 15px;
@@ -180,17 +207,17 @@
             }
 
             .submit-btn {
-              @include button(15px);
-              height: 60px;
+                @include button(15px);
+                height: 60px;
 
-              &:hover {
-                background: $pop;
-                color: $charcoal;
-              }
+                &:hover {
+                    background: $pop;
+                    color: $charcoal;
+                }
             }
 
             .help-btn.active {
-              display: block;
+                display: block;
             }
         }
     }
@@ -204,7 +231,7 @@ div.tooltip {
     align-self: center;
 
     &.active {
-      display: flex;
+        display: flex;
     }
 
     &:hover .tooltiptext {
@@ -253,6 +280,4 @@ div.tooltip {
     }
 }
 
-.update {
-
-}
+.update {}

@@ -55,6 +55,14 @@
         </nav>
     </header>
 
+    <div class="no-project" ng-hide="ownsProjects">
+      <div class="message">
+        <h3>Hi, {{currentUser.username}}!</h3>
+        <p>It looks like you haven't forked any projects yet. Visit the <span><a ui-sref="codeKarmaParent.allProjects">All Projects</a></span> page to see what's available!</p>
+      </div>
+      <img src="assets/fork.png" alt="fork icon created by Loudoun Design Co. from Noun Project" class="fork">
+    </div>
+
     <div class="project-card" ng-cloak ng-repeat="project in projects | orderBy: '-'">
         <h3 class="title {{project.id}}">{{project.organization_name}}</h3>
         <p class="brief-description">{{project.brief_description}}</p>

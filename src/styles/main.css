@@ -1321,6 +1321,24 @@ ui-view {
   @media only screen and (max-width: 1000px) {
     .dev-projects-container {
       width: 100%; } }
+  .dev-projects-container .no-project {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px; }
+    .dev-projects-container .no-project h3, .dev-projects-container .no-project p {
+      padding-left: 10px; }
+    .dev-projects-container .no-project p {
+      margin-top: 15px;
+      font-size: 20px;
+      line-height: 24px; }
+      .dev-projects-container .no-project p a {
+        font-weight: bold;
+        text-decoration: none;
+        color: #191919; }
+    .dev-projects-container .no-project .fork {
+      height: 100px;
+      margin: 0 10px 15px 10px; }
+  .dev-projects-container .no-project,
   .dev-projects-container .project-card {
     background: #ffffff;
     border-left: 10px solid #AAEFDF;
@@ -1329,38 +1347,49 @@ ui-view {
     width: 60%;
     box-shadow: 0px 0px 5px 0px #ced0ce;
     border-radius: 5px; }
+    .dev-projects-container .no-project h3,
     .dev-projects-container .project-card h3 {
       font-size: 30px; }
+    .dev-projects-container .no-project .brief-description,
     .dev-projects-container .project-card .brief-description {
       margin: 15px 0 0 10px; }
+    .dev-projects-container .no-project .details,
     .dev-projects-container .project-card .details {
       display: flex;
       flex-direction: row;
       justify-content: space-between; }
+      .dev-projects-container .no-project .details form,
       .dev-projects-container .project-card .details form {
         display: flex;
         flex-direction: column;
         margin: 15px 10px; }
+        .dev-projects-container .no-project .details form select,
         .dev-projects-container .project-card .details form select {
           background: #ffffff;
           border: 1px solid #ced0ce;
           font-family: "Raleway", sans-serif;
           font-size: 16px;
           height: 25px; }
+          .dev-projects-container .no-project .details form select:focus,
           .dev-projects-container .project-card .details form select:focus {
             outline: 0; }
+        .dev-projects-container .no-project .details form label.date,
         .dev-projects-container .project-card .details form label.date {
           margin: 30px 0 15px; }
+        .dev-projects-container .no-project .details form input,
         .dev-projects-container .project-card .details form input {
           border-radius: 5px;
           border: 1px solid #ced0ce;
           font-family: "Raleway", sans-serif;
           font-size: 16px;
           height: 25px; }
+          .dev-projects-container .no-project .details form input:focus,
           .dev-projects-container .project-card .details form input:focus {
             outline: 0; }
+      .dev-projects-container .no-project .details .help-btn,
       .dev-projects-container .project-card .details .help-btn {
         display: none; }
+      .dev-projects-container .no-project .details .help-btn,
       .dev-projects-container .project-card .details .help-btn {
         margin-bottom: 15px;
         border-radius: 5px;
@@ -1371,10 +1400,13 @@ ui-view {
         font-family: "Raleway", sans-serif;
         font-size: 1em;
         padding: 10px; }
+        .dev-projects-container .no-project .details .help-btn:hover,
         .dev-projects-container .project-card .details .help-btn:hover {
           background: #AAEFDF; }
+        .dev-projects-container .no-project .details .help-btn:focus,
         .dev-projects-container .project-card .details .help-btn:focus {
           outline: 0; }
+      .dev-projects-container .no-project .details .submit-btn,
       .dev-projects-container .project-card .details .submit-btn {
         background: none;
         border: 3px solid #AAEFDF;
@@ -1389,9 +1421,11 @@ ui-view {
         text-transform: uppercase;
         outline: none;
         height: 60px; }
+        .dev-projects-container .no-project .details .submit-btn:hover,
         .dev-projects-container .project-card .details .submit-btn:hover {
           background: #AAEFDF;
           color: #191919; }
+      .dev-projects-container .no-project .details .help-btn.active,
       .dev-projects-container .project-card .details .help-btn.active {
         display: block; }
 
