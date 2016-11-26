@@ -20,22 +20,22 @@
         <div class="name">
             <p>{{currentUser.name}}</p>
         </div>
-
+        <p class="header">Username</p>
         <div class="username">
             <p>{{currentUser.username}}</p>
         </div>
-
+        <img src="assets/github_logo.png">
         <div class="gitHubLink">
             <p>{{currentUser.github}}</p>
         </div>
-
+        <p class="header">Organization</p>
         <div class="orgName">
             <p>{{currentUser.orgName}}</p>
             <img ng-hide='clientDashboard.showNameEdit' ng-click='clientDashboard.showNameEdit=true' class="editIcon" src="assets/editIcon.png" alt="edit by Laura Vilar from the Noun Project" />
             <input type="text" name="orgName" ng-show='clientDashboard.showNameEdit' ng-model="clientDashboard.newInfo.organization_name">
             <button class="save" ng-show='clientDashboard.showNameEdit' ng-click="clientDashboard.updateInfo()">Save</button>
         </div>
-
+        <p class="header">Website</p>
         <div class="orgLink">
             <p>{{currentUser.orgSite}}</p>
             <img ng-hide='clientDashboard.showLinkEdit' ng-click='clientDashboard.showLinkEdit=true' class="editIcon" src="assets/editIcon.png" alt="edit by Laura Vilar from the Noun Project" />

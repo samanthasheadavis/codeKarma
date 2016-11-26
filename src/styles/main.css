@@ -343,7 +343,9 @@ ui-view {
     align-items: center;
     box-shadow: 0px 0px 5px 0px #ced0ce;
     border-radius: 5px;
-    border-bottom: 10px solid #AAEFDF; }
+    border-bottom: 10px solid #AAEFDF;
+    margin-bottom: 30px;
+    height: 100%; }
     .client-dashboard-container .infoContainer .profilePic {
       margin-top: 20px;
       width: 150px;
@@ -367,7 +369,8 @@ ui-view {
     .client-dashboard-container .infoContainer .gitHubLink,
     .client-dashboard-container .infoContainer .name,
     .client-dashboard-container .infoContainer .orgLink,
-    .client-dashboard-container .infoContainer .orgName {
+    .client-dashboard-container .infoContainer .orgName,
+    .client-dashboard-container .infoContainer .username {
       height: 20px;
       width: 100%;
       text-align: center;
@@ -377,7 +380,8 @@ ui-view {
       .client-dashboard-container .infoContainer .gitHubLink input,
       .client-dashboard-container .infoContainer .name input,
       .client-dashboard-container .infoContainer .orgLink input,
-      .client-dashboard-container .infoContainer .orgName input {
+      .client-dashboard-container .infoContainer .orgName input,
+      .client-dashboard-container .infoContainer .username input {
         width: 250px;
         font-size: 20px;
         outline: none;
@@ -387,7 +391,8 @@ ui-view {
       .client-dashboard-container .infoContainer .gitHubLink .save,
       .client-dashboard-container .infoContainer .name .save,
       .client-dashboard-container .infoContainer .orgLink .save,
-      .client-dashboard-container .infoContainer .orgName .save {
+      .client-dashboard-container .infoContainer .orgName .save,
+      .client-dashboard-container .infoContainer .username .save {
         background: none;
         border: 3px solid #AAEFDF;
         border-radius: 5px;
@@ -399,9 +404,15 @@ ui-view {
         position: relative;
         text-transform: uppercase;
         outline: none; }
+    .client-dashboard-container .infoContainer img {
+      width: 20px; }
+    .client-dashboard-container .infoContainer .header {
+      font-weight: bold; }
+    .client-dashboard-container .infoContainer .username,
+    .client-dashboard-container .infoContainer .gitHubLink,
     .client-dashboard-container .infoContainer .orgLink,
     .client-dashboard-container .infoContainer .orgName {
-      border-top: 1px solid lightGrey; }
+      padding-top: 5px; }
     .client-dashboard-container .infoContainer .editIcon {
       width: 15px;
       margin-left: 10px;
