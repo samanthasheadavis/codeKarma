@@ -10,6 +10,33 @@
         width: 100%;
     }
 
+    header {
+      @include media(tablet) {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    .mobile-nav {
+        height: 85px;
+      h1 {
+        position: absolute;
+        z-index: 3;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+      }
+
+      img {
+        position: absolute;
+        z-index: 3;
+        top: 50px;
+        left: 46%;
+      }
+    }
+
+
     .flexContainer {
         display: flex;
         flex-direction: row;
@@ -39,9 +66,8 @@
             display: flex;
             margin: 40px 0;
             width: 100%;
-
             @include media(mobileLarge) {
-              margin: 30px 0;
+                margin: 30px 0;
             }
 
             textarea {
@@ -185,7 +211,7 @@
                             display: flex;
                             justify-content: flex-end;
                             flex-direction: row;
-                            margin: 10px 0 0 0;
+                            margin: 10px 0 0;
                         }
 
                         .comment-time,
@@ -248,7 +274,6 @@
 
     .sidebar {
         width: 25%;
-
         @include media(desktop) {
             width: 30%;
         }
@@ -272,9 +297,8 @@
             justify-content: center;
             align-items: center;
             margin-top: 40px;
-            transition: all .5s ease;
+            transition: all 0.5s ease;
             width: 100%;
-
             @include media(mobileLarge) {
                 display: block;
                 border: none;
@@ -282,9 +306,8 @@
                 background: none;
                 margin-top: 30px;
             }
-
             @include media(mobileSmall) {
-              display: flex;
+                display: flex;
             }
 
             img.user-photo {
@@ -292,16 +315,14 @@
                 border-radius: 10px;
                 box-shadow: $box-shadow;
                 margin: $vspace 0;
-
                 @include media(mobileLarge) {
-                  width: 50px;
-                  margin: $vspace $hspace 0 $hspace;
-                  float: left;
+                    width: 50px;
+                    margin: $vspace $hspace 0;
+                    float: left;
                 }
-
                 @include media(mobileSmall) {
-                  float: none;
-                  margin-top: 0;
+                    float: none;
+                    margin-top: 0;
                 }
             }
 
@@ -311,7 +332,6 @@
                 height: 0;
                 border-top: 1px solid rgba(0, 0, 0, 0.1);
                 border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-
                 @include media(mobileLarge) {
                     display: none;
                 }
@@ -322,21 +342,17 @@
             margin-bottom: 8px;
             font-weight: bold;
             font-size: 20px;
-
             @include media(mobileLarge) {
                 padding-top: $vspace;
             }
-
             @include media(mobileSmall) {
                 margin: 5px 0;
                 padding-top: 0;
             }
-
         }
 
         .points {
             margin: 8px 0;
-
             @include media(mobileLarge) {
                 margin: 0;
                 float: left;
@@ -345,13 +361,11 @@
 
         p.rank {
             margin-bottom: $vspace;
-
             @include media(mobileLarge) {
                 text-align: right;
                 padding-right: $hspace;
                 margin-bottom: 0;
             }
-
             @include media(mobile) {
                 clear: both;
             }

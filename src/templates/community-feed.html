@@ -1,8 +1,8 @@
 <div class="community-feed-container">
-  <div class="mobile-nav">
-    <h1 ui-sref="codeKarmaParent.home">Code Karma</h1>
-    <img src="assets/menu.png" alt="menu by unlimicon from the Noun Project" ng-click="account.toggleSlide()">
-  </div>
+    <div class="mobile-nav">
+        <h1 ui-sref="codeKarmaParent.home">Code Karma</h1>
+        <img src="assets/menu.png" alt="menu by unlimicon from the Noun Project" ng-click="account.toggleSlide()">
+    </div>
     <header>
         <img ui-sref="codeKarmaParent.home" src="assets/lotus_blue.png" alt="Lotus by Muhammad Faizal Rahman Hakim from the Noun Project" />
         <h1 ui-sref="codeKarmaParent.home">Code Karma</h1>
@@ -38,8 +38,8 @@
                     <img class="questioner-img" src="{{post.questioner_image}}" alt="{{post.questioner}}">
                     <p class="question">{{post.question}}</p>
                     <div class="like-container">
-                    <img class="like" src="assets/like.png" alt="like by dilayorganci from the Noun Project" ng-click="communityFeed.updateQuestionLikes(post.likes, post.question_id)">
-                    <p class="likeAmount"><span>{{post.likes}}</span> Likes</p>
+                        <img class="like" src="assets/like.png" alt="like by dilayorganci from the Noun Project" ng-click="communityFeed.updateQuestionLikes(post.likes, post.question_id)">
+                        <p class="likeAmount"><span>{{post.likes}}</span> Likes</p>
                     </div>
                 </div>
                 <div class="postInfoContainer">
@@ -80,28 +80,28 @@
                 <ul>
                     <li class="one">
                         <div class="flex-left">
-                        <p class="rank">#1</p>
-                        <div class="prof-pic-container"><img class="prof-pic" src="{{leaderboard[0].developer_image}}" alt="{{leaderboard[0].developer_name}}"></div>
-                        <p class="leader-username">{{leaderboard[0].developer_name}}</p>
-                      </div>
+                            <p class="rank">#1</p>
+                            <div class="prof-pic-container"><img class="prof-pic" src="{{leaderboard[0].developer_image}}" alt="{{leaderboard[0].developer_name}}"></div>
+                            <p class="leader-username">{{leaderboard[0].developer_name}}</p>
+                        </div>
                         <p class="points">{{leaderboard[0].karma_points}} pts</p>
 
                     </li>
                     <li class="two">
-                      <div class="flex-left">
-                      <p class="rank">#2</p>
-                      <div class="prof-pic-container"><img class="prof-pic" src="{{leaderboard[1].developer_image}}" alt="{{leaderboard[1].developer_name}}"></div>
-                      <p class="leader-username">{{leaderboard[1].developer_name}}</p>
-                    </div>
-                      <p class="points">{{leaderboard[1].karma_points}} pts</p>
+                        <div class="flex-left">
+                            <p class="rank">#2</p>
+                            <div class="prof-pic-container"><img class="prof-pic" src="{{leaderboard[1].developer_image}}" alt="{{leaderboard[1].developer_name}}"></div>
+                            <p class="leader-username">{{leaderboard[1].developer_name}}</p>
+                        </div>
+                        <p class="points">{{leaderboard[1].karma_points}} pts</p>
                     </li>
                     <li class="three">
-                      <div class="flex-left">
-                      <p class="rank">#3</p>
-                      <div class="prof-pic-container"><img class="prof-pic" src="{{leaderboard[2].developer_image}}" alt="{{leaderboard[2].developer_name}}"></div>
-                      <p class="leader-username">{{leaderboard[2].developer_name}}</p>
-                    </div>
-                      <p class="points">{{leaderboard[2].karma_points}} pts</p>
+                        <div class="flex-left">
+                            <p class="rank">#3</p>
+                            <div class="prof-pic-container"><img class="prof-pic" src="{{leaderboard[2].developer_image}}" alt="{{leaderboard[2].developer_name}}"></div>
+                            <p class="leader-username">{{leaderboard[2].developer_name}}</p>
+                        </div>
+                        <p class="points">{{leaderboard[2].karma_points}} pts</p>
                     </li>
                 </ul>
             </div>
