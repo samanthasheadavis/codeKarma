@@ -4,15 +4,21 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
     this.response = '';
     var self = this;
 
-    this.addPost = function() {
+    $scope.showMore = function(id) {
+        for (var index = 0; index < $scope.posts.length; index += 1) {
+            if ($scope.posts[index].question_id === id) {
+                $scope.posts[index].showMore = $scope.posts[index].comments.length;
+            }
+        }
+    };
 
+    this.addPost = function() {
         this.newQuestion = {
             "karma_question": this.post
         };
         RequestService.postQuestion(this.newQuestion, function(response) {
-          self.getPosts();
+            self.getPosts();
         });
-
         this.post = '';
     };
 
@@ -26,6 +32,7 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
             // $scope.posts.timeElapsed = this.date + ' ' + this.time;
 
             for (var index = 0; index < $scope.posts.length; index++) {
+                $scope.posts[index].showMore = 3;
                 if ($scope.posts[index].comments.length > 0) {
                     var currentPost = $scope.posts[index].comments;
                     for (var commIndex = 0; commIndex < currentPost.length; commIndex++) {
@@ -35,10 +42,8 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
                     }
                 }
             }
-
             $scope.$apply();
         });
-
     };
 
     this.addResponse = function(comment, id) {
@@ -52,23 +57,19 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
 
     this.updateQuestionLikes = function(likes, id) {
         this.likes = {
-          "question_like": likes,
+            "question_like": likes,
         };
-        console.log(this.likes);
         RequestService.updateQuestionLikes(this.likes, id, function(response) {
-          self.getPosts();
+            self.getPosts();
         });
-
     };
 
     this.updateCommentLikes = function(likes, id) {
-        console.log(id);
         this.likes = {
-          "comment_like": likes,
+            "comment_like": likes,
         };
-        console.log(this.likes);
         RequestService.updateCommentLikes(this.likes, id, function(response) {
-          self.getPosts();
+            self.getPosts();
         });
     };
 
@@ -82,14 +83,14 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
     function findUserStats(array, attr, value) {
         for (var index = 0; index < array.length; index += 1) {
             if (array[index][attr] === value) {
-              $scope.currentUserStats = {
-                username: $scope.leaderboard[index].developer_name,
-                points: $scope.leaderboard[index].karma_points,
-                image: $scope.leaderboard[index].developer_image,
-                total_devs: $scope.leaderboard[index].total_developers,
-                rank: $scope.leaderboard[index].developer_rank
-              };
-              $scope.$apply();
+                $scope.currentUserStats = {
+                    username: $scope.leaderboard[index].developer_name,
+                    points: $scope.leaderboard[index].karma_points,
+                    image: $scope.leaderboard[index].developer_image,
+                    total_devs: $scope.leaderboard[index].total_developers,
+                    rank: $scope.leaderboard[index].developer_rank
+                };
+                $scope.$apply();
             }
         }
         return -1;

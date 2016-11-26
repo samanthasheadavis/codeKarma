@@ -151,6 +151,10 @@
                         border-radius: 5px;
                         margin-bottom: 10px;
 
+                        &.active {
+                          background: $pop;
+                        }
+
                         &:hover {
                             background: $pop;
                             cursor: pointer;
@@ -234,6 +238,25 @@
                             height: 14px;
                         }
                     }
+                }
+
+                .load-more {
+                  background: $pop;
+                  border-radius: $border-radius;
+                  font-size: 14px;
+                  margin: $vspace auto;
+                  padding: 5px 0;
+                  text-align: center;
+                  width: 40%;
+
+                  &:hover {
+                    cursor: pointer;
+                  }
+
+                  .arrow-down {
+                    height: 8px;
+                    margin-top: 8px;
+                  }
                 }
             }
 

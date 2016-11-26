@@ -47,16 +47,20 @@
                     <p class="timeElapsed"><span class="timeStamp">{{post.timeElapsed}}</span> ago</p>
                 </div>
                 <div class="responsesContainer">
-                    <div class="response" ng-repeat="comment in post.comments">
+                    <div class="response" ng-repeat="comment in post.comments | orderBy: '-' | limitTo: post.showMore">
                         <img class="commenter-photo" src="{{comment.image}}">
                         <div class="comment-container">
                             <p class="comment"><span class="commenter-name">{{comment.commenter}} </span> {{comment.comment}}</p>
                             <div class="comment-data">
                                 <p class="comment-time">{{comment.commentTimestamp}}</p>
                                 <p class="like-text">{{comment.likes}}</p>
-                                <img class="like-comment" src="assets/like.png" alt="like by dilayorganci from the Noun Project" ng-click="communityFeed.updateCommentLikes(comment.likes, comment.id)">
+                                <img class="like-comment {{comment.id}}" src="assets/like.png" alt="like by dilayorganci from the Noun Project" ng-click="communityFeed.updateCommentLikes(comment.likes, comment.id)">
                             </div>
                         </div>
+                    </div>
+                    <div class="load-more" ng-hide="post.showMore > 3" ng-if="post.comments.length > 3" ng-click="showMore(post.question_id)">
+                      <p>view all {{post.comments.length}} responses</p>
+                      <img class="arrow-down" src="assets/arrow_down.png" alt="down arrow by SBRICONS from the Noun Project">
                     </div>
                 </div>
                 <div class="responseForm">
