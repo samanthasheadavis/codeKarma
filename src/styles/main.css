@@ -369,7 +369,8 @@ ui-view {
       display: inline; }
     .client-dashboard-container .infoContainer p {
       display: inline;
-      transition: all 0.5s ease; }
+      transition: all 0.5s ease;
+      margin-left: 15px; }
       @media only screen and (max-width: 330px) {
         .client-dashboard-container .infoContainer p {
           font-size: 14px; } }
@@ -394,7 +395,8 @@ ui-view {
         outline: none;
         border: 1px solid #e6e8e6;
         font-family: "Raleway", sans-serif;
-        padding: 2px; }
+        padding: 2px;
+        margin-left: 25px; }
       .client-dashboard-container .infoContainer .gitHubLink .save,
       .client-dashboard-container .infoContainer .name .save,
       .client-dashboard-container .infoContainer .orgLink .save,
@@ -411,6 +413,9 @@ ui-view {
         position: relative;
         text-transform: uppercase;
         outline: none; }
+    .client-dashboard-container .infoContainer .orgLink,
+    .client-dashboard-container .infoContainer .orgName {
+      margin: 0 0 37px 0; }
     .client-dashboard-container .infoContainer img {
       width: 20px; }
     .client-dashboard-container .infoContainer .header {

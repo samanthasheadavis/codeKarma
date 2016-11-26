@@ -155,6 +155,7 @@
         p {
             display: inline;
             transition: $responsive;
+            margin-left: 15px;
 
             @include media(mobileSmall) {
               font-size: 14px;
@@ -180,6 +181,7 @@
                 border: 1px solid $lightGrey;
                 font-family: $raleway;
                 padding: 2px;
+                margin-left: 25px;
             }
 
             .save {
@@ -195,6 +197,11 @@
                 text-transform: uppercase;
                 outline: none;
             }
+        }
+
+        .orgLink,
+        .orgName {
+          margin: 0 0 37px 0;
         }
 
         img {
