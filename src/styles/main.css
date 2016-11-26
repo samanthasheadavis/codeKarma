@@ -1292,7 +1292,8 @@ ui-view {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-content: flex-start;
+  align-items: center;
+  flex-direction: column;
   width: 80%;
   height: 100%;
   transition: all 0.5s ease; }
@@ -1305,7 +1306,6 @@ ui-view {
   .dev-projects-container .project-card {
     background: #ffffff;
     border-left: 10px solid #AAEFDF;
-    align-self: flex-start;
     padding: 15px 10px 0;
     margin-top: 40px;
     width: 60%;
