@@ -181,7 +181,7 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
         $.ajax(settings).done(callback);
     }
 
-    function postComment(post) {
+    function postComment(post, callback) {
         var settings = {
             "async": true,
             "crossDomain": true,
@@ -191,9 +191,7 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
         };
 
         $.ajax(settings).done(function(response) {
-
-            console.log(response);
-
+          console.log(response);
         });
     }
 

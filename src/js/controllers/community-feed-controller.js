@@ -44,7 +44,7 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
             "karma_question_id": id
         };
         RequestService.postComment(this.newComment);
-
+        this.getPosts();
     };
 
     this.updateQuestionLikes = function(likes, id) {

@@ -7,7 +7,7 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
     this.updateButton = function(progress, id) {
       for (var index = 0; index < $scope.projects.length; index++) {
           if ($scope.projects[index].id === id ) {
-              console.log(id);
+              console.log('id ' + id);
               $scope.projects[index].progress = progress;
               console.log($scope.projects[index]);
           }
@@ -31,24 +31,19 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
       $('.dev-projects-container').addClass('modal-up');
       this.showModal = true;
       this.projectId = id;
-
       this.token = RequestService.fetchToken();
       this.branchUrl = "https://code-karma-api.herokuapp.com/branches/" + this.projectId + "?token=" + this.token;
-
       var settings = {
           "async": true,
           "crossDomain": true,
           "url": this.branchUrl,
           "method": "GET"
       };
-
       $.ajax(settings).done(function(response) {
           $scope.headBranches = response.head_branches;
           $scope.baseBranches = response.base_branches;
-
           $scope.$apply();
       });
-
     };
 
     this.closeModal = function() {
@@ -76,7 +71,6 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
           "method": "POST",
           "data": $scope.pullInfo
       };
-
       $.ajax(settings).done(function(response) {
         console.log(response);
       });
@@ -101,14 +95,11 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
 
     $scope.updateProgress = function(progress, date, id) {
       console.log(id);
-
         this.status = {
           "percentage_complete": progress,
           "est_completion_date": date
         };
-
         RequestService.setProgress(this.status, id);
-
     };
 
     this.getDev = function() {
