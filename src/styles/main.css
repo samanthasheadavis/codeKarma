@@ -256,7 +256,6 @@ ui-view {
 .client-dashboard-container {
   background: rgba(255, 255, 255, 0.6);
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
   width: 80%;
@@ -370,7 +369,8 @@ ui-view {
     .client-dashboard-container .infoContainer .orgLink,
     .client-dashboard-container .infoContainer .orgName {
       font-size: 20px;
-      margin: 15px 10px; }
+      margin: 15px 10px;
+      text-align: center; }
       .client-dashboard-container .infoContainer .gitHubLink input,
       .client-dashboard-container .infoContainer .name input,
       .client-dashboard-container .infoContainer .orgLink input,
@@ -558,6 +558,7 @@ ui-view {
 
 .client-projects-container {
   align-items: center;
+  background: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
