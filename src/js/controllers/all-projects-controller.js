@@ -1,4 +1,6 @@
 angular.module('codeKarmaApp').controller('AllProjectsController', function($state, $scope, $http, RequestService) {
+    var storedToken = RequestService.getLocalToken();
+    var storedId = RequestService.getLocalId();
 
     $scope.details = false;
     this.selectedProject = null;
@@ -7,8 +9,14 @@ angular.module('codeKarmaApp').controller('AllProjectsController', function($sta
         project.show = !project.show;
     };
 
+    this.getDev = function() {
+        RequestService.getDev(storedToken, storedId, function(response) {
+            $scope.currentUser = RequestService.createUser(response.data);
+        });
+    };
+
     this.getUrl = function() {
-        this.url = RequestService.getProjectsUrl();
+        this.url = RequestService.getProjectsUrl(storedToken);
     };
 
     $scope.getIcon = function(response) {
@@ -53,7 +61,7 @@ angular.module('codeKarmaApp').controller('AllProjectsController', function($sta
 
     $scope.forkRepo = function(project) {
       this.id = project.id;
-      RequestService.forkRepo(this.id);
+      RequestService.forkRepo(storedToken, this.id);
     };
 
     // add project info to user object
@@ -65,5 +73,6 @@ angular.module('codeKarmaApp').controller('AllProjectsController', function($sta
 
 
     this.getUrl();
+    this.getDev();
     $scope.projects = this.getProjects();
 });

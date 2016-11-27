@@ -1,6 +1,8 @@
 angular.module('codeKarmaApp').controller('DevProjectsController', function($scope, $state, RequestService) {
     $scope.ownsProjects = true;
     $scope.progress = 0;
+    var storedToken = RequestService.getLocalToken();
+    var storedId = RequestService.getLocalId();
 
     // show pull request button when progress === 100%
 
@@ -31,8 +33,7 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
       $('.dev-projects-container').addClass('modal-up');
       this.showModal = true;
       this.projectId = id;
-      this.token = RequestService.fetchToken();
-      this.branchUrl = "https://code-karma-api.herokuapp.com/branches/" + this.projectId + "?token=" + this.token;
+      this.branchUrl = "https://code-karma-api.herokuapp.com/branches/" + this.projectId + "?token=" + storedToken;
       var settings = {
           "async": true,
           "crossDomain": true,
@@ -62,7 +63,7 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
 
     this.submitRequest = function() {
 
-      this.requestUrl = "https://code-karma-api.herokuapp.com/developer_projects/" + this.projectId + "?token=" + this.token;
+      this.requestUrl = "https://code-karma-api.herokuapp.com/developer_projects/" + this.projectId + "?token=" + storedToken;
       console.log($scope.pullInfo);
       var settings = {
           "async": true,
@@ -80,7 +81,7 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
     // get projects info
 
     this.getProjects = function() {
-      RequestService.getDevProjects(function(response) {
+      RequestService.getDevProjects(storedToken, storedId, function(response) {
           $scope.projects = response.my_developer_projects;
           if ($scope.projects.length === 0) {
             $scope.ownsProjects = false;
@@ -99,11 +100,11 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
           "percentage_complete": progress,
           "est_completion_date": date
         };
-        RequestService.setProgress(this.status, id);
+        RequestService.setProgress(storedToken, this.status, id);
     };
 
     this.getDev = function() {
-        RequestService.getDev(function(response) {
+        RequestService.getDev(storedToken, storedId, function(response) {
             $scope.currentUser = RequestService.createUser(response.data);
         });
     };
