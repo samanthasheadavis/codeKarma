@@ -1687,7 +1687,7 @@ header {
           width: 100%;
           justify-content: center; } }
     header .navList .active {
-      background: #ffffff;
+      background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("../../assets/bright_squares.png");
       color: #191919; }
   header a {
     text-decoration: none;
