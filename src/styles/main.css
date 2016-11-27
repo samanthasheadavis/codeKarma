@@ -1814,14 +1814,24 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 10px;
   width: 80%;
   height: 100vh; }
+  @media only screen and (max-width: 440px) {
+    .home-container {
+      width: 90%; } }
   .home-container .main-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     background: transparent; }
+    .home-container .main-container img {
+      transition: all 0.5s ease; }
+      @media only screen and (max-width: 560px) {
+        .home-container .main-container img {
+          transform: scale(0.75); } }
+      @media only screen and (max-width: 440px) {
+        .home-container .main-container img {
+          transform: scale(0.5); } }
   .home-container button {
     height: 50px;
     border: none;
@@ -1830,7 +1840,11 @@ header {
     border-radius: 5px;
     padding: 10px;
     width: 215px;
-    outline: none; }
+    outline: none;
+    transition: all 0.5s ease; }
+    @media only screen and (max-width: 560px) {
+      .home-container button {
+        width: 150px; } }
     .home-container button:hover {
       background: #7fe7cf;
       cursor: pointer; }
@@ -1844,6 +1858,9 @@ header {
     position: relative;
     display: inline-block;
     transition: color 0.2s ease; }
+    @media only screen and (max-width: 560px) {
+      .home-container a {
+        font-size: 13px; } }
   .home-container .aboutBtn {
     height: 50px;
     border: none;
@@ -1857,6 +1874,11 @@ header {
     font-weight: bold;
     text-transform: uppercase;
     outline: none; }
+    @media only screen and (max-width: 560px) {
+      .home-container .aboutBtn {
+        margin: 0 0 10px;
+        font-size: 13px;
+        width: 150px; } }
     .home-container .aboutBtn:hover {
       background: #7fe7cf;
       cursor: pointer; }
@@ -1864,22 +1886,39 @@ header {
     display: flex;
     justify-content: center;
     transition: all 0.5s ease; }
+    @media only screen and (max-width: 560px) {
+      .home-container .continueBtnContainer {
+        flex-direction: column; } }
+    @media only screen and (max-width: 560px) {
+      .home-container .continueBtnContainer .developer {
+        margin: 10px; } }
   .home-container h1 {
     font-size: 4em;
-    text-align: center; }
+    text-align: center;
+    transition: all 0.5s ease; }
+    @media only screen and (max-width: 560px) {
+      .home-container h1 {
+        font-size: 2.5em; } }
   .home-container h2 {
     margin: 20px 0;
     font-size: 1.5em;
-    align-self: center; }
+    align-self: center;
+    transition: all 0.5s ease; }
+    @media only screen and (max-width: 560px) {
+      .home-container h2 {
+        font-size: 1em;
+        margin: 5px 0 30px 0; } }
   .home-container .about {
     display: flex;
-    height: 130vh;
     flex-direction: column;
     justify-content: flex-start;
     position: absolute;
     top: 100vh;
     background: #ffffff;
     width: 80%; }
+    @media only screen and (max-width: 1000px) {
+      .home-container .about {
+        margin-top: 15px; } }
     .home-container .about .aboutContainer {
       display: flex;
       align-items: center;
