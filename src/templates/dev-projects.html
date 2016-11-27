@@ -72,7 +72,6 @@
                   progress :  <span class="progress">{{project.progress}}</span>%
                 <div slider id="flat-slider" project="project.id" model="progress"></div>
                 </div>
-
                 <label for="completion-date" class="date">est. completion date</label>
                 <input ng-model="completionDate" name="completionDate" type="date">
                 <button type="submit" class="update" ng-click="updateProgress(progress, completionDate, project.id)">Update</button>
