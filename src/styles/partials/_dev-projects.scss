@@ -36,33 +36,31 @@
     }
 
     textarea {
-      border: 1px solid $lightGrey;
-      text-indent: 10px;
-      border-radius: 5px;
-      resize: none;
-      margin-bottom: $vspace;
-      transition: $responsive;
+        border: 1px solid $lightGrey;
+        text-indent: 10px;
+        border-radius: 5px;
+        resize: none;
+        margin-bottom: $vspace;
+        transition: $responsive;
 
-      &:focus {
-          outline-color: $pop;
-      }
-
+        &:focus {
+            outline-color: $pop;
+        }
     }
 
     .project-body {
-      position: relative;
-      margin: 10px 0;
+        position: relative;
+        margin: 10px 0;
 
-      span {
-        padding: 1px 8px 3px;
-        background: white;
-        border-radius: 50%;
-        color: $midGrey;
-        font-size: 20px;
-        border-top: 1px solid $lightGrey;
-        border-left: 1px solid $lightGrey;
-      }
-
+        span {
+            padding: 1px 8px 3px;
+            background: white;
+            border-radius: 50%;
+            color: $midGrey;
+            font-size: 20px;
+            border-top: 1px solid $lightGrey;
+            border-left: 1px solid $lightGrey;
+        }
     }
 
     .select-container {
@@ -107,19 +105,52 @@
                     border-left: 1px solid $lightGrey;
                 }
             }
-        }
 
+            .modal-tooltip {
+                display: flex;
+                justify-content: center;
+                position: relative;
+
+                &:hover > .tooltip-text {
+                    display: block;
+                }
+
+                img {
+                    position: absolute;
+                    width: 15px;
+                    right: -9px;
+                    top: -26px;
+                }
+
+                .tooltip-text {
+                    background: $pop;
+                    border-radius: $border-radius;
+                    color: $charcoal;
+                    font-size: 12px;
+                    line-height: 16px;
+                    left: 36%;
+                    top: -142px;
+                    padding: 5px;
+                    position: absolute;
+                    text-align: center;
+                    width: 120px;
+                    z-index: 5;
+                    margin: 0;
+                    display: none;
+                }
+            }
+        }
         .sub-container:nth-child(2) {
             margin-left: 15px;
         }
     }
 
     button {
-      @include button(15px);
+        @include button(15px);
 
-      &:hover {
-        background: $pop;
-      }
+        &:hover {
+            background: $pop;
+        }
     }
 }
 

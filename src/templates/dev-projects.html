@@ -4,16 +4,24 @@
   <p class="project-body"><span>1</span>Enter a title for your Pull Request</p>
   <input type="text" ng-model="pullInfo.title">
   <p class="project-body"><span>2</span>Add a comment (required)</p>
-  <textarea ng-model="pullInfo.body">Add a comment (required)</textarea>
+  <textarea ng-model="pullInfo.body"></textarea>
   <div class="select-container">
     <div class="sub-container">
       <p><span>3</span> Select a base branch</p>
+      <div class="modal-tooltip">
+        <img src="assets/question.png" alt="Question by Gregor Črešnar from the Noun Project">
+        <p class="tooltip-text">The base branch is the branch in the client's repository that you are requesting to merge your changes with.</p>
+      </div>
       <select class="base-branch" ng-model="pullInfo.base">
         <option ng-repeat="branch in baseBranches">{{branch.name}}</option>
       </select>
     </div>
     <div class="sub-container">
       <p><span>4</span> Select a head branch</p>
+      <div class="modal-tooltip">
+        <img src="assets/question.png" alt="Question by Gregor Črešnar from the Noun Project">
+        <p class="tooltip-text">The head branch is the branch in your forked repository that you are requesting to merge into the client's base branch.</p>
+      </div>
       <select class="head-branch" ng-model="pullInfo.head">
         <option ng-repeat="branch in headBranches">{{branch.name}}</option>
       </select>

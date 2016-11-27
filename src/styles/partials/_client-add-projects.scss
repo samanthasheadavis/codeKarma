@@ -1,10 +1,12 @@
 .client-add-project-container {
     align-items: center;
     display: flex;
+    background: rgba(255,255,255, .6);
     flex-direction: column;
     justify-content: flex-start;
     width: 80%;
     transition: $responsive;
+    height: 100vh;
     @include media(desktop) {
         width: 85%;
     }

@@ -441,10 +441,12 @@ ui-view {
 .client-add-project-container {
   align-items: center;
   display: flex;
+  background: rgba(255, 255, 255, 0.6);
   flex-direction: column;
   justify-content: flex-start;
   width: 80%;
-  transition: all 0.5s ease; }
+  transition: all 0.5s ease;
+  height: 100vh; }
   @media only screen and (max-width: 1220px) {
     .client-add-project-container {
       width: 85%; } }
@@ -1466,6 +1468,32 @@ ui-view {
           font-size: 20px;
           border-top: 1px solid #e6e8e6;
           border-left: 1px solid #e6e8e6; }
+      .pull-request-modal .select-container .sub-container .modal-tooltip {
+        display: flex;
+        justify-content: center;
+        position: relative; }
+        .pull-request-modal .select-container .sub-container .modal-tooltip:hover > .tooltip-text {
+          display: block; }
+        .pull-request-modal .select-container .sub-container .modal-tooltip img {
+          position: absolute;
+          width: 15px;
+          right: -9px;
+          top: -26px; }
+        .pull-request-modal .select-container .sub-container .modal-tooltip .tooltip-text {
+          background: #AAEFDF;
+          border-radius: 5px;
+          color: #191919;
+          font-size: 12px;
+          line-height: 16px;
+          left: 36%;
+          top: -142px;
+          padding: 5px;
+          position: absolute;
+          text-align: center;
+          width: 120px;
+          z-index: 5;
+          margin: 0;
+          display: none; }
     .pull-request-modal .select-container .sub-container:nth-child(2) {
       margin-left: 15px; }
   .pull-request-modal button {
