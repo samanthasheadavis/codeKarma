@@ -1,7 +1,7 @@
 (function($) {
   "use strict";
 
-  var codeKarmaApp = angular.module('codeKarmaApp', ['ui.router']);
+  var codeKarmaApp = angular.module('codeKarmaApp', ['ui.router', 'LocalStorageModule']);
 
   codeKarmaApp.config(function($stateProvider, $urlRouterProvider) {
 

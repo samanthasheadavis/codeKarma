@@ -2,10 +2,13 @@ angular.module('codeKarmaApp').controller('DevDashboardController', function($st
 
     this.devName = 'Your Name';
     this.devLink = 'github.com/yourName';
+    var self = this;
+    var storedToken = RequestService.getLocalToken();
+    var storedId = RequestService.getLocalId();
 
     // have to edit in service to get correct url for posting skills
     this.getUrl = function() {
-        this.url = RequestService.getDevUrl();
+        this.url = RequestService.getDevUrl(storedToken, storedId);
     };
 
     this.updateInfo = function(value) {
@@ -13,13 +16,13 @@ angular.module('codeKarmaApp').controller('DevDashboardController', function($st
             this.skills = {
                 "skills": this.newSkill
             };
-            RequestService.putSkills(this.skills);
+            RequestService.putSkills(storedToken, this.skills);
             this.newSkill = '';
         } else if ($scope.currentUser.skills.length > 0) {
             this.skills = {
                 "skills": $scope.currentUser.skills + ', ' + this.newSkill
             };
-            RequestService.putSkills(this.skills);
+            RequestService.putSkills(storedToken, this.skills);
             this.newSkill = '';
         }
 
@@ -31,7 +34,7 @@ angular.module('codeKarmaApp').controller('DevDashboardController', function($st
     };
 
     this.getDev = function() {
-        RequestService.getDev(function(response) {
+        RequestService.getDev(storedToken, storedId, function(response) {
             $scope.currentUser = RequestService.createUser(response.data);
             getLeaderboard();
         });
@@ -53,7 +56,7 @@ angular.module('codeKarmaApp').controller('DevDashboardController', function($st
     }
 
     function getLeaderboard() {
-        RequestService.getLeaderboard(function(response) {
+        RequestService.getLeaderboard(storedToken, function(response) {
             $scope.leaderboard = response.all_developer_rankings;
             findUserStats($scope.leaderboard, 'developer_name', $scope.currentUser.username);
 

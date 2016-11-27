@@ -1,4 +1,4 @@
-angular.module('codeKarmaApp').service('RequestService', function($http, $location, $state) {
+angular.module('codeKarmaApp').service('RequestService', function($http, $location, $state, localStorageService) {
 
     var token;
     var currentUser = '';
@@ -19,6 +19,9 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
         token = url.match(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/)[0];
         userId = url.match(/id=([0-9]+)/)[1];
 
+        setLocalToken(token);
+        setLocalId(userId);
+
         if (url.includes("redirect")) {
             dashboardRedirect();
         } else {
@@ -34,8 +37,8 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
         return userId;
     }
 
-    function getProjectsUrl() {
-        var url = "https://code-karma-api.herokuapp.com/projects" + "?token=" + token;
+    function getProjectsUrl(storedToken) {
+        var url = "https://code-karma-api.herokuapp.com/projects" + "?token=" + storedToken;
         return url;
     }
 
@@ -44,8 +47,8 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
         return url;
     }
 
-    function getDevUrl() {
-        var url = "https://code-karma-api.herokuapp.com/developers/" + userId + "?token=" + token;
+    function getDevUrl(storedToken, id) {
+        var url = "https://code-karma-api.herokuapp.com/developers/" + id + "?token=" + storedToken;
         return url;
     }
 
@@ -58,10 +61,10 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
         });
     }
 
-    function getDev(callback) {
+    function getDev(storedToken, id, callback) {
         $http({
             method: 'GET',
-            url: 'https://code-karma-api.herokuapp.com/developers/' + userId + '?token=' + token,
+            url: 'https://code-karma-api.herokuapp.com/developers/' + id + '?token=' + storedToken,
         }).then(callback, function errorCallback(response) {
             return response;
         });
@@ -82,12 +85,12 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
         return currentUser;
     }
 
-    function setProgress(progress, id) {
+    function setProgress(storedToken, progress, id) {
 
         var settings = {
             "async": true,
             "crossDomain": true,
-            "url": 'https://code-karma-api.herokuapp.com/developer_projects/' + id + '?token=' + token,
+            "url": 'https://code-karma-api.herokuapp.com/developer_projects/' + id + '?token=' + storedToken,
             "method": "PUT",
             "data": progress
         };
@@ -106,10 +109,10 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
         });
     }
 
-    function forkRepo(id) {
+    function forkRepo(storedToken, id) {
         $http({
             method: 'POST',
-            url: 'https://code-karma-api.herokuapp.com/projects/' + id + '?token=' + token
+            url: 'https://code-karma-api.herokuapp.com/projects/' + id + '?token=' + storedToken
         }).then(function successCallback(response) {
             $state.go('codeKarmaParent.devProjects');
         }, function errorCallback(response) {
@@ -117,12 +120,12 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
         });
     }
 
-    function putSkills(skills) {
+    function putSkills(storedToken, skills) {
 
         var settings = {
             "async": true,
             "crossDomain": true,
-            "url": 'https://code-karma-api.herokuapp.com/developers/' + userId + '?token=' + token,
+            "url": 'https://code-karma-api.herokuapp.com/developers/' + userId + '?token=' + storedToken,
             "method": "PUT",
             "data": skills
         };
@@ -131,11 +134,11 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
         });
     }
 
-    function getDevProjects(callback) {
+    function getDevProjects(storedToken, callback) {
         var settings = {
             "async": true,
             "crossDomain": true,
-            "url": 'https://code-karma-api.herokuapp.com/developers_my_projects/' + userId + '?token=' + token,
+            "url": 'https://code-karma-api.herokuapp.com/developers_my_projects/' + userId + '?token=' + storedToken,
             "method": "GET"
         };
 
@@ -143,22 +146,22 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
 
     }
 
-    function getLeaderboard(callback) {
+    function getLeaderboard(storedToken, callback) {
       var settings = {
           "async": true,
           "crossDomain": true,
-          "url": 'https://code-karma-api.herokuapp.com/developers/rank?token=' + token,
+          "url": 'https://code-karma-api.herokuapp.com/developers/rank?token=' + storedToken,
           "method": "GET"
       };
 
       $.ajax(settings).done(callback);
     }
 
-    function postQuestion(post, callback) {
+    function postQuestion(post, storedToken, callback) {
         var settings = {
             "async": true,
             "crossDomain": true,
-            "url": 'https://code-karma-api.herokuapp.com/karma_questions?token=' + token,
+            "url": 'https://code-karma-api.herokuapp.com/karma_questions?token=' + storedToken,
             "method": "POST",
             "data": post
         };
@@ -167,22 +170,22 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
 
     }
 
-    function getPosts(callback) {
+    function getPosts(storedToken, callback) {
         var settings = {
             "async": true,
             "crossDomain": true,
-            "url": 'https://code-karma-api.herokuapp.com/karma_comments?token=' + token,
+            "url": 'https://code-karma-api.herokuapp.com/karma_comments?token=' + storedToken,
             "method": "GET",
         };
 
         $.ajax(settings).done(callback);
     }
 
-    function postComment(post, callback) {
+    function postComment(post, storedToken) {
         var settings = {
             "async": true,
             "crossDomain": true,
-            "url": 'https://code-karma-api.herokuapp.com/karma_comments?token=' + token,
+            "url": 'https://code-karma-api.herokuapp.com/karma_comments?token=' + storedToken,
             "method": "POST",
             "data": post
         };
@@ -192,29 +195,62 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
         });
     }
 
-    function updateQuestionLikes(likes, id, callback){
+    function updateQuestionLikes(likes, id, storedToken, callback){
 
       var settings = {
           "async": true,
           "crossDomain": true,
-          "url": 'https://code-karma-api.herokuapp.com/karma_question/' + id + '?token=' + token,
+          "url": 'https://code-karma-api.herokuapp.com/karma_question/' + id + '?token=' + storedToken,
           "method": "PUT",
           "data": likes
       };
       $.ajax(settings).done(callback);
     }
 
-    function updateCommentLikes(likes, id, callback){
+    function updateCommentLikes(likes, id, storedToken, callback){
 
       var settings = {
           "async": true,
           "crossDomain": true,
-          "url": 'https://code-karma-api.herokuapp.com/karma_comment/' + id + '?token=' + token,
+          "url": 'https://code-karma-api.herokuapp.com/karma_comment/' + id + '?token=' + storedToken,
           "method": "PUT",
           "data": likes
       };
       $.ajax(settings).done(callback);
     }
+
+    function getLocalToken() {
+        return localStorageService.get('storedToken') || [];
+    }
+
+    function setLocalToken(token) {
+      localStorageService.set('storedToken', token);
+    }
+
+    function getLocalId() {
+        return localStorageService.get('storedId') || [];
+    }
+
+    function setLocalId(id) {
+      localStorageService.set('storedId', id);
+    }
+
+    function setLikedQuestion(liked) {
+      localStorageService.set('likedQuestion', liked);
+    }
+
+    function getLikedQuestion() {
+        return localStorageService.get('likedQuestion') || [];
+    }
+
+    function setLikedComment(liked) {
+      localStorageService.set('likedComment', liked);
+    }
+
+    function getLikedComment() {
+        return localStorageService.get('likedComment') || [];
+    }
+
 
 
     return {
@@ -237,7 +273,14 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
         getPosts: getPosts,
         postComment: postComment,
         updateQuestionLikes: updateQuestionLikes,
-        updateCommentLikes: updateCommentLikes
+        updateCommentLikes: updateCommentLikes,
+        getLocalToken: getLocalToken,
+        setLocalToken: setLocalToken,
+        getLikedQuestion: getLikedQuestion,
+        setLikedQuestion: setLikedQuestion,
+        getLikedComment: getLikedComment,
+        setLikedComment: setLikedComment,
+        getLocalId: getLocalId,
     };
 
 });
