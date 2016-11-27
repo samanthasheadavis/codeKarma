@@ -1815,10 +1815,12 @@ header {
   flex-direction: column;
   align-items: center;
   width: 80%;
-  height: 100vh; }
+  height: 100vh;
+  transition: all 0.5s ease; }
   @media only screen and (max-width: 440px) {
     .home-container {
-      width: 90%; } }
+      width: 100%;
+      background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("../../assets/bright_squares.png"); } }
   .home-container .main-container {
     display: flex;
     flex-direction: column;
@@ -1918,17 +1920,39 @@ header {
     width: 80%; }
     @media only screen and (max-width: 1000px) {
       .home-container .about {
-        margin-top: 15px; } }
+        margin-top: 15px;
+        padding-top: 15px; } }
+    @media only screen and (max-width: 440px) {
+      .home-container .about {
+        width: 100%;
+        background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("../../assets/bright_squares.png"); } }
     .home-container .about .aboutContainer {
       display: flex;
       align-items: center;
       justify-content: space-around; }
+      @media only screen and (max-width: 560px) {
+        .home-container .about .aboutContainer {
+          padding: 10px; } }
+      .home-container .about .aboutContainer p {
+        transition: all 0.5s ease;
+        margin-left: 15px; }
     .home-container .about .aboutSubContainer {
       display: flex;
       justify-content: center;
-      padding: 10px; }
+      padding: 10px;
+      transition: all 0.5s ease; }
+      @media only screen and (max-width: 780px) {
+        .home-container .about .aboutSubContainer {
+          flex-direction: column; } }
+      @media only screen and (max-width: 440px) {
+        .home-container .about .aboutSubContainer {
+          padding: 0; } }
       .home-container .about .aboutSubContainer .mission {
-        flex-shrink: 20; }
+        flex-shrink: 20;
+        transition: all 0.5s ease; }
+        @media only screen and (max-width: 1000px) {
+          .home-container .about .aboutSubContainer .mission {
+            flex-shrink: 2; } }
       .home-container .about .aboutSubContainer .section {
         display: flex;
         flex-direction: column;
@@ -1936,10 +1960,20 @@ header {
         align-items: center;
         margin: 15px;
         border: 1px solid #f2f2f2;
-        padding: 10px; }
+        padding: 10px;
+        transition: all 0.5s ease; }
+        @media only screen and (max-width: 560px) {
+          .home-container .about .aboutSubContainer .section {
+            border: 3px solid #AAEFDF; } }
         .home-container .about .aboutSubContainer .section h2 {
           color: #AAEFDF;
-          border-bottom: 1px solid #ced0ce; }
+          border-bottom: 1px solid #ced0ce;
+          text-align: center; }
+          @media only screen and (max-width: 560px) {
+            .home-container .about .aboutSubContainer .section h2 {
+              color: #191919;
+              border: none;
+              font-weight: bold; } }
         .home-container .about .aboutSubContainer .section p {
           color: #4F4F4F;
           line-height: 1.25;
@@ -1952,12 +1986,20 @@ header {
           margin-top: 10px; }
           .home-container .about .aboutSubContainer .section .member .memberName {
             font-weight: bold;
-            font-size: 20px; }
+            font-size: 20px;
+            transition: all 0.5s ease; }
+            @media only screen and (max-width: 780px) {
+              .home-container .about .aboutSubContainer .section .member .memberName {
+                margin: 15px; } }
           .home-container .about .aboutSubContainer .section .member .profile {
             width: 50px;
             border-radius: 50%; }
           .home-container .about .aboutSubContainer .section .member .mediaPic {
             width: 50px; }
+      @media only screen and (max-width: 780px) {
+        .home-container .about .aboutSubContainer .section:nth-child(2) .member {
+          flex-direction: row;
+          margin-bottom: 15px; } }
 
 .redirect-container {
   background: #e6e8e6;
