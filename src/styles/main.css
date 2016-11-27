@@ -929,6 +929,8 @@ ui-view {
             height: 25px;
             border-radius: 5px;
             margin-bottom: 10px; }
+            .community-feed-container .flexContainer .commPost .postContainer .like-container img.like.active {
+              background: #AAEFDF; }
             .community-feed-container .flexContainer .commPost .postContainer .like-container img.like:hover {
               background: #AAEFDF;
               cursor: pointer; }
@@ -984,6 +986,19 @@ ui-view {
               margin-right: 5px; }
             .community-feed-container .flexContainer .commPost .responsesContainer .response .comment-container .like-comment {
               height: 14px; }
+        .community-feed-container .flexContainer .commPost .responsesContainer .load-more {
+          background: #AAEFDF;
+          border-radius: 5px;
+          font-size: 14px;
+          margin: 15px auto;
+          padding: 5px 0;
+          text-align: center;
+          width: 40%; }
+          .community-feed-container .flexContainer .commPost .responsesContainer .load-more:hover {
+            cursor: pointer; }
+          .community-feed-container .flexContainer .commPost .responsesContainer .load-more .arrow-down {
+            height: 8px;
+            margin-top: 8px; }
       .community-feed-container .flexContainer .commPost .responseForm {
         display: flex; }
         .community-feed-container .flexContainer .commPost .responseForm textarea {
