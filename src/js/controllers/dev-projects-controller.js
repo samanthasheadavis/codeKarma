@@ -81,7 +81,7 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
     // get projects info
 
     this.getProjects = function() {
-      RequestService.getDevProjects(storedToken, function(response) {
+      RequestService.getDevProjects(storedToken, storedId, function(response) {
           $scope.projects = response.my_developer_projects;
           if ($scope.projects.length === 0) {
             $scope.ownsProjects = false;

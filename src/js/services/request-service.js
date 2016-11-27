@@ -120,12 +120,12 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
         });
     }
 
-    function putSkills(storedToken, skills) {
+    function putSkills(storedToken, id, skills) {
 
         var settings = {
             "async": true,
             "crossDomain": true,
-            "url": 'https://code-karma-api.herokuapp.com/developers/' + userId + '?token=' + storedToken,
+            "url": 'https://code-karma-api.herokuapp.com/developers/' + id + '?token=' + storedToken,
             "method": "PUT",
             "data": skills
         };
@@ -134,11 +134,11 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
         });
     }
 
-    function getDevProjects(storedToken, callback) {
+    function getDevProjects(storedToken, id, callback) {
         var settings = {
             "async": true,
             "crossDomain": true,
-            "url": 'https://code-karma-api.herokuapp.com/developers_my_projects/' + userId + '?token=' + storedToken,
+            "url": 'https://code-karma-api.herokuapp.com/developers_my_projects/' + id + '?token=' + storedToken,
             "method": "GET"
         };
 
