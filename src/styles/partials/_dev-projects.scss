@@ -3,12 +3,12 @@
     display: flex;
     position: fixed;
     flex-direction: column;
-    top: 30%;
+    top: 25%;
     z-index: 5;
     background: $white;
     box-shadow: 0 0 200px 40px rgba(79,79,79,1);
     border-radius: 5px;
-    transform: scale(1.5);
+    transform: scale(1.25);
 
     img {
         width: 30px;
@@ -22,9 +22,47 @@
         margin-bottom: 10px;
     }
 
-    p {
-        padding: 5px;
-        margin: 5px;
+    input {
+        height: 25px;
+        margin-bottom: $vspace;
+        text-indent: 10px;
+        border: 1px solid $lightGrey;
+        border-radius: 5px;
+        transition: $responsive;
+
+        &:focus {
+            outline-color: $pop;
+        }
+    }
+
+    textarea {
+      border: 1px solid $lightGrey;
+      text-indent: 10px;
+      border-radius: 5px;
+      resize: none;
+      margin-bottom: $vspace;
+      transition: $responsive;
+
+      &:focus {
+          outline-color: $pop;
+      }
+
+    }
+
+    .project-body {
+      position: relative;
+      margin: 10px 0;
+
+      span {
+        padding: 1px 8px 3px;
+        background: white;
+        border-radius: 50%;
+        color: $midGrey;
+        font-size: 20px;
+        border-top: 1px solid $lightGrey;
+        border-left: 1px solid $lightGrey;
+      }
+
     }
 
     .select-container {
@@ -75,6 +113,14 @@
             margin-left: 15px;
         }
     }
+
+    button {
+      @include button(15px);
+
+      &:hover {
+        background: $pop;
+      }
+    }
 }
 
 .modal-up {
@@ -103,25 +149,26 @@
         justify-content: space-between;
         margin-bottom: 40px;
 
-        h3, p {
-          padding-left: $hspace;
+        h3,
+        p {
+            padding-left: $hspace;
         }
 
         p {
-          margin-top: $vspace;
-          font-size: 20px;
-          line-height: 24px;
+            margin-top: $vspace;
+            font-size: 20px;
+            line-height: 24px;
 
-          a {
-            font-weight: bold;
-            text-decoration: none;
-            color: $charcoal;
-          }
+            a {
+                font-weight: bold;
+                text-decoration: none;
+                color: $charcoal;
+            }
         }
 
         .fork {
             height: 100px;
-            margin: 0 $hspace $vspace $hspace;
+            margin: 0 $hspace $vspace;
         }
     }
 

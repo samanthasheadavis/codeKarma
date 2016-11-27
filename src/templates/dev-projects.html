@@ -1,18 +1,19 @@
 <div class="pull-request-modal" ng-show="devProjects.showModal">
   <img src="assets/delete.png" alt="Delete by Huu Nguyen from the Noun Project" ng-click="devProjects.closeModal()">
   <h1>Pull Request</h1>
-  <input type="text" placeholder="Enter a title for your Pull Request" ng-model="pullInfo.title">
-  <p class="project-body">Add a comment (required)</p>
+  <p class="project-body"><span>1</span>Enter a title for your Pull Request</p>
+  <input type="text" ng-model="pullInfo.title">
+  <p class="project-body"><span>2</span>Add a comment (required)</p>
   <textarea ng-model="pullInfo.body">Add a comment (required)</textarea>
   <div class="select-container">
     <div class="sub-container">
-      <p><span>1</span> Select a base branch</p>
+      <p><span>3</span> Select a base branch</p>
       <select class="base-branch" ng-model="pullInfo.base">
         <option ng-repeat="branch in baseBranches">{{branch.name}}</option>
       </select>
     </div>
     <div class="sub-container">
-      <p><span>2</span> Select a head branch</p>
+      <p><span>4</span> Select a head branch</p>
       <select class="head-branch" ng-model="pullInfo.head">
         <option ng-repeat="branch in headBranches">{{branch.name}}</option>
       </select>
@@ -64,7 +65,7 @@
     </div>
 
     <div class="project-card" ng-cloak ng-repeat="project in projects | orderBy: '-'">
-        <h3 class="title {{project.id}}">{{project.organization_name}}</h3>
+        <h3 class="title {{project.id}}" ng-click="devProjects.pullRequest(project.id)">{{project.organization_name}}</h3>
         <p class="brief-description">{{project.brief_description}}</p>
         <div class="details">
             <form>
