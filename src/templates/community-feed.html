@@ -47,7 +47,7 @@
                     <p class="timeElapsed"><span class="timeStamp">{{post.timeElapsed}}</span> ago</p>
                 </div>
                 <div class="responsesContainer">
-                    <div class="response" ng-repeat="comment in post.comments | orderBy: '-' | limitTo: post.showMore">
+                    <div class="response" ng-repeat="comment in post.comments | orderBy: 'id' | limitTo: post.showMore">
                         <img class="commenter-photo" src="{{comment.image}}">
                         <div class="comment-container">
                             <p class="comment"><span class="commenter-name">{{comment.commenter}} </span> {{comment.comment}}</p>

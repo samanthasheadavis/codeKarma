@@ -441,10 +441,12 @@ ui-view {
 .client-add-project-container {
   align-items: center;
   display: flex;
+  background: rgba(255, 255, 255, 0.6);
   flex-direction: column;
   justify-content: flex-start;
   width: 80%;
-  transition: all 0.5s ease; }
+  transition: all 0.5s ease;
+  height: 100vh; }
   @media only screen and (max-width: 1220px) {
     .client-add-project-container {
       width: 85%; } }
@@ -1388,12 +1390,12 @@ ui-view {
   display: flex;
   position: fixed;
   flex-direction: column;
-  top: 30%;
+  top: 25%;
   z-index: 5;
   background: #ffffff;
   box-shadow: 0 0 200px 40px #4f4f4f;
   border-radius: 5px;
-  transform: scale(1.5); }
+  transform: scale(1.25); }
   .pull-request-modal img {
     width: 30px;
     position: absolute;
@@ -1402,9 +1404,35 @@ ui-view {
   .pull-request-modal h1 {
     font-size: 20px;
     margin-bottom: 10px; }
-  .pull-request-modal p {
-    padding: 5px;
-    margin: 5px; }
+  .pull-request-modal input {
+    height: 25px;
+    margin-bottom: 15px;
+    text-indent: 10px;
+    border: 1px solid #e6e8e6;
+    border-radius: 5px;
+    transition: all 0.5s ease; }
+    .pull-request-modal input:focus {
+      outline-color: #AAEFDF; }
+  .pull-request-modal textarea {
+    border: 1px solid #e6e8e6;
+    text-indent: 10px;
+    border-radius: 5px;
+    resize: none;
+    margin-bottom: 15px;
+    transition: all 0.5s ease; }
+    .pull-request-modal textarea:focus {
+      outline-color: #AAEFDF; }
+  .pull-request-modal .project-body {
+    position: relative;
+    margin: 10px 0; }
+    .pull-request-modal .project-body span {
+      padding: 1px 8px 3px;
+      background: white;
+      border-radius: 50%;
+      color: #ced0ce;
+      font-size: 20px;
+      border-top: 1px solid #e6e8e6;
+      border-left: 1px solid #e6e8e6; }
   .pull-request-modal .select-container {
     display: flex;
     justify-content: space-around;
@@ -1440,8 +1468,49 @@ ui-view {
           font-size: 20px;
           border-top: 1px solid #e6e8e6;
           border-left: 1px solid #e6e8e6; }
+      .pull-request-modal .select-container .sub-container .modal-tooltip {
+        display: flex;
+        justify-content: center;
+        position: relative; }
+        .pull-request-modal .select-container .sub-container .modal-tooltip:hover > .tooltip-text {
+          display: block; }
+        .pull-request-modal .select-container .sub-container .modal-tooltip img {
+          position: absolute;
+          width: 15px;
+          right: -9px;
+          top: -26px; }
+        .pull-request-modal .select-container .sub-container .modal-tooltip .tooltip-text {
+          background: #AAEFDF;
+          border-radius: 5px;
+          color: #191919;
+          font-size: 12px;
+          line-height: 16px;
+          left: 36%;
+          top: -142px;
+          padding: 5px;
+          position: absolute;
+          text-align: center;
+          width: 120px;
+          z-index: 5;
+          margin: 0;
+          display: none; }
     .pull-request-modal .select-container .sub-container:nth-child(2) {
       margin-left: 15px; }
+  .pull-request-modal button {
+    background: none;
+    border: 3px solid #AAEFDF;
+    border-radius: 5px;
+    color: #191919;
+    display: block;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 10px;
+    padding: 10px;
+    position: relative;
+    text-transform: uppercase;
+    outline: none; }
+    .pull-request-modal button:hover {
+      background: #AAEFDF; }
 
 .modal-up {
   filter: blur(2px); }
@@ -1466,7 +1535,8 @@ ui-view {
     display: flex;
     justify-content: space-between;
     margin-bottom: 40px; }
-    .dev-projects-container .no-project h3, .dev-projects-container .no-project p {
+    .dev-projects-container .no-project h3,
+    .dev-projects-container .no-project p {
       padding-left: 10px; }
     .dev-projects-container .no-project p {
       margin-top: 15px;
@@ -1478,7 +1548,7 @@ ui-view {
         color: #191919; }
     .dev-projects-container .no-project .fork {
       height: 100px;
-      margin: 0 10px 15px 10px; }
+      margin: 0 10px 15px; }
   .dev-projects-container .no-project,
   .dev-projects-container .project-card {
     background: #ffffff;
@@ -1702,7 +1772,7 @@ header {
           width: 100%;
           justify-content: center; } }
     header .navList .active {
-      background: #ffffff;
+      background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("../../assets/bright_squares.png");
       color: #191919; }
   header a {
     text-decoration: none;
@@ -1778,7 +1848,7 @@ header {
     height: 50px;
     border: none;
     background: #AAEFDF;
-    margin: 0 0 20px 0;
+    margin: 0 0 20px;
     border-radius: 5px;
     padding: 10px;
     width: 200px;

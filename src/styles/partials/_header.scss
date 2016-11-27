@@ -105,7 +105,7 @@ header {
         }
 
         .active {
-          background: $white;
+          background: linear-gradient(rgba(255,255,255, .6), rgba(255,255,255, .6)), url('../../assets/bright_squares.png');
           color: $charcoal;
         }
     }
