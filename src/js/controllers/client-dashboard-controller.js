@@ -1,8 +1,11 @@
 angular.module('codeKarmaApp').controller('ClientDashboardController', function($state, RequestService, $scope, $http) {
 
+    var storedToken = RequestService.getLocalToken();
+    var storedId = RequestService.getLocalId();
+
     // Have to edit this in service to make sure posting to correct url for updating client info
     this.getUrl = function() {
-        this.url = RequestService.getProjectsUrl();
+        this.url = RequestService.getProjectsUrl(storedToken);
     };
 
     // orgName and orgLink refer to the 'organization name' and 'website link' fields.
@@ -33,13 +36,10 @@ angular.module('codeKarmaApp').controller('ClientDashboardController', function(
         this.showLinkEdit = false;
         this.showNameEdit = false;
 
-        this.token = RequestService.fetchToken();
-        this.id = RequestService.fetchId();
-
         var settings = {
             "async": true,
             "crossDomain": true,
-            "url": "https://code-karma-api.herokuapp.com/clients/" + this.id + "?token=" + this.token,
+            "url": "https://code-karma-api.herokuapp.com/clients/" + storedId + "?token=" + storedToken,
             "method": "PUT",
             "data": this.newInfo
         };
@@ -53,7 +53,7 @@ angular.module('codeKarmaApp').controller('ClientDashboardController', function(
 
     this.getClient = function() {
 
-        RequestService.getClient(function(response) {
+        RequestService.getClient(storedToken, storedId, function(response) {
             $scope.currentUser = RequestService.createUser(response.data);
             $scope.handleInfo($scope.currentUser);
         });
