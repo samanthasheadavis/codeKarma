@@ -25,6 +25,7 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
         };
         RequestService.postQuestion(this.newQuestion, storedToken, function(response) {
             self.getPosts();
+            self.getDev();
         });
         this.post = '';
     };
@@ -45,10 +46,11 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
                 }
             }
             $scope.$apply();
-            likedQuestions = StorageService.getLikedQuestion();
-            console.log(likedQuestions);
-            likedQuestionArray.push(likedQuestions);
-            self.getBlueLikes(likedQuestionArray);
+            // likedQuestions = StorageService.getLikedQuestion();
+              likedQuestionArray.push(likedQuestions);
+              self.getBlueLikes(likedQuestionArray);
+
+
         });
     };
 
@@ -59,6 +61,7 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
         };
         RequestService.postComment(this.newComment, storedToken);
         this.getPosts();
+        self.getDev();
     };
 
     this.updateQuestionLikes = function(likes, id) {
@@ -67,7 +70,6 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
         };
         RequestService.updateQuestionLikes(this.likes, id, storedToken, function(response) {
             self.getPosts();
-
         });
         console.log(likedQuestionArray);
         this.question = {
@@ -139,8 +141,8 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
         $scope.$apply();
     };
 
+
     this.getDev();
     this.getPosts();
-
 
 });
