@@ -38,7 +38,7 @@
                     <img class="questioner-img" src="{{post.questioner_image}}" alt="{{post.questioner}}">
                     <p class="question">{{post.question}}</p>
                     <div class="like-container">
-                        <img class="like" ng-class= "{'active': post.question_id.liked }"src="assets/like.png" alt="like by dilayorganci from the Noun Project" ng-click="communityFeed.updateQuestionLikes(post.likes, post.question_id)">
+                        <img class="like" ng-class= "{'active': post.liked }"src="assets/like.png" alt="like by dilayorganci from the Noun Project" ng-click="communityFeed.updateQuestionLikes(post.likes, post.question_id)">
                         <p class="likeAmount"><span>{{post.likes}}</span> Likes</p>
                     </div>
                 </div>

@@ -5,9 +5,9 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
     var self = this;
     var storedToken = RequestService.getLocalToken();
     var storedId = RequestService.getLocalId();
-    // var likedQuestions = StorageService.getLikedQuestion();
-    // var likeComments = StorageService.getLikedComment();
-    // var likedQuestionArray = [];
+    var likedQuestions = StorageService.getLikedQuestion();
+    var likeComments = StorageService.getLikedComment();
+    var likedQuestionArray = [];
 
 
 
@@ -45,9 +45,10 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
                 }
             }
             $scope.$apply();
-            // likedQuestions= StorageService.getLikedQuestion();
-            // likedQuestionArray.push(likedQuestions);
-            // self.getBlueLikes(likedQuestionArray);
+            likedQuestions = StorageService.getLikedQuestion();
+            console.log(likedQuestions);
+            likedQuestionArray.push(likedQuestions);
+            self.getBlueLikes(likedQuestionArray);
         });
     };
 
@@ -68,10 +69,13 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
             self.getPosts();
 
         });
-        // console.log(likedQuestionArray);
-        // var newArray = likedQuestionArray.push(id);
-        // console.log(newArray);
-        // StorageService.setLikedQuestion(newArray);
+        console.log(likedQuestionArray);
+        this.question = {
+            questionId: id
+        };
+        var newArray = likedQuestionArray.push(this.question);
+        console.log(newArray);
+        StorageService.setLikedQuestion(newArray);
     };
 
     this.updateCommentLikes = function(likes, id) {
@@ -80,9 +84,12 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
         };
         RequestService.updateCommentLikes(this.likes, id, storedToken, function(response) {
             self.getPosts();
-            // likedCommentArray.push(id);
+            this.comment = {
+                commentId: id
+            };
+            likedCommentArray.push(this.comment);
         });
-        // StorageService.setLikedComment(likedCommentArray);
+        StorageService.setLikedComment(likedCommentArray);
     };
 
     this.getDev = function() {
@@ -116,23 +123,21 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
         });
     }
 
-    // this.getBlueLikes = function(array) {
-    //   console.log(array);
-    //     console.log('hi');
-    //     for (var index = 0; index < array.length; index++) {
-    //       console.log(array);
-    //       console.log('in blue loop');
-    //       var blueId = array[index];
-    //         for (var newIndex = 0; newIndex < $scope.posts.length; newIndex++) {
-    //           console.log('in scope loop');
-    //           var scopeId = $scope.posts[newIndex].question_id;
-    //             if (scopeId === blueId) {
-    //                 scopeId.liked = true;
-    //             }
-    //         }
-    //       }
-    //       $scope.$apply();
-    // };
+    this.getBlueLikes = function(array) {
+
+        for (var index = 0; index < array.length; index++) {
+            console.log(array);
+            var blueId = array[index].questionId;
+            for (var newIndex = 0; newIndex < $scope.posts.length; newIndex++) {
+                if ($scope.posts[newIndex].question_id === blueId) {
+                    console.log("true!");
+                    $scope.posts[newIndex].liked = true;
+                    console.log($scope.posts[newIndex].liked);
+                }
+            }
+        }
+        $scope.$apply();
+    };
 
     this.getDev();
     this.getPosts();
