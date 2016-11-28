@@ -74,6 +74,9 @@
         margin: 30px $hspace 0;
         padding-bottom: 20px;
         width: 60%;
+        @include media(mobileLarge) {
+            width: 75%;
+        }
 
         &:first-of-type {
             margin-top: 0;
@@ -101,10 +104,6 @@
 
                     &:hover .tooltiptext {
                         display: block;
-                    }
-
-                    &:hover > .languages {
-                        border: 3px solid $pop;
                     }
 
                     img {
@@ -154,6 +153,54 @@
                     margin: $vspace $hspace 0 0;
                     display: inline;
                     padding: 5px;
+                    border-radius: 5px;
+                }
+
+                .lang-image {
+                    display: flex;
+                    justify-content: center;
+                    position: relative;
+
+                    &:hover > .languages {
+                        border: 3px solid $pop;
+                    }
+
+                    &:hover > .lang-tooltip {
+                        display: block;
+                    }
+
+                    img {
+                        height: 35px;
+                        margin-right: $hspace;
+                    }
+
+                    .lang-tooltip {
+                        background: $pop;
+                        border-radius: $border-radius;
+                        color: $charcoal;
+                        display: none;
+                        font-size: 12px;
+                        line-height: 16px;
+                        left: 95%;
+                        top: 34%;
+                        padding: 5px;
+                        position: absolute;
+                        text-align: center;
+                        width: 30px;
+                        z-index: 5;
+
+                        &:after {
+                            transform: scale(.75);
+                            content: " ";
+                            position: absolute;
+                            top: 40%;
+                            right: 95%;
+                            margin-top: -5px;
+                            border-width: 8px;
+                            border-style: solid;
+                            border-color: transparent $pop transparent transparent;
+                        }
+                    }
                 }
             }
         }
@@ -258,8 +305,15 @@
         background: $white;
         border-radius: 5px;
         box-shadow: 0 0 200px 40px rgba(79,79,79,1);
-        padding: $vspace $vspace;
+        padding: $vspace;
         align-items: center;
+        @include media(tablet) {
+            width: 60%;
+            top: 33%;
+        }
+        @include media(mobileLarge) {
+            width: 75%;
+        }
 
         .minimize {
             position: absolute;
@@ -276,24 +330,23 @@
             }
         }
 
-
         p {
-          font-size: 24px;
-          margin-top: 20px;
-          text-align: center;
+            font-size: 24px;
+            margin-top: 20px;
+            text-align: center;
         }
 
         a {
-          text-decoration: none;
+            text-decoration: none;
         }
 
         button {
-          @include button(15px);
+            @include button(15px);
 
-          &:hover {
-            background: $pop;
-            cursor: pointer;
-          }
+            &:hover {
+                background: $pop;
+                cursor: pointer;
+            }
         }
 
         .wrapper {
