@@ -1,8 +1,8 @@
 <div class="all-projects-container">
-  <div class="mobile-nav">
-    <h1 ui-sref="codeKarmaParent.home">Code Karma</h1>
-    <img src="assets/menu.png" alt="menu by unlimicon from the Noun Project" ng-click="account.toggleSlide()">
-  </div>
+    <div class="mobile-nav">
+        <h1 ui-sref="codeKarmaParent.home">Code Karma</h1>
+        <img src="assets/menu.png" alt="menu by unlimicon from the Noun Project" ng-click="account.toggleSlide()">
+    </div>
     <header>
         <img ui-sref="codeKarmaParent.home" src="assets/lotus_blue.png" alt="Lotus by Muhammad Faizal Rahman Hakim from the Noun Project" />
         <h1 ui-sref="codeKarmaParent.home">Code Karma</h1>
@@ -36,25 +36,27 @@
     </form>
 
     <div class="project-card" ng-repeat="project in projects | filter:allProjects.keyword | orderBy: '-'">
-            <div class="heading">
-                <h3 class="title">{{project.title}}</h3>
-                <div class="categories">
-                    <div class="category-image tooltip">
-                        <img class="bug-fix" src="assets/{{project.img_src}}.png" alt="Created by {{project.img_alt}} from Noun Project">
-                        <p class="tooltiptext">this project is a <span>{{project.fix_type}}</span></p>
-                    </div>
-                    <div class="flexLang">
-                      <div class="category-image tooltip" ng-repeat="language in project.languages">
+        <div class="heading">
+          <div class="info-container">
+            <h3 class="title">{{project.title}}</h3>
+            <p class="snapshot">{{project.brief_description}}</p>
+          </div>
+            <div class="categories">
+                <div class="category-image tooltip">
+                    <img class="bug-fix" src="assets/{{project.img_src}}.png" alt="Created by {{project.img_alt}} from Noun Project">
+                    <p class="tooltiptext">this project is a <span>{{project.fix_type}}</span></p>
+                </div>
+                <div class="flexLang">
+                    <div class="lang-image tooltip" ng-repeat="language in project.languages">
                         <p class="languages">{{language.language_name}}</p>
-                        <p class="tooltiptext">{{language.language_percent}}%</p>
-                      </div>
+                        <p class="lang-tooltip">{{language.language_percent}}%</p>
                     </div>
                 </div>
             </div>
-            <div class="project-contents">
-                <p class="snapshot">{{project.brief_description}}</p>
-                <button class="details-btn" ng-click="toggleDetails(project)">Details</button>
-            </div>
+        </div>
+        <div class="project-contents">
+            <button class="details-btn" ng-click="toggleDetails(project)">Details</button>
+        </div>
         <div class="details" ng-class="{'active': project.show}">
             <hr>
             <ul class="project-details">
@@ -65,6 +67,21 @@
             </ul>
             <button class="fork-btn" ng-click='forkRepo(project)'><img src="assets/github_logo.png" alt="github logo from flaticon.com"> Fork</button>
         </div>
+
+        <div class="fork-message" ng-show="project.showFork">
+          <p class="minimize" ng-click="project.showFork=false"><img src="assets/delete.png" alt="Delete by Huu Nguyen from the Noun Project" </p>
+          <p>
+            Success! You just forked {{project.title}}.
+          </p>
+            <div class="wrapper">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 98.5 98.5" enable-background="new 0 0 98.5 98.5" xml:space="preserve">
+                  <path class="checkmark" fill="none" stroke-width="8" stroke-miterlimit="10" d="M81.7,17.8C73.5,9.3,62,4,49.2,4
+                   C24.3,4,4,24.3,4,49.2s20.3,45.2,45.2,45.2s45.2-20.3,45.2-45.2c0-8.6-2.4-16.6-6.5-23.4l0,0L45.6,68.2L24.7,47.3"/>
+                 </svg>
+            </div>
+            <a ui-sref="codeKarmaParent.devProjects"><button>See it in My Projects</button></a>
+        </div>
+
     </div>
 
 </div>
