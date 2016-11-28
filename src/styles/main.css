@@ -68,7 +68,9 @@ ui-view {
   justify-content: flex-start;
   width: 80%;
   padding-bottom: 40px;
-  transition: all 0.5s ease; }
+  transition: all 0.5s ease;
+  height: auto;
+  min-height: 100%; }
   @media only screen and (max-width: 1220px) {
     .all-projects-container {
       width: 85%; } }
@@ -146,7 +148,11 @@ ui-view {
     width: 60%; }
     @media only screen and (max-width: 560px) {
       .all-projects-container .project-card {
-        width: 75%; } }
+        width: 75%;
+        margin-top: 0; } }
+    @media only screen and (max-width: 440px) {
+      .all-projects-container .project-card {
+        width: 90%; } }
     .all-projects-container .project-card:first-of-type {
       margin-top: 0; }
     .all-projects-container .project-card .heading {
@@ -163,6 +169,10 @@ ui-view {
           padding: 0 10px 15px 40px;
           font-size: 20px;
           line-height: 1.25; }
+          @media only screen and (max-width: 440px) {
+            .all-projects-container .project-card .heading .info-container .snapshot {
+              padding: 0 10px 15px 10px;
+              font-size: 16px; } }
       .all-projects-container .project-card .heading .categories {
         display: flex;
         flex-direction: column;
@@ -172,6 +182,8 @@ ui-view {
           justify-content: center;
           position: relative; }
           .all-projects-container .project-card .heading .categories .category-image:hover .tooltiptext {
+            display: block; }
+          .all-projects-container .project-card .heading .categories .category-image:active .tooltiptext {
             display: block; }
           .all-projects-container .project-card .heading .categories .category-image img {
             height: 35px;
@@ -190,6 +202,13 @@ ui-view {
             text-align: center;
             width: 120px;
             z-index: 5; }
+            @media only screen and (max-width: 560px) {
+              .all-projects-container .project-card .heading .categories .category-image .tooltiptext {
+                width: 80px; } }
+            @media only screen and (max-width: 440px) {
+              .all-projects-container .project-card .heading .categories .category-image .tooltiptext {
+                left: -64%;
+                top: -202%; } }
             .all-projects-container .project-card .heading .categories .category-image .tooltiptext:after {
               content: " ";
               position: absolute;
@@ -199,6 +218,12 @@ ui-view {
               border-width: 8px;
               border-style: solid;
               border-color: transparent #AAEFDF transparent transparent; }
+              @media only screen and (max-width: 560px) {
+                .all-projects-container .project-card .heading .categories .category-image .tooltiptext:after {
+                  top: 30%; } }
+              @media only screen and (max-width: 440px) {
+                .all-projects-container .project-card .heading .categories .category-image .tooltiptext:after {
+                  right: 90%; } }
             .all-projects-container .project-card .heading .categories .category-image .tooltiptext span {
               letter-spacing: 0.1em;
               display: block; }
@@ -216,7 +241,11 @@ ui-view {
           position: relative; }
           .all-projects-container .project-card .heading .categories .lang-image:hover > .languages {
             border: 3px solid #AAEFDF; }
+          .all-projects-container .project-card .heading .categories .lang-image:active > .languages {
+            border: 3px solid #AAEFDF; }
           .all-projects-container .project-card .heading .categories .lang-image:hover > .lang-tooltip {
+            display: block; }
+          .all-projects-container .project-card .heading .categories .lang-image:active > .lang-tooltip {
             display: block; }
           .all-projects-container .project-card .heading .categories .lang-image img {
             height: 35px;
@@ -235,6 +264,9 @@ ui-view {
             text-align: center;
             width: 30px;
             z-index: 5; }
+            @media only screen and (max-width: 440px) {
+              .all-projects-container .project-card .heading .categories .lang-image .lang-tooltip {
+                left: 83%; } }
             .all-projects-container .project-card .heading .categories .lang-image .lang-tooltip:after {
               transform: scale(0.75);
               content: " ";
@@ -245,6 +277,9 @@ ui-view {
               border-width: 8px;
               border-style: solid;
               border-color: transparent #AAEFDF transparent transparent; }
+              @media only screen and (max-width: 440px) {
+                .all-projects-container .project-card .heading .categories .lang-image .lang-tooltip:after {
+                  right: 80%; } }
     .all-projects-container .project-card .project-contents {
       display: flex;
       flex-direction: row;
@@ -810,13 +845,14 @@ ui-view {
       margin-top: 10px;
       display: flex;
       flex-wrap: wrap;
-      align-items: flex-start;
       background: #e6e8e6;
       border-radius: 5px;
       flex-direction: column; }
       .client-projects-container .project-details .progress .progress-container .percent-container {
         display: flex;
         margin-bottom: 10px; }
+        .client-projects-container .project-details .progress .progress-container .percent-container .dev-name {
+          margin-right: auto; }
         .client-projects-container .project-details .progress .progress-container .percent-container .progress-bar {
           width: 200px;
           height: 10px;
@@ -840,7 +876,7 @@ ui-view {
       .client-projects-container .project-details .progress .progress-container p:nth-child(3) {
         align-self: flex-start; }
   .client-projects-container .project-details li {
-    margin: 0 10px 15px 10px; }
+    margin: 0 10px 15px; }
     .client-projects-container .project-details li textarea {
       width: 100%;
       height: 50px;
@@ -1654,7 +1690,6 @@ ui-view {
   align-items: center;
   flex-direction: column;
   width: 80%;
-  height: 100%;
   transition: all 0.5s ease; }
   @media only screen and (max-width: 1220px) {
     .dev-projects-container {

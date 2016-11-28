@@ -46,8 +46,8 @@ angular.module('codeKarmaApp').controller('AllProjectsController', function($sta
         };
 
         $.ajax(settings).done(function(response) {
-
             $scope.projects = response.all_projects;
+            console.log($scope.projects);
             $scope.getIcon(response.all_projects);
             $scope.$apply();
             $scope.languages($scope.projects);

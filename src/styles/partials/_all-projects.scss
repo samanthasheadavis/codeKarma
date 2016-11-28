@@ -7,6 +7,8 @@
     width: 80%;
     padding-bottom: 40px;
     transition: all 0.5s ease;
+    height: auto;
+    min-height: 100%;
     @include media(desktop) {
         width: 85%;
     }
@@ -76,6 +78,10 @@
         width: 60%;
         @include media(mobileLarge) {
             width: 75%;
+            margin-top: 0;
+        }
+        @include media(mobile) {
+          width: 90%;
         }
 
         &:first-of-type {
@@ -99,6 +105,10 @@
                 padding: 0 $hspace $vspace 40px;
                 font-size: 20px;
                 line-height: 1.25;
+                @include media(mobile) {
+                  padding: 0 $hspace $vspace $hspace;
+                  font-size: 16px;
+                }
               }
             }
 
@@ -114,6 +124,10 @@
 
                     &:hover .tooltiptext {
                         display: block;
+                    }
+
+                    &:active .tooltiptext {
+                      display: block;
                     }
 
                     img {
@@ -135,6 +149,13 @@
                         text-align: center;
                         width: 120px;
                         z-index: 5;
+                        @include media(mobileLarge) {
+                          width: 80px;
+                        }
+                        @include media(mobile) {
+                          left: -64%;
+                          top: -202%;
+                        }
 
                         &:after {
                             content: " ";
@@ -145,6 +166,13 @@
                             border-width: 8px;
                             border-style: solid;
                             border-color: transparent $pop transparent transparent;
+                            @include media(mobileLarge) {
+                              top: 30%;
+                            }
+                            @include media(mobile) {
+                              right: 90%;
+                            }
+
                         }
 
                         span {
@@ -175,8 +203,16 @@
                         border: 3px solid $pop;
                     }
 
+                    &:active > .languages {
+                      border: 3px solid $pop;
+                    }
+
                     &:hover > .lang-tooltip {
                         display: block;
+                    }
+
+                    &:active > .lang-tooltip {
+                      display: block;
                     }
 
                     img {
@@ -198,6 +234,10 @@
                         text-align: center;
                         width: 30px;
                         z-index: 5;
+                        @include media(mobile) {
+                          left: 83%;
+                        }
+
 
                         &:after {
                             transform: scale(.75);
@@ -209,6 +249,9 @@
                             border-width: 8px;
                             border-style: solid;
                             border-color: transparent $pop transparent transparent;
+                            @include media(mobile) {
+                              right: 80%;
+                            }
                         }
                     }
                 }
