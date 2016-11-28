@@ -87,9 +87,19 @@
             flex-direction: row;
             justify-content: space-between;
 
-            h3 {
+            .info-container {
+              display: flex;
+              flex-direction: column;
+              h3 {
                 font-size: 30px;
-                padding: $vspace 0 0 $hspace;
+                padding: $vspace $hspace;
+              }
+
+              .snapshot {
+                padding: 0 $hspace $vspace 40px;
+                font-size: 20px;
+                line-height: 1.25;
+              }
             }
 
             .categories {
@@ -208,7 +218,7 @@
         .project-contents {
             display: flex;
             flex-direction: row;
-            justify-content: space-between;
+            justify-content: center;
             margin: 0 $hspace;
 
             p {
@@ -272,10 +282,10 @@
             display: flex;
             font-size: 16px;
             font-weight: bold;
-            height: 40px;
+            height: 45px;
             justify-content: center;
             margin-right: 20px;
-            padding: 10px;
+            padding: 11px;
             width: 100px;
             align-self: flex-end;
 
@@ -287,6 +297,7 @@
 
             &:hover {
                 border: 3px solid $charcoal;
+                cursor: pointer;
             }
 
             &:focus {

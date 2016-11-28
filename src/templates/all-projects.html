@@ -37,7 +37,10 @@
 
     <div class="project-card" ng-repeat="project in projects | filter:allProjects.keyword | orderBy: '-'">
         <div class="heading">
+          <div class="info-container">
             <h3 class="title">{{project.title}}</h3>
+            <p class="snapshot">{{project.brief_description}}</p>
+          </div>
             <div class="categories">
                 <div class="category-image tooltip">
                     <img class="bug-fix" src="assets/{{project.img_src}}.png" alt="Created by {{project.img_alt}} from Noun Project">
@@ -52,7 +55,6 @@
             </div>
         </div>
         <div class="project-contents">
-            <p class="snapshot">{{project.brief_description}}</p>
             <button class="details-btn" ng-click="toggleDetails(project)">Details</button>
         </div>
         <div class="details" ng-class="{'active': project.show}">

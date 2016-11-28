@@ -153,9 +153,16 @@ ui-view {
       display: flex;
       flex-direction: row;
       justify-content: space-between; }
-      .all-projects-container .project-card .heading h3 {
-        font-size: 30px;
-        padding: 15px 0 0 10px; }
+      .all-projects-container .project-card .heading .info-container {
+        display: flex;
+        flex-direction: column; }
+        .all-projects-container .project-card .heading .info-container h3 {
+          font-size: 30px;
+          padding: 15px 10px; }
+        .all-projects-container .project-card .heading .info-container .snapshot {
+          padding: 0 10px 15px 40px;
+          font-size: 20px;
+          line-height: 1.25; }
       .all-projects-container .project-card .heading .categories {
         display: flex;
         flex-direction: column;
@@ -241,7 +248,7 @@ ui-view {
     .all-projects-container .project-card .project-contents {
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
+      justify-content: center;
       margin: 0 10px; }
       .all-projects-container .project-card .project-contents p {
         align-self: flex-start;
@@ -294,10 +301,10 @@ ui-view {
       display: flex;
       font-size: 16px;
       font-weight: bold;
-      height: 40px;
+      height: 45px;
       justify-content: center;
       margin-right: 20px;
-      padding: 10px;
+      padding: 11px;
       width: 100px;
       align-self: flex-end; }
       .all-projects-container .details .fork-btn img {
@@ -305,7 +312,8 @@ ui-view {
         margin-right: 10px;
         margin-top: -5px; }
       .all-projects-container .details .fork-btn:hover {
-        border: 3px solid #191919; }
+        border: 3px solid #191919;
+        cursor: pointer; }
       .all-projects-container .details .fork-btn:focus {
         outline: 0; }
   .all-projects-container .fork-message {

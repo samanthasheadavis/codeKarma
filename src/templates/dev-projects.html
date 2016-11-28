@@ -73,7 +73,7 @@
     </div>
 
     <div class="project-card" ng-cloak ng-repeat="project in projects | orderBy: '-'">
-        <h3 class="title {{project.id}}" ng-click="devProjects.pullRequest(project.id)">{{project.organization_name}}</h3>
+        <h3 class="title {{project.id}}" ng-click="devProjects.pullRequest(project.id)">{{project.project_title}}</h3>
         <p class="brief-description">{{project.brief_description}}</p>
         <div class="details">
             <form>

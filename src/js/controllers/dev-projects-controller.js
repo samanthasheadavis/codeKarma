@@ -88,6 +88,7 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
           } else {
             $scope.ownsProjects = true;
           }
+          console.log(response);
           $scope.$apply();
         });
     };
