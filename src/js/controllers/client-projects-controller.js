@@ -1,8 +1,9 @@
 angular.module('codeKarmaApp').controller('ClientProjectsController', function($state, RequestService, $scope) {
-    this.message = "in ClientProjectsController";
+    var storedToken = RequestService.getLocalToken();
+    var storedId = RequestService.getLocalId();
     // Collect client projects
     this.getProjects = function() {
-        this.url = RequestService.getClientProjectsUrl();
+        this.url = RequestService.getClientProjectsUrl(storedToken, storedId);
 
         var settings = {
             "async": true,
@@ -81,12 +82,10 @@ angular.module('codeKarmaApp').controller('ClientProjectsController', function($
     this.updateInfo = function() {
         console.log(this.updateProject);
 
-        this.token = RequestService.fetchToken();
-
         var settings = {
             "async": true,
             "crossDomain": true,
-            "url": "https://code-karma-api.herokuapp.com/projects/" + this.id + "?token=" + this.token,
+            "url": "https://code-karma-api.herokuapp.com/projects/" + this.id + "?token=" + storedToken,
             "method": "PUT",
             "data": this.updateProject
         };

@@ -1,10 +1,11 @@
 angular.module('codeKarmaApp').controller('ClientAddProjectController', function($state, $http, RequestService) {
-
+    var storedToken = RequestService.getLocalToken();
+    var storedId = RequestService.getLocalId();
 
     // this.url calls to the request service to get the correct url for posting to including the user id and token, and saves it in the controller variable this.url
 
     this.getUrl = function() {
-        this.url = RequestService.getProjectsUrl();
+        this.url = RequestService.getProjectsUrl(storedToken);
     };
 
     // collect form data and put into project object
