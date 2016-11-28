@@ -1564,6 +1564,9 @@ ui-view {
       margin-top: 15px;
       font-size: 20px;
       line-height: 24px; }
+      @media only screen and (max-width: 440px) {
+        .dev-projects-container .no-project p {
+          font-size: 16px; } }
       .dev-projects-container .no-project p a {
         font-weight: bold;
         text-decoration: none;
@@ -1571,18 +1574,36 @@ ui-view {
     .dev-projects-container .no-project .fork {
       height: 100px;
       margin: 0 10px 15px; }
+      @media only screen and (max-width: 560px) {
+        .dev-projects-container .no-project .fork {
+          height: 75px; } }
+      @media only screen and (max-width: 440px) {
+        .dev-projects-container .no-project .fork {
+          height: 50px; } }
   .dev-projects-container .no-project,
   .dev-projects-container .project-card {
     background: #ffffff;
     border-left: 10px solid #AAEFDF;
-    padding: 15px 10px 0;
+    padding: 15px 10px 15px;
     margin-top: 40px;
     width: 60%;
     box-shadow: 0px 0px 5px 0px #ced0ce;
     border-radius: 5px; }
+    @media only screen and (max-width: 700px) {
+      .dev-projects-container .no-project,
+      .dev-projects-container .project-card {
+        width: 75%; } }
     .dev-projects-container .no-project h3,
     .dev-projects-container .project-card h3 {
       font-size: 30px; }
+      @media only screen and (max-width: 560px) {
+        .dev-projects-container .no-project h3,
+        .dev-projects-container .project-card h3 {
+          font-size: 25px; } }
+      @media only screen and (max-width: 440px) {
+        .dev-projects-container .no-project h3,
+        .dev-projects-container .project-card h3 {
+          font-size: 20px; } }
     .dev-projects-container .no-project .brief-description,
     .dev-projects-container .project-card .brief-description {
       margin: 15px 0 0 10px; }
