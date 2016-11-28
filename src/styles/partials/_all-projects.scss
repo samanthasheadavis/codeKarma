@@ -19,6 +19,13 @@
         margin-top: 40px;
         margin-bottom: 40px;
         width: 60%;
+        transition: $responsive;
+        @include media(mobileLarge) {
+          width: 75%;
+        }
+        @include media(mobile) {
+          width: 90%;
+        }
 
         textarea {
             resize: none;
@@ -33,6 +40,9 @@
             @include placeholder {
                 color: $darkGrey;
                 font-size: 18px;
+                @include media(mobileLarge) {
+                  font-size: 16px;
+                }
             }
         }
 

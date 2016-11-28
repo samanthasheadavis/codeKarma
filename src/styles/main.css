@@ -79,7 +79,14 @@ ui-view {
     display: flex;
     margin-top: 40px;
     margin-bottom: 40px;
-    width: 60%; }
+    width: 60%;
+    transition: all 0.5s ease; }
+    @media only screen and (max-width: 560px) {
+      .all-projects-container .searchForm {
+        width: 75%; } }
+    @media only screen and (max-width: 440px) {
+      .all-projects-container .searchForm {
+        width: 90%; } }
     .all-projects-container .searchForm textarea {
       resize: none;
       background: #e6e8e6;
@@ -93,15 +100,27 @@ ui-view {
       .all-projects-container .searchForm textarea::-webkit-input-placeholder {
         color: #4F4F4F;
         font-size: 18px; }
+        @media only screen and (max-width: 560px) {
+          .all-projects-container .searchForm textarea::-webkit-input-placeholder {
+            font-size: 16px; } }
       .all-projects-container .searchForm textarea::-moz-placeholder {
         color: #4F4F4F;
         font-size: 18px; }
+        @media only screen and (max-width: 560px) {
+          .all-projects-container .searchForm textarea::-moz-placeholder {
+            font-size: 16px; } }
       .all-projects-container .searchForm textarea:-moz-placeholder {
         color: #4F4F4F;
         font-size: 18px; }
+        @media only screen and (max-width: 560px) {
+          .all-projects-container .searchForm textarea:-moz-placeholder {
+            font-size: 16px; } }
       .all-projects-container .searchForm textarea:-ms-input-placeholder {
         color: #4F4F4F;
         font-size: 18px; }
+        @media only screen and (max-width: 560px) {
+          .all-projects-container .searchForm textarea:-ms-input-placeholder {
+            font-size: 16px; } }
     .all-projects-container .searchForm .searchBtn {
       border-radius: 0 5px 5px 0;
       width: 100px;
