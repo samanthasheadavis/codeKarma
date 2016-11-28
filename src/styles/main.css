@@ -1371,6 +1371,9 @@ ui-view {
       width: 20px; }
     .dev-dashboard-container .infoContainer .gitHubLink {
       margin-top: 5px; }
+      @media only screen and (max-width: 560px) {
+        .dev-dashboard-container .infoContainer .gitHubLink {
+          font-size: 15px; } }
     .dev-dashboard-container .infoContainer .skills {
       height: auto; }
       .dev-dashboard-container .infoContainer .skills p {
