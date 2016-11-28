@@ -1,10 +1,12 @@
-angular.module('codeKarmaApp').controller('CommunityFeedController', function($state, $scope, RequestService) {
+angular.module('codeKarmaApp').controller('CommunityFeedController', function($state, $scope, RequestService, StorageService) {
 
     this.post = '';
     this.response = '';
     var self = this;
     var storedToken = RequestService.getLocalToken();
     var storedId = RequestService.getLocalId();
+    var likedQuestions = StorageService.getLikedQuestion();
+    var likeComments = StorageService.getLikedComment();
 
 
 
@@ -29,7 +31,7 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
     this.getPosts = function() {
         RequestService.getPosts(storedToken, function(response) {
             $scope.posts = response;
-            console.log($scope.posts);
+
             // console.log($scope.posts);
             // this.date = $scope.posts.created.slice(0, 10);
             // this.time = $scope.posts.created.slice(11, 19);
@@ -47,6 +49,7 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
                 }
             }
             $scope.$apply();
+            self.getBlueLikes(likedQuestions);
         });
     };
 
@@ -66,6 +69,8 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
         RequestService.updateQuestionLikes(this.likes, id, storedToken, function(response) {
             self.getPosts();
         });
+        StorageService.setLikedQuestion(id);
+        likedQuestions = StorageService.getLikedQuestion();
     };
 
     this.updateCommentLikes = function(likes, id) {
@@ -75,6 +80,8 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
         RequestService.updateCommentLikes(this.likes, id, storedToken, function(response) {
             self.getPosts();
         });
+        StorageService.setLikedComment(id);
+
     };
 
     this.getDev = function() {
@@ -108,7 +115,26 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
         });
     }
 
+    this.getBlueLikes = function(storage) {
+      console.log(storage);
+        console.log('hi');
+        var array = storage.split(' ');
+        for (var index = 0; index < array.length; index++) {
+          console.log(array);
+          console.log('in blue loop');
+          var blueId = array[index];
+            for (var newIndex = 0; newIndex < $scope.posts.length; newIndex++) {
+              console.log('in scope loop');
+              var scopeId = $scope.posts[newIndex].question_id;
+                if (scopeId === blueId) {
+                    scopeId.liked = true;
+                }
+            }
+          }
+    };
+
     this.getDev();
     this.getPosts();
+
 
 });
