@@ -3,15 +3,29 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 10px;
     width: 80%;
     height: 100vh;
+    transition: $responsive;
+    @include media(mobile) {
+      width: 100%;
+      background: linear-gradient(rgba(255,255,255, .6), rgba(255,255,255, .6)), url('../../assets/bright_squares.png');
+    }
 
     .main-container {
         display: flex;
         flex-direction: column;
         justify-content: center;
         background: transparent;
+
+        img {
+          transition: $responsive;
+          @include media(mobileLarge) {
+            transform: scale(.75);
+          }
+          @include media(mobile) {
+            transform: scale(.5);
+          }
+        }
     }
 
     button {
@@ -23,6 +37,10 @@
         padding: 10px;
         width: 215px;
         outline: none;
+        transition: $responsive;
+        @include media(mobileLarge) {
+          width: 150px;
+        }
 
         &:hover {
             background: darken($pop, 10%);
@@ -40,6 +58,9 @@
         position: relative;
         display: inline-block;
         transition: color 0.2s ease;
+        @include media(mobileLarge) {
+          font-size: 13px;
+        }
     }
 
     .aboutBtn {
@@ -55,6 +76,11 @@
         font-weight: bold;
         text-transform: uppercase;
         outline: none;
+        @include media(mobileLarge) {
+          margin: 0 0 10px;
+          font-size: 13px;
+          width: 150px;
+        }
 
         &:hover {
             background: darken($pop, 10%);
@@ -65,43 +91,87 @@
     .continueBtnContainer {
         display: flex;
         justify-content: center;
-        transition: all 0.5s ease;
+        transition: $responsive;
+        @include media(mobileLarge) {
+          flex-direction: column;
+        }
+
+        .developer {
+          @include media(mobileLarge) {
+            margin: 10px;
+          }
+        }
     }
 
     h1 {
         font-size: 4em;
         text-align: center;
+        transition: $responsive;
+        @include media(mobileLarge) {
+          font-size: 2.5em;
+        }
     }
 
     h2 {
         margin: 20px 0;
         font-size: 1.5em;
         align-self: center;
+        transition: $responsive;
+        @include media(mobileLarge) {
+          font-size: 1em;
+          margin: 5px 0 30px 0;
+        }
     }
 
     .about {
         display: flex;
-        height: 130vh;
         flex-direction: column;
         justify-content: flex-start;
         position: absolute;
         top: 100vh;
         background: $white;
         width: 80%;
+        @include media(desktopSmall) {
+          margin-top: $vspace;
+          padding-top: $vspace;
+        }
+        @include media(mobile) {
+          width: 100%;
+          background: linear-gradient(rgba(255,255,255, .6), rgba(255,255,255, .6)), url('../../assets/bright_squares.png');
+        }
 
         .aboutContainer {
             display: flex;
             align-items: center;
             justify-content: space-around;
+            @include media(mobileLarge) {
+              padding: 10px;
+            }
+
+            p {
+              transition: $responsive;
+              margin-left: $vspace;
+            }
         }
 
         .aboutSubContainer {
             display: flex;
             justify-content: center;
             padding: 10px;
+            transition: $responsive;
+            @include media(tabletLarge) {
+              flex-direction: column;
+            }
+            @include media(mobile) {
+              padding: 0;
+            }
 
             .mission {
                 flex-shrink: 20;
+                transition: $responsive;
+                @include media(desktopSmall) {
+                  flex-shrink: 2;
+                }
             }
 
             .section {
@@ -112,10 +182,20 @@
                 margin: 15px;
                 border: 1px solid darken(white, 5%);
                 padding: 10px;
+                transition: $responsive;
+                @include media(mobileLarge) {
+                  border: 3px solid $pop;
+                }
 
                 h2 {
                     color: $pop;
                     border-bottom: 1px solid $midGrey;
+                    text-align: center;
+                    @include media(mobileLarge) {
+                      color: $charcoal;
+                      border: none;
+                      font-weight: bold;
+                    }
                 }
 
                 p {
@@ -134,6 +214,10 @@
                     .memberName {
                         font-weight: bold;
                         font-size: 20px;
+                        transition: $responsive;
+                        @include media(tabletLarge) {
+                          margin: $vspace;
+                        }
                     }
 
                     .profile {
@@ -145,6 +229,16 @@
                         width: 50px;
                     }
                 }
+            }
+
+            .section:nth-child(2) {
+
+              .member {
+                @include media(tabletLarge) {
+                  flex-direction: row;
+                  margin-bottom: 15px;
+                }
+              }
             }
         }
     }
