@@ -845,13 +845,14 @@ ui-view {
       margin-top: 10px;
       display: flex;
       flex-wrap: wrap;
-      align-items: flex-start;
       background: #e6e8e6;
       border-radius: 5px;
       flex-direction: column; }
       .client-projects-container .project-details .progress .progress-container .percent-container {
         display: flex;
         margin-bottom: 10px; }
+        .client-projects-container .project-details .progress .progress-container .percent-container .dev-name {
+          margin-right: auto; }
         .client-projects-container .project-details .progress .progress-container .percent-container .progress-bar {
           width: 200px;
           height: 10px;
@@ -875,7 +876,7 @@ ui-view {
       .client-projects-container .project-details .progress .progress-container p:nth-child(3) {
         align-self: flex-start; }
   .client-projects-container .project-details li {
-    margin: 0 10px 15px 10px; }
+    margin: 0 10px 15px; }
     .client-projects-container .project-details li textarea {
       width: 100%;
       height: 50px;

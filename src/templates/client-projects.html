@@ -89,7 +89,7 @@
                 <h4>Developer Progress</h4>
                 <div class="progress-container" ng-repeat = "dev in project.developer_project">
                   <div class="percent-container">
-                    <p><span>{{dev.developer}}</span></p>
+                    <p class="dev-name"><span>{{dev.developer}}</span></p>
                     <div class="progress-bar">
                       <div class="filler" style="width: {{dev.percent_complete}}%"></div>
                     </div>

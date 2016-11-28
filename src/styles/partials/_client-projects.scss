@@ -20,12 +20,11 @@
         position: relative;
         transition: $responsive;
         @include media(tablet) {
-          width: 65%;
+            width: 65%;
         }
         @include media(mobileLarge) {
-          width: 80%;
+            width: 80%;
         }
-
 
         .minimize {
             position: absolute;
@@ -88,13 +87,13 @@
         }
 
         a {
-          transition: $responsive;
-          @include media(tabletLarge) {
-            font-size: 14px;
-          }
-          @include media(mobile) {
-            overflow-wrap: break-word;
-          }
+            transition: $responsive;
+            @include media(tabletLarge) {
+                font-size: 14px;
+            }
+            @include media(mobile) {
+                overflow-wrap: break-word;
+            }
         }
 
         &:hover > a,
@@ -110,9 +109,8 @@
 }
 
 .modal-up {
-  filter: blur(2px);
+    filter: blur(2px);
 }
-
 
 .client-projects-container {
     align-items: center;
@@ -129,7 +127,6 @@
         width: 100%;
     }
 
-
     .project-card {
         background: $white;
         border: 1px solid $midGrey;
@@ -141,12 +138,11 @@
         margin-top: 40px;
         transition: $responsive;
         @include media(tabletLarge) {
-          width: 75%;
+            width: 75%;
         }
         @include media(mobileLarge) {
-          width: 80%;
+            width: 80%;
         }
-
     }
 }
 
@@ -155,62 +151,66 @@
     flex-direction: column;
 
     .title {
-      display: flex;
+        display: flex;
     }
 
     .progress {
-      position: relative;
-      .progress-container {
-        padding: 5px;
-        margin-top: 10px;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: flex-start;
-        background: $lightGrey;
-        border-radius: 5px;
-        flex-direction: column;
+        position: relative;
 
-        .percent-container {
-          display: flex;
-          margin-bottom: 10px;
+        .progress-container {
+            padding: 5px;
+            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            background: $lightGrey;
+            border-radius: 5px;
+            flex-direction: column;
 
-          .progress-bar {
-            width: 200px;
-            height: 10px;
-            background: $white;
-            margin: 4px 10px;
-            border-radius: 3px;
-            position: relative;
-            @include media(mobile) {
-              width: 100px;
+            .percent-container {
+                display: flex;
+                margin-bottom: 10px;
+
+                .dev-name {
+                  margin-right: auto
+                }
+
+                .progress-bar {
+                    width: 200px;
+                    height: 10px;
+                    background: $white;
+                    margin: 4px 10px;
+                    border-radius: 3px;
+                    position: relative;
+                    @include media(mobile) {
+                        width: 100px;
+                    }
+
+                    .filler {
+                        width: 200px;
+                        height: 10px;
+                        position: absolute;
+                        background: $pop;
+                        border-radius: 3px;
+                    }
+                }
             }
 
-            .filler {
-              width: 200px;
-              height: 10px;
-              position: absolute;
-              background: $pop;
-              border-radius: 3px;
+            p {
+                margin-left: 5px;
+
+                span {
+                    font-weight: bold;
+                }
             }
-          }
-        }
 
-        p {
-          margin-left: 5px;
-
-          span {
-            font-weight: bold;
-          }
+            p:nth-child(3) {
+                align-self: flex-start;
+            }
         }
-
-        p:nth-child(3) {
-          align-self: flex-start;
-        }
-      }
     }
 
     li {
-        margin: 0 $hspace $vspace $hspace;
+        margin: 0 $hspace $vspace;
 
         textarea {
             width: 100%;
@@ -231,7 +231,7 @@
             font-size: 30px;
             display: inline;
             @include media(mobile) {
-              font-size: 25px;
+                font-size: 25px;
             }
         }
 
@@ -244,10 +244,10 @@
         }
 
         a {
-          transition: $responsive;
-          @include media(mobileLarge) {
-            overflow-wrap: break-word;
-          }
+            transition: $responsive;
+            @include media(mobileLarge) {
+                overflow-wrap: break-word;
+            }
         }
 
         &:hover > .editIcon {
@@ -259,7 +259,8 @@
             flex-direction: column;
 
             .category-image {
-              position: relative;
+                position: relative;
+
                 &:hover .tooltiptext {
                     display: block;
                 }
@@ -298,8 +299,6 @@
             }
         }
     }
-
-
 
     .editBtn {
         @include button(15px) {};
