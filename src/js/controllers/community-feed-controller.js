@@ -5,8 +5,9 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
     var self = this;
     var storedToken = RequestService.getLocalToken();
     var storedId = RequestService.getLocalId();
-    var likedQuestions = StorageService.getLikedQuestion();
-    var likeComments = StorageService.getLikedComment();
+    // var likedQuestions = StorageService.getLikedQuestion();
+    // var likeComments = StorageService.getLikedComment();
+    // var likedQuestionArray = [];
 
 
 
@@ -49,7 +50,9 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
                 }
             }
             $scope.$apply();
-            self.getBlueLikes(likedQuestions);
+            // likedQuestions= StorageService.getLikedQuestion();
+            // likedQuestionArray.push(likedQuestions);
+            // self.getBlueLikes(likedQuestionArray);
         });
     };
 
@@ -68,9 +71,12 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
         };
         RequestService.updateQuestionLikes(this.likes, id, storedToken, function(response) {
             self.getPosts();
+
         });
-        StorageService.setLikedQuestion(id);
-        likedQuestions = StorageService.getLikedQuestion();
+        // console.log(likedQuestionArray);
+        // var newArray = likedQuestionArray.push(id);
+        // console.log(newArray);
+        // StorageService.setLikedQuestion(newArray);
     };
 
     this.updateCommentLikes = function(likes, id) {
@@ -79,9 +85,9 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
         };
         RequestService.updateCommentLikes(this.likes, id, storedToken, function(response) {
             self.getPosts();
+            // likedCommentArray.push(id);
         });
-        StorageService.setLikedComment(id);
-
+        // StorageService.setLikedComment(likedCommentArray);
     };
 
     this.getDev = function() {
@@ -115,23 +121,23 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
         });
     }
 
-    this.getBlueLikes = function(storage) {
-      console.log(storage);
-        console.log('hi');
-        var array = storage.split(' ');
-        for (var index = 0; index < array.length; index++) {
-          console.log(array);
-          console.log('in blue loop');
-          var blueId = array[index];
-            for (var newIndex = 0; newIndex < $scope.posts.length; newIndex++) {
-              console.log('in scope loop');
-              var scopeId = $scope.posts[newIndex].question_id;
-                if (scopeId === blueId) {
-                    scopeId.liked = true;
-                }
-            }
-          }
-    };
+    // this.getBlueLikes = function(array) {
+    //   console.log(array);
+    //     console.log('hi');
+    //     for (var index = 0; index < array.length; index++) {
+    //       console.log(array);
+    //       console.log('in blue loop');
+    //       var blueId = array[index];
+    //         for (var newIndex = 0; newIndex < $scope.posts.length; newIndex++) {
+    //           console.log('in scope loop');
+    //           var scopeId = $scope.posts[newIndex].question_id;
+    //             if (scopeId === blueId) {
+    //                 scopeId.liked = true;
+    //             }
+    //         }
+    //       }
+    //       $scope.$apply();
+    // };
 
     this.getDev();
     this.getPosts();
