@@ -1,5 +1,6 @@
 .home-container {
-    background: $white;
+    background: linear-gradient(rgba(black, .75), rgba(black, -0.6)), url('../../assets/hero.jpg');
+    background-size: cover;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -7,8 +8,7 @@
     height: 100vh;
     transition: $responsive;
     @include media(mobile) {
-      width: 100%;
-      background: linear-gradient(rgba(255,255,255, .6), rgba(255,255,255, .6)), url('../../assets/bright_squares.png');
+        width: 100%;
     }
 
     .main-container {
@@ -18,13 +18,15 @@
         background: transparent;
 
         img {
-          transition: $responsive;
-          @include media(mobileLarge) {
-            transform: scale(.75);
-          }
-          @include media(mobile) {
-            transform: scale(.5);
-          }
+            width: 66%;
+            margin: 75px auto 15px;
+            transition: $responsive;
+            @include media(mobileLarge) {
+                transform: scale(.75);
+            }
+            @include media(mobile) {
+                transform: scale(.5);
+            }
         }
     }
 
@@ -32,6 +34,7 @@
         height: 50px;
         border: none;
         background: $pop;
+        box-shadow: $box-shadow;
         margin: 0 10px;
         border-radius: 5px;
         padding: 10px;
@@ -39,11 +42,11 @@
         outline: none;
         transition: $responsive;
         @include media(mobileLarge) {
-          width: 150px;
+            width: 150px;
         }
 
         &:hover {
-            background: darken($pop, 10%);
+            background: $white;
             cursor: pointer;
         }
     }
@@ -59,7 +62,7 @@
         display: inline-block;
         transition: color 0.2s ease;
         @include media(mobileLarge) {
-          font-size: 13px;
+            font-size: 13px;
         }
     }
 
@@ -77,13 +80,13 @@
         text-transform: uppercase;
         outline: none;
         @include media(mobileLarge) {
-          margin: 0 0 10px;
-          font-size: 13px;
-          width: 150px;
+            margin: 0 0 10px;
+            font-size: 13px;
+            width: 150px;
         }
 
         &:hover {
-            background: darken($pop, 10%);
+            background: $white;
             cursor: pointer;
         }
     }
@@ -93,13 +96,13 @@
         justify-content: center;
         transition: $responsive;
         @include media(mobileLarge) {
-          flex-direction: column;
+            flex-direction: column;
         }
 
         .developer {
-          @include media(mobileLarge) {
-            margin: 10px;
-          }
+            @include media(mobileLarge) {
+                margin: 10px;
+            }
         }
     }
 
@@ -107,19 +110,24 @@
         font-size: 4em;
         text-align: center;
         transition: $responsive;
+        color: white;
+        font-weight: bold;
         @include media(mobileLarge) {
-          font-size: 2.5em;
+            font-size: 2.5em;
         }
     }
 
     h2 {
-        margin: 20px 0;
+        margin: 20px 0 50px;
         font-size: 1.5em;
         align-self: center;
+        color: white;
+        font-weight: bold;
+        letter-spacing: 3px;
         transition: $responsive;
         @include media(mobileLarge) {
-          font-size: 1em;
-          margin: 5px 0 30px 0;
+            font-size: 1em;
+            margin: 5px 0 30px;
         }
     }
 
@@ -132,12 +140,12 @@
         background: $white;
         width: 80%;
         @include media(desktopSmall) {
-          margin-top: $vspace;
-          padding-top: $vspace;
+            margin-top: $vspace;
+            padding-top: $vspace;
         }
         @include media(mobile) {
-          width: 100%;
-          background: linear-gradient(rgba(255,255,255, .6), rgba(255,255,255, .6)), url('../../assets/bright_squares.png');
+            width: 100%;
+            background: linear-gradient(rgba(255,255,255, .6), rgba(255,255,255, .6)), url('../../assets/bright_squares.png');
         }
 
         .aboutContainer {
@@ -145,12 +153,16 @@
             align-items: center;
             justify-content: space-around;
             @include media(mobileLarge) {
-              padding: 10px;
+                padding: 10px;
+            }
+
+            h1 {
+              color: $charcoal;
             }
 
             p {
-              transition: $responsive;
-              margin-left: $vspace;
+                transition: $responsive;
+                margin-left: $vspace;
             }
         }
 
@@ -160,17 +172,17 @@
             padding: 10px;
             transition: $responsive;
             @include media(tabletLarge) {
-              flex-direction: column;
+                flex-direction: column;
             }
             @include media(mobile) {
-              padding: 0;
+                padding: 0;
             }
 
             .mission {
                 flex-shrink: 20;
                 transition: $responsive;
                 @include media(desktopSmall) {
-                  flex-shrink: 2;
+                    flex-shrink: 2;
                 }
             }
 
@@ -184,7 +196,7 @@
                 padding: 10px;
                 transition: $responsive;
                 @include media(mobileLarge) {
-                  border: 3px solid $pop;
+                    border: 3px solid $pop;
                 }
 
                 h2 {
@@ -192,9 +204,9 @@
                     border-bottom: 1px solid $midGrey;
                     text-align: center;
                     @include media(mobileLarge) {
-                      color: $charcoal;
-                      border: none;
-                      font-weight: bold;
+                        color: $charcoal;
+                        border: none;
+                        font-weight: bold;
                     }
                 }
 
@@ -216,7 +228,7 @@
                         font-size: 20px;
                         transition: $responsive;
                         @include media(tabletLarge) {
-                          margin: $vspace;
+                            margin: $vspace;
                         }
                     }
 
@@ -232,13 +244,12 @@
             }
 
             .section:nth-child(2) {
-
-              .member {
-                @include media(tabletLarge) {
-                  flex-direction: row;
-                  margin-bottom: 15px;
+                .member {
+                    @include media(tabletLarge) {
+                        flex-direction: row;
+                        margin-bottom: 15px;
+                    }
                 }
-              }
             }
         }
     }

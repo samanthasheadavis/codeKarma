@@ -31,7 +31,7 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
 
     this.pullRequest = function(id) {
       $('.dev-projects-container').addClass('modal-up');
-      this.showModal = true;
+      $scope.showModal = true;
       this.projectId = id;
       this.branchUrl = "https://code-karma-api.herokuapp.com/branches/" + this.projectId + "?token=" + storedToken;
       var settings = {
@@ -40,6 +40,7 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
           "url": this.branchUrl,
           "method": "GET"
       };
+
       $.ajax(settings).done(function(response) {
           $scope.headBranches = response.head_branches;
           $scope.baseBranches = response.base_branches;
@@ -48,7 +49,7 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
     };
 
     this.closeModal = function() {
-      this.showModal = false;
+      $scope.showModal = false;
       $('.dev-projects-container').removeClass('modal-up');
     };
 
@@ -62,7 +63,7 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
     };
 
     this.submitRequest = function() {
-
+      this.closeModal();
       this.requestUrl = "https://code-karma-api.herokuapp.com/developer_projects/" + this.projectId + "?token=" + storedToken;
       console.log($scope.pullInfo);
       var settings = {
@@ -70,7 +71,17 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
           "crossDomain": true,
           "url": this.requestUrl,
           "method": "POST",
-          "data": $scope.pullInfo
+          "data": $scope.pullInfo,
+          "success": function(response) {
+            $scope.message = "Success! The client will be notified of your pull request.";
+          },
+          "error": function(response) {
+            $scope.showStatus = true;
+            $scope.error = true;
+            $scope.message = "Oops! Looks like something went wrong. Check to make sure you're choosing the right branches and try again!";
+            $scope.$apply();
+          }
+
       };
       $.ajax(settings).done(function(response) {
         console.log(response);

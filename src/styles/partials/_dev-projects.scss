@@ -140,6 +140,7 @@
                 }
             }
         }
+
         .sub-container:nth-child(2) {
             margin-left: 15px;
         }
@@ -158,6 +159,110 @@
     filter: blur(2px);
 }
 
+.status-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: fixed;
+    left: 50%;
+    top: 33%;
+    z-index: 6;
+    transform: translateX(-50%);
+    background: $white;
+    border-radius: 5px;
+    box-shadow: 0 0 200px 40px rgba(79,79,79,1);
+    padding: $vspace;
+    align-items: center;
+    @include media(tablet) {
+        width: 60%;
+        top: 33%;
+    }
+    @include media(mobileLarge) {
+        width: 75%;
+    }
+
+    .minimize {
+        position: absolute;
+        right: -5px;
+        top: -27px;
+        border-radius: 50%;
+
+        img {
+            width: 30px;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    p {
+        font-size: 24px;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    button {
+        @include button(15px);
+
+        &:hover {
+            background: $pop;
+            cursor: pointer;
+        }
+    }
+
+    .wrapper {
+        width: 100px;
+        margin: 1em auto 0;
+        height: 85px;
+    }
+
+    .checkmark {
+        stroke: $pop;
+        stroke-dashoffset: 745.74853515625;
+        stroke-dasharray: 745.74853515625;
+        animation: dash 2s ease-out forwards;
+    }
+    @keyframes dash {
+        0% {
+            stroke-dashoffset: 745.74853515625;
+        }
+
+        100% {
+            stroke-dashoffset: 0;
+        }
+    }
+
+    .animate {
+        position: absolute;
+        height: 80px;
+        left: calc(50% - 40px);
+        width: 80px;
+    }
+
+    svg.animate polyline {
+        animation: 1.5s fill forwards;
+        fill: none;
+        stroke: red;
+        stroke-width: 4;
+        stroke-dasharray: 200;
+        stroke-dashoffset: 200;
+    }
+    @keyframes fill {
+        0% {
+            stroke-dashoffset: 200;
+        }
+
+        100% {
+            stroke-dashoffset: 0;
+        }
+    }
+}
+
 .dev-projects-container {
     background: rgba(255,255,255, .6);
     display: flex;
@@ -166,7 +271,6 @@
     align-items: center;
     flex-direction: column;
     width: 80%;
-
     transition: all 0.5s ease;
     @include media(desktop) {
         width: 85%;
@@ -190,7 +294,7 @@
             font-size: 20px;
             line-height: 24px;
             @include media(mobile) {
-              font-size: 16px;
+                font-size: 16px;
             }
 
             a {
@@ -204,10 +308,10 @@
             height: 100px;
             margin: 0 $hspace $vspace;
             @include media(mobileLarge) {
-              height: 75px;
+                height: 75px;
             }
             @include media(mobile) {
-              height: 50px;
+                height: 50px;
             }
         }
     }
@@ -216,22 +320,22 @@
     .project-card {
         background: $white;
         border-left: $accent-border;
-        padding: $vspace $hspace $vspace;
+        padding: $vspace $hspace;
         margin-top: 40px;
         width: 60%;
         box-shadow: $box-shadow;
         border-radius: $border-radius;
         @include media(tablet) {
-          width: 75%;
+            width: 75%;
         }
 
         h3 {
             font-size: 30px;
             @include media(mobileLarge) {
-              font-size: 25px;
+                font-size: 25px;
             }
             @include media(mobile) {
-              font-size: 20px;
+                font-size: 20px;
             }
         }
 

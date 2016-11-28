@@ -1,44 +1,62 @@
-<div class="pull-request-modal" ng-show="devProjects.showModal">
-  <img src="assets/delete.png" alt="Delete by Huu Nguyen from the Noun Project" ng-click="devProjects.closeModal()">
-  <h1>Pull Request</h1>
-  <p class="project-body"><span>1</span>Enter a title for your Pull Request</p>
-  <input type="text" ng-model="pullInfo.title">
-  <p class="project-body"><span>2</span>Add a comment (required)</p>
-  <textarea ng-model="pullInfo.body"></textarea>
-  <div class="select-container">
-    <div class="sub-container">
-      <p><span>3</span> Select a base branch</p>
-      <div class="modal-tooltip">
-        <img src="assets/question.png" alt="Question by Gregor Črešnar from the Noun Project">
-        <p class="tooltip-text">The base branch is the branch in the client's repository that you are requesting to merge your changes with.</p>
-      </div>
-      <select class="base-branch" ng-model="pullInfo.base">
+<div class="pull-request-modal" ng-show="showModal">
+    <img src="assets/delete.png" alt="Delete by Huu Nguyen from the Noun Project" ng-click="devProjects.closeModal()">
+    <h1>Pull Request</h1>
+    <p class="project-body"><span>1</span>Enter a title for your Pull Request</p>
+    <input type="text" ng-model="pullInfo.title">
+    <p class="project-body"><span>2</span>Add a comment (required)</p>
+    <textarea ng-model="pullInfo.body"></textarea>
+    <div class="select-container">
+        <div class="sub-container">
+            <p><span>3</span> Select a base branch</p>
+            <div class="modal-tooltip">
+                <img src="assets/question.png" alt="Question by Gregor Črešnar from the Noun Project">
+                <p class="tooltip-text">The base branch is the branch in the client's repository that you are requesting to merge your changes with.</p>
+            </div>
+            <select class="base-branch" ng-model="pullInfo.base">
         <option ng-repeat="branch in baseBranches">{{branch.name}}</option>
       </select>
-    </div>
-    <div class="sub-container">
-      <p><span>4</span> Select a head branch</p>
-      <div class="modal-tooltip">
-        <img src="assets/question.png" alt="Question by Gregor Črešnar from the Noun Project">
-        <p class="tooltip-text">The head branch is the branch in your forked repository that you are requesting to merge into the client's base branch.</p>
-      </div>
-      <select class="head-branch" ng-model="pullInfo.head">
+        </div>
+        <div class="sub-container">
+            <p><span>4</span> Select a head branch</p>
+            <div class="modal-tooltip">
+                <img src="assets/question.png" alt="Question by Gregor Črešnar from the Noun Project">
+                <p class="tooltip-text">The head branch is the branch in your forked repository that you are requesting to merge into the client's base branch.</p>
+            </div>
+            <select class="head-branch" ng-model="pullInfo.head">
         <option ng-repeat="branch in headBranches">{{branch.name}}</option>
       </select>
+        </div>
     </div>
-  </div>
-  <button ng-click="devProjects.submitRequest()">Submit</button>
+    <button ng-click="devProjects.submitRequest()">Submit</button>
 </div>
 
+<div class="status-container" ng-show="showStatus">
+    <p class="minimize" ng-click="showStatus=false"><img src="assets/delete.png" alt="Delete by Huu Nguyen from the Noun Project" </p>
+        <p>
+            {{message}}
+        </p>
+        <div class="wrapper">
+            <svg ng-hide="error" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 98.5 98.5" enable-background="new 0 0 98.5 98.5" xml:space="preserve">
+          <path class="checkmark" fill="none" stroke-width="8" stroke-miterlimit="10" d="M81.7,17.8C73.5,9.3,62,4,49.2,4
+           C24.3,4,4,24.3,4,49.2s20.3,45.2,45.2,45.2s45.2-20.3,45.2-45.2c0-8.6-2.4-16.6-6.5-23.4l0,0L45.6,68.2L24.7,47.3"/>
+         </svg>
+         <svg class="animate">
+           <polyline points="1 79, 79 1" />
+           <polyline points="79 79, 1 1" />
+          </svg>
+        </div>
+
+        <a ng-hide="error" ui-sref="codeKarmaParent.devProjects"><button>See it in My Projects</button></a>
+</div>
 
 <div class="dev-projects-container">
-  <div class="mobile-nav">
-    <h1 ui-sref="codeKarmaParent.home">Code Karma</h1>
-    <img src="assets/menu.png" alt="menu by unlimicon from the Noun Project" ng-click="account.toggleSlide()">
-  </div>
+    <div class="mobile-nav">
+        <h1 ui-sref="codeKarmaParent.home">Code Karma</h1>
+        <img src="assets/menu.png" alt="menu by unlimicon from the Noun Project" ng-click="account.toggleSlide()">
+    </div>
     <header>
         <img ui-sref="codeKarmaParent.home" src="assets/lotus_blue.png" alt="Lotus by Muhammad Faizal Rahman Hakim from the Noun Project" />
-        <h1 ui-sref="codeKarmaParent.home" >Code Karma</h1>
+        <h1 ui-sref="codeKarmaParent.home">Code Karma</h1>
         <nav class="nav">
             <div class="container">
                 <ul class="navList">
@@ -65,11 +83,11 @@
     </header>
 
     <div class="no-project" ng-hide="ownsProjects">
-      <div class="message">
-        <h3>Hi, {{currentUser.username}}!</h3>
-        <p>It looks like you haven't forked any projects yet. Visit the <span><a ui-sref="codeKarmaParent.allProjects">All Projects</a></span> page to see what's available!</p>
-      </div>
-      <img src="assets/fork.png" alt="fork icon created by Loudoun Design Co. from Noun Project" class="fork">
+        <div class="message">
+            <h3>Hi, {{currentUser.username}}!</h3>
+            <p>It looks like you haven't forked any projects yet. Visit the <span><a ui-sref="codeKarmaParent.allProjects">All Projects</a></span> page to see what's available!</p>
+        </div>
+        <img src="assets/fork.png" alt="fork icon created by Loudoun Design Co. from Noun Project" class="fork">
     </div>
 
     <div class="project-card" ng-cloak ng-repeat="project in projects | orderBy: '-'">
@@ -78,8 +96,8 @@
         <div class="details">
             <form>
                 <div class="status">
-                  progress :  <span class="progress">{{project.progress}}</span>%
-                <div slider id="flat-slider" project="project.id" model="project.progress"></div>
+                    progress : <span class="progress">{{project.progress}}</span>%
+                    <div slider id="flat-slider" project="project.id" model="project.progress"></div>
                 </div>
                 <label for="completion-date" class="date">est. completion date</label>
                 <input ng-model="project.completionDate" name="project.completionDate" type="date">
@@ -87,8 +105,8 @@
             </form>
             <button class="help-btn active {{project.id}}" ui-sref="codeKarmaParent.communityFeed">Ask for Help</button>
             <div class="tooltip {{project.id}}">
-              <button class="submit-btn " ng-click="devProjects.pullRequest(project.id)">Open a Pull Request</button>
-              <p class="tooltiptext">submit a pull request to GitHub</p>
+                <button class="submit-btn " ng-click="devProjects.pullRequest(project.id)">Open a Pull Request</button>
+                <p class="tooltiptext">submit a pull request to GitHub</p>
             </div>
         </div>
     </div>
