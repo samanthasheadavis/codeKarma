@@ -1131,9 +1131,11 @@ ui-view {
         display: flex; }
         .community-feed-container .flexContainer .commPost .responseForm textarea {
           box-sizing: border-box;
+          font-size: 16px;
+          padding-top: 8px;
           width: 100%;
           resize: none;
-          padding: 10px;
+          text-indent: 10px;
           border: 1px solid #e6e8e6;
           outline: none;
           height: 36px;

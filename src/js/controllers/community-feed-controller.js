@@ -32,20 +32,15 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
     this.getPosts = function() {
         RequestService.getPosts(storedToken, function(response) {
             $scope.posts = response;
-
-            // console.log($scope.posts);
-            // this.date = $scope.posts.created.slice(0, 10);
-            // this.time = $scope.posts.created.slice(11, 19);
-            // $scope.posts.timeElapsed = this.date + ' ' + this.time;
-
             for (var index = 0; index < $scope.posts.length; index++) {
+                var newTime = moment($scope.posts[index].created).tz("UTC");
+                $scope.posts[index].timeElapsed = moment(newTime, "YYYY-MM-DDTHH:mm:ss.SSSSZ").fromNow();
                 $scope.posts[index].showMore = 3;
                 if ($scope.posts[index].comments.length > 0) {
                     var currentPost = $scope.posts[index].comments;
                     for (var commIndex = 0; commIndex < currentPost.length; commIndex++) {
-                        this.commentDate = currentPost[commIndex].created.slice(0, 10);
-                        this.commentTime = currentPost[commIndex].created.slice(11, 19);
-                        currentPost[commIndex].commentTimestamp = this.commentDate + ' ' + this.commentTime;
+                        var newCommentTime = moment(currentPost[commIndex].created).tz("UTC");
+                        currentPost[commIndex].commentTimestamp = moment(newCommentTime, "YYYY-MM-DDTHH:mm:ss.SSSSZ").fromNow();
                     }
                 }
             }
