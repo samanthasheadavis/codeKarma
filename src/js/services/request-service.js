@@ -80,6 +80,7 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
             github: response.github,
             orgName: response.organization_name,
             orgSite: response.organization_site,
+            commits: response.commits,
             skills: response.skills || []
         };
         return currentUser;
@@ -234,22 +235,6 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
       localStorageService.set('storedId', id);
     }
 
-    function setLikedQuestion(liked) {
-      localStorageService.set('likedQuestion', liked);
-    }
-
-    function getLikedQuestion() {
-        return localStorageService.get('likedQuestion') || [];
-    }
-
-    function setLikedComment(liked) {
-      localStorageService.set('likedComment', liked);
-    }
-
-    function getLikedComment() {
-        return localStorageService.get('likedComment') || [];
-    }
-
 
 
     return {
@@ -275,10 +260,6 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
         updateCommentLikes: updateCommentLikes,
         getLocalToken: getLocalToken,
         setLocalToken: setLocalToken,
-        getLikedQuestion: getLikedQuestion,
-        setLikedQuestion: setLikedQuestion,
-        getLikedComment: getLikedComment,
-        setLikedComment: setLikedComment,
         getLocalId: getLocalId,
     };
 

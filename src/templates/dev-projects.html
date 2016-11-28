@@ -79,15 +79,15 @@
             <form>
                 <div class="status">
                   progress :  <span class="progress">{{project.progress}}</span>%
-                <div slider id="flat-slider" project="project.id" model="progress"></div>
+                <div slider id="flat-slider" project="project.id" model="project.progress"></div>
                 </div>
                 <label for="completion-date" class="date">est. completion date</label>
-                <input ng-model="completionDate" name="completionDate" type="date">
-                <button type="submit" class="update" ng-click="updateProgress(progress, completionDate, project.id)">Update</button>
+                <input ng-model="project.completionDate" name="project.completionDate" type="date">
+                <button type="submit" class="update" ng-click="updateProgress(project.progress, project.completionDate, project.id)">Update</button>
             </form>
             <button class="help-btn active {{project.id}}" ui-sref="codeKarmaParent.communityFeed">Ask for Help</button>
-            <div class="tooltip">
-              <button class="submit-btn {{project.id}}" ng-click="devProjects.pullRequest(project.id)">Open a Pull Request</button>
+            <div class="tooltip {{project.id}}">
+              <button class="submit-btn " ng-click="devProjects.pullRequest(project.id)">Open a Pull Request</button>
               <p class="tooltiptext">submit a pull request to GitHub</p>
             </div>
         </div>
