@@ -79,7 +79,14 @@ ui-view {
     display: flex;
     margin-top: 40px;
     margin-bottom: 40px;
-    width: 60%; }
+    width: 60%;
+    transition: all 0.5s ease; }
+    @media only screen and (max-width: 560px) {
+      .all-projects-container .searchForm {
+        width: 75%; } }
+    @media only screen and (max-width: 440px) {
+      .all-projects-container .searchForm {
+        width: 90%; } }
     .all-projects-container .searchForm textarea {
       resize: none;
       background: #e6e8e6;
@@ -93,15 +100,27 @@ ui-view {
       .all-projects-container .searchForm textarea::-webkit-input-placeholder {
         color: #4F4F4F;
         font-size: 18px; }
+        @media only screen and (max-width: 560px) {
+          .all-projects-container .searchForm textarea::-webkit-input-placeholder {
+            font-size: 16px; } }
       .all-projects-container .searchForm textarea::-moz-placeholder {
         color: #4F4F4F;
         font-size: 18px; }
+        @media only screen and (max-width: 560px) {
+          .all-projects-container .searchForm textarea::-moz-placeholder {
+            font-size: 16px; } }
       .all-projects-container .searchForm textarea:-moz-placeholder {
         color: #4F4F4F;
         font-size: 18px; }
+        @media only screen and (max-width: 560px) {
+          .all-projects-container .searchForm textarea:-moz-placeholder {
+            font-size: 16px; } }
       .all-projects-container .searchForm textarea:-ms-input-placeholder {
         color: #4F4F4F;
         font-size: 18px; }
+        @media only screen and (max-width: 560px) {
+          .all-projects-container .searchForm textarea:-ms-input-placeholder {
+            font-size: 16px; } }
     .all-projects-container .searchForm .searchBtn {
       border-radius: 0 5px 5px 0;
       width: 100px;
@@ -1371,6 +1390,9 @@ ui-view {
       width: 20px; }
     .dev-dashboard-container .infoContainer .gitHubLink {
       margin-top: 5px; }
+      @media only screen and (max-width: 560px) {
+        .dev-dashboard-container .infoContainer .gitHubLink {
+          font-size: 15px; } }
     .dev-dashboard-container .infoContainer .skills {
       height: auto; }
       .dev-dashboard-container .infoContainer .skills p {
@@ -1542,6 +1564,9 @@ ui-view {
       margin-top: 15px;
       font-size: 20px;
       line-height: 24px; }
+      @media only screen and (max-width: 440px) {
+        .dev-projects-container .no-project p {
+          font-size: 16px; } }
       .dev-projects-container .no-project p a {
         font-weight: bold;
         text-decoration: none;
@@ -1549,18 +1574,36 @@ ui-view {
     .dev-projects-container .no-project .fork {
       height: 100px;
       margin: 0 10px 15px; }
+      @media only screen and (max-width: 560px) {
+        .dev-projects-container .no-project .fork {
+          height: 75px; } }
+      @media only screen and (max-width: 440px) {
+        .dev-projects-container .no-project .fork {
+          height: 50px; } }
   .dev-projects-container .no-project,
   .dev-projects-container .project-card {
     background: #ffffff;
     border-left: 10px solid #AAEFDF;
-    padding: 15px 10px 0;
+    padding: 15px 10px 15px;
     margin-top: 40px;
     width: 60%;
     box-shadow: 0px 0px 5px 0px #ced0ce;
     border-radius: 5px; }
+    @media only screen and (max-width: 700px) {
+      .dev-projects-container .no-project,
+      .dev-projects-container .project-card {
+        width: 75%; } }
     .dev-projects-container .no-project h3,
     .dev-projects-container .project-card h3 {
       font-size: 30px; }
+      @media only screen and (max-width: 560px) {
+        .dev-projects-container .no-project h3,
+        .dev-projects-container .project-card h3 {
+          font-size: 25px; } }
+      @media only screen and (max-width: 440px) {
+        .dev-projects-container .no-project h3,
+        .dev-projects-container .project-card h3 {
+          font-size: 20px; } }
     .dev-projects-container .no-project .brief-description,
     .dev-projects-container .project-card .brief-description {
       margin: 15px 0 0 10px; }

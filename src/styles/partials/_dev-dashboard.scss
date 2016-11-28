@@ -220,6 +220,9 @@
 
         .gitHubLink {
           margin-top: 5px;
+          @include media(mobileLarge) {
+            font-size: 15px;
+          }
         }
 
         .skills {
