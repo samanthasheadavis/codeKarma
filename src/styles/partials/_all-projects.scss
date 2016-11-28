@@ -7,6 +7,8 @@
     width: 80%;
     padding-bottom: 40px;
     transition: all 0.5s ease;
+    height: auto;
+    min-height: 100%;
     @include media(desktop) {
         width: 85%;
     }

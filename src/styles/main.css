@@ -68,7 +68,9 @@ ui-view {
   justify-content: flex-start;
   width: 80%;
   padding-bottom: 40px;
-  transition: all 0.5s ease; }
+  transition: all 0.5s ease;
+  height: auto;
+  min-height: 100%; }
   @media only screen and (max-width: 1220px) {
     .all-projects-container {
       width: 85%; } }
@@ -1685,7 +1687,6 @@ ui-view {
   align-items: center;
   flex-direction: column;
   width: 80%;
-  height: 100%;
   transition: all 0.5s ease; }
   @media only screen and (max-width: 1220px) {
     .dev-projects-container {
