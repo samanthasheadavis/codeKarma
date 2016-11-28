@@ -114,7 +114,6 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
             method: 'POST',
             url: 'https://code-karma-api.herokuapp.com/projects/' + id + '?token=' + storedToken
         }).then(function successCallback(response) {
-            $state.go('codeKarmaParent.devProjects');
         }, function errorCallback(response) {
             return response;
         });

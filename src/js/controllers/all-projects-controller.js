@@ -62,14 +62,10 @@ angular.module('codeKarmaApp').controller('AllProjectsController', function($sta
     $scope.forkRepo = function(project) {
       this.id = project.id;
       RequestService.forkRepo(storedToken, this.id);
+      project.showFork = true;
     };
 
     // add project info to user object
-
-
-    // Search functionality
-
-    this.keyword = '';
 
 
     this.getUrl();

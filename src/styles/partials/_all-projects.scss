@@ -21,10 +21,10 @@
         width: 60%;
         transition: $responsive;
         @include media(mobileLarge) {
-          width: 75%;
+            width: 75%;
         }
         @include media(mobile) {
-          width: 90%;
+            width: 90%;
         }
 
         textarea {
@@ -41,20 +41,20 @@
                 color: $darkGrey;
                 font-size: 18px;
                 @include media(mobileLarge) {
-                  font-size: 16px;
+                    font-size: 16px;
                 }
             }
         }
 
         .searchBtn {
-          border-radius: 0 5px 5px 0;
-          width: 100px;
-          border: none;
-          outline: none;
-          margin: 0;
-          padding: 0;
-          font-family: $raleway;
-          font-size: 1em;
+            border-radius: 0 5px 5px 0;
+            width: 100px;
+            border: none;
+            outline: none;
+            margin: 0;
+            padding: 0;
+            font-family: $raleway;
+            font-size: 1em;
 
             &:hover {
                 background: $pop;
@@ -104,7 +104,7 @@
                     }
 
                     &:hover > .languages {
-                      border: 3px solid $pop;
+                        border: 3px solid $pop;
                     }
 
                     img {
@@ -143,11 +143,10 @@
                             display: block;
                         }
                     }
-
                 }
 
                 .bold {
-                  font-weight: bold;
+                    font-weight: bold;
                 }
 
                 .languages {
@@ -155,7 +154,6 @@
                     margin: $vspace $hspace 0 0;
                     display: inline;
                     padding: 5px;
-
                 }
             }
         }
@@ -246,6 +244,76 @@
 
             &:focus {
                 outline: 0;
+            }
+        }
+    }
+
+    .fork-message {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+        background: $white;
+        border-radius: 5px;
+        box-shadow: 0 0 200px 40px rgba(79,79,79,1);
+        padding: $vspace $vspace;
+        align-items: center;
+
+        .minimize {
+            position: absolute;
+            right: -5px;
+            top: -27px;
+            border-radius: 50%;
+
+            img {
+                width: 30px;
+            }
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+
+        p {
+          font-size: 24px;
+          margin-top: 20px;
+          text-align: center;
+        }
+
+        a {
+          text-decoration: none;
+        }
+
+        button {
+          @include button(15px);
+
+          &:hover {
+            background: $pop;
+            cursor: pointer;
+          }
+        }
+
+        .wrapper {
+            width: 100px;
+            margin: 1em auto 0;
+        }
+
+        .checkmark {
+            stroke: $pop;
+            stroke-dashoffset: 745.74853515625;
+            stroke-dasharray: 745.74853515625;
+            animation: dash 2s ease-out forwards;
+        }
+        @keyframes dash {
+            0% {
+                stroke-dashoffset: 745.74853515625;
+            }
+
+            100% {
+                stroke-dashoffset: 0;
             }
         }
     }

@@ -271,7 +271,62 @@ ui-view {
         border: 3px solid #191919; }
       .all-projects-container .details .fork-btn:focus {
         outline: 0; }
-
+  .all-projects-container .fork-message {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 200px 40px #4f4f4f;
+    padding: 15px 15px;
+    align-items: center; }
+    .all-projects-container .fork-message .minimize {
+      position: absolute;
+      right: -5px;
+      top: -27px;
+      border-radius: 50%; }
+      .all-projects-container .fork-message .minimize img {
+        width: 30px; }
+      .all-projects-container .fork-message .minimize:hover {
+        cursor: pointer; }
+    .all-projects-container .fork-message p {
+      font-size: 24px;
+      margin-top: 20px;
+      text-align: center; }
+    .all-projects-container .fork-message a {
+      text-decoration: none; }
+    .all-projects-container .fork-message button {
+      background: none;
+      border: 3px solid #AAEFDF;
+      border-radius: 5px;
+      color: #191919;
+      display: block;
+      font-size: 15px;
+      font-weight: bold;
+      margin: 10px;
+      padding: 10px;
+      position: relative;
+      text-transform: uppercase;
+      outline: none; }
+      .all-projects-container .fork-message button:hover {
+        background: #AAEFDF;
+        cursor: pointer; }
+    .all-projects-container .fork-message .wrapper {
+      width: 100px;
+      margin: 1em auto 0; }
+    .all-projects-container .fork-message .checkmark {
+      stroke: #AAEFDF;
+      stroke-dashoffset: 745.74853515625;
+      stroke-dasharray: 745.74853515625;
+      animation: dash 2s ease-out forwards; }
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 745.74853515625; }
+  100% {
+    stroke-dashoffset: 0; } }
 .client-dashboard-container {
   background: rgba(255, 255, 255, 0.6);
   display: flex;
