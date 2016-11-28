@@ -265,9 +265,11 @@
 
                 textarea {
                     box-sizing: border-box;
+                    font-size: 16px;
+                    padding-top: 8px;
                     width: 100%;
                     resize: none;
-                    padding: 10px;
+                    text-indent: 10px;
                     border: 1px solid $lightGrey;
                     outline: none;
                     height: 36px;

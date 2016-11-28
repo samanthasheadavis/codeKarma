@@ -38,13 +38,13 @@
                     <img class="questioner-img" src="{{post.questioner_image}}" alt="{{post.questioner}}">
                     <p class="question">{{post.question}}</p>
                     <div class="like-container">
-                        <img class="like" ng-class= "{'active': post.question_id.liked }"src="assets/like.png" alt="like by dilayorganci from the Noun Project" ng-click="communityFeed.updateQuestionLikes(post.likes, post.question_id)">
+                        <img class="like" ng-class= "{'active': post.liked }"src="assets/like.png" alt="like by dilayorganci from the Noun Project" ng-click="communityFeed.updateQuestionLikes(post.likes, post.question_id)">
                         <p class="likeAmount"><span>{{post.likes}}</span> Likes</p>
                     </div>
                 </div>
                 <div class="postInfoContainer">
                     <h1 class="name">{{post.questioner}}</h1>
-                    <p class="timeElapsed"><span class="timeStamp">{{post.timeElapsed}}</span> ago</p>
+                    <p class="timeElapsed">{{post.timeElapsed}}</p>
                 </div>
                 <div class="responsesContainer">
                     <div class="response" ng-repeat="comment in post.comments | orderBy: 'id' | limitTo: post.showMore">
@@ -64,7 +64,7 @@
                     </div>
                 </div>
                 <div class="responseForm">
-                    <textarea id="post.question_id" name="post" placeholder="Post a response" ng-model="post.response"></textarea>
+                    <textarea id="post.question_id" name="post" placeholder="post a response..." ng-model="post.response"></textarea>
                     <button type="button" class="respondBtn" ng-click="communityFeed.addResponse(post.response, post.question_id)">Post</button>
                 </div>
             </div>
