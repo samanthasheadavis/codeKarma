@@ -222,6 +222,15 @@
             font-family: $raleway;
         }
 
+        .github-repo-url {
+          text-decoration: none;
+          color: $charcoal;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
         img {
             width: 25px;
             margin-left: 15px;

@@ -163,6 +163,15 @@
             font-size: 20px;
             margin: $vspace $hspace;
 
+            .github-account {
+              text-decoration: none;
+              color: $charcoal;
+
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+
             input {
                 width: 250px;
                 font-size: 20px;

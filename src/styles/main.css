@@ -300,7 +300,8 @@ ui-view {
         padding: 10px;
         position: relative;
         text-transform: uppercase;
-        outline: none; }
+        outline: none;
+        margin-bottom: 0; }
         .all-projects-container .project-card .project-contents .details-btn:hover {
           background: #AAEFDF;
           color: white; }
@@ -885,6 +886,11 @@ ui-view {
       resize: none;
       font-size: 14px;
       font-family: "Raleway", sans-serif; }
+    .client-projects-container .project-details li .github-repo-url {
+      text-decoration: none;
+      color: #191919; }
+      .client-projects-container .project-details li .github-repo-url:hover {
+        text-decoration: underline; }
     .client-projects-container .project-details li img {
       width: 25px;
       margin-left: 15px; }
@@ -1491,6 +1497,15 @@ ui-view {
     .dev-dashboard-container .infoContainer .skills {
       font-size: 20px;
       margin: 15px 10px; }
+      .dev-dashboard-container .infoContainer .gitHubLink .github-account,
+      .dev-dashboard-container .infoContainer .name .github-account,
+      .dev-dashboard-container .infoContainer .skills .github-account {
+        text-decoration: none;
+        color: #191919; }
+        .dev-dashboard-container .infoContainer .gitHubLink .github-account:hover,
+        .dev-dashboard-container .infoContainer .name .github-account:hover,
+        .dev-dashboard-container .infoContainer .skills .github-account:hover {
+          text-decoration: underline; }
       .dev-dashboard-container .infoContainer .gitHubLink input,
       .dev-dashboard-container .infoContainer .name input,
       .dev-dashboard-container .infoContainer .skills input {

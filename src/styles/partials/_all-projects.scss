@@ -271,6 +271,7 @@
 
             .details-btn {
                 @include button(12px) {};
+                margin-bottom: 0;
 
                 &:hover {
                     background: $pop;
