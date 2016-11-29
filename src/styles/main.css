@@ -328,6 +328,9 @@ ui-view {
       margin: 0 10px; }
     .all-projects-container .details li {
       margin: 15px 10px; }
+      .all-projects-container .details li.description {
+        line-height: 19px;
+        letter-spacing: .05em; }
     .all-projects-container .details a {
       color: black; }
     .all-projects-container .details .fork-btn {
@@ -547,6 +550,19 @@ ui-view {
       font-size: 20px;
       padding: 15px 0;
       margin: 0; }
+      .client-dashboard-container .infoContainer .gitHubLink .client-github,
+      .client-dashboard-container .infoContainer .name .client-github,
+      .client-dashboard-container .infoContainer .orgLink .client-github,
+      .client-dashboard-container .infoContainer .orgName .client-github,
+      .client-dashboard-container .infoContainer .username .client-github {
+        text-decoration: none;
+        color: #191919; }
+        .client-dashboard-container .infoContainer .gitHubLink .client-github:hover,
+        .client-dashboard-container .infoContainer .name .client-github:hover,
+        .client-dashboard-container .infoContainer .orgLink .client-github:hover,
+        .client-dashboard-container .infoContainer .orgName .client-github:hover,
+        .client-dashboard-container .infoContainer .username .client-github:hover {
+          text-decoration: underline; }
       .client-dashboard-container .infoContainer .gitHubLink input,
       .client-dashboard-container .infoContainer .name input,
       .client-dashboard-container .infoContainer .orgLink input,

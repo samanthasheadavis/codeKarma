@@ -313,6 +313,11 @@
 
         li {
             margin: $vspace $hspace;
+
+            &.description {
+              line-height: 19px;
+              letter-spacing: .05em;
+            }
         }
 
         a {
