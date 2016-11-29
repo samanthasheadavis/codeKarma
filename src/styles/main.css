@@ -2234,7 +2234,7 @@ header {
   width: 80%;
   height: 100vh;
   transition: all 0.5s ease; }
-  @media only screen and (max-width: 440px) {
+  @media only screen and (max-width: 560px) {
     .home-container {
       width: 100%; } }
   .home-container .main-container {
@@ -2365,6 +2365,9 @@ header {
         transition: all 0.5s ease;
         text-align: center;
         margin: 0 100px; }
+        @media only screen and (max-width: 560px) {
+          .home-container .about .aboutContainer .about-text {
+            margin: 0 30px; } }
       .home-container .about .aboutContainer .about-nav {
         display: flex;
         margin: 20px;
@@ -2444,11 +2447,31 @@ header {
           display: flex;
           width: 50%;
           justify-content: space-around; }
+          @media only screen and (max-width: 1000px) {
+            .home-container .about .aboutSubContainer .section .front-end {
+              width: 75%; } }
+          @media only screen and (max-width: 560px) {
+            .home-container .about .aboutSubContainer .section .front-end {
+              flex-direction: column; } }
         .home-container .about .aboutSubContainer .section .back-end {
           margin-bottom: 20px;
           display: flex;
           width: 75%;
           justify-content: space-around; }
+          @media only screen and (max-width: 1000px) {
+            .home-container .about .aboutSubContainer .section .back-end {
+              width: 100%; } }
+          @media only screen and (max-width: 560px) {
+            .home-container .about .aboutSubContainer .section .back-end {
+              flex-direction: column; } }
+        .home-container .about .aboutSubContainer .section .testimonial {
+          width: 50%;
+          padding: 10px;
+          border-radius: 5px;
+          box-shadow: 0px 0px 5px 0px #ced0ce; }
+          .home-container .about .aboutSubContainer .section .testimonial p {
+            text-align: center;
+            width: 50%; }
         .home-container .about .aboutSubContainer .section .member {
           display: flex;
           flex-direction: column;
@@ -2458,19 +2481,26 @@ header {
           .home-container .about .aboutSubContainer .section .member .memberName {
             font-weight: bold;
             font-size: 20px;
-            transition: all 0.5s ease; }
+            transition: all 0.5s ease;
+            text-align: center; }
             @media only screen and (max-width: 780px) {
               .home-container .about .aboutSubContainer .section .member .memberName {
-                margin: 15px; } }
+                margin: 10px 0 0 0; } }
           .home-container .about .aboutSubContainer .section .member .profile {
             width: 150px;
             border-radius: 50%; }
+            @media only screen and (max-width: 1000px) {
+              .home-container .about .aboutSubContainer .section .member .profile {
+                width: 130px; } }
+            @media only screen and (max-width: 780px) {
+              .home-container .about .aboutSubContainer .section .member .profile {
+                width: 100px; } }
+            @media only screen and (max-width: 700px) {
+              .home-container .about .aboutSubContainer .section .member .profile {
+                width: 75px; } }
           .home-container .about .aboutSubContainer .section .member .mediaPic {
-            width: 50px; }
-      @media only screen and (max-width: 780px) {
-        .home-container .about .aboutSubContainer .section:nth-child(2) .member {
-          flex-direction: row;
-          margin-bottom: 15px; } }
+            width: 100px;
+            margin-bottom: 15px; }
       .home-container .about .aboutSubContainer .to-top-btn {
         background: none;
         border: 3px solid #AAEFDF;

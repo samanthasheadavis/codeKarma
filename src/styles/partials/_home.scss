@@ -7,7 +7,7 @@
     width: 80%;
     height: 100vh;
     transition: $responsive;
-    @include media(mobile) {
+    @include media(mobileLarge) {
         width: 100%;
     }
 
@@ -166,6 +166,9 @@
                 transition: $responsive;
                 text-align: center;
                 margin: 0 100px;
+                @include media(mobileLarge) {
+                  margin: 0 30px;
+                }
             }
             .about-nav {
               display: flex;
@@ -273,6 +276,12 @@
                   display: flex;
                   width: 50%;
                   justify-content: space-around;
+                  @include media(desktopSmall) {
+                    width: 75%
+                  }
+                  @include media(mobileLarge) {
+                    flex-direction: column;
+                  }
                 }
 
                 .back-end {
@@ -280,6 +289,25 @@
                   display: flex;
                   width: 75%;
                   justify-content: space-around;
+                  @include media(desktopSmall) {
+                    width: 100%
+                  }
+                  @include media(mobileLarge) {
+                    flex-direction: column;
+                  }
+                }
+
+
+                .testimonial {
+                  width: 50%;
+                  padding: 10px;
+                  border-radius: 5px;
+                  box-shadow: $box-shadow;
+
+                  p {
+                    text-align: center;
+                    width: 50%;
+                  }
                 }
 
                 .member {
@@ -293,26 +321,28 @@
                         font-weight: bold;
                         font-size: 20px;
                         transition: $responsive;
+                        text-align: center;
                         @include media(tabletLarge) {
-                            margin: $vspace;
+                            margin: 10px 0 0 0;
                         }
                     }
 
                     .profile {
                         width: 150px;
                         border-radius: 50%;
+                        @include media(desktopSmall) {
+                          width: 130px;
+                        }
+                        @include media(tabletLarge) {
+                          width: 100px;
+                        }
+                        @include media(tablet) {
+                          width: 75px;
+                        }
                     }
 
                     .mediaPic {
-                        width: 50px;
-                    }
-                }
-            }
-
-            .section:nth-child(2) {
-                .member {
-                    @include media(tabletLarge) {
-                        flex-direction: row;
+                        width: 100px;
                         margin-bottom: 15px;
                     }
                 }
