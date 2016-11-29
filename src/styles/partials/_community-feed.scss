@@ -1,7 +1,7 @@
 .community-feed-container {
     background: rgba(255,255,255, .6);
     width: 80%;
-    height: 100%;
+    min-height: 100vh;
     transition: all 0.5s ease;
     @include media(desktop) {
         width: 85%;

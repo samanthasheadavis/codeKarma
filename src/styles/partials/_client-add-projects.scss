@@ -5,6 +5,7 @@
     flex-direction: column;
     justify-content: flex-start;
     width: 80%;
+    min-height: 100vh;
     transition: $responsive;
     height: 100vh;
     @include media(desktop) {

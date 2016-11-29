@@ -7,8 +7,7 @@
     width: 80%;
     padding-bottom: 40px;
     transition: all 0.5s ease;
-    height: auto;
-    min-height: 100%;
+    min-height: 100vh;
     @include media(desktop) {
         width: 85%;
     }
@@ -19,7 +18,7 @@
     .searchForm {
         display: flex;
         margin-top: 40px;
-        margin-bottom: 40px;
+        margin-bottom: 10px;
         width: 60%;
         transition: $responsive;
         @include media(mobileLarge) {
@@ -188,10 +187,13 @@
 
                 .languages {
                     align-self: center;
-                    margin: $vspace $hspace 0 0;
+                    color: $merlot;
+                    font-weight: 600;
+                    margin: 10px $hspace 0 0;
                     display: inline;
                     padding: 5px;
                     border-radius: 5px;
+                    border: 3px solid $white;
                 }
 
                 .lang-image {
@@ -227,7 +229,7 @@
                         display: none;
                         font-size: 12px;
                         line-height: 16px;
-                        left: 95%;
+                        left: 100%;
                         top: 34%;
                         padding: 5px;
                         position: absolute;
