@@ -99,6 +99,7 @@
                 </div>
             </li>
             <button class="editBtn" ng-hide="clientProjects.show" ng-click="clientProjects.edit(project.title, project.brief_description, project.description, project.github_repo_url, project.id)">Edit</button>
+            <button class='deleteBtn' ng-click="clientProjects.deleteProject(project.id)">Delete</button>
         </ul>
     </div>
 </div>

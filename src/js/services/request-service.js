@@ -219,6 +219,17 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
       $.ajax(settings).done(callback);
     }
 
+    function deleteProject(storedToken, projectId, callback) {
+      var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://code-karma-api.herokuapp.com/projects/" + projectId + "?token=" + storedToken,
+        "method": "DELETE"
+      };
+
+      $.ajax(settings).done(callback);
+    }
+
     function getLocalToken() {
         return localStorageService.get('storedToken') || [];
     }
@@ -261,6 +272,7 @@ angular.module('codeKarmaApp').service('RequestService', function($http, $locati
         getLocalToken: getLocalToken,
         setLocalToken: setLocalToken,
         getLocalId: getLocalId,
+        deleteProject: deleteProject
     };
 
 });

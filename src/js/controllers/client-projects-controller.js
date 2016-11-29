@@ -97,6 +97,12 @@ angular.module('codeKarmaApp').controller('ClientProjectsController', function($
 
     };
 
+    this.deleteProject = function(projectId) {
+      RequestService.deleteProject(storedToken, projectId, function(response) {
+        console.log('successfully deleted');
+      });
+    };
+
     // post updated object to backend
 
     this.getProjects();
