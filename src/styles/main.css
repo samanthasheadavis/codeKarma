@@ -602,7 +602,8 @@ ui-view {
         outline: none; }
     .client-dashboard-container .infoContainer .orgLink,
     .client-dashboard-container .infoContainer .orgName {
-      margin: 0 0 37px 0; }
+      margin: 0 0 37px 0;
+      overflow-wrap: break-word; }
     .client-dashboard-container .infoContainer img {
       width: 20px; }
     .client-dashboard-container .infoContainer .header {
