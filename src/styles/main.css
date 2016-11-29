@@ -82,6 +82,9 @@ ui-view {
     margin-bottom: 10px;
     width: 60%;
     transition: all 0.5s ease; }
+    @media only screen and (max-width: 700px) {
+      .all-projects-container .searchForm {
+        width: 75%; } }
     @media only screen and (max-width: 560px) {
       .all-projects-container .searchForm {
         width: 75%; } }
@@ -145,10 +148,12 @@ ui-view {
     margin: 30px 10px 0;
     padding-bottom: 20px;
     width: 60%; }
+    @media only screen and (max-width: 700px) {
+      .all-projects-container .project-card {
+        width: 75%; } }
     @media only screen and (max-width: 560px) {
       .all-projects-container .project-card {
-        width: 75%;
-        margin-top: 0; } }
+        width: 75%; } }
     @media only screen and (max-width: 440px) {
       .all-projects-container .project-card {
         width: 90%; } }

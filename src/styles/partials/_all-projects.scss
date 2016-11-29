@@ -21,6 +21,9 @@
         margin-bottom: 10px;
         width: 60%;
         transition: $responsive;
+        @include media(tablet) {
+          width: 75%;
+        }
         @include media(mobileLarge) {
             width: 75%;
         }
@@ -75,9 +78,11 @@
         margin: 30px $hspace 0;
         padding-bottom: 20px;
         width: 60%;
+        @include media(tablet) {
+          width: 75%;
+        }
         @include media(mobileLarge) {
             width: 75%;
-            margin-top: 0;
         }
         @include media(mobile) {
           width: 90%;
