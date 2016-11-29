@@ -175,6 +175,12 @@
               margin: 20px;
               width: 33%;
               justify-content: space-around;
+              @include media(tablet) {
+                width: 60%;
+              }
+              @include media(mobile) {
+                width: 80%;
+              }
 
               a {
                 text-decoration: none;
@@ -183,6 +189,7 @@
                 transition: color 0.2s ease;
                 padding: 3px 0;
                 transition: $responsive;
+                font-size: 15px;
 
                 &:hover {
                     color: #aaa;
@@ -238,8 +245,9 @@
                 line-height: 1.5;
                 transition: $responsive;
                 font-size: 20px;
-                @include media(desktopSmall) {
-                    flex-shrink: 2;
+                @include media(tablet) {
+                  margin: 0 15px;
+                  font-size: 16px;
                 }
             }
 
@@ -303,10 +311,16 @@
                   padding: 10px;
                   border-radius: 5px;
                   box-shadow: $box-shadow;
+                  @include media(tablet) {
+                    width: 75%;
+                  }
 
                   p {
                     text-align: center;
                     width: 50%;
+                    @include media(tabletLarge) {
+                      width: 80%;
+                    }
                   }
                 }
 
