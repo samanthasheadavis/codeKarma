@@ -18,19 +18,21 @@ angular.module('codeKarmaApp').controller('DevDashboardController', function($st
             };
             RequestService.putSkills(storedToken, storedId, this.skills);
             this.newSkill = '';
+            this.getDev();
         } else if ($scope.currentUser.skills.length > 0) {
             this.skills = {
                 "skills": $scope.currentUser.skills + ', ' + this.newSkill
             };
             RequestService.putSkills(storedToken, storedId, this.skills);
             this.newSkill = '';
+            this.getDev();
         }
 
         this.showLinkEdit = false;
         this.showNameEdit = false;
         this.showSkillEdit = false;
 
-        this.getDev();
+
     };
 
     this.getDev = function() {
