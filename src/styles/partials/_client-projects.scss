@@ -120,6 +120,7 @@
     justify-content: flex-start;
     width: 80%;
     transition: all 0.5s ease;
+    min-height: 100vh;
     @include media(desktop) {
         width: 85%;
     }
@@ -171,7 +172,7 @@
                 margin-bottom: 10px;
 
                 .dev-name {
-                  margin-right: auto
+                    margin-right: auto;
                 }
 
                 .progress-bar {
@@ -223,12 +224,12 @@
         }
 
         .github-repo-url {
-          text-decoration: none;
-          color: $charcoal;
+            text-decoration: none;
+            color: $charcoal;
 
-          &:hover {
-            text-decoration: underline;
-          }
+            &:hover {
+                text-decoration: underline;
+            }
         }
 
         img {
@@ -312,36 +313,66 @@
     }
 
     .btnContainer {
-      display: flex;
-      transition: $responsive;
-
-      &:hover > .deleteBtn {
-        display: block;
-      }
-
-      .editBtn {
-          flex-grow: 5;
-          @include button(15px) {};
-          transition: $responsive;
-
-          &:hover {
-              background: $pop;
-              color: $white;
-              cursor: pointer;
-          }
-      }
-
-      .deleteBtn {
-        flex-grow: 1;
-        @include button(15px) {};
-        display: none;
+        display: flex;
         transition: $responsive;
 
+        &:hover > .deleteBtn {
+            display: block;
+        }
+
+        .editBtn {
+            flex-grow: 5;
+            @include button(15px) {};
+            transition: $responsive;
+
+            &:hover {
+                background: $pop;
+                color: $white;
+                cursor: pointer;
+            }
+        }
+
+        .deleteBtn {
+            flex-grow: 1;
+            @include button(15px) {};
+            display: none;
+            transition: $responsive;
+
+            &:hover {
+                background: $pop;
+                color: $white;
+                cursor: pointer;
+                flex-grow: 2;
+            }
+        }
+    }
+}
+
+.delete-message {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: fixed;
+    left: 50%;
+    top: 33%;
+    z-index: 6;
+    transform: translateX(-50%);
+    background: $white;
+    border-radius: 5px;
+    padding: 25px 15px 15px 15px;
+    align-items: center;
+    box-shadow: 0px 0px 130px 9px rgba($darkGrey, 0.75);
+
+    .delete-btn-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+
+      button {
+        @include button(15px){};
+
         &:hover {
-            background: $pop;
-            color: $white;
-            cursor: pointer;
-            flex-grow: 2;
+          background: $pop;
         }
       }
     }
