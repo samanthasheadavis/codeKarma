@@ -96,10 +96,10 @@
         <div class="details">
             <form>
                 <div class="status">
-                    progress : <span class="progress">{{project.progress}}</span>%
+                    progress : <span class="progress">{{project.progress}} %</span>
                     <div slider id="flat-slider" project="project.id" model="project.progress"></div>
                 </div>
-                <label for="completion-date" class="date">est. completion date</label>
+                <label for="completion-date" class="date">est. completion date : </label>
                 <input ng-model="project.completionDate" name="project.completionDate" type="date">
                 <button type="submit" class="update active {{project.id}}" ng-click="updateProgress(project.progress, project.completionDate, project.id)">Update</button>
             </form>

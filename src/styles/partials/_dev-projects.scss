@@ -371,6 +371,16 @@
                     margin: 30px 0 $vspace;
                 }
 
+                .status, label.date {
+                  color: $merlot;
+                  font-weight: 600;
+
+                  .progress {
+                    color: $charcoal;
+                    font-weight: normal;
+                  }
+                }
+
                 input {
                     border-radius: $border-radius;
                     border: 1px solid $midGrey;
