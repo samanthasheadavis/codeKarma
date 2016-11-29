@@ -1925,6 +1925,10 @@ ui-view {
       .dev-projects-container .no-project,
       .dev-projects-container .project-card {
         width: 75%; } }
+    @media only screen and (max-width: 440px) {
+      .dev-projects-container .no-project,
+      .dev-projects-container .project-card {
+        padding-bottom: 30px; } }
     .dev-projects-container .no-project h3,
     .dev-projects-container .project-card h3 {
       font-size: 30px; }
@@ -1944,6 +1948,10 @@ ui-view {
       display: flex;
       flex-direction: row;
       justify-content: space-between; }
+      @media only screen and (max-width: 440px) {
+        .dev-projects-container .no-project .details,
+        .dev-projects-container .project-card .details {
+          flex-direction: column; } }
       .dev-projects-container .no-project .details form,
       .dev-projects-container .project-card .details form {
         display: flex;
@@ -1986,6 +1994,12 @@ ui-view {
       .dev-projects-container .project-card .details .help-btn,
       .dev-projects-container .project-card .details .update {
         display: none; }
+        @media only screen and (max-width: 440px) {
+          .dev-projects-container .no-project .details .help-btn, .dev-projects-container .no-project .details .update,
+          .dev-projects-container .project-card .details .help-btn,
+          .dev-projects-container .project-card .details .update {
+            width: 120px;
+            align-self: center; } }
       .dev-projects-container .no-project .details .help-btn,
       .dev-projects-container .project-card .details .help-btn {
         margin-bottom: 15px;
@@ -1997,6 +2011,10 @@ ui-view {
         font-family: "Raleway", sans-serif;
         font-size: 1em;
         padding: 10px; }
+        @media only screen and (max-width: 440px) {
+          .dev-projects-container .no-project .details .help-btn,
+          .dev-projects-container .project-card .details .help-btn {
+            margin: 0 auto; } }
         .dev-projects-container .no-project .details .help-btn:hover,
         .dev-projects-container .project-card .details .help-btn:hover {
           background: #AAEFDF; }
@@ -2018,6 +2036,12 @@ ui-view {
         text-transform: uppercase;
         outline: none;
         height: 60px; }
+        @media only screen and (max-width: 440px) {
+          .dev-projects-container .no-project .details .submit-btn,
+          .dev-projects-container .project-card .details .submit-btn {
+            height: 40px;
+            font-size: 16px;
+            padding: 0 8px; } }
         .dev-projects-container .no-project .details .submit-btn:hover,
         .dev-projects-container .project-card .details .submit-btn:hover {
           background: #AAEFDF;
