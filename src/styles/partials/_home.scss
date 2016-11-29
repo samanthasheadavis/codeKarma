@@ -151,6 +151,7 @@
         .aboutContainer {
             display: flex;
             align-items: center;
+            flex-direction: column;
             justify-content: space-around;
             @include media(mobileLarge) {
                 padding: 10px;
@@ -158,11 +159,61 @@
 
             h1 {
               color: $charcoal;
+              margin: 20px 0;
             }
 
-            p {
+            .about-text {
                 transition: $responsive;
-                margin-left: $vspace;
+                text-align: center;
+                margin: 0 100px;
+            }
+            .about-nav {
+              display: flex;
+              margin: 20px;
+              width: 33%;
+              justify-content: space-around;
+
+              a {
+                text-decoration: none;
+                position: relative;
+                display: inline-block;
+                transition: color 0.2s ease;
+                padding: 3px 0;
+                transition: $responsive;
+
+                &:hover {
+                    color: #aaa;
+                    cursor: pointer;
+
+                    &::after,
+                    &::before {
+                        width: 100%;
+                        left: 0;
+                    }
+                }
+              }
+
+              a {
+                  &::after,
+                  &::before {
+                      content: '';
+                      position: absolute;
+                      top: calc(100% + 5px);
+                      width: 0;
+                      right: 0;
+                      height: 3px;
+                  }
+
+                  &::before {
+                      transition: width 0.25s cubic-bezier(0.51, 0.18, 0, 0.88) 0.1s;
+                      background: $darkGrey;
+                  }
+
+                  &::after {
+                      transition: width 0.2s cubic-bezier(0.29, 0.18, 0.26, 0.83);
+                      background: $pop;
+                  }
+              }
             }
         }
 
@@ -171,6 +222,7 @@
             justify-content: center;
             padding: 10px;
             transition: $responsive;
+            flex-direction: column;
             @include media(tabletLarge) {
                 flex-direction: column;
             }
@@ -179,8 +231,10 @@
             }
 
             .mission {
-                flex-shrink: 20;
+                margin: 0 50px;
+                line-height: 1.5;
                 transition: $responsive;
+                font-size: 20px;
                 @include media(desktopSmall) {
                     flex-shrink: 2;
                 }
@@ -213,7 +267,19 @@
                 p {
                     color: $darkGrey;
                     line-height: 1.25;
-                    text-align: center;
+                }
+
+                .front-end {
+                  display: flex;
+                  width: 50%;
+                  justify-content: space-around;
+                }
+
+                .back-end {
+                  margin-bottom: 20px;
+                  display: flex;
+                  width: 75%;
+                  justify-content: space-around;
                 }
 
                 .member {
@@ -233,7 +299,7 @@
                     }
 
                     .profile {
-                        width: 50px;
+                        width: 150px;
                         border-radius: 50%;
                     }
 
@@ -250,6 +316,11 @@
                         margin-bottom: 15px;
                     }
                 }
+            }
+
+            .to-top-btn {
+              @include button(15px) {};
+              align-self: center;
             }
         }
     }

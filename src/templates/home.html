@@ -15,7 +15,12 @@
     <div class="about">
         <div class="aboutContainer">
             <h1>About</h1>
-            <p>Code Karma is a motivational platform for developers to use their coding and design skills for good.</p>
+            <p class="about-text">Code Karma is a motivational platform for developers to use their coding and design skills for good.</p>
+            <div class="about-nav">
+                <a ng-click="home.scrollMission()">Mission</a>
+                <a ng-click="home.scrollTeam()">Team</a>
+                <a ng-click="home.scrollMedia()">Media</a>
+            </div>
         </div>
         <div class="aboutSubContainer">
             <div class="section mission">
@@ -24,35 +29,39 @@
                     to build awesome websites that represent their mission and accomplish their goals. This is where Code Karma comes in. Developers looking to build their resumes, learn new skills or give back can sign up for nonprofit projects and earn
                     points by completing them or answering tech-related questions in the community feed. This way nonprofits get the help they need free of charge, and developers get to work on projects with real-world impact.</p>
             </div>
-            <div class="section">
+            <div class="section team">
                 <h2>Our Team</h2>
-                <div class="member">
-                    <img class="profile" src="assets/laHeadshot.png" />
-                    <p class="memberName">Lindsey</p>
-                    <p>Front-End</p>
+                <div class="back-end">
+                    <div class="member">
+                        <img class="profile" src="assets/ktHeadshot.jpg"/>
+                        <p class="memberName">Kristine Teichmann</p>
+                        <p>Back-End</p>
+                    </div>
+                    <div class="member">
+                        <img class="profile" src="assets/thHeadshot.jpg" />
+                        <p class="memberName">Tim Hsieh</p>
+                        <p>Back-End</p>
+                    </div>
+                    <div class="member">
+                        <img class="profile" src="assets/dgHeadshot.jpg" />
+                        <p class="memberName">Dan Griffiths</p>
+                        <p>Back-End</p>
+                    </div>
                 </div>
-                <div class="member">
-                    <img class="profile" src="assets/sdHeadshot.jpg" />
-                    <p class="memberName">Samantha</p>
-                    <p>Front-End</p>
-                </div>
-                <div class="member">
-                    <img class="profile" src="assets/ktHeadshot.jpg" />
-                    <p class="memberName">Kristine</p>
-                    <p>Back-End</p>
-                </div>
-                <div class="member">
-                    <img class="profile" src="assets/thHeadshot.jpg" />
-                    <p class="memberName">Tim</p>
-                    <p>Back-End</p>
-                </div>
-                <div class="member">
-                    <img class="profile" src="assets/dgHeadshot.jpg" />
-                    <p class="memberName">Dan</p>
-                    <p>Back-End</p>
+                <div class="front-end">
+                    <div class="member">
+                        <img class="profile" src="assets/laHeadshot.png" />
+                        <p class="memberName">Lindsey Adams</p>
+                        <p>Front-End</p>
+                    </div>
+                    <div class="member">
+                        <img class="profile" src="assets/sdHeadshot.jpg" />
+                        <p class="memberName">Samantha Davis</p>
+                        <p>Front-End</p>
+                    </div>
                 </div>
             </div>
-            <div class="section">
+            <div class="section media">
                 <h2>Media</h2>
                 <div class="member">
                     <img class="mediaPic" src="assets/nytimesLogo.png" />
@@ -67,6 +76,7 @@
                     <p>"The next big thing"</p>
                 </div>
             </div>
+            <button class=to-top-btn ng-click="home.scrollTop()">Back to Top</button>
         </div>
     </div>
 </div>

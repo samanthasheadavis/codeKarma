@@ -2353,20 +2353,55 @@ header {
     .home-container .about .aboutContainer {
       display: flex;
       align-items: center;
+      flex-direction: column;
       justify-content: space-around; }
       @media only screen and (max-width: 560px) {
         .home-container .about .aboutContainer {
           padding: 10px; } }
       .home-container .about .aboutContainer h1 {
-        color: #191919; }
-      .home-container .about .aboutContainer p {
+        color: #191919;
+        margin: 20px 0; }
+      .home-container .about .aboutContainer .about-text {
         transition: all 0.5s ease;
-        margin-left: 15px; }
+        text-align: center;
+        margin: 0 100px; }
+      .home-container .about .aboutContainer .about-nav {
+        display: flex;
+        margin: 20px;
+        width: 33%;
+        justify-content: space-around; }
+        .home-container .about .aboutContainer .about-nav a {
+          text-decoration: none;
+          position: relative;
+          display: inline-block;
+          transition: color 0.2s ease;
+          padding: 3px 0;
+          transition: all 0.5s ease; }
+          .home-container .about .aboutContainer .about-nav a:hover {
+            color: #aaa;
+            cursor: pointer; }
+            .home-container .about .aboutContainer .about-nav a:hover::after, .home-container .about .aboutContainer .about-nav a:hover::before {
+              width: 100%;
+              left: 0; }
+        .home-container .about .aboutContainer .about-nav a::after, .home-container .about .aboutContainer .about-nav a::before {
+          content: '';
+          position: absolute;
+          top: calc(100% + 5px);
+          width: 0;
+          right: 0;
+          height: 3px; }
+        .home-container .about .aboutContainer .about-nav a::before {
+          transition: width 0.25s cubic-bezier(0.51, 0.18, 0, 0.88) 0.1s;
+          background: #4F4F4F; }
+        .home-container .about .aboutContainer .about-nav a::after {
+          transition: width 0.2s cubic-bezier(0.29, 0.18, 0.26, 0.83);
+          background: #AAEFDF; }
     .home-container .about .aboutSubContainer {
       display: flex;
       justify-content: center;
       padding: 10px;
-      transition: all 0.5s ease; }
+      transition: all 0.5s ease;
+      flex-direction: column; }
       @media only screen and (max-width: 780px) {
         .home-container .about .aboutSubContainer {
           flex-direction: column; } }
@@ -2374,8 +2409,10 @@ header {
         .home-container .about .aboutSubContainer {
           padding: 0; } }
       .home-container .about .aboutSubContainer .mission {
-        flex-shrink: 20;
-        transition: all 0.5s ease; }
+        margin: 0 50px;
+        line-height: 1.5;
+        transition: all 0.5s ease;
+        font-size: 20px; }
         @media only screen and (max-width: 1000px) {
           .home-container .about .aboutSubContainer .mission {
             flex-shrink: 2; } }
@@ -2402,8 +2439,16 @@ header {
               font-weight: bold; } }
         .home-container .about .aboutSubContainer .section p {
           color: #4F4F4F;
-          line-height: 1.25;
-          text-align: center; }
+          line-height: 1.25; }
+        .home-container .about .aboutSubContainer .section .front-end {
+          display: flex;
+          width: 50%;
+          justify-content: space-around; }
+        .home-container .about .aboutSubContainer .section .back-end {
+          margin-bottom: 20px;
+          display: flex;
+          width: 75%;
+          justify-content: space-around; }
         .home-container .about .aboutSubContainer .section .member {
           display: flex;
           flex-direction: column;
@@ -2418,7 +2463,7 @@ header {
               .home-container .about .aboutSubContainer .section .member .memberName {
                 margin: 15px; } }
           .home-container .about .aboutSubContainer .section .member .profile {
-            width: 50px;
+            width: 150px;
             border-radius: 50%; }
           .home-container .about .aboutSubContainer .section .member .mediaPic {
             width: 50px; }
@@ -2426,6 +2471,20 @@ header {
         .home-container .about .aboutSubContainer .section:nth-child(2) .member {
           flex-direction: row;
           margin-bottom: 15px; } }
+      .home-container .about .aboutSubContainer .to-top-btn {
+        background: none;
+        border: 3px solid #AAEFDF;
+        border-radius: 5px;
+        color: #191919;
+        display: block;
+        font-size: 15px;
+        font-weight: bold;
+        margin: 10px;
+        padding: 10px;
+        position: relative;
+        text-transform: uppercase;
+        outline: none;
+        align-self: center; }
 
 .redirect-container {
   background: #e6e8e6;
