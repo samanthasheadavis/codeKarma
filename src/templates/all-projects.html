@@ -47,7 +47,7 @@
                     <p class="tooltiptext">this project is a <span>{{project.fix_type}}</span></p>
                 </div>
                 <div class="flexLang">
-                    <div class="lang-image tooltip" ng-repeat="language in project.languages">
+                    <div class="lang-image tooltip" ng-repeat="language in project.languages | limitTo: 3">
                         <p class="languages">{{language.language_name}}</p>
                         <p class="lang-tooltip">{{language.language_percent}}%</p>
                     </div>

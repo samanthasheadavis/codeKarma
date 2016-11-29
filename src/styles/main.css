@@ -1962,6 +1962,16 @@ ui-view {
         .dev-projects-container .no-project .details form label.date,
         .dev-projects-container .project-card .details form label.date {
           margin: 30px 0 15px; }
+        .dev-projects-container .no-project .details form .status, .dev-projects-container .no-project .details form label.date,
+        .dev-projects-container .project-card .details form .status,
+        .dev-projects-container .project-card .details form label.date {
+          color: #751721;
+          font-weight: 600; }
+          .dev-projects-container .no-project .details form .status .progress, .dev-projects-container .no-project .details form label.date .progress,
+          .dev-projects-container .project-card .details form .status .progress,
+          .dev-projects-container .project-card .details form label.date .progress {
+            color: #191919;
+            font-weight: normal; }
         .dev-projects-container .no-project .details form input,
         .dev-projects-container .project-card .details form input {
           border-radius: 5px;
