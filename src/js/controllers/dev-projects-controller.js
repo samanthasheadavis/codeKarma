@@ -99,18 +99,18 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
     this.getProjects = function() {
       RequestService.getDevProjects(storedToken, storedId, function(response) {
           $scope.projects = response.my_developer_projects;
-
+          if ($scope.projects.length === 0) {
+            $scope.ownsProjects = false;
+          } else {
+            $scope.ownsProjects = true;
+          }
           for (var i = 0; i < $scope.projects.length; i++) {
             var project = $scope.projects[i];
 
             project.progress = project.percentage_complete;
             $('.flat-slider').slider('value', '80');
 
-          if ($scope.projects.length === 0) {
-            $scope.ownsProjects = false;
-          } else {
-            $scope.ownsProjects = true;
-          }
+
           $scope.$apply();
         }
       });
