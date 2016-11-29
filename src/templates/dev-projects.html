@@ -83,7 +83,7 @@
                 </div>
                 <label for="completion-date" class="date">est. completion date</label>
                 <input ng-model="project.completionDate" name="project.completionDate" type="date">
-                <button type="submit" class="update" ng-click="updateProgress(project.progress, project.completionDate, project.id)">Update</button>
+                <button type="submit" class="update active {{project.id}}" ng-click="updateProgress(project.progress, project.completionDate, project.id)">Update</button>
             </form>
             <button class="help-btn active {{project.id}}" ui-sref="codeKarmaParent.communityFeed">Ask for Help</button>
             <div class="tooltip {{project.id}}">

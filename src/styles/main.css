@@ -1786,8 +1786,9 @@ ui-view {
           .dev-projects-container .no-project .details form input:focus,
           .dev-projects-container .project-card .details form input:focus {
             outline: 0; }
-      .dev-projects-container .no-project .details .help-btn,
-      .dev-projects-container .project-card .details .help-btn {
+      .dev-projects-container .no-project .details .help-btn, .dev-projects-container .no-project .details .update,
+      .dev-projects-container .project-card .details .help-btn,
+      .dev-projects-container .project-card .details .update {
         display: none; }
       .dev-projects-container .no-project .details .help-btn,
       .dev-projects-container .project-card .details .help-btn {
@@ -1825,8 +1826,9 @@ ui-view {
         .dev-projects-container .project-card .details .submit-btn:hover {
           background: #AAEFDF;
           color: #191919; }
-      .dev-projects-container .no-project .details .help-btn.active,
-      .dev-projects-container .project-card .details .help-btn.active {
+      .dev-projects-container .no-project .details .help-btn.active, .dev-projects-container .no-project .details .update.active,
+      .dev-projects-container .project-card .details .help-btn.active,
+      .dev-projects-container .project-card .details .update.active {
         display: block; }
 
 div.tooltip {

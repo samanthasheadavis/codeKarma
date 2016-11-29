@@ -278,7 +278,7 @@
                 }
             }
 
-            .help-btn {
+            .help-btn, .update {
                 display: none;
             }
 
@@ -312,7 +312,7 @@
                 }
             }
 
-            .help-btn.active {
+            .help-btn.active, .update.active {
                 display: block;
             }
         }
@@ -375,5 +375,3 @@ div.tooltip {
         background: $pop;
     }
 }
-
-.update {}

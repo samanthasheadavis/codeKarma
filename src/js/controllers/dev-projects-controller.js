@@ -16,8 +16,6 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
       }
       console.log(progress);
       $('.' + id).toggleClass('active');
-      // $('button.help-btn .' + id).removeClass('active');
-      // $('div.tooltip .' + id).addClass('active');
     };
 
     // remove pull request button when progress < 100%
@@ -25,7 +23,7 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
     this.revertButton = function(progress) {
       this.progress = progress;
       console.log(progress);
-      $('button.help-btn').addClass('active');
+      $('button.help-btn, button.update').addClass('active');
       $('div.tooltip').removeClass('active');
     };
 
