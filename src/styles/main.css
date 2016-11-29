@@ -1684,6 +1684,89 @@ ui-view {
 .modal-up {
   filter: blur(2px); }
 
+.status-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: fixed;
+  left: 50%;
+  top: 33%;
+  z-index: 6;
+  transform: translateX(-50%);
+  background: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 0 200px 40px #4f4f4f;
+  padding: 15px;
+  align-items: center; }
+  @media only screen and (max-width: 700px) {
+    .status-container {
+      width: 60%;
+      top: 33%; } }
+  @media only screen and (max-width: 560px) {
+    .status-container {
+      width: 75%; } }
+  .status-container .minimize {
+    position: absolute;
+    right: -5px;
+    top: -27px;
+    border-radius: 50%; }
+    .status-container .minimize img {
+      width: 30px; }
+    .status-container .minimize:hover {
+      cursor: pointer; }
+  .status-container p {
+    font-size: 24px;
+    margin-top: 20px;
+    text-align: center; }
+  .status-container a {
+    text-decoration: none; }
+  .status-container button {
+    background: none;
+    border: 3px solid #AAEFDF;
+    border-radius: 5px;
+    color: #191919;
+    display: block;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 10px;
+    padding: 10px;
+    position: relative;
+    text-transform: uppercase;
+    outline: none; }
+    .status-container button:hover {
+      background: #AAEFDF;
+      cursor: pointer; }
+  .status-container .wrapper {
+    width: 100px;
+    margin: 1em auto 0;
+    height: 85px; }
+  .status-container .checkmark {
+    stroke: #AAEFDF;
+    stroke-dashoffset: 745.74853515625;
+    stroke-dasharray: 745.74853515625;
+    animation: dash 2s ease-out forwards; }
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 745.74853515625; }
+  100% {
+    stroke-dashoffset: 0; } }
+  .status-container .animate {
+    position: absolute;
+    height: 80px;
+    left: calc(50% - 40px);
+    width: 80px; }
+  .status-container svg.animate polyline {
+    animation: 1.5s fill forwards;
+    fill: none;
+    stroke: red;
+    stroke-width: 4;
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200; }
+@keyframes fill {
+  0% {
+    stroke-dashoffset: 200; }
+  100% {
+    stroke-dashoffset: 0; } }
 .dev-projects-container {
   background: rgba(255, 255, 255, 0.6);
   display: flex;
@@ -1730,7 +1813,7 @@ ui-view {
   .dev-projects-container .project-card {
     background: #ffffff;
     border-left: 10px solid #AAEFDF;
-    padding: 15px 10px 15px;
+    padding: 15px 10px;
     margin-top: 40px;
     width: 60%;
     box-shadow: 0px 0px 5px 0px #ced0ce;
@@ -2001,7 +2084,8 @@ header {
     background: #AAEFDF; }
 
 .home-container {
-  background: #ffffff;
+  background: linear-gradient(rgba(0, 0, 0, 0.75), transparent), url("../../assets/hero.jpg");
+  background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2010,14 +2094,15 @@ header {
   transition: all 0.5s ease; }
   @media only screen and (max-width: 440px) {
     .home-container {
-      width: 100%;
-      background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("../../assets/bright_squares.png"); } }
+      width: 100%; } }
   .home-container .main-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     background: transparent; }
     .home-container .main-container img {
+      width: 66%;
+      margin: 75px auto 15px;
       transition: all 0.5s ease; }
       @media only screen and (max-width: 560px) {
         .home-container .main-container img {
@@ -2029,6 +2114,7 @@ header {
     height: 50px;
     border: none;
     background: #AAEFDF;
+    box-shadow: 0px 0px 5px 0px #ced0ce;
     margin: 0 10px;
     border-radius: 5px;
     padding: 10px;
@@ -2039,7 +2125,7 @@ header {
       .home-container button {
         width: 150px; } }
     .home-container button:hover {
-      background: #7fe7cf;
+      background: #ffffff;
       cursor: pointer; }
   .home-container a {
     text-decoration: none;
@@ -2073,7 +2159,7 @@ header {
         font-size: 13px;
         width: 150px; } }
     .home-container .aboutBtn:hover {
-      background: #7fe7cf;
+      background: #ffffff;
       cursor: pointer; }
   .home-container .continueBtnContainer {
     display: flex;
@@ -2088,19 +2174,24 @@ header {
   .home-container h1 {
     font-size: 4em;
     text-align: center;
-    transition: all 0.5s ease; }
+    transition: all 0.5s ease;
+    color: white;
+    font-weight: bold; }
     @media only screen and (max-width: 560px) {
       .home-container h1 {
         font-size: 2.5em; } }
   .home-container h2 {
-    margin: 20px 0;
+    margin: 20px 0 50px;
     font-size: 1.5em;
     align-self: center;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 3px;
     transition: all 0.5s ease; }
     @media only screen and (max-width: 560px) {
       .home-container h2 {
         font-size: 1em;
-        margin: 5px 0 30px 0; } }
+        margin: 5px 0 30px; } }
   .home-container .about {
     display: flex;
     flex-direction: column;
@@ -2124,6 +2215,8 @@ header {
       @media only screen and (max-width: 560px) {
         .home-container .about .aboutContainer {
           padding: 10px; } }
+      .home-container .about .aboutContainer h1 {
+        color: #191919; }
       .home-container .about .aboutContainer p {
         transition: all 0.5s ease;
         margin-left: 15px; }
