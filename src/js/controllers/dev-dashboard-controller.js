@@ -44,7 +44,7 @@ angular.module('codeKarmaApp').controller('DevDashboardController', function($st
             $scope.currentUser = RequestService.createUser(response.data);
 
             if ($scope.currentUser.skills.length === 0) {
-              $scope.currentUser.skills = ' ';
+              $scope.currentUser.skills = '';
             }
             getLeaderboard();
         });
