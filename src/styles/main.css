@@ -231,10 +231,13 @@ ui-view {
           font-weight: bold; }
         .all-projects-container .project-card .heading .categories .languages {
           align-self: center;
+          color: #751721;
+          font-weight: 600;
           margin: 15px 10px 0 0;
           display: inline;
           padding: 5px;
-          border-radius: 5px; }
+          border-radius: 5px;
+          border: 3px solid #ffffff; }
         .all-projects-container .project-card .heading .categories .lang-image {
           display: flex;
           justify-content: center;
@@ -257,7 +260,7 @@ ui-view {
             display: none;
             font-size: 12px;
             line-height: 16px;
-            left: 95%;
+            left: 100%;
             top: 34%;
             padding: 5px;
             position: absolute;
