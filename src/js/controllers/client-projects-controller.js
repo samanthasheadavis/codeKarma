@@ -13,7 +13,6 @@ angular.module('codeKarmaApp').controller('ClientProjectsController', function($
         };
 
         $.ajax(settings).done(function(response) {
-          console.log(response);
             $scope.projects = response;
             $scope.icons(response);
             $scope.handleProgress(response);
@@ -24,7 +23,6 @@ angular.module('codeKarmaApp').controller('ClientProjectsController', function($
     $scope.handleProgress = function(response) {
       for (count=0; count<response.length; count++) {
         if (response[count].developer_project.length === 0) {
-          console.log('null');
         } else {
           for (index = 0; index<response[count].developer_project.length; index++) {
             if (response[count].developer_project[index].completion_dates !== null) {
@@ -80,7 +78,6 @@ angular.module('codeKarmaApp').controller('ClientProjectsController', function($
     };
 
     this.updateInfo = function() {
-        console.log(this.updateProject);
 
         var settings = {
             "async": true,
@@ -98,8 +95,9 @@ angular.module('codeKarmaApp').controller('ClientProjectsController', function($
     };
 
     this.deleteProject = function(projectId) {
+      var self = this;
       RequestService.deleteProject(storedToken, projectId, function(response) {
-        console.log('successfully deleted');
+        self.getProjects();
       });
     };
 

@@ -830,7 +830,8 @@ ui-view {
   flex-direction: column;
   justify-content: flex-start;
   width: 80%;
-  transition: all 0.5s ease; }
+  transition: all 0.5s ease;
+  min-height: 100vh; }
   @media only screen and (max-width: 1220px) {
     .client-projects-container {
       width: 85%; } }
@@ -1011,6 +1012,40 @@ ui-view {
         color: #ffffff;
         cursor: pointer;
         flex-grow: 2; }
+
+.delete-message {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: fixed;
+  left: 50%;
+  top: 33%;
+  z-index: 6;
+  transform: translateX(-50%);
+  background: #ffffff;
+  border-radius: 5px;
+  padding: 25px 15px 15px 15px;
+  align-items: center;
+  box-shadow: 0px 0px 130px 9px rgba(79, 79, 79, 0.75); }
+  .delete-message .delete-btn-container {
+    width: 100%;
+    display: flex;
+    justify-content: center; }
+    .delete-message .delete-btn-container button {
+      background: none;
+      border: 3px solid #AAEFDF;
+      border-radius: 5px;
+      color: #191919;
+      display: block;
+      font-size: 15px;
+      font-weight: bold;
+      margin: 10px;
+      padding: 10px;
+      position: relative;
+      text-transform: uppercase;
+      outline: none; }
+      .delete-message .delete-btn-container button:hover {
+        background: #AAEFDF; }
 
 .editIcon {
   width: 15px;
