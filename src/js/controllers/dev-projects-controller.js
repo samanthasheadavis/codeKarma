@@ -71,7 +71,11 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
           "method": "POST",
           "data": $scope.pullInfo,
           "success": function(response) {
+            console.log('success!');
+            $scope.showStatus = true;
             $scope.message = "Success! The client will be notified of your pull request.";
+            $scope.error = false;
+            $scope.$apply();
           },
           "error": function(response) {
             $scope.showStatus = true;
@@ -82,9 +86,8 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
 
       };
       $.ajax(settings).done(function(response) {
-        console.log(response);
+        
       });
-
   };
 
     // get projects info
