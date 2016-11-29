@@ -38,6 +38,10 @@ angular.module('codeKarmaApp').controller('DevDashboardController', function($st
     this.getDev = function() {
         RequestService.getDev(storedToken, storedId, function(response) {
             $scope.currentUser = RequestService.createUser(response.data);
+
+            if ($scope.currentUser.skills.length === 0) {
+              $scope.currentUser.skills = ' ';
+            }
             getLeaderboard();
         });
     };
