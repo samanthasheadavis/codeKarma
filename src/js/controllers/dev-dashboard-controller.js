@@ -16,16 +16,21 @@ angular.module('codeKarmaApp').controller('DevDashboardController', function($st
             this.skills = {
                 "skills": this.newSkill
             };
-            RequestService.putSkills(storedToken, storedId, this.skills);
+            RequestService.putSkills(storedToken, storedId, this.skills, function(response) {
+              self.getDev();
+            });
+
             this.newSkill = '';
-            this.getDev();
+
         } else if ($scope.currentUser.skills.length > 0) {
             this.skills = {
                 "skills": $scope.currentUser.skills + ', ' + this.newSkill
             };
-            RequestService.putSkills(storedToken, storedId, this.skills);
+            RequestService.putSkills(storedToken, storedId, this.skills, function(response) {
+              self.getDev();
+            });
+
             this.newSkill = '';
-            this.getDev();
         }
 
         this.showLinkEdit = false;
@@ -38,6 +43,10 @@ angular.module('codeKarmaApp').controller('DevDashboardController', function($st
     this.getDev = function() {
         RequestService.getDev(storedToken, storedId, function(response) {
             $scope.currentUser = RequestService.createUser(response.data);
+
+            if ($scope.currentUser.skills.length === 0) {
+              $scope.currentUser.skills = '';
+            }
             getLeaderboard();
         });
     };

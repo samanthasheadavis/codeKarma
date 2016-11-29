@@ -1,30 +1,34 @@
 angular.module('codeKarmaApp').controller('DevProjectsController', function($scope, $state, RequestService) {
     $scope.ownsProjects = true;
-    $scope.progress = 0;
+
     var storedToken = RequestService.getLocalToken();
     var storedId = RequestService.getLocalId();
 
     // show pull request button when progress === 100%
 
-    this.updateButton = function(progress, id) {
+    function updateProjectProgress(progress, id) {
       for (var index = 0; index < $scope.projects.length; index++) {
-          if ($scope.projects[index].id === id ) {
-              console.log('id ' + id);
-              $scope.projects[index].progress = progress;
-              console.log($scope.projects[index]);
-          }
+        var project = $scope.projects[index];
+        if (project.id == id) {
+          project.progress = progress;
+        }
       }
-      console.log(progress);
+
+      $scope.$apply();
+    }
+
+    this.updateButton = function(progress, id) {
+      updateProjectProgress(progress, id);
       $('.' + id).toggleClass('active');
     };
 
     // remove pull request button when progress < 100%
 
-    this.revertButton = function(progress) {
-      this.progress = progress;
-      console.log(progress);
-      $('button.help-btn, button.update').addClass('active');
-      $('div.tooltip').removeClass('active');
+    this.revertButton = function(progress, id) {
+      updateProjectProgress(progress, id);
+      $('button.help-btn' + '.' + id).addClass('active');
+      $('button.update' + '.' + id).addClass('active');
+      $('div.tooltip' + '.' + id).removeClass('active');
     };
 
     this.pullRequest = function(id) {
@@ -86,7 +90,7 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
 
       };
       $.ajax(settings).done(function(response) {
-        
+
       });
   };
 
@@ -100,14 +104,22 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
           } else {
             $scope.ownsProjects = true;
           }
+          for (var i = 0; i < $scope.projects.length; i++) {
+            var project = $scope.projects[i];
+
+            project.progress = project.percentage_complete;
+            $('.flat-slider').slider('value', '80');
+
+
           $scope.$apply();
-        });
+        }
+      });
     };
 
     // update and post progress
 
-    $scope.updateProgress = function(progress, date, id) {
-      console.log(id);
+    $scope.updateProgress = function(date, id) {
+      var progress = $('.progress' + '.' + id).text();
         this.status = {
           "percentage_complete": progress,
           "est_completion_date": date
