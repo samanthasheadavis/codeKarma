@@ -7,8 +7,7 @@
     width: 80%;
     padding-bottom: 40px;
     transition: all 0.5s ease;
-    height: auto;
-    min-height: 100%;
+    min-height: 100vh;
     @include media(desktop) {
         width: 85%;
     }
@@ -19,7 +18,7 @@
     .searchForm {
         display: flex;
         margin-top: 40px;
-        margin-bottom: 40px;
+        margin-bottom: 10px;
         width: 60%;
         transition: $responsive;
         @include media(mobileLarge) {

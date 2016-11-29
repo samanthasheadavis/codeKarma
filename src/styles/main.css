@@ -69,8 +69,7 @@ ui-view {
   width: 80%;
   padding-bottom: 40px;
   transition: all 0.5s ease;
-  height: auto;
-  min-height: 100%; }
+  min-height: 100vh; }
   @media only screen and (max-width: 1220px) {
     .all-projects-container {
       width: 85%; } }
@@ -80,7 +79,7 @@ ui-view {
   .all-projects-container .searchForm {
     display: flex;
     margin-top: 40px;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
     width: 60%;
     transition: all 0.5s ease; }
     @media only screen and (max-width: 560px) {
@@ -427,6 +426,7 @@ ui-view {
   flex-direction: column;
   align-items: center;
   width: 80%;
+  min-height: 100vh;
   justify-content: flex-start;
   transition: all 0.5s ease; }
   @media only screen and (max-width: 700px) {
@@ -626,6 +626,7 @@ ui-view {
   flex-direction: column;
   justify-content: flex-start;
   width: 80%;
+  min-height: 100vh;
   transition: all 0.5s ease;
   height: 100vh; }
   @media only screen and (max-width: 1220px) {
@@ -1021,7 +1022,7 @@ ui-view {
 .community-feed-container {
   background: rgba(255, 255, 255, 0.6);
   width: 80%;
-  height: 100%;
+  min-height: 100vh;
   transition: all 0.5s ease; }
   @media only screen and (max-width: 1220px) {
     .community-feed-container {
@@ -1429,6 +1430,7 @@ ui-view {
   flex-direction: column;
   align-items: center;
   width: 80%;
+  min-height: 100vh;
   justify-content: flex-start;
   transition: all 0.5s ease; }
   @media only screen and (max-width: 700px) {
@@ -1838,6 +1840,8 @@ ui-view {
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
+  padding-bottom: 40px;
+  min-height: 100vh;
   width: 80%;
   transition: all 0.5s ease; }
   @media only screen and (max-width: 1220px) {
@@ -2354,7 +2358,7 @@ header {
   display: flex;
   justify-content: center;
   width: 80%;
-  height: 100vh; }
+  min-height: 100vh; }
   .redirect-container .boxLoading {
     width: 80px;
     height: 80px;
