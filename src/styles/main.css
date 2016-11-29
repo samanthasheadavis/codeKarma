@@ -1150,6 +1150,8 @@ ui-view {
               margin-right: 5px; }
             .community-feed-container .flexContainer .commPost .responsesContainer .response .comment-container .like-comment {
               height: 14px; }
+              .community-feed-container .flexContainer .commPost .responsesContainer .response .comment-container .like-comment.active {
+                background: #AAEFDF; }
         .community-feed-container .flexContainer .commPost .responsesContainer .load-more {
           background: #AAEFDF;
           border-radius: 5px;

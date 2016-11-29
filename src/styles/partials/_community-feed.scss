@@ -236,6 +236,10 @@
 
                         .like-comment {
                             height: 14px;
+
+                            &.active {
+                              background: $pop;
+                            }
                         }
                     }
                 }
