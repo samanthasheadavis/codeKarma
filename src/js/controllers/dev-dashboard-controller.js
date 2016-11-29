@@ -16,16 +16,20 @@ angular.module('codeKarmaApp').controller('DevDashboardController', function($st
             this.skills = {
                 "skills": this.newSkill
             };
-            RequestService.putSkills(storedToken, storedId, this.skills);
-            this.newSkill = '';
-            this.getDev();
+            RequestService.putSkills(storedToken, storedId, this.skills, function(response) {
+              this.newSkill = '';
+              self.getDev();
+            });
+
         } else if ($scope.currentUser.skills.length > 0) {
             this.skills = {
                 "skills": $scope.currentUser.skills + ', ' + this.newSkill
             };
-            RequestService.putSkills(storedToken, storedId, this.skills);
-            this.newSkill = '';
-            this.getDev();
+            RequestService.putSkills(storedToken, storedId, this.skills, function(response) {
+              this.newSkill = '';
+              self.getDev();
+            });
+
         }
 
         this.showLinkEdit = false;
