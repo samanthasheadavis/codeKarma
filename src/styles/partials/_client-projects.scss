@@ -79,7 +79,7 @@
         }
 
         h4 {
-            color: $midGrey;
+            color: (darken($pop, 10%));
         }
 
         p {
@@ -245,11 +245,13 @@
         }
 
         h4 {
-            color: $midGrey;
+            color: $merlot;
+            font-weight: 600;
         }
 
         p {
             display: inline;
+            line-height: 19px;
         }
 
         a {
@@ -309,14 +311,39 @@
         }
     }
 
-    .editBtn {
+    .btnContainer {
+      display: flex;
+      transition: $responsive;
+
+      &:hover > .deleteBtn {
+        display: block;
+      }
+
+      .editBtn {
+          flex-grow: 5;
+          @include button(15px) {};
+          transition: $responsive;
+
+          &:hover {
+              background: $pop;
+              color: $white;
+              cursor: pointer;
+          }
+      }
+
+      .deleteBtn {
+        flex-grow: 1;
         @include button(15px) {};
+        display: none;
+        transition: $responsive;
 
         &:hover {
             background: $pop;
             color: $white;
             cursor: pointer;
+            flex-grow: 2;
         }
+      }
     }
 }
 

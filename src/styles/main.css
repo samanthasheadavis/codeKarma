@@ -784,7 +784,7 @@ ui-view {
       font-size: 30px;
       display: inline; }
     .editModal li h4 {
-      color: #ced0ce; }
+      color: #7fe7cf; }
     .editModal li p {
       display: inline; }
     .editModal li a {
@@ -901,9 +901,11 @@ ui-view {
         .client-projects-container .project-details li h3 {
           font-size: 25px; } }
     .client-projects-container .project-details li h4 {
-      color: #ced0ce; }
+      color: #751721;
+      font-weight: 600; }
     .client-projects-container .project-details li p {
-      display: inline; }
+      display: inline;
+      line-height: 19px; }
     .client-projects-container .project-details li a {
       transition: all 0.5s ease; }
       @media only screen and (max-width: 560px) {
@@ -944,23 +946,51 @@ ui-view {
           .client-projects-container .project-details li .categories .category-image .tooltiptext span {
             letter-spacing: 0.1em;
             display: block; }
-  .client-projects-container .project-details .editBtn {
-    background: none;
-    border: 3px solid #AAEFDF;
-    border-radius: 5px;
-    color: #191919;
-    display: block;
-    font-size: 15px;
-    font-weight: bold;
-    margin: 10px;
-    padding: 10px;
-    position: relative;
-    text-transform: uppercase;
-    outline: none; }
-    .client-projects-container .project-details .editBtn:hover {
-      background: #AAEFDF;
-      color: #ffffff;
-      cursor: pointer; }
+  .client-projects-container .project-details .btnContainer {
+    display: flex;
+    transition: all 0.5s ease; }
+    .client-projects-container .project-details .btnContainer:hover > .deleteBtn {
+      display: block; }
+    .client-projects-container .project-details .btnContainer .editBtn {
+      flex-grow: 5;
+      background: none;
+      border: 3px solid #AAEFDF;
+      border-radius: 5px;
+      color: #191919;
+      display: block;
+      font-size: 15px;
+      font-weight: bold;
+      margin: 10px;
+      padding: 10px;
+      position: relative;
+      text-transform: uppercase;
+      outline: none;
+      transition: all 0.5s ease; }
+      .client-projects-container .project-details .btnContainer .editBtn:hover {
+        background: #AAEFDF;
+        color: #ffffff;
+        cursor: pointer; }
+    .client-projects-container .project-details .btnContainer .deleteBtn {
+      flex-grow: 1;
+      background: none;
+      border: 3px solid #AAEFDF;
+      border-radius: 5px;
+      color: #191919;
+      display: block;
+      font-size: 15px;
+      font-weight: bold;
+      margin: 10px;
+      padding: 10px;
+      position: relative;
+      text-transform: uppercase;
+      outline: none;
+      display: none;
+      transition: all 0.5s ease; }
+      .client-projects-container .project-details .btnContainer .deleteBtn:hover {
+        background: #AAEFDF;
+        color: #ffffff;
+        cursor: pointer;
+        flex-grow: 2; }
 
 .editIcon {
   width: 15px;
