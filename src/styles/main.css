@@ -328,6 +328,9 @@ ui-view {
       margin: 0 10px; }
     .all-projects-container .details li {
       margin: 15px 10px; }
+      .all-projects-container .details li.description {
+        line-height: 19px;
+        letter-spacing: .05em; }
     .all-projects-container .details a {
       color: black; }
     .all-projects-container .details .fork-btn {
