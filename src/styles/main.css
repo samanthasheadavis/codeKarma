@@ -2067,17 +2067,17 @@ ui-view {
 div.btn-div {
   align-self: flex-end; }
 
-div.tooltip {
+.dev-projects-container div.tooltip {
   display: none;
   justify-content: center;
   position: relative;
   height: 40px;
   align-self: flex-end; }
-  div.tooltip.active {
+  .dev-projects-container div.tooltip.active {
     display: flex; }
-  div.tooltip:hover .tooltiptext {
+  .dev-projects-container div.tooltip:hover .tooltiptext {
     display: block; }
-  div.tooltip .tooltiptext {
+  .dev-projects-container div.tooltip .tooltiptext {
     background: #AAEFDF;
     border-radius: 5px;
     color: #191919;
@@ -2091,7 +2091,7 @@ div.tooltip {
     text-align: center;
     width: 120px;
     z-index: 5; }
-    div.tooltip .tooltiptext:after {
+    .dev-projects-container div.tooltip .tooltiptext:after {
       content: " ";
       position: absolute;
       top: 45%;
