@@ -93,7 +93,8 @@ ui-view {
         width: 90%; } }
     .all-projects-container .searchForm textarea {
       resize: none;
-      background: #e6e8e6;
+      background: #ffffff;
+      box-shadow: 0px 0px 5px 0px #ced0ce;
       border: none;
       height: 20px;
       padding: 10px;
