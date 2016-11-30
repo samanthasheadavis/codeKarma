@@ -20,19 +20,9 @@ angular.module('codeKarmaApp').controller('ClientAddProjectController', function
             github_repo_url: githubRepo,
         };
 
-        var settings = {
-            "async": true,
-            "crossDomain": true,
-            "url": this.url,
-            "method": "POST",
-            "data": this.newProject
-        };
-
-        $.ajax(settings).done(function(response) {
-            console.log(response);
-            $state.go('codeKarmaParent.clientProjects');
+        ClientService.createProject(storedToken, this.newProject, function(response) {
+          $state.go('codeKarmaParent.clientProjects');
         });
-
     };
 
     this.getUrl();
