@@ -9,8 +9,6 @@ angular.module('codeKarmaApp').controller('ClientDashboardController', function(
     // if they haven't, the link icon will show but the empty field won't show.
 
     $scope.handleInfo = function(response) {
-      console.log(response);
-
       if (response.orgName === null || response.orgSite === null) {
         this.showLinkEdit = false;
         this.showNameEdit = true;
@@ -36,6 +34,7 @@ angular.module('codeKarmaApp').controller('ClientDashboardController', function(
         });
     };
 
+    // getClient accesses the ClientService and the CredentialsService to get the client's github information.
 
     this.getClient = function() {
 
