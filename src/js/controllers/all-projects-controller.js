@@ -1,13 +1,16 @@
 angular.module('codeKarmaApp').controller('AllProjectsController', function($state, $scope, $http, CredentialsService, DevService) {
     var storedToken = CredentialsService.getLocalToken();
     var storedId = CredentialsService.getLocalId();
-
     $scope.details = false;
     this.selectedProject = null;
+
+    // toggle detail view of projects
 
     $scope.toggleDetails = function(project) {
         project.show = !project.show;
     };
+
+    // get current user
 
     this.getDev = function() {
         DevService.getDev(storedToken, storedId, function(response) {
@@ -15,14 +18,10 @@ angular.module('codeKarmaApp').controller('AllProjectsController', function($sta
         });
     };
 
-    this.getUrl = function() {
-        this.url = DevService.getProjectsUrl(storedToken);
-    };
+    // match fix-type image with project fix-type
 
     $scope.getIcon = function(response) {
-
         for (var index = 0; index < response.length; index++) {
-
             if (response[index].fix_type === "Bug Fix") {
                 response[index].img_src = "bugfix";
                 response[index].img_alt = "Icon Fair";
@@ -34,27 +33,16 @@ angular.module('codeKarmaApp').controller('AllProjectsController', function($sta
                 response[index].img_alt = "Phil Goodwin";
             }
         }
-
     };
+
+    // populate page with available projects
 
     this.getProjects = function() {
-        var settings = {
-            "async": true,
-            "crossDomain": true,
-            "url": this.url,
-            "method": "GET"
-        };
-
-        $.ajax(settings).done(function(response) {
-            $scope.projects = response.all_projects;
-            $scope.getIcon(response.all_projects);
-            $scope.$apply();
-            $scope.languages($scope.projects);
+        DevService.getAllProjects(storedToken, function(response) {
+          $scope.projects = response.all_projects;
+          $scope.getIcon(response.all_projects);
+          $scope.$apply();
         });
-
-    };
-    $scope.languages = function(response) {
-
     };
 
     // fork project function
@@ -66,10 +54,7 @@ angular.module('codeKarmaApp').controller('AllProjectsController', function($sta
       });
     };
 
-    // add project info to user object
 
-
-    this.getUrl();
     this.getDev();
     $scope.projects = this.getProjects();
 });

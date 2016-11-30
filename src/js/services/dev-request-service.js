@@ -9,11 +9,6 @@ angular.module('codeKarmaApp').service('DevService', function($http, $location, 
         });
     }
 
-    function getProjectsUrl(storedToken) {
-        var url = "https://code-karma-api.herokuapp.com/projects" + "?token=" + storedToken;
-        return url;
-    }
-
     function getDevUrl(storedToken, id) {
         var url = "https://code-karma-api.herokuapp.com/developers/" + id + "?token=" + storedToken;
         return url;
@@ -168,18 +163,27 @@ angular.module('codeKarmaApp').service('DevService', function($http, $location, 
             "data": data,
         };
         $.ajax(settings).done(callback, errorCallback);
-
         }
+
+    function getAllProjects(storedToken, callback) {
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://code-karma-api.herokuapp.com/projects" + "?token=" + storedToken,
+            "method": "GET"
+        };
+        $.ajax(settings).done(callback);
+    }
 
 
     return {
         forkRepo: forkRepo,
+        getAllProjects: getAllProjects,
         getDev: getDev,
         getDevProjects: getDevProjects,
         getDevUrl: getDevUrl,
         getLeaderboard: getLeaderboard,
         getPosts: getPosts,
-        getProjectsUrl: getProjectsUrl,
         postComment: postComment,
         postQuestion: postQuestion,
         pullRequest: pullRequest,
