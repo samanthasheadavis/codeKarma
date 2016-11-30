@@ -1999,19 +1999,17 @@ ui-view {
           .dev-projects-container .no-project .details form input:focus,
           .dev-projects-container .project-card .details form input:focus {
             outline: 0; }
-      .dev-projects-container .no-project .details .help-btn, .dev-projects-container .no-project .details .update,
-      .dev-projects-container .project-card .details .help-btn,
-      .dev-projects-container .project-card .details .update {
+      .dev-projects-container .no-project .details .help-btn,
+      .dev-projects-container .project-card .details .help-btn {
         display: none; }
         @media only screen and (max-width: 440px) {
-          .dev-projects-container .no-project .details .help-btn, .dev-projects-container .no-project .details .update,
-          .dev-projects-container .project-card .details .help-btn,
-          .dev-projects-container .project-card .details .update {
+          .dev-projects-container .no-project .details .help-btn,
+          .dev-projects-container .project-card .details .help-btn {
             width: 120px;
             align-self: center; } }
       .dev-projects-container .no-project .details .help-btn,
       .dev-projects-container .project-card .details .help-btn {
-        margin-bottom: 15px;
+        margin: 0 10px 15px 0;
         border-radius: 5px;
         border: none;
         height: 40px;
@@ -2044,7 +2042,8 @@ ui-view {
         position: relative;
         text-transform: uppercase;
         outline: none;
-        height: 60px; }
+        margin: 0 10px 30px 0;
+        align-self: center; }
         @media only screen and (max-width: 440px) {
           .dev-projects-container .no-project .details .submit-btn,
           .dev-projects-container .project-card .details .submit-btn {
@@ -2055,17 +2054,25 @@ ui-view {
         .dev-projects-container .project-card .details .submit-btn:hover {
           background: #AAEFDF;
           color: #191919; }
-      .dev-projects-container .no-project .details .help-btn.active, .dev-projects-container .no-project .details .update.active,
-      .dev-projects-container .project-card .details .help-btn.active,
-      .dev-projects-container .project-card .details .update.active {
+      .dev-projects-container .no-project .details .update,
+      .dev-projects-container .project-card .details .update {
+        opacity: .5; }
+      .dev-projects-container .no-project .details .help-btn.active,
+      .dev-projects-container .project-card .details .help-btn.active {
         display: block; }
+      .dev-projects-container .no-project .details .update.active,
+      .dev-projects-container .project-card .details .update.active {
+        opacity: 1; }
+
+div.btn-div {
+  align-self: flex-end; }
 
 div.tooltip {
   display: none;
   justify-content: center;
   position: relative;
   height: 40px;
-  align-self: center; }
+  align-self: flex-end; }
   div.tooltip.active {
     display: flex; }
   div.tooltip:hover .tooltiptext {

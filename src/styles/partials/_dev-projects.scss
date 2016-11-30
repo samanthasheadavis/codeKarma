@@ -405,7 +405,7 @@
                 }
             }
 
-            .help-btn, .update {
+            .help-btn {
                 display: none;
 
                 @include media(mobile) {
@@ -416,7 +416,7 @@
             }
 
             .help-btn {
-                margin-bottom: 15px;
+                margin: 0 $hspace 15px 0;
                 border-radius: 5px;
                 border: none;
                 height: 40px;
@@ -441,7 +441,9 @@
 
             .submit-btn {
                 @include button(15px);
-                height: 60px;
+                margin: 0 $hspace 30px 0;
+                align-self: center;
+
 
                 @include media(mobile) {
                   height: 40px;
@@ -456,11 +458,24 @@
                 }
             }
 
-            .help-btn.active, .update.active {
+            .update {
+              opacity: .5;
+            }
+
+            .help-btn.active {
                 display: block;
             }
+
+            .update.active {
+              opacity: 1;
+            }
+
         }
     }
+}
+
+div.btn-div {
+  align-self: flex-end;
 }
 
 div.tooltip {
@@ -468,7 +483,7 @@ div.tooltip {
     justify-content: center;
     position: relative;
     height: 40px;
-    align-self: center;
+    align-self: flex-end;
 
     &.active {
         display: flex;

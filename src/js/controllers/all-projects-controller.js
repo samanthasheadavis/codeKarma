@@ -56,12 +56,14 @@ angular.module('codeKarmaApp').controller('AllProjectsController', function($sta
     $scope.languages = function(response) {
 
     };
+
     // fork project function
 
     $scope.forkRepo = function(project) {
       this.id = project.id;
-      DevService.forkRepo(storedToken, this.id);
-      project.showFork = true;
+      DevService.forkRepo(storedToken, this.id, function(response) {
+        project.showFork = true;
+      });
     };
 
     // add project info to user object

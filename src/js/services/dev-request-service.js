@@ -43,11 +43,11 @@ angular.module('codeKarmaApp').service('DevService', function($http, $location, 
         });
     }
 
-    function forkRepo(storedToken, id) {
+    function forkRepo(storedToken, id, callback) {
         $http({
             method: 'POST',
             url: 'https://code-karma-api.herokuapp.com/projects/' + id + '?token=' + storedToken
-        }).then(function successCallback(response) {}, function errorCallback(response) {
+        }).then(callback, function errorCallback(response) {
             return response;
         });
     }
@@ -149,19 +149,43 @@ angular.module('codeKarmaApp').service('DevService', function($http, $location, 
         $.ajax(settings).done(callback);
     }
 
+    function pullRequest(storedToken, id, callback) {
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://code-karma-api.herokuapp.com/branches/" + id + "?token=" + storedToken,
+            "method": "GET"
+        };
+        $.ajax(settings).done(callback);
+    }
+
+    function submitRequest(storedToken, id, data, callback, errorCallback) {
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://code-karma-api.herokuapp.com/developer_projects/" + id + "?token=" + storedToken,
+            "method": "POST",
+            "data": data,
+        };
+        $.ajax(settings).done(callback, errorCallback);
+
+        }
+
+
     return {
-        getDev: getDev,
-        getProjectsUrl: getProjectsUrl,
-        getDevUrl: getDevUrl,
-        setProgress: setProgress,
-        setEstDate: setEstDate,
         forkRepo: forkRepo,
-        putSkills: putSkills,
+        getDev: getDev,
         getDevProjects: getDevProjects,
+        getDevUrl: getDevUrl,
         getLeaderboard: getLeaderboard,
-        postQuestion: postQuestion,
         getPosts: getPosts,
+        getProjectsUrl: getProjectsUrl,
         postComment: postComment,
+        postQuestion: postQuestion,
+        pullRequest: pullRequest,
+        putSkills: putSkills,
+        setEstDate: setEstDate,
+        setProgress: setProgress,
         updateQuestionLikes: updateQuestionLikes,
         updateCommentLikes: updateCommentLikes
     };
