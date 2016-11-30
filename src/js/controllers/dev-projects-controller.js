@@ -1,8 +1,8 @@
-angular.module('codeKarmaApp').controller('DevProjectsController', function($scope, $state, RequestService) {
+angular.module('codeKarmaApp').controller('DevProjectsController', function($scope, $state, DevService, CredentialsService) {
     $scope.ownsProjects = true;
 
-    var storedToken = RequestService.getLocalToken();
-    var storedId = RequestService.getLocalId();
+    var storedToken = CredentialsService.getLocalToken();
+    var storedId = CredentialsService.getLocalId();
 
     // show pull request button when progress === 100%
 
@@ -97,7 +97,7 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
     // get projects info
 
     this.getProjects = function() {
-        RequestService.getDevProjects(storedToken, storedId, function(response) {
+        DevService.getDevProjects(storedToken, storedId, function(response) {
             $scope.projects = response.my_developer_projects;
             console.log($scope.projects);
             if ($scope.projects.length === 0) {
@@ -125,12 +125,12 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
             "percentage_complete": progress,
             "est_completion_date": date
         };
-        RequestService.setProgress(storedToken, this.status, id);
+        DevService.setProgress(storedToken, this.status, id);
     };
 
     this.getDev = function() {
-        RequestService.getDev(storedToken, storedId, function(response) {
-            $scope.currentUser = RequestService.createUser(response.data);
+        DevService.getDev(storedToken, storedId, function(response) {
+            $scope.currentUser = CredentialsService.createUser(response.data);
         });
     };
 

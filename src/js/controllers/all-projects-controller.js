@@ -1,6 +1,6 @@
-angular.module('codeKarmaApp').controller('AllProjectsController', function($state, $scope, $http, RequestService) {
-    var storedToken = RequestService.getLocalToken();
-    var storedId = RequestService.getLocalId();
+angular.module('codeKarmaApp').controller('AllProjectsController', function($state, $scope, $http, CredentialsService, DevService) {
+    var storedToken = CredentialsService.getLocalToken();
+    var storedId = CredentialsService.getLocalId();
 
     $scope.details = false;
     this.selectedProject = null;
@@ -10,13 +10,13 @@ angular.module('codeKarmaApp').controller('AllProjectsController', function($sta
     };
 
     this.getDev = function() {
-        RequestService.getDev(storedToken, storedId, function(response) {
-            $scope.currentUser = RequestService.createUser(response.data);
+        DevService.getDev(storedToken, storedId, function(response) {
+            $scope.currentUser = CredentialsService.createUser(response.data);
         });
     };
 
     this.getUrl = function() {
-        this.url = RequestService.getProjectsUrl(storedToken);
+        this.url = DevService.getProjectsUrl(storedToken);
     };
 
     $scope.getIcon = function(response) {
@@ -47,7 +47,6 @@ angular.module('codeKarmaApp').controller('AllProjectsController', function($sta
 
         $.ajax(settings).done(function(response) {
             $scope.projects = response.all_projects;
-            console.log($scope.projects);
             $scope.getIcon(response.all_projects);
             $scope.$apply();
             $scope.languages($scope.projects);
@@ -61,7 +60,7 @@ angular.module('codeKarmaApp').controller('AllProjectsController', function($sta
 
     $scope.forkRepo = function(project) {
       this.id = project.id;
-      RequestService.forkRepo(storedToken, this.id);
+      DevService.forkRepo(storedToken, this.id);
       project.showFork = true;
     };
 

@@ -17,8 +17,6 @@ angular.module('codeKarmaApp').service('StorageService', function($http, $locati
         return localStorageService.get('likedComment') || [];
     }
 
-
-
     return {
       getLikedQuestion: getLikedQuestion,
       setLikedQuestion: setLikedQuestion,

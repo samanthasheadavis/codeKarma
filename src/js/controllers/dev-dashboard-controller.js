@@ -1,14 +1,14 @@
-angular.module('codeKarmaApp').controller('DevDashboardController', function($state, RequestService, $scope, $http) {
+angular.module('codeKarmaApp').controller('DevDashboardController', function($state, $scope, $http, DevService, CredentialsService) {
 
     this.devName = 'Your Name';
     this.devLink = 'github.com/yourName';
     var self = this;
-    var storedToken = RequestService.getLocalToken();
-    var storedId = RequestService.getLocalId();
+    var storedToken = CredentialsService.getLocalToken();
+    var storedId = CredentialsService.getLocalId();
 
     // have to edit in service to get correct url for posting skills
     this.getUrl = function() {
-        this.url = RequestService.getDevUrl(storedToken, storedId);
+        this.url = DevService.getDevUrl(storedToken, storedId);
     };
 
     this.updateInfo = function(value) {
@@ -16,7 +16,7 @@ angular.module('codeKarmaApp').controller('DevDashboardController', function($st
             this.skills = {
                 "skills": this.newSkill
             };
-            RequestService.putSkills(storedToken, storedId, this.skills, function(response) {
+            DevService.putSkills(storedToken, storedId, this.skills, function(response) {
               self.getDev();
             });
 
@@ -26,7 +26,7 @@ angular.module('codeKarmaApp').controller('DevDashboardController', function($st
             this.skills = {
                 "skills": $scope.currentUser.skills + ', ' + this.newSkill
             };
-            RequestService.putSkills(storedToken, storedId, this.skills, function(response) {
+            DevService.putSkills(storedToken, storedId, this.skills, function(response) {
               self.getDev();
             });
 
@@ -41,8 +41,8 @@ angular.module('codeKarmaApp').controller('DevDashboardController', function($st
     };
 
     this.getDev = function() {
-        RequestService.getDev(storedToken, storedId, function(response) {
-            $scope.currentUser = RequestService.createUser(response.data);
+        DevService.getDev(storedToken, storedId, function(response) {
+            $scope.currentUser = CredentialsService.createUser(response.data);
 
             if ($scope.currentUser.skills.length === 0) {
               $scope.currentUser.skills = '';
@@ -67,7 +67,7 @@ angular.module('codeKarmaApp').controller('DevDashboardController', function($st
     }
 
     function getLeaderboard() {
-        RequestService.getLeaderboard(storedToken, function(response) {
+        DevService.getLeaderboard(storedToken, function(response) {
             $scope.leaderboard = response.all_developer_rankings;
             findUserStats($scope.leaderboard, 'developer_name', $scope.currentUser.username);
 

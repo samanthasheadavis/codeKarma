@@ -1,9 +1,9 @@
-angular.module('codeKarmaApp').controller('ClientProjectsController', function($state, RequestService, $scope) {
-    var storedToken = RequestService.getLocalToken();
-    var storedId = RequestService.getLocalId();
+angular.module('codeKarmaApp').controller('ClientProjectsController', function($state, $scope, ClientService, CredentialsService) {
+    var storedToken = CredentialsService.getLocalToken();
+    var storedId = CredentialsService.getLocalId();
     // Collect client projects
     this.getProjects = function() {
-        this.url = RequestService.getClientProjectsUrl(storedToken, storedId);
+        this.url = ClientService.getClientProjectsUrl(storedToken, storedId);
 
         var settings = {
             "async": true,
@@ -96,7 +96,7 @@ angular.module('codeKarmaApp').controller('ClientProjectsController', function($
 
     this.deleteProject = function(projectId) {
       var self = this;
-      RequestService.deleteProject(storedToken, projectId, function(response) {
+      ClientService.deleteProject(storedToken, projectId, function(response) {
         self.getProjects();
       });
     };

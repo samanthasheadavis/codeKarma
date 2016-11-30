@@ -52,7 +52,7 @@ angular.module('codeKarmaApp').service('DevService', function($http, $location, 
         });
     }
 
-    function putSkills(storedToken, id, skills) {
+    function putSkills(storedToken, id, skills, callback) {
 
         var settings = {
             "async": true,
@@ -61,9 +61,7 @@ angular.module('codeKarmaApp').service('DevService', function($http, $location, 
             "method": "PUT",
             "data": skills
         };
-        $.ajax(settings).done(function(response) {
-            return response;
-        });
+        $.ajax(settings).done(callback);
     }
 
     function getDevProjects(storedToken, id, callback) {

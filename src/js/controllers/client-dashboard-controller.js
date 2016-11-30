@@ -1,11 +1,11 @@
-angular.module('codeKarmaApp').controller('ClientDashboardController', function($state, RequestService, $scope, $http) {
+angular.module('codeKarmaApp').controller('ClientDashboardController', function($state, $scope, $http, CredentialsService, ClientService) {
 
-    var storedToken = RequestService.getLocalToken();
-    var storedId = RequestService.getLocalId();
+    var storedToken = CredentialsService.getLocalToken();
+    var storedId = CredentialsService.getLocalId();
 
     // Have to edit this in service to make sure posting to correct url for updating client info
     this.getUrl = function() {
-        this.url = RequestService.getProjectsUrl(storedToken);
+        this.url = ClientService.getProjectsUrl(storedToken);
     };
 
     // orgName and orgLink refer to the 'organization name' and 'website link' fields.
@@ -53,8 +53,8 @@ angular.module('codeKarmaApp').controller('ClientDashboardController', function(
 
     this.getClient = function() {
 
-        RequestService.getClient(storedToken, storedId, function(response) {
-            $scope.currentUser = RequestService.createUser(response.data);
+        ClientService.getClient(storedToken, storedId, function(response) {
+            $scope.currentUser = CredentialsService.createUser(response.data);
             $scope.handleInfo($scope.currentUser);
         });
     };

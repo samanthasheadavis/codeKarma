@@ -1,10 +1,10 @@
-angular.module('codeKarmaApp').controller('CommunityFeedController', function($state, $scope, RequestService, StorageService) {
+angular.module('codeKarmaApp').controller('CommunityFeedController', function($state, $scope, StorageService, CredentialsService, DevService) {
 
     this.post = '';
     this.response = '';
     var self = this;
-    var storedToken = RequestService.getLocalToken();
-    var storedId = RequestService.getLocalId();
+    var storedToken = CredentialsService.getLocalToken();
+    var storedId = CredentialsService.getLocalId();
 
 
 
@@ -20,7 +20,7 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
         this.newQuestion = {
             "karma_question": this.post
         };
-        RequestService.postQuestion(this.newQuestion, storedToken, function(response) {
+        DevService.postQuestion(this.newQuestion, storedToken, function(response) {
             self.getPosts();
             self.getDev();
         });
@@ -28,7 +28,7 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
     };
 
     this.getPosts = function() {
-        RequestService.getPosts(storedToken, function(response) {
+        DevService.getPosts(storedToken, function(response) {
             $scope.posts = response;
             for (var index = 0; index < $scope.posts.length; index++) {
                 var newTime = moment($scope.posts[index].created).tz("UTC");
@@ -55,7 +55,7 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
             "karma_comment": comment,
             "karma_question_id": id
         };
-        RequestService.postComment(this.newComment, storedToken);
+        DevService.postComment(this.newComment, storedToken);
         this.getPosts();
         self.getDev();
     };
@@ -65,7 +65,7 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
         this.likes = {
             "question_like": likes,
         };
-        RequestService.updateQuestionLikes(this.likes, id, storedToken, function(response) {
+        DevService.updateQuestionLikes(this.likes, id, storedToken, function(response) {
             self.getPosts();
         });
         this.question = {
@@ -80,7 +80,7 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
         this.likes = {
             "comment_like": likes,
         };
-        RequestService.updateCommentLikes(this.likes, id, storedToken, function(response) {
+        DevService.updateCommentLikes(this.likes, id, storedToken, function(response) {
             self.getPosts();
             this.comment = {
                 commentId: id
@@ -92,8 +92,8 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
     };
 
     this.getDev = function() {
-        RequestService.getDev(storedToken, storedId, function(response) {
-            $scope.currentUser = RequestService.createUser(response.data);
+        DevService.getDev(storedToken, storedId, function(response) {
+            $scope.currentUser = CredentialsService.createUser(response.data);
             getLeaderboard();
         });
     };
@@ -115,7 +115,7 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
     }
 
     function getLeaderboard() {
-        RequestService.getLeaderboard(storedToken, function(response) {
+        DevService.getLeaderboard(storedToken, function(response) {
             $scope.leaderboard = response.all_developer_rankings;
             findUserStats($scope.leaderboard, 'developer_name', $scope.currentUser.username);
 

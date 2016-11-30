@@ -26,9 +26,18 @@ function deleteProject(storedToken, projectId, callback) {
   $.ajax(settings).done(callback);
 }
 
+function getProjectsUrl(storedToken) {
+    var url = "https://code-karma-api.herokuapp.com/projects" + "?token=" + storedToken;
+    return url;
+}
 
 
-
+return {
+  getClientProjectsUrl: getClientProjectsUrl,
+  getClient: getClient,
+  deleteProject: deleteProject,
+  getProjectsUrl: getProjectsUrl
+};
 
 
 });
