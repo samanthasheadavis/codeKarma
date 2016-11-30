@@ -327,16 +327,12 @@
         width: 60%;
         box-shadow: $box-shadow;
         border-radius: $border-radius;
-
-
         @include media(tablet) {
             width: 75%;
         }
-
         @include media(mobile) {
-          padding-bottom: 2*$vspace;
+            padding-bottom: 2*$vspace;
         }
-
 
         h3 {
             font-size: 30px;
@@ -356,9 +352,8 @@
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-
             @include media(mobile) {
-              flex-direction: column;
+                flex-direction: column;
             }
 
             form {
@@ -382,14 +377,15 @@
                     margin: 30px 0 $vspace;
                 }
 
-                .status, label.date {
-                  color: $merlot;
-                  font-weight: 600;
+                .status,
+                label.date {
+                    color: $merlot;
+                    font-weight: 600;
 
-                  .progress {
-                    color: $charcoal;
-                    font-weight: normal;
-                  }
+                    .progress {
+                        color: $charcoal;
+                        font-weight: normal;
+                    }
                 }
 
                 input {
@@ -407,12 +403,10 @@
 
             .help-btn {
                 display: none;
-
                 @include media(mobile) {
-                  width: 120px;
-                  align-self: center;
+                    width: 120px;
+                    align-self: center;
                 }
-
             }
 
             .help-btn {
@@ -425,9 +419,8 @@
                 font-family: $raleway;
                 font-size: 1em;
                 padding: 10px;
-
                 @include media(mobile) {
-                  margin: 0 auto;
+                    margin: 0 auto;
                 }
 
                 &:hover {
@@ -443,14 +436,11 @@
                 @include button(15px);
                 margin: 0 $hspace 30px 0;
                 align-self: center;
-
-
                 @include media(mobile) {
-                  height: 40px;
-                  font-size: 16px;
-                  padding: 0 8px;
+                    height: 40px;
+                    font-size: 16px;
+                    padding: 0 8px;
                 }
-
 
                 &:hover {
                     background: $pop;
@@ -459,7 +449,7 @@
             }
 
             .update {
-              opacity: .5;
+                opacity: 0.5;
             }
 
             .help-btn.active {
@@ -467,15 +457,10 @@
             }
 
             .update.active {
-              opacity: 1;
+                opacity: 1;
             }
-
         }
     }
-}
-
-div.btn-div {
-  align-self: flex-end;
 }
 
 .dev-projects-container div.tooltip {
