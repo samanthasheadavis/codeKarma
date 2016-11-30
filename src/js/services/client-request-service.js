@@ -1,10 +1,10 @@
 angular.module('codeKarmaApp').service('ClientService', function($http, $location, $state) {
 
-
-    function getClientProjectsUrl(storedToken, storedId) {
-        var url = "https://code-karma-api.herokuapp.com/projects/" + storedId + "?token=" + storedToken;
-        return url;
-    }
+    //
+    // function getClientProjectsUrl(storedToken, storedId) {
+    //     var url = "https://code-karma-api.herokuapp.com/projects/" + storedId + "?token=" + storedToken;
+    //     return url;
+    // }
 
     function getClient(storedToken, storedId, callback) {
         $http({
@@ -56,7 +56,31 @@ angular.module('codeKarmaApp').service('ClientService', function($http, $locatio
         };
 
         $.ajax(settings).done(callback);
+    }
 
+    function getClientProjects(storedToken, storedId, callback) {
+
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://code-karma-api.herokuapp.com/projects/" + storedId + "?token=" + storedToken,
+            "method": "GET"
+        };
+
+        $.ajax(settings).done(callback);
+    }
+
+    function updateClientProject(storedToken, projectId, data, callback) {
+
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://code-karma-api.herokuapp.com/projects/" + projectId + "?token=" + storedToken,
+            "method": "PUT",
+            "data": data
+        };
+
+        $.ajax(settings).done(callback);
     }
 
     return {
@@ -65,7 +89,8 @@ angular.module('codeKarmaApp').service('ClientService', function($http, $locatio
         deleteProject: deleteProject,
         getProjectsUrl: getProjectsUrl,
         createProject: createProject,
-        updateClientInfo: updateClientInfo
+        updateClientInfo: updateClientInfo,
+        getClientProjects: getClientProjects
     };
 
 

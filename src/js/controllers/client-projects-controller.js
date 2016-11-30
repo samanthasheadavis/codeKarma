@@ -1,24 +1,23 @@
 angular.module('codeKarmaApp').controller('ClientProjectsController', function($state, $scope, ClientService, CredentialsService) {
+
+  // create variables for storedId and storedToken from CredentialsService to pass into requests to backend.
+
     var storedToken = CredentialsService.getLocalToken();
     var storedId = CredentialsService.getLocalId();
-    // Collect client projects
+
+    // Collect client projects by accessing getClientProjects in the ClientService, then passing the response to icons and handleprogress
+
     this.getProjects = function() {
-        this.url = ClientService.getClientProjectsUrl(storedToken, storedId);
 
-        var settings = {
-            "async": true,
-            "crossDomain": true,
-            "url": this.url,
-            "method": "GET"
-        };
-
-        $.ajax(settings).done(function(response) {
-            $scope.projects = response;
-            $scope.icons(response);
-            $scope.handleProgress(response);
-            $scope.$apply();
+        ClientService.getClientProjects(storedToken, storedId, function(response) {
+          $scope.projects = response;
+          $scope.icons(response);
+          $scope.handleProgress(response);
+          $scope.$apply();
         });
     };
+
+    // handleProgress is a function that populates the estimated completion date for each project
 
     $scope.handleProgress = function(response) {
       for (count=0; count<response.length; count++) {
@@ -34,6 +33,8 @@ angular.module('codeKarmaApp').controller('ClientProjectsController', function($
         }
       }
     };
+
+    // icons associates each fix_type with the correct icon and alt info
 
     $scope.icons = function(response) {
 
@@ -51,7 +52,7 @@ angular.module('codeKarmaApp').controller('ClientProjectsController', function($
         }
     };
 
-    // collect edited data
+    // updateInfo shows the edit modal
 
     this.updateInfo = function(project) {
         project.showTitleEdit = !project.showTitleEdit;
@@ -59,6 +60,8 @@ angular.module('codeKarmaApp').controller('ClientProjectsController', function($
         project.showDescriptionEdit = !project.showDescriptionEdit;
         project.showGithubRepoEdit = !project.showGithubRepoEdit;
     };
+
+    // edit collects the new client project info in the updateProject container
 
     this.edit = function(title, briefDescription, description, repoUrl, id) {
       $('.client-projects-container').addClass('modal-up');
@@ -72,27 +75,24 @@ angular.module('codeKarmaApp').controller('ClientProjectsController', function($
         this.show = true;
     };
 
+    // quitModal closes the edit modal
+
     this.quitModal = function() {
       this.show = false;
       $('.client-projects-container').removeClass('modal-up');
     };
 
+    //updateInfo passes the new client project updated info to the back end via a PUT
+
     this.updateInfo = function() {
 
-        var settings = {
-            "async": true,
-            "crossDomain": true,
-            "url": "https://code-karma-api.herokuapp.com/projects/" + this.id + "?token=" + storedToken,
-            "method": "PUT",
-            "data": this.updateProject
-        };
-
-        $.ajax(settings).done(function(response) {
-            this.show = false;
-            $state.reload();
+        ClientService.updateClientProject(storedToken, this.id, this.updateProject, function(response) {
+          this.show = false;
+          $state.reload();
         });
-
     };
+
+    // deleteProject allows the client to delete a project by accessing the deleteProject function in ClientService
 
     this.deleteProject = function(projectId) {
       var self = this;

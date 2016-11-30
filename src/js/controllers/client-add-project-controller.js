@@ -8,7 +8,7 @@ angular.module('codeKarmaApp').controller('ClientAddProjectController', function
     // collect form data and put into project object
 
     this.create = function(title, briefDescription, description, category, githubRepo) {
-        console.log("in create" + this.url);
+        
         this.newProject = {
             title: title,
             brief_description: briefDescription,
