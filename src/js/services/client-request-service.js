@@ -46,12 +46,26 @@ angular.module('codeKarmaApp').service('ClientService', function($http, $locatio
 
     }
 
+    function updateClientInfo(storedToken, storedId, data, callback) {
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://code-karma-api.herokuapp.com/clients/" + storedId + "?token=" + storedToken,
+            "method": "PUT",
+            "data": data
+        };
+
+        $.ajax(settings).done(callback);
+
+    }
+
     return {
         getClientProjectsUrl: getClientProjectsUrl,
         getClient: getClient,
         deleteProject: deleteProject,
         getProjectsUrl: getProjectsUrl,
-        createProject: createProject
+        createProject: createProject,
+        updateClientInfo: updateClientInfo
     };
 
 

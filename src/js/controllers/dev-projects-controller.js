@@ -85,10 +85,10 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
             "error": function(response) {
                 $scope.showStatus = true;
                 $scope.error = true;
+                $scope.newProjectBtn = true;
                 $scope.message = "Oops! Looks like something went wrong. Check to make sure you're choosing the right branches and try again!";
                 $scope.$apply();
             }
-
         };
         $.ajax(settings).done(function(response) {
 

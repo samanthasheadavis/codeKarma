@@ -1,12 +1,9 @@
 angular.module('codeKarmaApp').controller('ClientAddProjectController', function($state, $http, CredentialsService, ClientService) {
+
+    // create variables for storedId and storedToken from CredentialsService to pass into requests to backend.
+
     var storedToken = CredentialsService.getLocalToken();
     var storedId = CredentialsService.getLocalId();
-
-    // this.url calls to the request service to get the correct url for posting to including the user id and token, and saves it in the controller variable this.url
-
-    this.getUrl = function() {
-        this.url = ClientService.getProjectsUrl(storedToken);
-    };
 
     // collect form data and put into project object
 
@@ -20,10 +17,10 @@ angular.module('codeKarmaApp').controller('ClientAddProjectController', function
             github_repo_url: githubRepo,
         };
 
+        // pass data to post function in ClientService when a client creates a project
+
         ClientService.createProject(storedToken, this.newProject, function(response) {
           $state.go('codeKarmaParent.clientProjects');
         });
     };
-
-    this.getUrl();
 });
