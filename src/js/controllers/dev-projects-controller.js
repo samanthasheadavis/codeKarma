@@ -31,26 +31,6 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
         $('div.tooltip' + '.' + id).removeClass('active');
     };
 
-
-    // this.pullRequest = function(id) {
-    //     $('.dev-projects-container').addClass('modal-up');
-    //     $scope.showModal = true;
-    //     this.projectId = id;
-    //     this.branchUrl = "https://code-karma-api.herokuapp.com/branches/" + this.projectId + "?token=" + storedToken;
-    //     var settings = {
-    //         "async": true,
-    //         "crossDomain": true,
-    //         "url": this.branchUrl,
-    //         "method": "GET"
-    //     };
-    //
-    //     $.ajax(settings).done(function(response) {
-    //         $scope.headBranches = response.head_branches;
-    //         $scope.baseBranches = response.base_branches;
-    //         $scope.$apply();
-    //     });
-    // };
-
     this.pullRequest = function(id) {
         $('.dev-projects-container').addClass('modal-up');
         $scope.showModal = true;
@@ -78,32 +58,6 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
 
     this.submitRequest = function() {
         this.closeModal();
-        // this.requestUrl = "https://code-karma-api.herokuapp.com/developer_projects/" + this.projectId + "?token=" + storedToken;
-        // var settings = {
-        //     "async": true,
-        //     "crossDomain": true,
-        //     "url": this.requestUrl,
-        //     "method": "POST",
-        //     "data": $scope.pullInfo,
-        //     "success": function(response) {
-        //         $scope.showStatus = true;
-        //         $scope.message = "Success! The client will be notified of your pull request.";
-        //         $scope.error = false;
-        //         $scope.newProjectBtn = false;
-        //         $scope.$apply();
-        //     },
-        //     "error": function(response) {
-        //         $scope.showStatus = true;
-        //         $scope.error = true;
-        //         $scope.message = "Oops! Looks like something went wrong. Check to make sure you're choosing the right branches and try again!";
-        //         $scope.$apply();
-        //     }
-        //
-        // };
-        // $.ajax(settings).done(function(response) {
-        //
-        // });
-
         DevService.submitRequest(storedToken, this.projectId, $scope.pullInfo, function(response) {
           $scope.showStatus = true;
           $scope.message = "Success! The client will be notified of your pull request.";
@@ -153,7 +107,6 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
         $scope.showStatus = true;
         $scope.error = false;
         $scope.newProjectBtn = true;
-
     };
 
     this.getDev = function() {

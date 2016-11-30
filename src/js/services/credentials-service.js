@@ -25,14 +25,6 @@ angular.module('codeKarmaApp').service('CredentialsService', function($http, $lo
       }
   }
 
-  // function fetchToken() {
-  //     return token;
-  // }
-  //
-  // function fetchId() {
-  //     return userId;
-  // }
-
   function createUser(response) {
 
       currentUser = {
