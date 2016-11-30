@@ -79,6 +79,7 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
                 $scope.showStatus = true;
                 $scope.message = "Success! The client will be notified of your pull request.";
                 $scope.error = false;
+                $scope.newProjectBtn = false;
                 $scope.$apply();
             },
             "error": function(response) {
@@ -126,6 +127,12 @@ angular.module('codeKarmaApp').controller('DevProjectsController', function($sco
             "est_completion_date": date
         };
         DevService.setProgress(storedToken, this.status, id);
+        console.log('updated');
+        $scope.message = "Progress successfully updated.";
+        $scope.showStatus = true;
+        $scope.error = false;
+        $scope.newProjectBtn = true;
+
     };
 
     this.getDev = function() {
