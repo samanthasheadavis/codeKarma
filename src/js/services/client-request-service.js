@@ -1,6 +1,5 @@
 angular.module('codeKarmaApp').service('ClientService', function($http, $location, $state) {
 
-
 function getClientProjectsUrl(storedToken, storedId) {
     var url = "https://code-karma-api.herokuapp.com/projects/" + storedId + "?token=" + storedToken;
     return url;
@@ -31,13 +30,11 @@ function getProjectsUrl(storedToken) {
     return url;
 }
 
-
 return {
   getClientProjectsUrl: getClientProjectsUrl,
   getClient: getClient,
   deleteProject: deleteProject,
   getProjectsUrl: getProjectsUrl
 };
-
 
 });

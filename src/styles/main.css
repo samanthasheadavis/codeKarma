@@ -1979,12 +1979,14 @@ ui-view {
         .dev-projects-container .no-project .details form label.date,
         .dev-projects-container .project-card .details form label.date {
           margin: 30px 0 15px; }
-        .dev-projects-container .no-project .details form .status, .dev-projects-container .no-project .details form label.date,
+        .dev-projects-container .no-project .details form .status,
+        .dev-projects-container .no-project .details form label.date,
         .dev-projects-container .project-card .details form .status,
         .dev-projects-container .project-card .details form label.date {
           color: #751721;
           font-weight: 600; }
-          .dev-projects-container .no-project .details form .status .progress, .dev-projects-container .no-project .details form label.date .progress,
+          .dev-projects-container .no-project .details form .status .progress,
+          .dev-projects-container .no-project .details form label.date .progress,
           .dev-projects-container .project-card .details form .status .progress,
           .dev-projects-container .project-card .details form label.date .progress {
             color: #191919;
@@ -1999,19 +2001,17 @@ ui-view {
           .dev-projects-container .no-project .details form input:focus,
           .dev-projects-container .project-card .details form input:focus {
             outline: 0; }
-      .dev-projects-container .no-project .details .help-btn, .dev-projects-container .no-project .details .update,
-      .dev-projects-container .project-card .details .help-btn,
-      .dev-projects-container .project-card .details .update {
+      .dev-projects-container .no-project .details .help-btn,
+      .dev-projects-container .project-card .details .help-btn {
         display: none; }
         @media only screen and (max-width: 440px) {
-          .dev-projects-container .no-project .details .help-btn, .dev-projects-container .no-project .details .update,
-          .dev-projects-container .project-card .details .help-btn,
-          .dev-projects-container .project-card .details .update {
+          .dev-projects-container .no-project .details .help-btn,
+          .dev-projects-container .project-card .details .help-btn {
             width: 120px;
             align-self: center; } }
       .dev-projects-container .no-project .details .help-btn,
       .dev-projects-container .project-card .details .help-btn {
-        margin-bottom: 15px;
+        margin: 0 10px 15px 0;
         border-radius: 5px;
         border: none;
         height: 40px;
@@ -2044,7 +2044,8 @@ ui-view {
         position: relative;
         text-transform: uppercase;
         outline: none;
-        height: 60px; }
+        margin: 0 10px 30px 0;
+        align-self: center; }
         @media only screen and (max-width: 440px) {
           .dev-projects-container .no-project .details .submit-btn,
           .dev-projects-container .project-card .details .submit-btn {
@@ -2055,22 +2056,27 @@ ui-view {
         .dev-projects-container .project-card .details .submit-btn:hover {
           background: #AAEFDF;
           color: #191919; }
-      .dev-projects-container .no-project .details .help-btn.active, .dev-projects-container .no-project .details .update.active,
-      .dev-projects-container .project-card .details .help-btn.active,
-      .dev-projects-container .project-card .details .update.active {
+      .dev-projects-container .no-project .details .update,
+      .dev-projects-container .project-card .details .update {
+        opacity: 0.5; }
+      .dev-projects-container .no-project .details .help-btn.active,
+      .dev-projects-container .project-card .details .help-btn.active {
         display: block; }
+      .dev-projects-container .no-project .details .update.active,
+      .dev-projects-container .project-card .details .update.active {
+        opacity: 1; }
 
-div.tooltip {
+.dev-projects-container div.tooltip {
   display: none;
   justify-content: center;
   position: relative;
   height: 40px;
-  align-self: center; }
-  div.tooltip.active {
+  align-self: flex-end; }
+  .dev-projects-container div.tooltip.active {
     display: flex; }
-  div.tooltip:hover .tooltiptext {
+  .dev-projects-container div.tooltip:hover .tooltiptext {
     display: block; }
-  div.tooltip .tooltiptext {
+  .dev-projects-container div.tooltip .tooltiptext {
     background: #AAEFDF;
     border-radius: 5px;
     color: #191919;
@@ -2084,7 +2090,7 @@ div.tooltip {
     text-align: center;
     width: 120px;
     z-index: 5; }
-    div.tooltip .tooltiptext:after {
+    .dev-projects-container div.tooltip .tooltiptext:after {
       content: " ";
       position: absolute;
       top: 45%;

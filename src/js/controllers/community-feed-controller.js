@@ -44,9 +44,7 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
             }
             $scope.$apply();
             var likedQuestionArray = StorageService.getLikedQuestion();
-            // var likedCommentArray = StorageService.getLikedComment();
             self.getBlueQuestions(likedQuestionArray);
-            // self.getBlueComments(likedCommentArray);
         });
     };
 
@@ -80,15 +78,14 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
         this.likes = {
             "comment_like": likes,
         };
+        this.comment = {
+            commentId: id
+        };
         DevService.updateCommentLikes(this.likes, id, storedToken, function(response) {
             self.getPosts();
-            this.comment = {
-                commentId: id
-            };
-            likedCommentArray.push(this.comment);
-            StorageService.setLikedComment(likedCommentArray);
         });
-
+        likedCommentArray.push(this.comment);
+        StorageService.setLikedComment(likedCommentArray);
     };
 
     this.getDev = function() {
@@ -124,10 +121,9 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
 
     this.getBlueQuestions = function(array) {
         for (var index = 0; index < array.length; index++) {
-            console.log(array);
             var blueId = array[index].questionId;
             for (var newIndex = 0; newIndex < $scope.posts.length; newIndex++) {
-              self.getBlueComments($scope.posts[index].comments);
+                self.getBlueComments($scope.posts[newIndex].comments);
                 if ($scope.posts[newIndex].question_id === blueId) {
                     $scope.posts[newIndex].liked = true;
                 }
@@ -141,16 +137,13 @@ angular.module('codeKarmaApp').controller('CommunityFeedController', function($s
         for (var index = 0; index < likedCommentArray.length; index++) {
             var blueCommentId = likedCommentArray[index].commentId;
             for (var newIndex = 0; newIndex < item.length; newIndex++) {
-            if (item[newIndex].id === blueCommentId) {
-                item[newIndex].liked = true;
+                if (item[newIndex].id === blueCommentId) {
+                    item[newIndex].liked = true;
+                }
             }
-          }
         }
         $scope.$apply();
     };
-
-
-
 
     this.getDev();
     this.getPosts();

@@ -327,16 +327,12 @@
         width: 60%;
         box-shadow: $box-shadow;
         border-radius: $border-radius;
-
-
         @include media(tablet) {
             width: 75%;
         }
-
         @include media(mobile) {
-          padding-bottom: 2*$vspace;
+            padding-bottom: 2*$vspace;
         }
-
 
         h3 {
             font-size: 30px;
@@ -356,9 +352,8 @@
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-
             @include media(mobile) {
-              flex-direction: column;
+                flex-direction: column;
             }
 
             form {
@@ -382,14 +377,15 @@
                     margin: 30px 0 $vspace;
                 }
 
-                .status, label.date {
-                  color: $merlot;
-                  font-weight: 600;
+                .status,
+                label.date {
+                    color: $merlot;
+                    font-weight: 600;
 
-                  .progress {
-                    color: $charcoal;
-                    font-weight: normal;
-                  }
+                    .progress {
+                        color: $charcoal;
+                        font-weight: normal;
+                    }
                 }
 
                 input {
@@ -405,18 +401,16 @@
                 }
             }
 
-            .help-btn, .update {
+            .help-btn {
                 display: none;
-
                 @include media(mobile) {
-                  width: 120px;
-                  align-self: center;
+                    width: 120px;
+                    align-self: center;
                 }
-
             }
 
             .help-btn {
-                margin-bottom: 15px;
+                margin: 0 $hspace 15px 0;
                 border-radius: 5px;
                 border: none;
                 height: 40px;
@@ -425,9 +419,8 @@
                 font-family: $raleway;
                 font-size: 1em;
                 padding: 10px;
-
                 @include media(mobile) {
-                  margin: 0 auto;
+                    margin: 0 auto;
                 }
 
                 &:hover {
@@ -441,14 +434,13 @@
 
             .submit-btn {
                 @include button(15px);
-                height: 60px;
-
+                margin: 0 $hspace 30px 0;
+                align-self: center;
                 @include media(mobile) {
-                  height: 40px;
-                  font-size: 16px;
-                  padding: 0 8px;
+                    height: 40px;
+                    font-size: 16px;
+                    padding: 0 8px;
                 }
-
 
                 &:hover {
                     background: $pop;
@@ -456,19 +448,27 @@
                 }
             }
 
-            .help-btn.active, .update.active {
+            .update {
+                opacity: 0.5;
+            }
+
+            .help-btn.active {
                 display: block;
+            }
+
+            .update.active {
+                opacity: 1;
             }
         }
     }
 }
 
-div.tooltip {
+.dev-projects-container div.tooltip {
     display: none;
     justify-content: center;
     position: relative;
     height: 40px;
-    align-self: center;
+    align-self: flex-end;
 
     &.active {
         display: flex;
