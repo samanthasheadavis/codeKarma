@@ -190,6 +190,7 @@ angular.module('codeKarmaApp').service('DevService', function($http, $location, 
         putSkills: putSkills,
         setEstDate: setEstDate,
         setProgress: setProgress,
+        submitRequest: submitRequest,
         updateQuestionLikes: updateQuestionLikes,
         updateCommentLikes: updateCommentLikes
     };
